@@ -1,0 +1,501 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:experienceRequirements",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Description of skills and experience needed for the position.",
+      "rdfs:label": "experienceRequirements",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:educationRequirements",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Educational background needed for the position.",
+      "rdfs:label": "educationRequirements",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:skills",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Skills required to fulfill this role.",
+      "rdfs:label": "skills",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:validThrough",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "rdfs:label": "validThrough",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:JobPosting"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:PriceSpecification"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:employmentType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
+      "rdfs:label": "employmentType",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:jobBenefits",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Description of benefits associated with the job.",
+      "rdfs:label": "jobBenefits",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:salaryCurrency",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The currency (coded using <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a> ) used for the main salary information in this job posting or for this employee.",
+      "rdfs:label": "salaryCurrency",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:EmployeeRole"
+        },
+        {
+          "@id": "schema:JobPosting"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:baseSalary",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The base salary of the job or of an employee in an EmployeeRole.",
+      "rdfs:label": "baseSalary",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:JobPosting"
+        },
+        {
+          "@id": "schema:EmployeeRole"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:PriceSpecification"
+        }
+      ]
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:industry",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The industry associated with the job position.",
+      "rdfs:label": "industry",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:title",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The title of the job.",
+      "rdfs:label": "title",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:benefits",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Description of benefits associated with the job.",
+      "rdfs:label": "benefits",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:jobBenefits"
+      }
+    },
+    {
+      "@id": "schema:specialCommitments",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Any special commitments associated with this job posting. Valid entries include VeteranCommit, MilitarySpouseCommit, etc.",
+      "rdfs:label": "specialCommitments",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:qualifications",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Specific qualifications required for this role.",
+      "rdfs:label": "qualifications",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:incentiveCompensation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Description of bonus and commission compensation aspects of the job.",
+      "rdfs:label": "incentiveCompensation",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:responsibilities",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Responsibilities associated with this role.",
+      "rdfs:label": "responsibilities",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:jobLocation",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A (typically single) geographic location associated with the job position.",
+      "rdfs:label": "jobLocation",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Place"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:hiringOrganization",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Organization offering the job position.",
+      "rdfs:label": "hiringOrganization",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Organization"
+      }
+    },
+    {
+      "@id": "schema:workHours",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The typical working hours for this job (e.g. 1st shift, night shift, 8am-5pm).",
+      "rdfs:label": "workHours",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:datePosted",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Publication date for the job posting.",
+      "rdfs:label": "datePosted",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "schema:occupationalCategory",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.",
+      "rdfs:label": "occupationalCategory",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:JobPosting",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A listing that describes a job opening in a certain organization.",
+      "rdfs:label": "JobPosting",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:incentives",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Description of bonus and commission compensation aspects of the job.",
+      "rdfs:label": "incentives",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:incentiveCompensation"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    }
+  ]
+}

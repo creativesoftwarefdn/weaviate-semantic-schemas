@@ -1,0 +1,482 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:productSupported",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The product or service this support contact point is related to (such as product support for a particular product line). This can be a specific product or product line (e.g. \"iPhone\") or a general category of products or services (e.g. \"smartphones\").",
+      "rdfs:label": "productSupported",
+      "schema:domainIncludes": {
+        "@id": "schema:ContactPoint"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ]
+    },
+    {
+      "@id": "schema:serviceSmsNumber",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:servicePhone",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:serviceArea",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The geographic area where the service is provided.",
+      "rdfs:label": "serviceArea",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:AdministrativeArea"
+        }
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:areaServed"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:email",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Email address.",
+      "rdfs:label": "email",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:telephone",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The telephone number.",
+      "rdfs:label": "telephone",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:contactType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A person or organization can have different contact points, for different purposes. For example, a sales contact point, a PR contact point and so on. This property is used to specify the kind of contact point.",
+      "rdfs:label": "contactType",
+      "schema:domainIncludes": {
+        "@id": "schema:ContactPoint"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:availableLanguage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A language someone may use with the item. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/inLanguage\">inLanguage</a>",
+      "rdfs:label": "availableLanguage",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:LodgingBusiness"
+        },
+        {
+          "@id": "schema:ServiceChannel"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Language"
+        }
+      ]
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:areaServed",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The geographic area where a service or offered item is provided.",
+      "rdfs:label": "areaServed",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "schema:hoursAvailable",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The hours during which this service or contact is available.",
+      "rdfs:label": "hoursAvailable",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:OpeningHoursSpecification"
+      }
+    },
+    {
+      "@id": "schema:StructuredValue",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "rdfs:label": "StructuredValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:workLocation",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:contactOption",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An option available on this contact point (e.g. a toll-free number or support for hearing-impaired callers).",
+      "rdfs:label": "contactOption",
+      "schema:domainIncludes": {
+        "@id": "schema:ContactPoint"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPointOption"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:ContactPoint",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A contact point&#x2014;for example, a Customer Complaints department.",
+      "rdfs:label": "ContactPoint",
+      "rdfs:subClassOf": {
+        "@id": "schema:StructuredValue"
+      }
+    },
+    {
+      "@id": "schema:grantee",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:PostalAddress",
+      "rdfs:subClassOf": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:contactPoints",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:faxNumber",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The fax number.",
+      "rdfs:label": "faxNumber",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:homeLocation",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:contactPoint",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    }
+  ]
+}

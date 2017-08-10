@@ -1,0 +1,696 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:numAdults",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:inventoryLevel",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:occupancy",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:numberOfPlayers",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:tongueWeight",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:referenceQuantity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:advanceBookingRequirement",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:yearlyRevenue",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:numberOfEmployees",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:seatingCapacity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:cargoVolume",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:durationOfWarranty",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:minValue",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The lower value of some characteristic or property.",
+      "rdfs:label": "minValue",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:PropertyValueSpecification"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Number"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:wheelbase",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:depth",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:valueReference",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
+      "rdfs:label": "valueReference",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:StructuredValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "schema:numberOfPreviousOwners",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:roofLoad",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:vehicleSeatingCapacity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:unitCode",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+      "rdfs:label": "unitCode",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:TypeAndQuantityNode"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:UnitPriceSpecification"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:yearsInOperation",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:numberOfAxles",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:loanTerm",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:StructuredValue",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "rdfs:label": "StructuredValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:value",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "<p>The value of the quantitative value or property value node.</p>\n\n<ul>\n<li>For <a class=\"localLink\" href=\"http://schema.org/QuantitativeValue\">QuantitativeValue</a> and <a class=\"localLink\" href=\"http://schema.org/MonetaryAmount\">MonetaryAmount</a>, the recommended type for values is 'Number'.</li>\n<li>For <a class=\"localLink\" href=\"http://schema.org/PropertyValue\">PropertyValue</a>, it can be 'Text;', 'Number', 'Boolean', or 'StructuredValue'.</li>\n</ul>\n",
+      "rdfs:label": "value",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:StructuredValue"
+        },
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Boolean"
+        }
+      ]
+    },
+    {
+      "@id": "schema:fuelConsumption",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:broadcastFrequencyValue",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:numberOfForwardGears",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:additionalProperty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.</p>\n\n<p>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+      "rdfs:label": "additionalProperty",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:PropertyValue"
+      }
+    },
+    {
+      "@id": "schema:mileageFromOdometer",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:maxValue",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The upper value of some characteristic or property.",
+      "rdfs:label": "maxValue",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:PropertyValueSpecification"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Number"
+      }
+    },
+    {
+      "@id": "schema:enginePower",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:QuantitativeValue",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      },
+      "rdfs:comment": "A point value or interval for product characteristics and other purposes.",
+      "rdfs:label": "QuantitativeValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:StructuredValue"
+      }
+    },
+    {
+      "@id": "schema:annualPercentageRate",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:unitText",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode</a>.",
+      "rdfs:label": "unitText",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:UnitPriceSpecification"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:TypeAndQuantityNode"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:fuelCapacity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:engineDisplacement",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:partySize",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:width",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:floorSize",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:torque",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:interestRate",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:height",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:weight",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:eligibleDuration",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:trailerWeight",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:accelerationTime",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:speed",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:fuelEfficiency",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:numChildren",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:eligibleQuantity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:numberOfRooms",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:deliveryLeadTime",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:numberOfDoors",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:payload",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:weightTotal",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    }
+  ]
+}

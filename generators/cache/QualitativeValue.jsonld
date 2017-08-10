@@ -1,0 +1,515 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:DriveWheelConfigurationValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:supersededBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "rdfs:label": "supersededBy",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Enumeration"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://meta.schema.org/"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:activityFrequency",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:fuelType",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:Enumeration",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+      "rdfs:label": "Enumeration",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:greater",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "This ordering relation for qualitative values indicates that the subject is greater than the object.",
+      "rdfs:label": "greater",
+      "schema:domainIncludes": {
+        "@id": "schema:QualitativeValue"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:meetsEmissionStandard",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:intensity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:lesserOrEqual",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "This ordering relation for qualitative values indicates that the subject is lesser than or equal to the object.",
+      "rdfs:label": "lesserOrEqual",
+      "schema:domainIncludes": {
+        "@id": "schema:QualitativeValue"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:SteeringPositionValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:repetitions",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:lesser",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "This ordering relation for qualitative values indicates that the subject is lesser than the object.",
+      "rdfs:label": "lesser",
+      "schema:domainIncludes": {
+        "@id": "schema:QualitativeValue"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:vehicleTransmission",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:BedType",
+      "rdfs:subClassOf": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:activityDuration",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalProperty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A property-value pair representing an additional characteristics of the entitity, e.g. a product feature or another characteristic for which there is no matching property in schema.org.</p>\n\n<p>Note: Publishers should be aware that applications designed to use specific schema.org properties (e.g. http://schema.org/width, http://schema.org/color, http://schema.org/gtin13, ...) will typically expect such data to be provided using those properties, rather than using the generic property/value mechanism.",
+      "rdfs:label": "additionalProperty",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:QualitativeValue"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:PropertyValue"
+      }
+    },
+    {
+      "@id": "schema:engineType",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:doseValue",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:equal",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "This ordering relation for qualitative values indicates that the subject is equal to the object.",
+      "rdfs:label": "equal",
+      "schema:domainIncludes": {
+        "@id": "schema:QualitativeValue"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:costPerUnit",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:restPeriods",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:seatingType",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:greaterOrEqual",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "This ordering relation for qualitative values indicates that the subject is greater than or equal to the object.",
+      "rdfs:label": "greaterOrEqual",
+      "schema:domainIncludes": {
+        "@id": "schema:QualitativeValue"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:workload",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:valueReference",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "A pointer to a secondary value that provides additional information on the original value, e.g. a reference temperature.",
+      "rdfs:label": "valueReference",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:StructuredValue"
+        },
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:passengerPriorityStatus",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:nonEqual",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "This ordering relation for qualitative values indicates that the subject is not equal to the object.",
+      "rdfs:label": "nonEqual",
+      "schema:domainIncludes": {
+        "@id": "schema:QualitativeValue"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:bodyType",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "schema:lodgingUnitType",
+      "schema:rangeIncludes": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:CarUsageType",
+      "rdfs:subClassOf": {
+        "@id": "schema:QualitativeValue"
+      }
+    },
+    {
+      "@id": "schema:QualitativeValue",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      },
+      "rdfs:comment": "A predefined value for a product characteristic, e.g. the power cord plug type 'US' or the garment sizes 'S', 'M', 'L', and 'XL'.",
+      "rdfs:label": "QualitativeValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    }
+  ]
+}

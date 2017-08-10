@@ -1,0 +1,371 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:medicineSystem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+      "rdfs:label": "medicineSystem",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicineSystem"
+      }
+    },
+    {
+      "@id": "schema:guideline",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical guideline related to this entity.",
+      "rdfs:label": "guideline",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalGuideline"
+      }
+    },
+    {
+      "@id": "schema:legalStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "rdfs:label": "legalStatus",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MedicalEntity"
+        },
+        {
+          "@id": "schema:Drug"
+        },
+        {
+          "@id": "schema:DietarySupplement"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:MedicalEnumeration"
+        },
+        {
+          "@id": "schema:DrugLegalStatus"
+        }
+      ]
+    },
+    {
+      "@id": "schema:relevantSpecialty",
+      "@type": "rdf:Property",
+      "rdfs:comment": "If applicable, a medical specialty in which this entity is relevant.",
+      "rdfs:label": "relevantSpecialty",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalSpecialty"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:includedRiskFactor",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A modifiable or non-modifiable risk factor included in the calculation, e.g. age, coexisting condition.",
+      "rdfs:label": "includedRiskFactor",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalRiskEstimator"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalRiskFactor"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:code",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+      "rdfs:label": "code",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalCode"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:MedicalRiskCalculator",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A complex mathematical calculation requiring an online calculator, used to assess prognosis. Note: use the url property of Thing to record any URLs for online calculators.",
+      "rdfs:label": "MedicalRiskCalculator",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalRiskEstimator"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
+      "@id": "schema:recognizingAuthority",
+      "@type": "rdf:Property",
+      "rdfs:comment": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
+      "rdfs:label": "recognizingAuthority",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Organization"
+      }
+    },
+    {
+      "@id": "schema:study",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical study or trial related to this entity.",
+      "rdfs:label": "study",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalStudy"
+      }
+    },
+    {
+      "@id": "schema:MedicalEntity",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of entity related to health and the practice of medicine.",
+      "rdfs:label": "MedicalEntity",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "schema:estimatesRiskOf",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The condition, complication, or symptom whose risk is being estimated.",
+      "rdfs:label": "estimatesRiskOf",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalRiskEstimator"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalEntity"
+      }
+    },
+    {
+      "@id": "schema:MedicalRiskEstimator",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Any rule set or interactive tool for estimating the risk of developing a complication or condition.",
+      "rdfs:label": "MedicalRiskEstimator",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    }
+  ]
+}

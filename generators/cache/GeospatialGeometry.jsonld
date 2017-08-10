@@ -1,0 +1,499 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:geospatiallyEquals",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) are topologically equal, as defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>. \"Two geometries are topologically equal if their interiors intersect and no part of the interior or boundary of one geometry intersects the exterior of the other\" (a symmetric relationship)",
+      "rdfs:label": "geospatiallyEquals",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:geospatiallyIntersects",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyIntersects",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "schema:geospatiallyCovers",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a covering geometry to a covered geometry. \"Every point of b is a point of (the interior or boundary of) a\". As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCovers",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:geospatiallyWithin",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to one that contains it, i.e. it is inside (i.e. within) its interior. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyWithin",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:geospatiallyCoveredBy",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCoveredBy",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:geospatiallyContains",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a containing geometry to a contained geometry. \"a contains b iff no points of b lie in the exterior of a, and at least one point of the interior of b lies in the interior of a\". As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyContains",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "schema:geospatiallyOverlaps",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that geospatially overlaps it, i.e. they have some but not all points in common. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyOverlaps",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:geospatiallyTouches",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) touch: they have at least one boundary point in common, but no interior points.\" (a symmetric relationship, as defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a> )",
+      "rdfs:label": "geospatiallyTouches",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "schema:GeospatialGeometry",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "(Eventually to be defined as) a supertype of GeoShape designed to accommodate definitions from Geo-Spatial best practices.",
+      "rdfs:label": "GeospatialGeometry",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      },
+      "schema:category": "issue-1375",
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      }
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:geospatiallyCrosses",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCrosses",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "schema:geospatiallyDisjoint",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>)",
+      "rdfs:label": "geospatiallyDisjoint",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    }
+  ]
+}

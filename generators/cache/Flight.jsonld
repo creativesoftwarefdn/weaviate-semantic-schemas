@@ -1,0 +1,515 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:departureAirport",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The airport where the flight originates.",
+      "rdfs:label": "departureAirport",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Airport"
+      }
+    },
+    {
+      "@id": "schema:departureTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The expected departure time.",
+      "rdfs:label": "departureTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:TrainTrip"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:boardingPolicy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The type of boarding policy used by the airline (e.g. zone-based or group-based).",
+      "rdfs:label": "boardingPolicy",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Airline"
+        },
+        {
+          "@id": "schema:Flight"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:BoardingPolicyType"
+      }
+    },
+    {
+      "@id": "schema:provider",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "rdfs:label": "provider",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Flight",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "An airline flight.",
+      "rdfs:label": "Flight",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:arrivalTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The expected arrival time.",
+      "rdfs:label": "arrivalTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:Flight"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:mealService",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Description of the meals that will be provided or available for purchase.",
+      "rdfs:label": "mealService",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:aircraft",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The kind of aircraft (e.g., \"Boeing 747\").",
+      "rdfs:label": "aircraft",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Vehicle"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:webCheckinTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The time when a passenger can check into the flight online.",
+      "rdfs:label": "webCheckinTime",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:arrivalTerminal",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier of the flight's arrival terminal.",
+      "rdfs:label": "arrivalTerminal",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:arrivalAirport",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The airport where the flight terminates.",
+      "rdfs:label": "arrivalAirport",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Airport"
+      }
+    },
+    {
+      "@id": "schema:carrier",
+      "@type": "rdf:Property",
+      "rdfs:comment": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
+      "rdfs:label": "carrier",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Organization"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:provider"
+      }
+    },
+    {
+      "@id": "schema:seller",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+      "rdfs:label": "seller",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:participant"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:Order"
+        },
+        {
+          "@id": "schema:BuyAction"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:flightDistance",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The distance of the flight.",
+      "rdfs:label": "flightDistance",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Distance"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:departureTerminal",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier of the flight's departure terminal.",
+      "rdfs:label": "departureTerminal",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:departureGate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier of the flight's departure gate.",
+      "rdfs:label": "departureGate",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:flightNumber",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The unique identifier for a flight including the airline IATA code. For example, if describing United flight 110, where the IATA code for United is 'UA', the flightNumber is 'UA110'.",
+      "rdfs:label": "flightNumber",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:estimatedFlightDuration",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The estimated time the flight will take.",
+      "rdfs:label": "estimatedFlightDuration",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Duration"
+        }
+      ]
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:arrivalGate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier of the flight's arrival gate.",
+      "rdfs:label": "arrivalGate",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    }
+  ]
+}

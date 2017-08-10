@@ -1,0 +1,1300 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:isSimilarTo",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "A pointer to another, functionally similar product (or multiple products).",
+      "rdfs:label": "isSimilarTo",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ]
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:broker",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An entity that arranges for an exchange between a buyer and a seller.  In most cases a broker never acquires or releases ownership of a product or service involved in an exchange.  If it is not clear whether an entity is a broker, seller, or buyer, the latter two terms are preferred.",
+      "rdfs:label": "broker",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Order"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:contactlessPayment",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        }
+      ],
+      "rdfs:comment": "A secure method for consumers to purchase products or services via debit, credit or smartcards by using RFID or NFC technology.",
+      "rdfs:label": "contactlessPayment",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:PaymentCard"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
+      "@id": "schema:isRelatedTo",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "A pointer to another, somehow related product (or multiple products).",
+      "rdfs:label": "isRelatedTo",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Enumeration",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+      "rdfs:label": "Enumeration",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:gracePeriod",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        }
+      ],
+      "rdfs:comment": "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
+      "rdfs:label": "gracePeriod",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Duration"
+      }
+    },
+    {
+      "@id": "schema:serviceArea",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The geographic area where the service is provided.",
+      "rdfs:label": "serviceArea",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:AdministrativeArea"
+        }
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:areaServed"
+      }
+    },
+    {
+      "@id": "schema:provider",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The service provider, service operator, or service performer; the goods producer. Another party (a seller) may offer those services or goods on behalf of the provider. A provider may also serve as the seller.",
+      "rdfs:label": "provider",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:BusTrip"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "schema:offers",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "rdfs:label": "offers",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:MenuItem"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:brand",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The brand(s) associated with a product or service, or the brand(s) maintained by an organization or business person.",
+      "rdfs:label": "brand",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Brand"
+        }
+      ]
+    },
+    {
+      "@id": "schema:serviceOutput",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The tangible thing generated by the service, e.g. a passport, permit, etc.",
+      "rdfs:label": "serviceOutput",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:serviceType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The type of service being offered, e.g. veterans' benefits, emergency relief, etc.",
+      "rdfs:label": "serviceType",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:review",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A review of the item.",
+      "rdfs:label": "review",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Review"
+      }
+    },
+    {
+      "@id": "schema:CreditCard",
+      "@type": "rdfs:Class",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+        }
+      ],
+      "rdfs:comment": "<p>A card payment method of a particular brand or name.  Used to mark up a particular payment method and/or the financial product/service that supplies the card account.</p>\n\n<p>Commonly used values:</p>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#AmericanExpress</li>\n<li>http://purl.org/goodrelations/v1#DinersClub</li>\n<li>http://purl.org/goodrelations/v1#Discover</li>\n<li>http://purl.org/goodrelations/v1#JCB</li>\n<li>http://purl.org/goodrelations/v1#MasterCard</li>\n<li>http://purl.org/goodrelations/v1#VISA</li>\n</ul>\n",
+      "rdfs:label": "CreditCard",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:LoanOrCredit"
+        },
+        {
+          "@id": "schema:PaymentCard"
+        }
+      ]
+    },
+    {
+      "@id": "schema:availableChannel",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A means of accessing the service (e.g. a phone bank, a web site, a location, etc.).",
+      "rdfs:label": "availableChannel",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:ServiceChannel"
+      }
+    },
+    {
+      "@id": "schema:loanType",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        }
+      ],
+      "rdfs:comment": "The type of a loan or credit.",
+      "rdfs:label": "loanType",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:amount",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+      },
+      "rdfs:comment": "The amount of money.",
+      "rdfs:label": "amount",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:InvestmentOrDeposit"
+        },
+        {
+          "@id": "schema:LoanOrCredit"
+        },
+        {
+          "@id": "schema:MoneyTransfer"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:providerMobility",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates the mobility of a provided service (e.g. 'static', 'dynamic').",
+      "rdfs:label": "providerMobility",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:areaServed",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The geographic area where a service or offered item is provided.",
+      "rdfs:label": "areaServed",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "schema:loanTerm",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "The duration of the loan or credit agreement.",
+      "rdfs:label": "loanTerm",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:duration"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:PaymentCard",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "A payment method using a credit, debit, store or other card to associate the payment with an account.",
+      "rdfs:label": "PaymentCard",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:PaymentMethod"
+        },
+        {
+          "@id": "schema:FinancialProduct"
+        }
+      ]
+    },
+    {
+      "@id": "schema:floorLimit",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        }
+      ],
+      "rdfs:comment": "A floor limit is the amount of money above which credit card transactions must be authorized.",
+      "rdfs:label": "floorLimit",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:PaymentCard"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MonetaryAmount"
+      }
+    },
+    {
+      "@id": "schema:loanRepaymentForm",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        }
+      ],
+      "rdfs:comment": "A form of paying back money previously borrowed from a lender. Repayment usually takes the form of periodic payments that normally include part principal plus interest in each payment.",
+      "rdfs:label": "loanRepaymentForm",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:RepaymentSpecification"
+      }
+    },
+    {
+      "@id": "schema:supersededBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "rdfs:label": "supersededBy",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Property"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://meta.schema.org/"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Class"
+        }
+      ]
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:hoursAvailable",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The hours during which this service or contact is available.",
+      "rdfs:label": "hoursAvailable",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:OpeningHoursSpecification"
+      }
+    },
+    {
+      "@id": "schema:aggregateRating",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "rdfs:label": "aggregateRating",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:AggregateRating"
+      }
+    },
+    {
+      "@id": "schema:FinancialProduct",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "A product provided to consumers and businesses by financial institutions such as banks, insurance companies, brokerage firms, consumer finance companies, and investment companies which comprise the financial services industry.",
+      "rdfs:label": "FinancialProduct",
+      "rdfs:subClassOf": {
+        "@id": "schema:Service"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:LoanOrCredit",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "A financial product for the loaning of an amount of money under agreed terms and charges.",
+      "rdfs:label": "LoanOrCredit",
+      "rdfs:subClassOf": {
+        "@id": "schema:FinancialProduct"
+      }
+    },
+    {
+      "@id": "schema:annualPercentageRate",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "The annual rate that is charged for borrowing (or made by investing), expressed as a single percentage number that represents the actual yearly cost of funds over the term of a loan. This includes any fees or additional costs associated with the transaction.",
+      "rdfs:label": "annualPercentageRate",
+      "schema:domainIncludes": {
+        "@id": "schema:FinancialProduct"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:cashBack",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        }
+      ],
+      "rdfs:comment": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
+      "rdfs:label": "cashBack",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:PaymentCard"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:Boolean"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:produces",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The tangible thing generated by the service, e.g. a passport, permit, etc.",
+      "rdfs:label": "produces",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:serviceOutput"
+      }
+    },
+    {
+      "@id": "schema:award",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An award won by or for this item.",
+      "rdfs:label": "award",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:PaymentMethod",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      },
+      "rdfs:comment": "<p>A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.</p>\n\n<p>Commonly used values:</p>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li>\n<li>http://purl.org/goodrelations/v1#ByInvoice</li>\n<li>http://purl.org/goodrelations/v1#Cash</li>\n<li>http://purl.org/goodrelations/v1#CheckInAdvance</li>\n<li>http://purl.org/goodrelations/v1#COD</li>\n<li>http://purl.org/goodrelations/v1#DirectDebit</li>\n<li>http://purl.org/goodrelations/v1#GoogleCheckout</li>\n<li>http://purl.org/goodrelations/v1#PayPal</li>\n<li>http://purl.org/goodrelations/v1#PaySwarm</li>\n</ul>\n",
+      "rdfs:label": "PaymentMethod",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:recourseLoan",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        }
+      ],
+      "rdfs:comment": "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
+      "rdfs:label": "recourseLoan",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
+      "@id": "schema:hasOfferCatalog",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates an OfferCatalog listing for this Organization, Person, or Service.",
+      "rdfs:label": "hasOfferCatalog",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:OfferCatalog"
+      }
+    },
+    {
+      "@id": "schema:currency",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+      },
+      "rdfs:comment": "The currency in which the monetary amount is expressed (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a> format).",
+      "rdfs:label": "currency",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ExchangeRateSpecification"
+        },
+        {
+          "@id": "schema:LoanOrCredit"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:requiredCollateral",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "Assets required to secure loan or credit repayments. It may take form of third party pledge, goods, financial instruments (cash, securities, etc.)",
+      "rdfs:label": "requiredCollateral",
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
+        }
+      ]
+    },
+    {
+      "@id": "schema:feesAndCommissionsSpecification",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "Description of fees, commissions, and other terms applied either to a class of financial product, or by a financial service organization.",
+      "rdfs:label": "feesAndCommissionsSpecification",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:FinancialService"
+        },
+        {
+          "@id": "schema:FinancialProduct"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:interestRate",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "The interest rate, charged or paid, applicable to the financial product. Note: This is different from the calculated annualPercentageRate.",
+      "rdfs:label": "interestRate",
+      "schema:domainIncludes": {
+        "@id": "schema:FinancialProduct"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Service",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A service provided by an organization, e.g. delivery service, print services, etc.",
+      "rdfs:label": "Service",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:renegotiableLoan",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        }
+      ],
+      "rdfs:comment": "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
+      "rdfs:label": "renegotiableLoan",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
+      "@id": "schema:category",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "rdfs:label": "category",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
+        },
+        {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Property"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
+        },
+        {
+          "@id": "schema:PhysicalActivityCategory"
+        }
+      ]
+    },
+    {
+      "@id": "schema:audience",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An intended audience, i.e. a group for whom something was created.",
+      "rdfs:label": "audience",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:LodgingBusiness"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Audience"
+      }
+    },
+    {
+      "@id": "schema:termsOfService",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1423"
+      },
+      "rdfs:comment": "Human-readable terms of service documentation.",
+      "rdfs:label": "termsOfService",
+      "schema:category": "issue-1423",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:logo",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "An associated logo.",
+      "rdfs:label": "logo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:serviceAudience",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The audience eligible for this service.",
+      "rdfs:label": "serviceAudience",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Audience"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:audience"
+      }
+    },
+    {
+      "@id": "schema:monthlyMinimumRepaymentAmount",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        }
+      ],
+      "rdfs:comment": "The minimum payment is the lowest amount of money that one is required to pay on a credit card statement each month.",
+      "rdfs:label": "monthlyMinimumRepaymentAmount",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:CreditCard"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    }
+  ]
+}

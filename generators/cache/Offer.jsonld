@@ -1,0 +1,1253 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:Offer",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "An offer to transfer some rights to an item or to provide a service — for example, an offer to sell tickets to an event, to rent the DVD of a movie, to stream a TV show over the internet, to repair a motorcycle, or to loan a book.</p>\n\n<p>For <a href=\"http://www.gs1.org/barcodes/technical/idkeys/gtin\">GTIN</a>-related fields, see <a href=\"http://www.gs1.org/barcodes/support/check_digit_calculator\">Check Digit calculator</a> and <a href=\"http://www.gs1us.org/resources/standards/gtin-validation-guide\">validation guide</a> from <a href=\"http://www.gs1.org/\">GS1</a>.",
+      "rdfs:label": "Offer",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:inventoryLevel",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The current approximate inventory level for the item or items.",
+      "rdfs:label": "inventoryLevel",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:SomeProducts"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:gtin8",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The <a href=\"http://apps.gs1.org/GDD/glossary/Pages/GTIN-8.aspx\">GTIN-8</a> code of the product, or the product to which the offer refers. This code is also known as EAN/UCC-8 or 8-digit EAN. See <a href=\"http://www.gs1.org/barcodes/technical/idkeys/gtin\">GS1 GTIN Summary</a> for more details.",
+      "rdfs:label": "gtin8",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:eligibleCustomerType",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The type(s) of customers for which the given offer is valid.",
+      "rdfs:label": "eligibleCustomerType",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:BusinessEntityType"
+      }
+    },
+    {
+      "@id": "schema:addOn",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "An additional offer that can only be obtained in combination with the first base offer (e.g. supplements and extensions that are available for a surcharge).",
+      "rdfs:label": "addOn",
+      "schema:domainIncludes": {
+        "@id": "schema:Offer"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:validThrough",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The date after when the item is not valid. For example the end of an offer, salary period, or a period of opening hours.",
+      "rdfs:label": "validThrough",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:JobPosting"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:includesObject",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "This links to a node or nodes indicating the exact quantity of the products included in the offer.",
+      "rdfs:label": "includesObject",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:TypeAndQuantityNode"
+      }
+    },
+    {
+      "@id": "schema:category",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "rdfs:label": "category",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
+        },
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Class"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
+        },
+        {
+          "@id": "schema:PhysicalActivityCategory"
+        }
+      ]
+    },
+    {
+      "@id": "schema:warranty",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The warranty promise(s) included in the offer.",
+      "rdfs:label": "warranty",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:WarrantyPromise"
+      }
+    },
+    {
+      "@id": "schema:advanceBookingRequirement",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The amount of time that is required between accepting the offer and the actual usage of the resource or service.",
+      "rdfs:label": "advanceBookingRequirement",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:availabilityEnds",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The end of the availability of the product or service included in the offer.",
+      "rdfs:label": "availabilityEnds",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:review",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A review of the item.",
+      "rdfs:label": "review",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Review"
+      }
+    },
+    {
+      "@id": "schema:priceCurrency",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to <a class=\"localLink\" href=\"http://schema.org/PriceSpecification\">PriceSpecification</a> and its subtypes.",
+      "rdfs:label": "priceCurrency",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Ticket"
+        },
+        {
+          "@id": "schema:PriceSpecification"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:gtin14",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The <a href=\"http://apps.gs1.org/GDD/glossary/Pages/GTIN-14.aspx\">GTIN-14</a> code of the product, or the product to which the offer refers. See <a href=\"http://www.gs1.org/barcodes/technical/idkeys/gtin\">GS1 GTIN Summary</a> for more details.",
+      "rdfs:label": "gtin14",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:gtin13",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The <a href=\"http://apps.gs1.org/GDD/glossary/Pages/GTIN-13.aspx\">GTIN-13</a> code of the product, or the product to which the offer refers. This is equivalent to 13-digit ISBN codes and EAN UCC-13. Former 12-digit UPC codes can be converted into a GTIN-13 code by simply adding a preceeding zero. See <a href=\"http://www.gs1.org/barcodes/technical/idkeys/gtin\">GS1 GTIN Summary</a> for more details.",
+      "rdfs:label": "gtin13",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:gtin12",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The <a href=\"http://apps.gs1.org/GDD/glossary/Pages/GTIN-12.aspx\">GTIN-12</a> code of the product, or the product to which the offer refers. The GTIN-12 is the 12-digit GS1 Identification Key composed of a U.P.C. Company Prefix, Item Reference, and Check Digit used to identify trade items. See <a href=\"http://www.gs1.org/barcodes/technical/idkeys/gtin\">GS1 GTIN Summary</a> for more details.",
+      "rdfs:label": "gtin12",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:itemCondition",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
+      "rdfs:label": "itemCondition",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:OfferItemCondition"
+      }
+    },
+    {
+      "@id": "schema:ineligibleRegion",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is not valid, e.g. a region where the transaction is not allowed.</p>\n\n<p>See also <a class=\"localLink\" href=\"http://schema.org/eligibleRegion\">eligibleRegion</a>.",
+      "rdfs:label": "ineligibleRegion",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:DeliveryChargeSpecification"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:areaServed",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The geographic area where a service or offered item is provided.",
+      "rdfs:label": "areaServed",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:availabilityStarts",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The beginning of the availability of the product or service included in the offer.",
+      "rdfs:label": "availabilityStarts",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:makesOffer",
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:eligibleTransactionVolume",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The transaction volume, in a monetary unit, for which the offer or price specification is valid, e.g. for indicating a minimal purchasing volume, to express free shipping above a certain order volume, or to limit the acceptance of credit cards to purchases to a certain minimal amount.",
+      "rdfs:label": "eligibleTransactionVolume",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:PriceSpecification"
+      }
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "schema:sku",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The Stock Keeping Unit (SKU), i.e. a merchant-specific identifier for a product or service, or the product to which the offer refers.",
+      "rdfs:label": "sku",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:AggregateOffer",
+      "rdfs:subClassOf": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:reviews",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Review of the item.",
+      "rdfs:label": "reviews",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Review"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:review"
+      }
+    },
+    {
+      "@id": "schema:aggregateRating",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "rdfs:label": "aggregateRating",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:AggregateRating"
+      }
+    },
+    {
+      "@id": "schema:businessFunction",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The business function (e.g. sell, lease, repair, dispose) of the offer or component of a bundle (TypeAndQuantityNode). The default is http://purl.org/goodrelations/v1#Sell.",
+      "rdfs:label": "businessFunction",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:TypeAndQuantityNode"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:BusinessFunction"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:priceValidUntil",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The date after which the price is no longer available.",
+      "rdfs:label": "priceValidUntil",
+      "schema:domainIncludes": {
+        "@id": "schema:Offer"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:priceSpecification",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "One or more detailed price specifications, indicating the unit price and delivery or payment charges.",
+      "rdfs:label": "priceSpecification",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:TradeAction"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:PriceSpecification"
+      }
+    },
+    {
+      "@id": "schema:eligibleRegion",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The ISO 3166-1 (ISO 3166-1 alpha-2) or ISO 3166-2 code, the place, or the GeoShape for the geo-political region(s) for which the offer or delivery charge specification is valid.</p>\n\n<p>See also <a class=\"localLink\" href=\"http://schema.org/ineligibleRegion\">ineligibleRegion</a>.",
+      "rdfs:label": "eligibleRegion",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:areaServed"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:expectsAcceptanceOf",
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:mpn",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The Manufacturer Part Number (MPN) of the product, or the product to which the offer refers.",
+      "rdfs:label": "mpn",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:validFrom",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The date when the item becomes valid.",
+      "rdfs:label": "validFrom",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Permit"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:availableAtOrFrom",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The place(s) from which the offer can be obtained (e.g. store locations).",
+      "rdfs:label": "availableAtOrFrom",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:areaServed"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Place"
+      }
+    },
+    {
+      "@id": "schema:seller",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
+      "rdfs:label": "seller",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:participant"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:BuyAction"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Order"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:acceptedPaymentMethod",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The payment method(s) accepted by seller for this offer.",
+      "rdfs:label": "acceptedPaymentMethod",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:LoanOrCredit"
+        },
+        {
+          "@id": "schema:PaymentMethod"
+        }
+      ]
+    },
+    {
+      "@id": "schema:offeredBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A pointer to the organization or person making the offer.",
+      "rdfs:label": "offeredBy",
+      "schema:domainIncludes": {
+        "@id": "schema:Offer"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:makesOffer"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:price",
+      "@type": "rdf:Property",
+      "rdfs:comment": "<p>The offer price of a product, or of a price component when attached to PriceSpecification and its subtypes.</p>\n\n<p>Usage guidelines:</p>\n\n<ul>\n<li>Use the <a class=\"localLink\" href=\"http://schema.org/priceCurrency\">priceCurrency</a> property (with <a href=\"http://en.wikipedia.org/wiki/ISO_4217#Active_codes\">ISO 4217 codes</a> e.g. \"USD\") instead of\n  including <a href=\"http://en.wikipedia.org/wiki/Dollar_sign#Currencies_that_use_the_dollar_or_peso_sign\">ambiguous symbols</a> such as '$' in the value.</li>\n<li>Use '.' (Unicode 'FULL STOP' (U+002E)) rather than ',' to indicate a decimal point. Avoid using these symbols as a readability separator.</li>\n<li>Note that both <a href=\"http://www.w3.org/TR/xhtml-rdfa-primer/#using-the-content-attribute\">RDFa</a> and Microdata syntax allow the use of a \"content=\" attribute for publishing simple machine-readable values alongside more human-friendly formatting.</li>\n<li>Use values from 0123456789 (Unicode 'DIGIT ZERO' (U+0030) to 'DIGIT NINE' (U+0039)) rather than superficially similiar Unicode symbols.</li>\n</ul>\n",
+      "rdfs:label": "price",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:TradeAction"
+        },
+        {
+          "@id": "schema:PriceSpecification"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "schema:eligibleDuration",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The duration for which the given offer is valid.",
+      "rdfs:label": "eligibleDuration",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:availability",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The availability of this item&#x2014;for example In stock, Out of stock, Pre-order, etc.",
+      "rdfs:label": "availability",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:ItemAvailability"
+      }
+    },
+    {
+      "@id": "schema:serialNumber",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The serial number or any alphanumeric identifier of a particular product. When attached to an offer, it is a shortcut for the serial number of the product included in the offer.",
+      "rdfs:label": "serialNumber",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:IndividualProduct"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:eligibleQuantity",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The interval and unit of measurement of ordering quantities for which the offer or price specification is valid. This allows e.g. specifying that a certain freight charge is valid only for a certain quantity.",
+      "rdfs:label": "eligibleQuantity",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:itemOffered",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The item being offered.",
+      "rdfs:label": "itemOffered",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ]
+    },
+    {
+      "@id": "schema:acceptedOffer",
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:deliveryLeadTime",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The typical delay between the receipt of the order and the goods either leaving the warehouse or being prepared for pickup, in case the delivery method is on site pickup.",
+      "rdfs:label": "deliveryLeadTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:offers",
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:availableDeliveryMethod",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The delivery method(s) available for this offer.",
+      "rdfs:label": "availableDeliveryMethod",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DeliveryMethod"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    }
+  ]
+}

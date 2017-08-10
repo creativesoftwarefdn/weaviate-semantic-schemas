@@ -1,0 +1,1059 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:UserPageVisits",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:composer",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ"
+      },
+      "rdfs:comment": "The person or organization who wrote a composition, or who is the composer of a work performed at some event.",
+      "rdfs:label": "composer",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MusicComposition"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:attendees",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A person attending the event.",
+      "rdfs:label": "attendees",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:attendee"
+      }
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:Event",
+      "@type": "rdfs:Class",
+      "owl:equivalentClass": {
+        "@id": "http://purl.org/dc/dcmitype/Event"
+      },
+      "rdfs:comment": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class=\"localLink\" href=\"http://schema.org/offers\">offers</a> property. Repeated events may be structured as separate Event objects.",
+      "rdfs:label": "Event",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:attendee",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A person or organization attending the event.",
+      "rdfs:label": "attendee",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "schema:endDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The end date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
+      "rdfs:label": "endDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Role"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "schema:eventStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An eventStatus of an event represents its status; particularly useful when an event is cancelled or rescheduled.",
+      "rdfs:label": "eventStatus",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:EventStatusType"
+      }
+    },
+    {
+      "@id": "schema:funder",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "rdfs:label": "funder",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:sponsor"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:workFeatured",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A work featured in some event, e.g. exhibited in an ExhibitionEvent.\n       Specific subproperties are available for workPerformed (e.g. a play), or a workPresented (a Movie at a ScreeningEvent).",
+      "rdfs:label": "workFeatured",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:subEvent",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An Event that is part of this event. For example, a conference event includes many presentations, each of which is a subEvent of the conference.",
+      "rdfs:label": "subEvent",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:superEvent"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Event"
+      }
+    },
+    {
+      "@id": "schema:about",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The subject matter of the content.",
+      "rdfs:label": "about",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:UserInteraction",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "UserInteraction and its subtypes is an old way of talking about users interacting with pages. It is generally better to use <a class=\"localLink\" href=\"http://schema.org/Action\">Action</a>-based vocabulary, alongside types such as <a class=\"localLink\" href=\"http://schema.org/Comment\">Comment</a>.",
+      "rdfs:label": "UserInteraction",
+      "rdfs:subClassOf": {
+        "@id": "schema:Event"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:InteractionCounter"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:UserLikes",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:review",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A review of the item.",
+      "rdfs:label": "review",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Review"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:contributor",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A secondary contributor to the CreativeWork or Event.",
+      "rdfs:label": "contributor",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:duration",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>.",
+      "rdfs:label": "duration",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MusicRelease"
+        },
+        {
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:MusicRecording"
+        },
+        {
+          "@id": "schema:Audiobook"
+        },
+        {
+          "@id": "schema:MediaObject"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Duration"
+      }
+    },
+    {
+      "@id": "schema:previousStartDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Used in conjunction with eventStatus for rescheduled or cancelled events. This property contains the previously scheduled start date. For rescheduled events, the startDate property should be used for the newly scheduled start date. In the (rare) case of an event that has been postponed and rescheduled multiple times, this field may be repeated.",
+      "rdfs:label": "previousStartDate",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
+    },
+    {
+      "@id": "schema:sponsor",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A person or organization that supports a thing through a pledge, promise, or financial contribution. e.g. a sponsor of a Medical Study or a corporate sponsor of an event.",
+      "rdfs:label": "sponsor",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:MedicalStudy"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:performer",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.",
+      "rdfs:label": "performer",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:UserPlays",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:UserPlusOnes",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:doorTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The time admission will commence.",
+      "rdfs:label": "doorTime",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:organizer",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An organizer of an Event.",
+      "rdfs:label": "organizer",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "schema:superEvent",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An event that this event is a part of. For example, a collection of individual music performances might each have a music festival as their superEvent.",
+      "rdfs:label": "superEvent",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:subEvent"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Event"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:aggregateRating",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
+      "rdfs:label": "aggregateRating",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:AggregateRating"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:maximumAttendeeCapacity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The total number of individuals that may attend an event or venue.",
+      "rdfs:label": "maximumAttendeeCapacity",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Integer"
+      }
+    },
+    {
+      "@id": "schema:workPerformed",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A work performed in some event, for example a play performed in a TheaterEvent.",
+      "rdfs:label": "workPerformed",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:workFeatured"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:UserTweets",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:location",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
+    },
+    {
+      "@id": "schema:actor",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An actor, e.g. in tv, radio, movie, video games etc., or in an event. Actors can be associated with individual items or with a series, episode, clip.",
+      "rdfs:label": "actor",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MovieSeries"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:Episode"
+        },
+        {
+          "@id": "schema:VideoGame"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:VideoObject"
+        },
+        {
+          "@id": "schema:Clip"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:TVSeries"
+        },
+        {
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:RadioSeries"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
+      "@id": "schema:UserComments",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:startDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
+      "rdfs:label": "startDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
+          "@id": "schema:Role"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DateTime"
+        },
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    },
+    {
+      "@id": "schema:performers",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The main performer or performers of the event&#x2014;for example, a presenter, musician, or actor.",
+      "rdfs:label": "performers",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:performer"
+      }
+    },
+    {
+      "@id": "schema:translator",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Organization or person who adapts a creative work to different languages, regional differences and technical requirements of a target market, or that translates during some event.",
+      "rdfs:label": "translator",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
+      "@id": "schema:remainingAttendeeCapacity",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The number of attendee places for an event that remain unallocated.",
+      "rdfs:label": "remainingAttendeeCapacity",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Integer"
+      }
+    },
+    {
+      "@id": "schema:subEvents",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Events that are a part of this event. For example, a conference event includes many presentations, each subEvents of the conference.",
+      "rdfs:label": "subEvents",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:subEvent"
+      }
+    },
+    {
+      "@id": "schema:recordedIn",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The CreativeWork that captured all or part of this Event.",
+      "rdfs:label": "recordedIn",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:recordedAt"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:typicalAgeRange",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The typical expected age range, e.g. '7-9', '11-'.",
+      "rdfs:label": "typicalAgeRange",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:UserCheckins",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:UserBlocks",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:audience",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An intended audience, i.e. a group for whom something was created.",
+      "rdfs:label": "audience",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:LodgingBusiness"
+        },
+        {
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Audience"
+      }
+    },
+    {
+      "@id": "schema:UserDownloads",
+      "rdfs:subClassOf": {
+        "@id": "schema:UserInteraction"
+      }
+    },
+    {
+      "@id": "schema:isAccessibleForFree",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the publication is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:PublicationEvent"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
+      "@id": "schema:offers",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "rdfs:label": "offers",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:MenuItem"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
+    },
+    {
+      "@id": "schema:director",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "rdfs:label": "director",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:TVSeries"
+        },
+        {
+          "@id": "schema:RadioSeries"
+        },
+        {
+          "@id": "schema:VideoObject"
+        },
+        {
+          "@id": "schema:VideoGame"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Clip"
+        },
+        {
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:Episode"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:MovieSeries"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
+      "@id": "schema:inLanguage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The language of the content or performance or used in an action. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/availableLanguage\">availableLanguage</a>.",
+      "rdfs:label": "inLanguage",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:WriteAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:LinkRole"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Language"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    }
+  ]
+}
