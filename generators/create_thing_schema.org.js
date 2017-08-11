@@ -20,14 +20,39 @@ var http    = require('http'),
     path    = require("path"),
     fs      = require('fs'),
     Sync    = require('sync'),
+    tree    = {},
+    count = 0,
+    preVar = Array(),
+    createType = false;
+
+/**
+ * Check arguments
+ */
+process.argv.forEach(function (val, index, array) {
+    console.log();
+    if(val.toLowerCase() == "--type=thing"){
+        createType = "Thing";
+    } else if(val.toLowerCase() == "--type=action"){
+        createType = "Action";
+    }
+});
+
+/**
+ * Check creation types
+ */
+if(createType === false){
+    console.error("You did not pass --type. Example: --type=thing or --type=action");
+    process.exit(1);
+} else {
+    // update tree
     tree    = { 
         "context": "http://schema.org",
-        "type": "thing",
-        "name": "schema.org - Thing",
+        "type": createType.toLowerCase(),
+        "name": "schema.org - " + createType,
         "maintainer": "yourfriends@weaviate.com",
         "schema": {}
-    },
-    count = 0;
+    }
+}
 
 Sync(function(){
     /**
@@ -63,7 +88,7 @@ Sync(function(){
         // merge the tree before writing to the file
         //weaviateJson.definitions.schema = tree.schema
         // write to file
-        fs.writeFileSync('../weaviate-schema-Thing-schema_org.json', JSON.stringify(tree, null, 4));
+        fs.writeFileSync('../weaviate-schema-' + createType + '-schema_org.json', JSON.stringify(tree, null, 4));
     }
 
     /**
@@ -112,7 +137,7 @@ Sync(function(){
     /**
      * Build the complete tree
      * @param {*string} context context url
-     * @param {*string} schemaClass schemaClass (like: Thing)
+     * @param {*string} schemaClass schemaClass (like: Thing or Action)
      */
     function buildTree(context, schemaClass){
         getschema("http://" + context + "/" + schemaClass + ".jsonld", function(result){
@@ -165,8 +190,19 @@ Sync(function(){
                             }
 
                             if (!(inRange && !inDomain)) {
+                                // preVar for loading schema
+                                var preVar = [];
+                                // update schema types to actual urls
+                                if(Array.isArray(element["schema:rangeIncludes"])){
+                                    element["schema:rangeIncludes"].forEach(function(v, k){
+                                        preVar.push(element["schema:rangeIncludes"][k]["@id"].replace("schema:", "http://schema.org/"))
+                                    });
+                                } else {
+                                    preVar.push(element["schema:rangeIncludes"]["@id"].replace("schema:", "http://schema.org/"))
+                                }
+                                // set schema types
                                 tree["schema"][schemaClass][schema[1]] = {};
-                                tree["schema"][schemaClass][schema[1]]["type"] = "string";
+                                tree["schema"][schemaClass][schema[1]]["@dataType"] = preVar;
                                 tree["schema"][schemaClass][schema[1]]["description"] = element["rdfs:comment"];
                             }
                         }
@@ -180,7 +216,7 @@ Sync(function(){
      * Load weaviate Swagger and start building the tree
      */
     // build the tree
-    buildTree("schema.org", "Thing");
+    buildTree("schema.org", createType);
     // write to result file
     log("ADDING TO CONFIG FILE");
     writeToFile();

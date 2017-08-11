@@ -6,6 +6,17 @@ Within Weaviate, you can use these schema's to define things or actions.
 
 You can find more info in the [Weaviate Repo](https://github.com/weaviate/weaviate)
 
+_Note: The available schemas in Weaviate are based on schema.org and cover already. In case you have a valuable schema that you want to share, feel free to issue a pull request_
+
+## Schema types
+
+Weaviate knows two types of schemas:
+
+1. Thing schemas
+2. Action schemas
+
+The Thing schemas are used to define actual things. The Action schemas are used to define actions. These actions will also be made available to the things. For example, to execute a command.
+
 ## Creating a custom schema
 
 This repo contains examples of ready to use schemas. But you can create your own schema.
@@ -21,13 +32,13 @@ Template:
     "schema": {
         "Class": {              // class should have capital first letter
             "description": string
-            "type": [string, array, object, integer, ref] // ref = expected = reference
+            "@dataType": [ urlOfType ] // example: http://schema.org/URL
         }
     }
 }
 ```
 
-_Note: You can use the existing templates as examples_
+_Note: You can use the existing schemas as templates or examples_
 
 ## Generators
 
