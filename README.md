@@ -29,12 +29,27 @@ Template:
     "type": ["thing", "action"] // is it to describe an action or a thing?
     "maintainer" email          // email of maintainer
     "name": string              // name of schema
-    "schema": {
-        "Class": {              // class should have capital first letter
-            "description": string
-            "@dataType": [ urlOfType ] // example: http://schema.org/URL
-        }
-    }
+    "schema": [{       
+        "class" : string // class should have capital first letter
+        "description": string
+        "@dataType": [ urlOfType ] // example: http://schema.org/URL
+    }]
+}
+```
+
+Golang Struct:
+
+```
+type Schema struct {
+	Context    string   `json:"context"`
+	Type       []string `json:"type"`
+	Maintainer string   `json:"maintainer"`
+	Name       string   `json:"name"`
+	Schema     []struct {
+		Class       string `json:"class"`
+		Description string `json:"description"`
+		DataType    string `json:"@dataType"`
+	} `json:"schema"`
 }
 ```
 
