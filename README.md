@@ -21,35 +21,120 @@ The Thing schemas are used to define actual things. The Action schemas are used 
 
 This repo contains examples of ready to use schemas. But you can create your own schema.
 
-Template:
+Template in pseudo-JSON:
 
 ```
 {
-    "context": string           // example: http://schema.org
-    "type": ["thing", "action"] // is it to describe an action or a thing?
-    "maintainer" email          // email of maintainer
-    "name": string              // name of schema
-    "schema": [{       
-        "class" : string // class should have capital first letter
-        "description": string
-        "@dataType": [ urlOfType ] // example: http://schema.org/URL
-    }]
+	"@context": URL,
+	"type": thing or action,
+	"name": string,
+	"maintainer": email,
+	"classes": [{
+		"class": class with capital,
+		"description": string,
+		"properties": [{
+			"name": string,
+			"@dataType": [url of data type],
+			"description": description of the property
+		}]
+	}]
 }
 ```
 
-Golang Struct:
+### Example of JSON file
 
 ```
+{
+    "@context": "http://schema.org",
+    "type": "thing",
+    "name": "schema.org - Thing",
+    "maintainer": "yourfriends@weaviate.com",
+    "classes": [
+        {
+            "class": "Thing",
+            "description": "This is a Thing",
+            "properties": [
+                {
+                    "name": "url",
+                    "@dataType": ["URL"],
+                    "description": "URL of the item."
+                },
+                {
+                    "name": "additionalType",
+                    "@dataType": ["URL"],
+                    "description": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally."
+                }
+            ]
+        },
+        {
+            "class": "Event",
+            "description": "This is an Event",
+            "properties": [
+                {
+                    "name": "composer",
+                    "@dataType": [
+                        "Person",
+                        "Organization"
+                    ],
+                    "description": "The person or organization who wrote a composition, or who is the composer of a work performed at some event."
+                },
+                {
+                    "name": "attendees",
+                    "@dataType": [
+                        "Person",
+                        "Organization"
+                    ],
+                    "description": "A person attending the event."
+                }
+            ]
+        },
+        {
+            "class": "Person",
+            "description": "This is a Person",
+            "properties": [
+                {
+                    "name": "givenName",
+                    "@dataType": [
+                        "Text"
+                    ],
+                    "description": "Given name. In the U.S., the first name of a Person. This can be used along with familyName instead of the name property."
+                },
+                {   "name": "faxNumber",
+                    "@dataType": [
+                        "Text"
+                    ],
+                    "description": "The fax number."
+                }
+            ]
+        }   
+    ]
+}
+```
+
+### Golang Struct:
+
+```
+// Schema is a representation in GO for the custom schema provided.
 type Schema struct {
-	Context    string   `json:"context"`
-	Type       []string `json:"type"`
-	Maintainer string   `json:"maintainer"`
-	Name       string   `json:"name"`
-	Schema     []struct {
-		Class       string `json:"class"`
-		Description string `json:"description"`
-		DataType    string `json:"@dataType"`
-	} `json:"schema"`
+	Context    string  `json:"@context"`
+	Type       string  `json:"type"`
+	Maintainer string  `json:"maintainer"`
+	Name       string  `json:"name"`
+	Classes    []Class `json:"classes"`
+}
+
+// Class is a representation of a class within the schema.
+type Class struct {
+	Class       string     `json:"class"`
+	Description string     `json:"description"`
+	Properties  []Property `json:"properties"`
+}
+
+// Property provides the structure for the properties of the class items.
+type Property struct {
+	Name        string   `json:"name"`
+	Description string   `json:"description"`
+	DataType    []string `json:"@dataType"`
 }
 ```
 
