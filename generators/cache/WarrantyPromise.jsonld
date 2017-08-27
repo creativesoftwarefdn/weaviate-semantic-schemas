@@ -10,6 +10,12 @@
   },
   "@graph": [
     {
+      "@id": "schema:warrantyPromise",
+      "schema:rangeIncludes": {
+        "@id": "schema:WarrantyPromise"
+      }
+    },
+    {
       "@id": "schema:name",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of the item.",
@@ -58,18 +64,18 @@
       }
     },
     {
-      "@id": "schema:description",
+      "@id": "schema:durationOfWarranty",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
+      "rdfs:comment": "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
+      "rdfs:label": "durationOfWarranty",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:WarrantyPromise"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:QuantitativeValue"
       }
     },
     {
@@ -129,10 +135,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -185,18 +191,27 @@
       }
     },
     {
-      "@id": "schema:durationOfWarranty",
+      "@id": "schema:description",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
       },
-      "rdfs:comment": "The duration of the warranty promise. Common unitCode values are ANN for year, MON for months, or DAY for days.",
-      "rdfs:label": "durationOfWarranty",
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
       "schema:domainIncludes": {
-        "@id": "schema:WarrantyPromise"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
       }
     },
     {
@@ -212,30 +227,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
-    },
-    {
-      "@id": "schema:Intangible",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "rdfs:label": "Intangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:warrantyPromise",
-      "schema:rangeIncludes": {
-        "@id": "schema:WarrantyPromise"
-      }
     },
     {
       "@id": "schema:disambiguatingDescription",

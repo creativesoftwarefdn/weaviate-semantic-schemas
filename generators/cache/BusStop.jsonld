@@ -39,38 +39,6 @@
       ]
     },
     {
-      "@id": "schema:event",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Upcoming or past event associated with this place, organization, or action.",
-      "rdfs:label": "event",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:InviteAction"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:InformAction"
-        },
-        {
-          "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:JoinAction"
-        },
-        {
-          "@id": "schema:LeaveAction"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Event"
-      }
-    },
-    {
       "@id": "schema:url",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of the item.",
@@ -92,13 +60,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -133,10 +101,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -151,10 +119,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -197,10 +165,10 @@
       "rdfs:label": "events",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -238,12 +206,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Map"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Map"
         }
       ]
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:smokingAllowed",
@@ -312,28 +292,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Place"
         },
         {
           "@id": "schema:Offer"
         },
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -362,10 +342,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -379,13 +359,13 @@
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -402,13 +382,13 @@
       "rdfs:label": "amenityFeature",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Accommodation"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Accommodation"
         }
       ],
       "schema:rangeIncludes": {
@@ -453,10 +433,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -464,23 +444,43 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
     {
-      "@id": "schema:branchCode",
+      "@id": "schema:event",
       "@type": "rdf:Property",
-      "rdfs:comment": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.</p>\n\n<p>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
-      "rdfs:label": "branchCode",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
+      "rdfs:comment": "Upcoming or past event associated with this place, organization, or action.",
+      "rdfs:label": "event",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:LeaveAction"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:JoinAction"
+        },
+        {
+          "@id": "schema:InviteAction"
+        },
+        {
+          "@id": "schema:InformAction"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Event"
       }
     },
     {
@@ -542,43 +542,6 @@
       ]
     },
     {
-      "@id": "schema:logo",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "An associated logo.",
-      "rdfs:label": "logo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:ImageObject"
-        }
-      ]
-    },
-    {
       "@id": "schema:openingHours",
       "@type": "rdf:Property",
       "rdfs:comment": "<p>The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.</p>\n\n<ul>\n<li>Days are specified using the following two-letter combinations: <code>Mo</code>, <code>Tu</code>, <code>We</code>, <code>Th</code>, <code>Fr</code>, <code>Sa</code>, <code>Su</code>.</li>\n<li>Times are specified using 24:00 time. For example, 3pm is specified as <code>15:00</code>. </li>\n<li>Here is an example: <code>&lt;time itemprop=\"openingHours\" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.</li>\n<li>If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.</li>\n</ul>\n",
@@ -602,13 +565,13 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:Place"
@@ -625,19 +588,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -654,10 +617,10 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Event"
@@ -666,16 +629,16 @@
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -701,10 +664,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
@@ -733,14 +696,26 @@
       "rdfs:label": "maximumAttendeeCapacity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Integer"
+      }
+    },
+    {
+      "@id": "schema:publicAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -774,10 +749,10 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -844,16 +819,16 @@
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoCoordinates"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": [
@@ -896,10 +871,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -925,10 +900,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -950,10 +925,10 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
@@ -976,12 +951,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         }
       ]
+    },
+    {
+      "@id": "schema:branchCode",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.</p>\n\n<p>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
+      "rdfs:label": "branchCode",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:mainEntityOfPage",
@@ -996,10 +983,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1033,6 +1020,43 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:logo",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "An associated logo.",
+      "rdfs:label": "logo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Brand"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
           "@id": "schema:URL"
         },
         {
@@ -1041,30 +1065,26 @@
       ]
     },
     {
-      "@id": "schema:openingHoursSpecification",
+      "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The opening hours of a certain place.",
-      "rdfs:label": "openingHoursSpecification",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:PublicationEvent"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:OpeningHoursSpecification"
-      }
-    },
-    {
-      "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -1104,6 +1124,21 @@
       },
       "schema:supersededBy": {
         "@id": "schema:hasMap"
+      }
+    },
+    {
+      "@id": "schema:openingHoursSpecification",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The opening hours of a certain place.",
+      "rdfs:label": "openingHoursSpecification",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:OpeningHoursSpecification"
       }
     }
   ]

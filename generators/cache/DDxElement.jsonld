@@ -90,10 +90,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -161,10 +161,16 @@
       }
     },
     {
-      "@id": "schema:Thing",
+      "@id": "schema:MedicalIntangible",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "rdfs:label": "MedicalIntangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
     },
     {
       "@id": "schema:name",
@@ -206,13 +212,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -241,24 +247,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:MedicalIntangible",
+      "@id": "schema:Thing",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
-      "rdfs:label": "MedicalIntangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEntity"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:diagnosis",
@@ -267,10 +267,10 @@
       "rdfs:label": "diagnosis",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Patient"
+          "@id": "schema:DDxElement"
         },
         {
-          "@id": "schema:DDxElement"
+          "@id": "schema:Patient"
         }
       ],
       "schema:isPartOf": {

@@ -10,12 +10,6 @@
   },
   "@graph": [
     {
-      "@id": "schema:OrganizationRole",
-      "rdfs:subClassOf": {
-        "@id": "schema:Role"
-      }
-    },
-    {
       "@id": "schema:additionalType",
       "@type": "rdf:Property",
       "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
@@ -40,6 +34,9 @@
           "@id": "schema:CreativeWorkSeason"
         },
         {
+          "@id": "schema:Role"
+        },
+        {
           "@id": "schema:CreativeWorkSeries"
         },
         {
@@ -47,9 +44,6 @@
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Role"
         }
       ],
       "schema:rangeIncludes": [
@@ -74,6 +68,18 @@
       }
     },
     {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
       "@id": "schema:identifier",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -86,26 +92,26 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
     {
-      "@id": "schema:PerformanceRole",
-      "rdfs:subClassOf": {
-        "@id": "schema:Role"
-      }
-    },
-    {
-      "@id": "schema:LinkRole",
-      "rdfs:subClassOf": {
-        "@id": "schema:Role"
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -124,15 +130,27 @@
       }
     },
     {
-      "@id": "schema:potentialAction",
+      "@id": "schema:LinkRole",
+      "rdfs:subClassOf": {
+        "@id": "schema:Role"
+      }
+    },
+    {
+      "@id": "schema:PerformanceRole",
+      "rdfs:subClassOf": {
+        "@id": "schema:Role"
+      }
+    },
+    {
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Action"
+        "@id": "schema:Text"
       }
     },
     {
@@ -148,23 +166,17 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:OrganizationRole",
+      "rdfs:subClassOf": {
+        "@id": "schema:Role"
       }
     },
     {
@@ -177,10 +189,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -200,16 +212,21 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:roleName",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
+      "rdfs:comment": "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
+      "rdfs:label": "roleName",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Role"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:namedPosition",
@@ -221,10 +238,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ],
       "schema:supersededBy": {
@@ -244,63 +261,6 @@
       }
     },
     {
-      "@id": "schema:startDate",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
-      "rdfs:label": "startDate",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWorkSeries"
-        },
-        {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Role"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
-        }
-      ]
-    },
-    {
-      "@id": "schema:Intangible",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "rdfs:label": "Intangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:roleName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
-      "rdfs:label": "roleName",
-      "schema:domainIncludes": {
-        "@id": "schema:Role"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
       "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
       "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
@@ -314,6 +274,46 @@
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:startDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
+      "rdfs:label": "startDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:Role"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DateTime"
+        },
+        {
+          "@id": "schema:Date"
+        }
+      ]
     }
   ]
 }

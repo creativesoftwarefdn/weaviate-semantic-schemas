@@ -10,27 +10,6 @@
   },
   "@graph": [
     {
-      "@id": "schema:hasMenuItem",
-      "schema:rangeIncludes": {
-        "@id": "schema:MenuItem"
-      }
-    },
-    {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
       "@id": "schema:suitableForDiet",
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
@@ -72,15 +51,27 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:nutrition",
@@ -100,18 +91,9 @@
       }
     },
     {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "@id": "schema:hasMenuItem",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:MenuItem"
       }
     },
     {
@@ -139,23 +121,26 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
       }
     },
     {
@@ -209,22 +194,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:MenuItem"
-        },
-        {
-          "@id": "schema:AggregateOffer"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:MenuItem"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:AggregateOffer"
         }
       ],
       "schema:rangeIncludes": {
@@ -241,6 +226,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {

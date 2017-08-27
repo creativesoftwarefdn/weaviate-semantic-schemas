@@ -48,22 +48,22 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:InformAction"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:JoinAction"
+          "@id": "schema:PlayAction"
         },
         {
           "@id": "schema:LeaveAction"
         },
         {
+          "@id": "schema:JoinAction"
+        },
+        {
           "@id": "schema:InviteAction"
+        },
+        {
+          "@id": "schema:InformAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -81,10 +81,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -138,10 +138,10 @@
       "rdfs:label": "events",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -191,10 +191,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -202,10 +202,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -249,10 +249,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Map"
         },
         {
-          "@id": "schema:Map"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -267,10 +267,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -278,10 +278,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -337,10 +337,13 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Organization"
@@ -349,16 +352,13 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": {
@@ -384,16 +384,16 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -410,10 +410,10 @@
       "rdfs:label": "amenityFeature",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:Accommodation"
@@ -463,6 +463,29 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Boolean"
+      }
+    },
+    {
+      "@id": "schema:faxNumber",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The fax number.",
+      "rdfs:label": "faxNumber",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -517,10 +540,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -536,16 +559,53 @@
       ]
     },
     {
+      "@id": "schema:logo",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "An associated logo.",
+      "rdfs:label": "logo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
       "@id": "schema:openingHours",
       "@type": "rdf:Property",
       "rdfs:comment": "<p>The general opening hours for a business. Opening hours can be specified as a weekly time range, starting with days, then times per day. Multiple days can be listed with commas ',' separating each day. Day or time ranges are specified using a hyphen '-'.</p>\n\n<ul>\n<li>Days are specified using the following two-letter combinations: <code>Mo</code>, <code>Tu</code>, <code>We</code>, <code>Th</code>, <code>Fr</code>, <code>Sa</code>, <code>Su</code>.</li>\n<li>Times are specified using 24:00 time. For example, 3pm is specified as <code>15:00</code>. </li>\n<li>Here is an example: <code>&lt;time itemprop=\"openingHours\" datetime=&quot;Tu,Th 16:00-20:00&quot;&gt;Tuesdays and Thursdays 4-8pm&lt;/time&gt;</code>.</li>\n<li>If a business is open 7 days a week, then it can be specified as <code>&lt;time itemprop=&quot;openingHours&quot; datetime=&quot;Mo-Su&quot;&gt;Monday through Sunday, all day&lt;/time&gt;</code>.</li>\n</ul>\n",
       "rdfs:label": "openingHours",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocalBusiness"
+          "@id": "schema:CivicStructure"
         },
         {
-          "@id": "schema:CivicStructure"
+          "@id": "schema:LocalBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -562,13 +622,13 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:QualitativeValue"
-        },
-        {
           "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:QualitativeValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -582,9 +642,6 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Place"
         },
         {
@@ -592,6 +649,9 @@
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
@@ -611,19 +671,13 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:CreativeWork"
@@ -632,7 +686,13 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": {
@@ -652,13 +712,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -695,6 +755,18 @@
       }
     },
     {
+      "@id": "schema:publicAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
       "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -710,27 +782,13 @@
       }
     },
     {
-      "@id": "schema:globalLocationNumber",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
-      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "rdfs:label": "globalLocationNumber",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
@@ -746,10 +804,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -757,10 +815,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -792,19 +850,19 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeoCoordinates"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         },
         {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeoShape"
         }
       ],
       "schema:rangeIncludes": [
@@ -826,10 +884,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Photograph"
         },
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:ImageObject"
         }
       ],
       "schema:supersededBy": {
@@ -847,10 +905,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -858,10 +916,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -876,10 +934,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -887,27 +945,30 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
     {
-      "@id": "schema:faxNumber",
+      "@id": "schema:globalLocationNumber",
       "@type": "rdf:Property",
-      "rdfs:comment": "The fax number.",
-      "rdfs:label": "faxNumber",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "rdfs:label": "globalLocationNumber",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
       "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
@@ -927,10 +988,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -992,52 +1053,41 @@
       ]
     },
     {
-      "@id": "schema:logo",
+      "@id": "schema:openingHoursSpecification",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "An associated logo.",
-      "rdfs:label": "logo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
+      "rdfs:comment": "The opening hours of a certain place.",
+      "rdfs:label": "openingHoursSpecification",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
       },
+      "schema:rangeIncludes": {
+        "@id": "schema:OpeningHoursSpecification"
+      }
+    },
+    {
+      "@id": "schema:isAccessibleForFree",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:PublicationEvent"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:ImageObject"
-        }
-      ]
-    },
-    {
-      "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -1077,21 +1127,6 @@
       },
       "schema:supersededBy": {
         "@id": "schema:hasMap"
-      }
-    },
-    {
-      "@id": "schema:openingHoursSpecification",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The opening hours of a certain place.",
-      "rdfs:label": "openingHoursSpecification",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:OpeningHoursSpecification"
       }
     }
   ]

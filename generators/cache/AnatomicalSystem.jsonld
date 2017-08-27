@@ -22,9 +22,26 @@
       }
     },
     {
-      "@id": "schema:regionDrained",
+      "@id": "schema:associatedPathophysiology",
+      "@type": "rdf:Property",
+      "rdfs:comment": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+      "rdfs:label": "associatedPathophysiology",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:AnatomicalSystem"
+        },
+        {
+          "@id": "schema:AnatomicalStructure"
+        },
+        {
+          "@id": "schema:SuperficialAnatomy"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:AnatomicalSystem"
+        "@id": "schema:Text"
       }
     },
     {
@@ -93,10 +110,10 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
@@ -107,13 +124,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -193,26 +210,9 @@
       }
     },
     {
-      "@id": "schema:associatedPathophysiology",
-      "@type": "rdf:Property",
-      "rdfs:comment": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
-      "rdfs:label": "associatedPathophysiology",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:SuperficialAnatomy"
-        },
-        {
-          "@id": "schema:AnatomicalStructure"
-        },
-        {
-          "@id": "schema:AnatomicalSystem"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
+      "@id": "schema:regionDrained",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:AnatomicalSystem"
       }
     },
     {
@@ -261,10 +261,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
@@ -296,10 +296,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },

@@ -43,10 +43,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:ReplyAction"
+          "@id": "schema:CommentAction"
         },
         {
-          "@id": "schema:CommentAction"
+          "@id": "schema:ReplyAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -192,10 +192,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -221,10 +221,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -244,13 +244,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -264,31 +264,31 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:TipAction"
-        },
-        {
-          "@id": "schema:AuthorizeAction"
+          "@id": "schema:DonateAction"
         },
         {
           "@id": "schema:PayAction"
         },
         {
-          "@id": "schema:ReturnAction"
-        },
-        {
-          "@id": "schema:GiveAction"
-        },
-        {
-          "@id": "schema:Message"
+          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:SendAction"
         },
         {
-          "@id": "schema:DonateAction"
+          "@id": "schema:Message"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:AuthorizeAction"
+        },
+        {
+          "@id": "schema:ReturnAction"
+        },
+        {
+          "@id": "schema:TipAction"
+        },
+        {
+          "@id": "schema:GiveAction"
         }
       ],
       "schema:rangeIncludes": [
@@ -296,10 +296,13 @@
           "@id": "schema:Audience"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ]
     },
@@ -319,32 +322,16 @@
       }
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:image",
@@ -447,16 +434,32 @@
       ]
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Action"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
     },
     {
       "@id": "schema:alternateName",
@@ -506,27 +509,27 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:LinkRole"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:WriteAction"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     }

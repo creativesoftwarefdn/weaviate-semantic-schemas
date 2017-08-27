@@ -37,24 +37,24 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
-        },
-        {
-          "@id": "schema:Reservation"
-        },
-        {
           "@id": "schema:Service"
         },
         {
+          "@id": "schema:Order"
+        },
+        {
           "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -65,10 +65,10 @@
       "rdfs:label": "pickupTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TaxiReservation"
+          "@id": "schema:RentalCarReservation"
         },
         {
-          "@id": "schema:RentalCarReservation"
+          "@id": "schema:TaxiReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -130,13 +130,19 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
+          "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:BusTrip"
@@ -145,13 +151,7 @@
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Flight"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -170,18 +170,18 @@
       "rdfs:label": "underName",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -222,21 +222,21 @@
       "rdfs:label": "totalPrice",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Number"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:PriceSpecification"
         }
       ]
     },
@@ -253,10 +253,10 @@
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": {
@@ -285,10 +285,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:supersededBy": {
@@ -356,10 +356,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -385,10 +385,10 @@
       "rdfs:label": "partySize",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:TaxiReservation"
         },
         {
-          "@id": "schema:TaxiReservation"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": [
@@ -413,10 +413,10 @@
       "rdfs:label": "pickupLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TaxiReservation"
+          "@id": "schema:RentalCarReservation"
         },
         {
-          "@id": "schema:RentalCarReservation"
+          "@id": "schema:TaxiReservation"
         }
       ],
       "schema:rangeIncludes": {

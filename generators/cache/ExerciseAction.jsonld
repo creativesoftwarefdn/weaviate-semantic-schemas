@@ -46,14 +46,31 @@
           "@id": "schema:TransferAction"
         },
         {
-          "@id": "schema:MoveAction"
+          "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:MoveAction"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Place"
+      }
+    },
+    {
+      "@id": "schema:startTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December.</p>\n\n<p>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
+      "rdfs:label": "startTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:FoodEstablishmentReservation"
+        },
+        {
+          "@id": "schema:Action"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
       }
     },
     {
@@ -116,18 +133,18 @@
       ]
     },
     {
-      "@id": "schema:disambiguatingDescription",
+      "@id": "schema:sportsActivityLocation",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
+      "rdfs:comment": "A sub property of location. The sports activity location where this action occurred.",
+      "rdfs:label": "sportsActivityLocation",
       "rdfs:subPropertyOf": {
-        "@id": "schema:description"
+        "@id": "schema:location"
       },
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:ExerciseAction"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:SportsActivityLocation"
       }
     },
     {
@@ -155,18 +172,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
       }
     },
     {
@@ -220,20 +225,15 @@
       }
     },
     {
-      "@id": "schema:startTime",
+      "@id": "schema:potentialAction",
       "@type": "rdf:Property",
-      "rdfs:comment": "The startTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to start. For actions that span a period of time, when the action was performed. e.g. John wrote a book from <em>January</em> to December.</p>\n\n<p>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
-      "rdfs:label": "startTime",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:FoodEstablishmentReservation"
-        }
-      ],
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:DateTime"
+        "@id": "schema:Action"
       }
     },
     {
@@ -243,25 +243,25 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:InviteAction"
-        },
-        {
-          "@id": "schema:InformAction"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:LeaveAction"
         },
         {
           "@id": "schema:JoinAction"
         },
         {
-          "@id": "schema:LeaveAction"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:InformAction"
+        },
+        {
+          "@id": "schema:InviteAction"
+        },
+        {
+          "@id": "schema:PlayAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -269,18 +269,18 @@
       }
     },
     {
-      "@id": "schema:sportsActivityLocation",
+      "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of location. The sports activity location where this action occurred.",
-      "rdfs:label": "sportsActivityLocation",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
       "rdfs:subPropertyOf": {
-        "@id": "schema:location"
+        "@id": "schema:description"
       },
       "schema:domainIncludes": {
-        "@id": "schema:ExerciseAction"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:SportsActivityLocation"
+        "@id": "schema:Text"
       }
     },
     {
@@ -290,10 +290,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -370,10 +370,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -408,32 +408,16 @@
       }
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Action"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:image",
@@ -445,10 +429,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -483,10 +467,10 @@
       "rdfs:label": "exerciseType",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:ExercisePlan"
         },
         {
-          "@id": "schema:ExercisePlan"
+          "@id": "schema:ExerciseAction"
         }
       ],
       "schema:isPartOf": {
@@ -565,16 +549,32 @@
       ]
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
     },
     {
       "@id": "schema:audience",
@@ -583,19 +583,19 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PlayAction"
-        },
-        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Event"
@@ -615,16 +615,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:MoveAction"
+          "@id": "schema:InsertAction"
         },
         {
           "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:InsertAction"
+          "@id": "schema:TransferAction"
         },
         {
-          "@id": "schema:TransferAction"
+          "@id": "schema:MoveAction"
         }
       ],
       "schema:rangeIncludes": {

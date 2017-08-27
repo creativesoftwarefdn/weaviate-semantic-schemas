@@ -43,24 +43,24 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
+        },
+        {
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Order"
-        },
-        {
-          "@id": "schema:Reservation"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -119,13 +119,10 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
-        },
-        {
           "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Reservation"
@@ -137,10 +134,13 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -195,21 +195,21 @@
       "rdfs:label": "totalPrice",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
         {
           "@id": "schema:Number"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -232,18 +232,18 @@
       "rdfs:label": "underName",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -334,13 +334,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -413,16 +413,16 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Reservation"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -442,10 +442,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

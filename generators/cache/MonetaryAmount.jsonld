@@ -37,22 +37,22 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:JobPosting"
         },
         {
           "@id": "schema:Demand"
         },
         {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:MonetaryAmount"
@@ -159,27 +159,27 @@
       "rdfs:label": "value",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:StructuredValue"
+          "@id": "schema:Number"
         },
         {
           "@id": "schema:Boolean"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:StructuredValue"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -196,13 +196,13 @@
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:PropertyValueSpecification"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -237,16 +237,16 @@
       "rdfs:label": "maxValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:PropertyValueSpecification"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:PropertyValueSpecification"
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -269,10 +269,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -301,6 +301,12 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:estimatedSalary",
+      "schema:rangeIncludes": {
+        "@id": "schema:MonetaryAmount"
       }
     },
     {
@@ -343,16 +349,16 @@
       "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:ExchangeRateSpecification"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:LoanOrCredit"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:ExchangeRateSpecification"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -367,6 +373,12 @@
     },
     {
       "@id": "schema:minimumPaymentDue",
+      "schema:rangeIncludes": {
+        "@id": "schema:MonetaryAmount"
+      }
+    },
+    {
+      "@id": "schema:estimatedCost",
       "schema:rangeIncludes": {
         "@id": "schema:MonetaryAmount"
       }
@@ -387,25 +399,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Permit"
         },
         {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:Permit"
-        },
-        {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -425,10 +437,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

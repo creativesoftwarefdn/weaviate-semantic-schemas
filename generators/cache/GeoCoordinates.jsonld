@@ -52,18 +52,18 @@
           "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Country"
         },
         {
-          "@id": "schema:Country"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -92,10 +92,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -127,10 +127,10 @@
       "rdfs:label": "elevation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         }
       ],
       "schema:rangeIncludes": [
@@ -176,13 +176,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -225,10 +225,10 @@
       "rdfs:label": "postalCode",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:PostalAddress"
         },
         {
           "@id": "schema:GeoCoordinates"
@@ -251,7 +251,10 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:GeoCoordinates"
         },
         {
           "@id": "schema:Person"
@@ -260,10 +263,7 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:GeoCoordinates"
-        },
-        {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": [

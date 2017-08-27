@@ -31,18 +31,6 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:JobPosting"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
           "@id": "schema:OpeningHoursSpecification"
         },
         {
@@ -50,6 +38,18 @@
         },
         {
           "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:JobPosting"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -114,24 +114,24 @@
       "rdfs:label": "unitCode",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:UnitPriceSpecification"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
           "@id": "schema:TypeAndQuantityNode"
+        },
+        {
+          "@id": "schema:UnitPriceSpecification"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -154,10 +154,10 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:ContactPoint"
@@ -168,27 +168,13 @@
       }
     },
     {
-      "@id": "schema:identifier",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:identifier"
-      },
-      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
-      "rdfs:label": "identifier",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "@id": "schema:StructuredValue",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "rdfs:label": "StructuredValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
     },
     {
       "@id": "schema:value",
@@ -203,10 +189,10 @@
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": [
@@ -214,10 +200,10 @@
           "@id": "schema:Boolean"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
           "@id": "schema:StructuredValue"
@@ -234,13 +220,13 @@
       "rdfs:label": "minValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PropertyValueSpecification"
         },
         {
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:PropertyValueSpecification"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:PropertyValue"
@@ -272,13 +258,13 @@
       "rdfs:label": "maxValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:PropertyValueSpecification"
@@ -289,13 +275,27 @@
       }
     },
     {
-      "@id": "schema:StructuredValue",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "rdfs:label": "StructuredValue",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:description",
@@ -319,13 +319,13 @@
       "rdfs:label": "unitText",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:TypeAndQuantityNode"
+        },
+        {
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:UnitPriceSpecification"
@@ -398,16 +398,16 @@
       "schema:category": "issue-1425",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DataCatalog"
-        },
-        {
-          "@id": "schema:Dataset"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:DataDownload"
+        },
+        {
+          "@id": "schema:DataCatalog"
+        },
+        {
+          "@id": "schema:Dataset"
         }
       ],
       "schema:isPartOf": {
@@ -415,10 +415,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -435,27 +435,27 @@
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:QualitativeValue"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QualitativeValue"
-        },
-        {
-          "@id": "schema:Enumeration"
-        },
-        {
           "@id": "schema:StructuredValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:QualitativeValue"
         }
       ]
     },
@@ -469,25 +469,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Permit"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:OpeningHoursSpecification"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {

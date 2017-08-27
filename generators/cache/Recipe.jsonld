@@ -130,25 +130,25 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -174,18 +174,18 @@
       "rdfs:label": "author",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Rating"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Rating"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -229,13 +229,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Product"
         }
       ]
     },
@@ -252,21 +252,53 @@
       }
     },
     {
-      "@id": "schema:fileFormat",
+      "@id": "schema:description",
       "@type": "rdf:Property",
-      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
-      "rdfs:label": "fileFormat",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:estimatedCost",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The estimated cost of the supply or supplies consumed when performing instructions.",
+      "rdfs:label": "estimatedCost",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowToSupply"
+        },
+        {
+          "@id": "schema:HowTo"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        }
+      ]
+    },
+    {
+      "@id": "schema:expires",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Date the content expires and is no longer useful or available. For example a <a class=\"localLink\" href=\"http://schema.org/VideoObject\">VideoObject</a> or <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a> whose availability or relevance is time-limited, or a <a class=\"localLink\" href=\"http://schema.org/ClaimReview\">ClaimReview</a> fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.",
+      "rdfs:label": "expires",
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
     },
     {
       "@id": "schema:publisher",
@@ -315,16 +347,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -337,17 +369,20 @@
     {
       "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "A flag to signal that the publication is accessible for free.",
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PublicationEvent"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:PublicationEvent"
         }
       ],
       "schema:rangeIncludes": {
@@ -373,13 +408,13 @@
       "rdfs:label": "genre",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MusicGroup"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:BroadcastChannel"
-        },
-        {
-          "@id": "schema:MusicGroup"
         }
       ],
       "schema:rangeIncludes": [
@@ -401,21 +436,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Person"
-      }
-    },
-    {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -463,10 +483,10 @@
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -515,25 +535,25 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
           "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Flight"
         },
         {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
           "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
@@ -563,6 +583,23 @@
       ]
     },
     {
+      "@id": "schema:fileFormat",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
+      "rdfs:label": "fileFormat",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "schema:contributor",
       "@type": "rdf:Property",
       "rdfs:comment": "A secondary contributor to the CreativeWork or Event.",
@@ -577,10 +614,52 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:yield",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The quantity that results by performing instructions. For example, a paper airplane, 10 personalized candles.",
+      "rdfs:label": "yield",
+      "schema:domainIncludes": {
+        "@id": "schema:HowTo"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:steps",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The steps in the form of a single item (text, document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+      "rdfs:label": "steps",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowTo"
+        },
+        {
+          "@id": "schema:HowToSection"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:ItemList"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -672,19 +751,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -704,10 +783,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -747,10 +826,10 @@
       "rdfs:label": "typicalAgeRange",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -758,16 +837,24 @@
       }
     },
     {
-      "@id": "schema:keywords",
+      "@id": "schema:mainEntityOfPage",
       "@type": "rdf:Property",
-      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
-      "rdfs:label": "keywords",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
       "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:audience",
@@ -776,22 +863,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -847,18 +934,18 @@
       "rdfs:label": "position",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ListItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ListItem"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Integer"
         },
         {
-          "@id": "schema:Integer"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -879,6 +966,9 @@
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates the primary entity described in some page or other CreativeWork.",
       "rdfs:label": "mainEntity",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:about"
+      },
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
@@ -894,6 +984,9 @@
       "@type": "rdf:Property",
       "rdfs:comment": "The time it takes to actually cook the dish, in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
       "rdfs:label": "cookTime",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:performTime"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Recipe"
       },
@@ -923,13 +1016,18 @@
       }
     },
     {
-      "@id": "schema:totalTime",
+      "@id": "schema:performTime",
       "@type": "rdf:Property",
-      "rdfs:comment": "The total time it takes to prepare and cook the recipe, in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
-      "rdfs:label": "totalTime",
-      "schema:domainIncludes": {
-        "@id": "schema:Recipe"
-      },
+      "rdfs:comment": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
+      "rdfs:label": "performTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowToDirection"
+        },
+        {
+          "@id": "schema:HowTo"
+        }
+      ],
       "schema:rangeIncludes": {
         "@id": "schema:Duration"
       }
@@ -941,10 +1039,10 @@
       "rdfs:label": "dateCreated",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         },
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -977,6 +1075,9 @@
       "@type": "rdf:Property",
       "rdfs:comment": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
       "rdfs:label": "recipeIngredient",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:supply"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Recipe"
       },
@@ -987,17 +1088,23 @@
     {
       "@id": "schema:recipeInstructions",
       "@type": "rdf:Property",
-      "rdfs:comment": "A step or instruction involved in making the recipe.",
+      "rdfs:comment": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
       "rdfs:label": "recipeInstructions",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:steps"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Recipe"
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:ItemList"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -1011,6 +1118,23 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:totalTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The total time required to perform instructions or a direction (including time to prepare the supplies), in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
+      "rdfs:label": "totalTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowToDirection"
+        },
+        {
+          "@id": "schema:HowTo"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Duration"
       }
     },
     {
@@ -1032,10 +1156,10 @@
       "rdfs:label": "creator",
       "schema:domainIncludes": [
         {
-          "@id": "schema:UserComments"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:UserComments"
         }
       ],
       "schema:rangeIncludes": [
@@ -1122,10 +1246,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1148,19 +1272,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1174,10 +1298,22 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:HowTo",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Instructions that explain how to achieve a result by performing a sequence of steps.",
+      "rdfs:label": "HowTo",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
       "@id": "schema:ingredients",
       "@type": "rdf:Property",
       "rdfs:comment": "A single ingredient used in the recipe, e.g. sugar, flour or garlic.",
       "rdfs:label": "ingredients",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:supply"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Recipe"
       },
@@ -1205,12 +1341,20 @@
       "@type": "rdf:Property",
       "rdfs:comment": "The quantity produced by the recipe (for example, number of people served, number of servings, etc).",
       "rdfs:label": "recipeYield",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:yield"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Recipe"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ]
     },
     {
       "@id": "schema:associatedMedia",
@@ -1223,6 +1367,31 @@
       "schema:rangeIncludes": {
         "@id": "schema:MediaObject"
       }
+    },
+    {
+      "@id": "schema:supply",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
+      "rdfs:label": "supply",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:instrument"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowToDirection"
+        },
+        {
+          "@id": "schema:HowTo"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:HowToSupply"
+        }
+      ]
     },
     {
       "@id": "schema:license",
@@ -1286,10 +1455,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:DateTime"
         }
       ]
     },
@@ -1303,13 +1472,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:URL"
         }
       ],
       "schema:supersededBy": {
@@ -1392,10 +1561,10 @@
       "rdfs:label": "about",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:Event"
@@ -1433,6 +1602,31 @@
       }
     },
     {
+      "@id": "schema:tool",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
+      "rdfs:label": "tool",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:instrument"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowTo"
+        },
+        {
+          "@id": "schema:HowToDirection"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:HowToTool"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
       "@id": "schema:encoding",
       "@type": "rdf:Property",
       "rdfs:comment": "A media object that encodes this CreativeWork. This property is a synonym for associatedMedia.",
@@ -1445,24 +1639,16 @@
       }
     },
     {
-      "@id": "schema:mainEntityOfPage",
+      "@id": "schema:keywords",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
+      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "rdfs:label": "keywords",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:CreativeWork"
       },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:sponsor",
@@ -1471,19 +1657,19 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1513,7 +1699,7 @@
       "rdfs:comment": "A recipe. For dietary restrictions covered by the recipe, a few common restrictions are enumerated via <a class=\"localLink\" href=\"http://schema.org/suitableForDiet\">suitableForDiet</a>. The <a class=\"localLink\" href=\"http://schema.org/keywords\">keywords</a> property can also be used to add more detail.",
       "rdfs:label": "Recipe",
       "rdfs:subClassOf": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:HowTo"
       }
     },
     {
@@ -1556,10 +1742,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -1582,28 +1768,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -1659,11 +1845,16 @@
     {
       "@id": "schema:prepTime",
       "@type": "rdf:Property",
-      "rdfs:comment": "The length of time it takes to prepare the recipe, in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
+      "rdfs:comment": "The length of time it takes to prepare the items to be used in instructions or a direction, in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
       "rdfs:label": "prepTime",
-      "schema:domainIncludes": {
-        "@id": "schema:Recipe"
-      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowTo"
+        },
+        {
+          "@id": "schema:HowToDirection"
+        }
+      ],
       "schema:rangeIncludes": {
         "@id": "schema:Duration"
       }
@@ -1711,18 +1902,18 @@
       "rdfs:label": "translator",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1757,21 +1948,21 @@
       "rdfs:label": "material",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
         {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -1797,6 +1988,12 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:MenuItem"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
@@ -1804,12 +2001,6 @@
         },
         {
           "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:MenuItem"
         },
         {
           "@id": "schema:Product"
@@ -1822,14 +2013,27 @@
     {
       "@id": "schema:publishingPrinciples",
       "@type": "rdf:Property",
-      "rdfs:comment": "Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.",
+      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
       "rdfs:label": "publishingPrinciples",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:copyrightYear",
@@ -1850,7 +2054,10 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:WriteAction"
@@ -1859,10 +2066,7 @@
           "@id": "schema:LinkRole"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [

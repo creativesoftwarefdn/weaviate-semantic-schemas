@@ -73,13 +73,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Drug"
+        },
+        {
           "@id": "schema:MedicalEntity"
         },
         {
           "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -173,6 +173,18 @@
       }
     },
     {
+      "@id": "schema:MedicalIntangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "rdfs:label": "MedicalIntangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
       "@id": "schema:doseSchedule",
       "schema:rangeIncludes": {
         "@id": "schema:DoseSchedule"
@@ -218,13 +230,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -241,10 +253,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:QualitativeValue"
         }
       ]
     },
@@ -281,28 +293,16 @@
       ]
     },
     {
-      "@id": "schema:MedicalIntangible",
+      "@id": "schema:Thing",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
-      "rdfs:label": "MedicalIntangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEntity"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:MaximumDoseSchedule",
       "rdfs:subClassOf": {
         "@id": "schema:DoseSchedule"
       }
-    },
-    {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:recognizingAuthority",

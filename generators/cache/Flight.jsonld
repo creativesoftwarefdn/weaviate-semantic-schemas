@@ -40,13 +40,13 @@
       "rdfs:label": "departureTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BusTrip"
-        },
-        {
           "@id": "schema:Flight"
         },
         {
           "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:BusTrip"
         }
       ],
       "schema:rangeIncludes": {
@@ -60,10 +60,10 @@
       "rdfs:label": "boardingPolicy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Airline"
+          "@id": "schema:Flight"
         },
         {
-          "@id": "schema:Flight"
+          "@id": "schema:Airline"
         }
       ],
       "schema:rangeIncludes": {
@@ -77,36 +77,36 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:BusTrip"
+          "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:Reservation"
         },
         {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -206,13 +206,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -282,10 +282,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -349,19 +349,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
-        },
-        {
           "@id": "schema:Flight"
         },
         {
           "@id": "schema:Order"
         },
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:BuyAction"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
@@ -372,6 +372,18 @@
           "@id": "schema:Person"
         }
       ]
+    },
+    {
+      "@id": "schema:departureTerminal",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Identifier of the flight's departure terminal.",
+      "rdfs:label": "departureTerminal",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:flightDistance",
@@ -389,18 +401,6 @@
           "@id": "schema:Text"
         }
       ]
-    },
-    {
-      "@id": "schema:departureTerminal",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Identifier of the flight's departure terminal.",
-      "rdfs:label": "departureTerminal",
-      "schema:domainIncludes": {
-        "@id": "schema:Flight"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
     },
     {
       "@id": "schema:departureGate",
@@ -439,10 +439,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Duration"
         },
         {
-          "@id": "schema:Duration"
+          "@id": "schema:Text"
         }
       ]
     },

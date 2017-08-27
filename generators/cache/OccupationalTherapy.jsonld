@@ -40,10 +40,10 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalProcedure"
         },
         {
           "@id": "schema:MedicalStudy"
@@ -54,13 +54,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:EventStatusType"
+        },
+        {
           "@id": "schema:MedicalStudyStatus"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:EventStatusType"
         }
       ]
     },
@@ -151,10 +151,10 @@
           "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -162,13 +162,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:DrugLegalStatus"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -271,10 +271,10 @@
       "rdfs:label": "doseSchedule",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:TherapeuticProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -314,10 +314,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         }
       ]
     },
@@ -349,13 +349,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -404,10 +404,10 @@
       "rdfs:label": "contraindication",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:MedicalTherapy"
         },
         {
-          "@id": "schema:MedicalTherapy"
+          "@id": "schema:MedicalDevice"
         }
       ],
       "schema:isPartOf": {
@@ -467,10 +467,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         }
       ]
     },
@@ -487,10 +487,10 @@
       "rdfs:label": "MedicalSpecialty",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:Specialty"
+          "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:Specialty"
         }
       ],
       "schema:isPartOf": {
@@ -507,13 +507,13 @@
           "@id": "schema:DrugClass"
         },
         {
+          "@id": "schema:Patient"
+        },
+        {
           "@id": "schema:MedicalCondition"
         },
         {
           "@id": "schema:TherapeuticProcedure"
-        },
-        {
-          "@id": "schema:Patient"
         }
       ],
       "schema:isPartOf": {
@@ -623,10 +623,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -637,10 +637,10 @@
       "rdfs:label": "seriousAdverseOutcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:MedicalTherapy"
         },
         {
-          "@id": "schema:MedicalTherapy"
+          "@id": "schema:MedicalDevice"
         }
       ],
       "schema:isPartOf": {

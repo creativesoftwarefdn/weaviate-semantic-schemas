@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:RightHandDriving",
+      "@type": "schema:SteeringPositionValue",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      },
+      "rdfs:comment": "The steering position is on the right side of the vehicle (viewed from the main direction of driving).",
+      "rdfs:label": "RightHandDriving"
+    },
+    {
+      "@id": "schema:SteeringPositionValue",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      },
+      "rdfs:comment": "A value indicating a steering position.",
+      "rdfs:label": "SteeringPositionValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:QualitativeValue"
+      }
+    }
+  ]
+}

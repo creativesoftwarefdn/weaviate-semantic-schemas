@@ -10,18 +10,15 @@
   },
   "@graph": [
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Text"
       }
     },
     {
@@ -61,10 +58,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
@@ -81,27 +78,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Thing"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Thing"
         },
         {
           "@id": "schema:ListItem"
         }
       ]
-    },
-    {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
     },
     {
       "@id": "schema:description",
@@ -160,15 +145,18 @@
       ]
     },
     {
-      "@id": "schema:numberOfItems",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.",
-      "rdfs:label": "numberOfItems",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
-        "@id": "schema:ItemList"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Integer"
+        "@id": "schema:URL"
       }
     },
     {
@@ -181,10 +169,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -245,6 +233,18 @@
       "rdfs:label": "Intangible",
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:numberOfItems",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The number of items in an ItemList. Note that some descriptions might not fully describe all items in a list (e.g., multi-page pagination); in such cases, the numberOfItems would be for the entire list.",
+      "rdfs:label": "numberOfItems",
+      "schema:domainIncludes": {
+        "@id": "schema:ItemList"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Integer"
       }
     },
     {

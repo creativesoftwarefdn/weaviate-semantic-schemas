@@ -22,13 +22,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Enumeration"
+        },
+        {
           "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Enumeration"
         }
       ],
       "schema:isPartOf": {
@@ -36,10 +36,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
@@ -68,8 +68,16 @@
       }
     },
     {
-      "@id": "schema:CohortStudy",
-      "@type": "schema:MedicalObservationalStudyDesign"
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:disambiguatingDescription",
@@ -114,16 +122,12 @@
       }
     },
     {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "@id": "schema:CaseSeries",
+      "@type": "schema:MedicalObservationalStudyDesign"
+    },
+    {
+      "@id": "schema:Registry",
+      "@type": "schema:MedicalObservationalStudyDesign"
     },
     {
       "@id": "schema:identifier",
@@ -141,10 +145,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -177,10 +181,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -251,11 +255,7 @@
       ]
     },
     {
-      "@id": "schema:CaseSeries",
-      "@type": "schema:MedicalObservationalStudyDesign"
-    },
-    {
-      "@id": "schema:Registry",
+      "@id": "schema:CohortStudy",
       "@type": "schema:MedicalObservationalStudyDesign"
     },
     {

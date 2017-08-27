@@ -19,18 +19,18 @@
       "rdfs:label": "isSimilarTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -53,16 +53,16 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": [
@@ -84,18 +84,18 @@
       "rdfs:label": "isRelatedTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -106,24 +106,24 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoShape"
         }
       ],
       "schema:supersededBy": {
@@ -137,19 +137,13 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Reservation"
+        },
+        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:TrainTrip"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:ParcelDelivery"
@@ -159,6 +153,12 @@
         },
         {
           "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -225,16 +225,10 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
@@ -246,7 +240,13 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -290,10 +290,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -356,25 +356,28 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:DeliveryChargeSpecification"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
         {
           "@id": "schema:GeoShape"
         },
@@ -383,9 +386,6 @@
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
         }
       ]
     },
@@ -396,13 +396,13 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
-        },
-        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -443,28 +443,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Brand"
+        },
+        {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -569,9 +569,6 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Person"
         },
         {
@@ -579,6 +576,9 @@
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
@@ -618,13 +618,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -711,10 +711,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         }
       ]
     },
@@ -737,16 +737,13 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Offer"
@@ -755,18 +752,21 @@
           "@id": "schema:Product"
         },
         {
+          "@id": "schema:PhysicalActivity"
+        },
+        {
           "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PhysicalActivityCategory"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:Thing"
-        },
-        {
-          "@id": "schema:PhysicalActivityCategory"
         }
       ]
     },
@@ -777,19 +777,19 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
@@ -812,27 +812,27 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -855,22 +855,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:AggregateOffer"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:AggregateOffer"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:MenuItem"
         }
       ],
       "schema:rangeIncludes": {

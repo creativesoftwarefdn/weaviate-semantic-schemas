@@ -1,0 +1,28 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:OrderProcessing",
+      "@type": "schema:OrderStatus",
+      "rdfs:comment": "OrderStatus representing that an order is being processed.",
+      "rdfs:label": "OrderProcessing"
+    },
+    {
+      "@id": "schema:OrderStatus",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Enumerated status values for Order.",
+      "rdfs:label": "OrderStatus",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
+    }
+  ]
+}

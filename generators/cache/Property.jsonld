@@ -22,18 +22,18 @@
       }
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:domainIncludes",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
+      "rdfs:label": "domainIncludes",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Property"
+      },
+      "schema:isPartOf": {
+        "@id": "http://meta.schema.org/"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Class"
       }
     },
     {
@@ -43,13 +43,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
-        },
-        {
           "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -136,36 +136,36 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
           "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Class"
         },
         {
           "@id": "schema:Invoice"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
         {
           "@id": "schema:Thing"
         },
         {
           "@id": "schema:PhysicalActivityCategory"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -209,26 +209,26 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:domainIncludes",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "Relates a property to a class that is (one of) the type(s) the property is expected to be used on.",
-      "rdfs:label": "domainIncludes",
-      "schema:domainIncludes": {
-        "@id": "schema:Property"
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
       },
-      "schema:isPartOf": {
-        "@id": "http://meta.schema.org/"
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Class"
+        "@id": "schema:URL"
       }
     },
     {

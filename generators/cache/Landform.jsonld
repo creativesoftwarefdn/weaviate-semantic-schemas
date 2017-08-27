@@ -20,10 +20,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -31,10 +31,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -45,6 +45,9 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:LeaveAction"
         },
         {
@@ -54,13 +57,10 @@
           "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:JoinAction"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:JoinAction"
         },
         {
           "@id": "schema:InviteAction"
@@ -81,10 +81,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -92,21 +92,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
     {
-      "@id": "schema:Landform",
+      "@id": "schema:Thing",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A landform or physical feature.  Landform elements include mountains, plains, lakes, rivers, seascape and oceanic waterbody interface features such as bays, peninsulas, seas and so forth, including sub-aqueous terrain features such as submersed mountain ranges, volcanoes, and the great ocean basins.",
-      "rdfs:label": "Landform",
-      "rdfs:subClassOf": {
-        "@id": "schema:Place"
-      }
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:isicV4",
@@ -118,13 +115,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -162,10 +159,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -173,10 +170,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -196,24 +193,16 @@
       }
     },
     {
-      "@id": "schema:photo",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "A photograph of this place.",
-      "rdfs:label": "photo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
-      },
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
-        "@id": "schema:Place"
+        "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
-        },
-        {
-          "@id": "schema:Photograph"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:hasMap",
@@ -233,19 +222,45 @@
       ]
     },
     {
-      "@id": "schema:smokingAllowed",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
-      },
-      "rdfs:comment": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
-      "rdfs:label": "smokingAllowed",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
       "schema:domainIncludes": {
-        "@id": "schema:Place"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
+        "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:geospatiallyCoveredBy",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCoveredBy",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
     },
     {
       "@id": "schema:disambiguatingDescription",
@@ -290,28 +305,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -337,16 +352,16 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -366,10 +381,10 @@
           "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Accommodation"
         },
         {
-          "@id": "schema:Accommodation"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -404,33 +419,19 @@
       }
     },
     {
-      "@id": "schema:geospatiallyCoveredBy",
+      "@id": "schema:smokingAllowed",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
       },
-      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
-      "rdfs:label": "geospatiallyCoveredBy",
-      "schema:category": "issue-1375",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:GeospatialGeometry"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "rdfs:comment": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+      "rdfs:label": "smokingAllowed",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:GeospatialGeometry"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
     },
     {
       "@id": "schema:faxNumber",
@@ -439,16 +440,16 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -478,10 +479,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -489,10 +490,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -507,10 +508,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -518,60 +519,26 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:GeospatialGeometry"
-        },
-        {
-          "@id": "schema:Place"
         }
       ]
     },
     {
-      "@id": "schema:logo",
+      "@id": "schema:map",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "An associated logo.",
-      "rdfs:label": "logo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:ImageObject"
-        }
-      ]
-    },
-    {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "A URL to a map of the place.",
+      "rdfs:label": "map",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Place"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:hasMap"
       }
     },
     {
@@ -581,13 +548,13 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:QuantitativeValue"
@@ -604,19 +571,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Place"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -636,25 +603,25 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -677,10 +644,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -697,14 +664,26 @@
       "rdfs:label": "maximumAttendeeCapacity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Integer"
+      }
+    },
+    {
+      "@id": "schema:publicAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -738,10 +717,10 @@
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -785,18 +764,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "@id": "schema:Volcano",
+      "rdfs:subClassOf": {
+        "@id": "schema:Landform"
+      }
     },
     {
       "@id": "schema:containedIn",
@@ -820,9 +799,6 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:GeoCoordinates"
         },
         {
@@ -833,14 +809,17 @@
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -875,10 +854,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -886,10 +865,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -904,10 +883,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -915,10 +894,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -933,10 +912,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -952,18 +931,12 @@
       ]
     },
     {
-      "@id": "schema:map",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A URL to a map of the place.",
-      "rdfs:label": "map",
-      "schema:domainIncludes": {
+      "@id": "schema:Landform",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A landform or physical feature.  Landform elements include mountains, plains, lakes, rivers, seascape and oceanic waterbody interface features such as bays, peninsulas, seas and so forth, including sub-aqueous terrain features such as submersed mountain ranges, volcanoes, and the great ocean basins.",
+      "rdfs:label": "Landform",
+      "rdfs:subClassOf": {
         "@id": "schema:Place"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      },
-      "schema:supersededBy": {
-        "@id": "schema:hasMap"
       }
     },
     {
@@ -976,10 +949,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -996,10 +969,30 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "schema:photo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A photograph of this place.",
+      "rdfs:label": "photo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Photograph"
+        },
+        {
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -1021,30 +1014,63 @@
       ]
     },
     {
-      "@id": "schema:openingHoursSpecification",
+      "@id": "schema:logo",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "The opening hours of a certain place.",
-      "rdfs:label": "openingHoursSpecification",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
+      "rdfs:comment": "An associated logo.",
+      "rdfs:label": "logo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:OpeningHoursSpecification"
-      }
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:PublicationEvent"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -1087,9 +1113,18 @@
       }
     },
     {
-      "@id": "schema:Volcano",
-      "rdfs:subClassOf": {
-        "@id": "schema:Landform"
+      "@id": "schema:openingHoursSpecification",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The opening hours of a certain place.",
+      "rdfs:label": "openingHoursSpecification",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:OpeningHoursSpecification"
       }
     }
   ]

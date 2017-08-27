@@ -20,10 +20,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -31,10 +31,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -45,25 +45,25 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:InviteAction"
-        },
-        {
-          "@id": "schema:InformAction"
-        },
-        {
           "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:JoinAction"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:InviteAction"
         },
         {
           "@id": "schema:LeaveAction"
+        },
+        {
+          "@id": "schema:JoinAction"
+        },
+        {
+          "@id": "schema:InformAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -81,10 +81,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -92,10 +92,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -109,10 +109,10 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
@@ -129,10 +129,10 @@
       "rdfs:label": "events",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -153,10 +153,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -164,10 +164,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -182,10 +182,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -247,33 +247,19 @@
       ]
     },
     {
-      "@id": "schema:geospatiallyCoveredBy",
+      "@id": "schema:smokingAllowed",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
       },
-      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
-      "rdfs:label": "geospatiallyCoveredBy",
-      "schema:category": "issue-1375",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeospatialGeometry"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "rdfs:comment": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+      "rdfs:label": "smokingAllowed",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeospatialGeometry"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
     },
     {
       "@id": "schema:disambiguatingDescription",
@@ -327,28 +313,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -374,16 +360,16 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -403,10 +389,10 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Accommodation"
         },
         {
-          "@id": "schema:Accommodation"
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -450,18 +436,55 @@
       }
     },
     {
-      "@id": "schema:smokingAllowed",
+      "@id": "schema:geospatiallyCoveredBy",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
       },
-      "rdfs:comment": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
-      "rdfs:label": "smokingAllowed",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCoveredBy",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:faxNumber",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The fax number.",
+      "rdfs:label": "faxNumber",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
+        "@id": "schema:Text"
       }
     },
     {
@@ -527,10 +550,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -556,13 +579,13 @@
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -576,19 +599,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Offer"
         },
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -605,28 +628,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -646,13 +669,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -678,14 +701,26 @@
       "rdfs:label": "maximumAttendeeCapacity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Integer"
+      }
+    },
+    {
+      "@id": "schema:publicAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -704,27 +739,13 @@
       }
     },
     {
-      "@id": "schema:globalLocationNumber",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
-      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "rdfs:label": "globalLocationNumber",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
@@ -740,10 +761,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -751,10 +772,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -790,10 +811,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -801,10 +822,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -818,10 +839,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Photograph"
         },
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:ImageObject"
         }
       ],
       "schema:supersededBy": {
@@ -835,19 +856,19 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:GeoCoordinates"
+        },
+        {
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:GeoShape"
         }
       ],
       "schema:rangeIncludes": [
@@ -870,10 +891,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -881,22 +902,25 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
     {
-      "@id": "schema:faxNumber",
+      "@id": "schema:globalLocationNumber",
       "@type": "rdf:Property",
-      "rdfs:comment": "The fax number.",
-      "rdfs:label": "faxNumber",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "rdfs:label": "globalLocationNumber",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
       "schema:domainIncludes": [
-        {
-          "@id": "schema:ContactPoint"
-        },
         {
           "@id": "schema:Person"
         },
@@ -950,10 +974,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -987,6 +1011,12 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Service"
         },
         {
@@ -994,33 +1024,38 @@
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:PublicationEvent"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {

@@ -70,21 +70,21 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:AdministrativeArea"
@@ -139,10 +139,10 @@
       "rdfs:label": "addressCountry",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:GeoCoordinates"
@@ -150,10 +150,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Country"
         },
         {
-          "@id": "schema:Country"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -199,6 +199,9 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Place"
         },
         {
@@ -206,9 +209,6 @@
         },
         {
           "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -224,25 +224,28 @@
     {
       "@id": "schema:availableLanguage",
       "@type": "rdf:Property",
-      "rdfs:comment": "A language someone may use with the item. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/inLanguage\">inLanguage</a>",
+      "rdfs:comment": "A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/inLanguage\">inLanguage</a>",
       "rdfs:label": "availableLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:ServiceChannel"
+        },
+        {
+          "@id": "schema:TouristAttraction"
         },
         {
           "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:ServiceChannel"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -265,33 +268,33 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
         {
           "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:AdministrativeArea"
-        },
-        {
-          "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
@@ -305,10 +308,10 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:LocationFeatureSpecification"
@@ -364,13 +367,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -402,6 +405,9 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:Person"
         },
         {
@@ -409,9 +415,6 @@
         },
         {
           "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -434,10 +437,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -448,13 +451,13 @@
       "rdfs:label": "postalCode",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PostalAddress"
-        },
-        {
           "@id": "schema:GeoCoordinates"
         },
         {
           "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:PostalAddress"
         }
       ],
       "schema:rangeIncludes": {
@@ -528,10 +531,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

@@ -67,16 +67,35 @@
       }
     },
     {
-      "@id": "schema:PathologyTest",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.",
-      "rdfs:label": "PathologyTest",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalTest"
-      },
+      "@id": "schema:legalStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "rdfs:label": "legalStatus",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:MedicalEntity"
+        },
+        {
+          "@id": "schema:Drug"
+        }
+      ],
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
-      }
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:DrugLegalStatus"
+        },
+        {
+          "@id": "schema:MedicalEnumeration"
+        }
+      ]
     },
     {
       "@id": "schema:relevantSpecialty",
@@ -168,6 +187,18 @@
       }
     },
     {
+      "@id": "schema:PathologyTest",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A medical test performed by a laboratory that typically involves examination of a tissue sample by a pathologist.",
+      "rdfs:label": "PathologyTest",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalTest"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
       "@id": "schema:signDetected",
       "@type": "rdf:Property",
       "rdfs:comment": "A sign detected by the test.",
@@ -237,13 +268,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -331,37 +362,6 @@
       }
     },
     {
-      "@id": "schema:legalStatus",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
-      "rdfs:label": "legalStatus",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Drug"
-        },
-        {
-          "@id": "schema:MedicalEntity"
-        },
-        {
-          "@id": "schema:DietarySupplement"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:DrugLegalStatus"
-        }
-      ]
-    },
-    {
       "@id": "schema:MedicalEntity",
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of entity related to health and the practice of medicine.",
@@ -386,10 +386,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

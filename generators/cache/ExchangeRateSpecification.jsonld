@@ -10,6 +10,21 @@
   },
   "@graph": [
     {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
       "@id": "schema:currentExchangeRate",
       "@type": "rdf:Property",
       "dct:source": [
@@ -75,27 +90,13 @@
       }
     },
     {
-      "@id": "schema:identifier",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:identifier"
-      },
-      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
-      "rdfs:label": "identifier",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "@id": "schema:StructuredValue",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "rdfs:label": "StructuredValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
     },
     {
       "@id": "schema:description",
@@ -172,38 +173,6 @@
       ]
     },
     {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
       "@id": "schema:name",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of the item.",
@@ -216,13 +185,44 @@
       }
     },
     {
-      "@id": "schema:StructuredValue",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "rdfs:label": "StructuredValue",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:alternateName",
@@ -265,6 +265,9 @@
       "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
+          "@id": "schema:ExchangeRateSpecification"
+        },
+        {
           "@id": "schema:MonetaryAmount"
         },
         {
@@ -272,9 +275,6 @@
         },
         {
           "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:ExchangeRateSpecification"
         }
       ],
       "schema:rangeIncludes": {

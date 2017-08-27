@@ -57,10 +57,10 @@
           "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -68,13 +68,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:MedicalStudyStatus"
         },
         {
           "@id": "schema:EventStatusType"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -145,10 +145,10 @@
       "rdfs:label": "associatedAnatomy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -156,30 +156,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:SuperficialAnatomy"
-        },
-        {
           "@id": "schema:AnatomicalStructure"
         },
         {
           "@id": "schema:AnatomicalSystem"
+        },
+        {
+          "@id": "schema:SuperficialAnatomy"
         }
       ]
-    },
-    {
-      "@id": "schema:stage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The stage of the condition, if applicable.",
-      "rdfs:label": "stage",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalCondition"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalConditionStage"
-      }
     },
     {
       "@id": "schema:typicalTest",
@@ -194,6 +179,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalTest"
+      }
+    },
+    {
+      "@id": "schema:stage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The stage of the condition, if applicable.",
+      "rdfs:label": "stage",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalCondition"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalConditionStage"
       }
     },
     {
@@ -233,10 +233,10 @@
           "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
@@ -244,13 +244,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEnumeration"
         },
         {
           "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -326,16 +326,16 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TherapeuticProcedure"
-        },
-        {
           "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:DrugClass"
+          "@id": "schema:Patient"
         },
         {
-          "@id": "schema:Patient"
+          "@id": "schema:TherapeuticProcedure"
+        },
+        {
+          "@id": "schema:DrugClass"
         }
       ],
       "schema:isPartOf": {
@@ -385,10 +385,10 @@
       "rdfs:label": "cause",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalSignOrSymptom"
         },
         {
-          "@id": "schema:MedicalSignOrSymptom"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -464,13 +464,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -622,10 +622,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

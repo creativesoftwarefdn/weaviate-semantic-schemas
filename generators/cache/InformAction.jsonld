@@ -55,13 +55,13 @@
       "rdfs:label": "about",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommunicateAction"
-        },
-        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:CommunicateAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -78,10 +78,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -178,10 +178,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -250,42 +250,45 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:GiveAction"
         },
         {
           "@id": "schema:AuthorizeAction"
         },
         {
+          "@id": "schema:ReturnAction"
+        },
+        {
+          "@id": "schema:DonateAction"
+        },
+        {
           "@id": "schema:Message"
         },
         {
-          "@id": "schema:ReturnAction"
+          "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:TipAction"
         },
         {
           "@id": "schema:PayAction"
         },
         {
           "@id": "schema:SendAction"
-        },
-        {
-          "@id": "schema:TipAction"
-        },
-        {
-          "@id": "schema:GiveAction"
-        },
-        {
-          "@id": "schema:DonateAction"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
         {
           "@id": "schema:Audience"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
         }
       ]
     },
@@ -296,25 +299,25 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LeaveAction"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:InformAction"
+          "@id": "schema:PlayAction"
         },
         {
           "@id": "schema:InviteAction"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:LeaveAction"
         },
         {
           "@id": "schema:JoinAction"
         },
         {
-          "@id": "schema:PlayAction"
+          "@id": "schema:InformAction"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -337,16 +340,32 @@
       }
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Action"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        }
+      ]
     },
     {
       "@id": "schema:image",
@@ -358,10 +377,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -455,32 +474,16 @@
       ]
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PostalAddress"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:alternateName",
@@ -516,10 +519,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -530,27 +533,27 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:LinkRole"
         },
         {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:LinkRole"
-        },
-        {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:WriteAction"
         },
         {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     }

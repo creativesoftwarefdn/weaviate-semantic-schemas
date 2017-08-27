@@ -43,10 +43,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:TransferAction"
+          "@id": "schema:MoveAction"
         },
         {
-          "@id": "schema:MoveAction"
+          "@id": "schema:TransferAction"
         },
         {
           "@id": "schema:ExerciseAction"
@@ -69,13 +69,13 @@
           "@id": "schema:ReceiveAction"
         },
         {
+          "@id": "schema:TrackAction"
+        },
+        {
           "@id": "schema:SendAction"
         },
         {
           "@id": "schema:OrderAction"
-        },
-        {
-          "@id": "schema:TrackAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -212,13 +212,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -232,31 +232,31 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:PayAction"
-        },
-        {
-          "@id": "schema:Message"
-        },
-        {
-          "@id": "schema:TipAction"
-        },
-        {
-          "@id": "schema:ReturnAction"
-        },
-        {
           "@id": "schema:CommunicateAction"
-        },
-        {
-          "@id": "schema:DonateAction"
-        },
-        {
-          "@id": "schema:GiveAction"
         },
         {
           "@id": "schema:SendAction"
         },
         {
+          "@id": "schema:Message"
+        },
+        {
+          "@id": "schema:DonateAction"
+        },
+        {
+          "@id": "schema:PayAction"
+        },
+        {
+          "@id": "schema:ReturnAction"
+        },
+        {
+          "@id": "schema:TipAction"
+        },
+        {
           "@id": "schema:AuthorizeAction"
+        },
+        {
+          "@id": "schema:GiveAction"
         }
       ],
       "schema:rangeIncludes": [
@@ -265,6 +265,9 @@
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Person"
@@ -287,16 +290,32 @@
       }
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        }
+      ]
     },
     {
       "@id": "schema:image",
@@ -382,40 +401,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:SendAction",
@@ -436,16 +439,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:MoveAction"
-        },
-        {
           "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:InsertAction"
+          "@id": "schema:MoveAction"
         },
         {
           "@id": "schema:TransferAction"
+        },
+        {
+          "@id": "schema:InsertAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -495,10 +498,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     }

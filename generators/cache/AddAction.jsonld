@@ -85,10 +85,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -156,6 +156,18 @@
       }
     },
     {
+      "@id": "schema:result",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
       "@id": "schema:endTime",
       "@type": "rdf:Property",
       "rdfs:comment": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>.</p>\n\n<p>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
@@ -214,10 +226,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
@@ -240,16 +252,32 @@
       }
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        }
+      ]
     },
     {
       "@id": "schema:image",
@@ -335,10 +363,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -347,34 +375,6 @@
       "rdfs:subClassOf": {
         "@id": "schema:AddAction"
       }
-    },
-    {
-      "@id": "schema:location",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PostalAddress"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
     },
     {
       "@id": "schema:alternateName",

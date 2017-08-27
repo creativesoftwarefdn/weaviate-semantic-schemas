@@ -10,30 +10,6 @@
   },
   "@graph": [
     {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:previousItem",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A link to the ListItem that preceeds the current one.",
-      "rdfs:label": "previousItem",
-      "schema:domainIncludes": {
-        "@id": "schema:ListItem"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:ListItem"
-      }
-    },
-    {
       "@id": "schema:url",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of the item.",
@@ -63,6 +39,78 @@
       }
     },
     {
+      "@id": "schema:HowToDirection",
+      "rdfs:subClassOf": {
+        "@id": "schema:ListItem"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:nextItem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A link to the ListItem that follows the current one.",
+      "rdfs:label": "nextItem",
+      "schema:domainIncludes": {
+        "@id": "schema:ListItem"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:ListItem"
+      }
+    },
+    {
       "@id": "schema:identifier",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -75,10 +123,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
@@ -107,15 +155,38 @@
       }
     },
     {
-      "@id": "schema:potentialAction",
+      "@id": "schema:image",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:previousItem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A link to the ListItem that preceeds the current one.",
+      "rdfs:label": "previousItem",
+      "schema:domainIncludes": {
+        "@id": "schema:ListItem"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:Action"
+        "@id": "schema:ListItem"
       }
     },
     {
@@ -139,64 +210,10 @@
       ]
     },
     {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
+      "@id": "schema:HowToItem",
+      "rdfs:subClassOf": {
+        "@id": "schema:ListItem"
       }
-    },
-    {
-      "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "schema:position",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The position of an item in a series or sequence of items.",
-      "rdfs:label": "position",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:ListItem"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Integer"
-        }
-      ]
-    },
-    {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:alternateName",
@@ -208,18 +225,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:nextItem",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A link to the ListItem that follows the current one.",
-      "rdfs:label": "nextItem",
-      "schema:domainIncludes": {
-        "@id": "schema:ListItem"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:ListItem"
       }
     },
     {
@@ -253,19 +258,32 @@
       }
     },
     {
-      "@id": "schema:disambiguatingDescription",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:HowToTip",
+      "rdfs:subClassOf": {
+        "@id": "schema:ListItem"
       }
+    },
+    {
+      "@id": "schema:position",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The position of an item in a series or sequence of items.",
+      "rdfs:label": "position",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ListItem"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Integer"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     }
   ]
 }

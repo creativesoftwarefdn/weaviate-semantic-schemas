@@ -31,13 +31,13 @@
       "rdfs:label": "inventoryLevel",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:SomeProducts"
+        },
+        {
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -57,13 +57,13 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -134,19 +134,19 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:JobPosting"
         },
         {
-          "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -180,36 +180,36 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
-          "@id": "schema:Property"
-        },
-        {
           "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Thing"
         },
         {
           "@id": "schema:PhysicalActivityCategory"
         },
         {
-          "@id": "schema:Thing"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -223,10 +223,10 @@
       "rdfs:label": "warranty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -251,23 +251,23 @@
       ]
     },
     {
-      "@id": "schema:advanceBookingRequirement",
+      "@id": "schema:itemCondition",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The amount of time that is required between accepting the offer and the actual usage of the resource or service.",
-      "rdfs:label": "advanceBookingRequirement",
+      "rdfs:comment": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
+      "rdfs:label": "itemCondition",
       "schema:domainIncludes": [
         {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
+        "@id": "schema:OfferItemCondition"
       }
     },
     {
@@ -280,10 +280,10 @@
       "rdfs:label": "availabilityEnds",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -327,28 +327,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -362,16 +362,16 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Ticket"
-        },
-        {
           "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": {
@@ -394,10 +394,10 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -417,13 +417,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -443,10 +443,10 @@
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -454,23 +454,23 @@
       }
     },
     {
-      "@id": "schema:itemCondition",
+      "@id": "schema:advanceBookingRequirement",
       "@type": "rdf:Property",
-      "rdfs:comment": "A predefined value from OfferItemCondition or a textual description of the condition of the product or service, or the products or services included in the offer.",
-      "rdfs:label": "itemCondition",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The amount of time that is required between accepting the offer and the actual usage of the resource or service.",
+      "rdfs:label": "advanceBookingRequirement",
       "schema:domainIncludes": [
         {
           "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
-        "@id": "schema:OfferItemCondition"
+        "@id": "schema:QuantitativeValue"
       }
     },
     {
@@ -480,24 +480,24 @@
       "rdfs:label": "ineligibleRegion",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
         {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -520,7 +520,13 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Organization"
@@ -529,21 +535,15 @@
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
@@ -563,10 +563,10 @@
       "rdfs:label": "availabilityStarts",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -586,10 +586,10 @@
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -629,13 +629,13 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -681,7 +681,10 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
@@ -690,10 +693,7 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -710,7 +710,19 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Brand"
@@ -719,19 +731,7 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -754,10 +754,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -798,10 +798,10 @@
       "rdfs:label": "availableDeliveryMethod",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -818,13 +818,13 @@
       "rdfs:label": "priceSpecification",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
-        },
-        {
           "@id": "schema:TradeAction"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -844,10 +844,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Offer"
@@ -855,13 +855,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:GeoShape"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -901,10 +901,10 @@
           "@id": "schema:TypeAndQuantityNode"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -921,13 +921,13 @@
       "rdfs:label": "mpn",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -947,22 +947,22 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Permit"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
           "@id": "schema:OpeningHoursSpecification"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:Permit"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -1002,10 +1002,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Order"
@@ -1019,10 +1019,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1044,10 +1044,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PaymentMethod"
+          "@id": "schema:LoanOrCredit"
         },
         {
-          "@id": "schema:LoanOrCredit"
+          "@id": "schema:PaymentMethod"
         }
       ]
     },
@@ -1064,10 +1064,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1081,10 +1081,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:TradeAction"
         },
         {
-          "@id": "schema:TradeAction"
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": [
@@ -1149,10 +1149,10 @@
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:IndividualProduct"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:IndividualProduct"
         }
       ],
       "schema:rangeIncludes": {
@@ -1169,13 +1169,13 @@
       "rdfs:label": "eligibleQuantity",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -1189,18 +1189,18 @@
       "rdfs:label": "itemOffered",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -1214,10 +1214,10 @@
       "rdfs:label": "deliveryLeadTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -1243,19 +1243,19 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:MenuItem"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:AggregateOffer"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:AggregateOffer"
         },
         {
           "@id": "schema:Product"

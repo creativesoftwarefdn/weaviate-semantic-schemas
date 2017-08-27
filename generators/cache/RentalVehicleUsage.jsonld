@@ -1,0 +1,40 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:RentalVehicleUsage",
+      "@type": "schema:CarUsageType",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      },
+      "rdfs:comment": "Indicates the usage of the vehicle as a rental car.",
+      "rdfs:label": "RentalVehicleUsage",
+      "schema:isPartOf": {
+        "@id": "http://auto.schema.org"
+      }
+    },
+    {
+      "@id": "schema:CarUsageType",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      },
+      "rdfs:comment": "A value indicating a special usage of a car, e.g. commercial rental, driving school, or as a taxi.",
+      "rdfs:label": "CarUsageType",
+      "rdfs:subClassOf": {
+        "@id": "schema:QualitativeValue"
+      },
+      "schema:isPartOf": {
+        "@id": "http://auto.schema.org"
+      }
+    }
+  ]
+}

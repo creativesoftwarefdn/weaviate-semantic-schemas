@@ -19,18 +19,18 @@
       "rdfs:label": "composer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MusicComposition"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:MusicComposition"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -44,10 +44,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:supersededBy": {
@@ -88,10 +88,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -108,13 +108,13 @@
           "@id": "schema:DatedMoneySpecification"
         },
         {
-          "@id": "schema:Role"
+          "@id": "schema:CreativeWorkSeries"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWorkSeries"
+          "@id": "schema:Role"
         }
       ],
       "schema:rangeIncludes": [
@@ -148,24 +148,24 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ]
     },
@@ -203,13 +203,13 @@
       "rdfs:label": "about",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -274,25 +274,25 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Product"
@@ -317,27 +317,30 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
     {
-      "@id": "schema:competitor",
+      "@id": "schema:mainEntityOfPage",
       "@type": "rdf:Property",
-      "rdfs:comment": "A competitor in a sports event.",
-      "rdfs:label": "competitor",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
       "schema:domainIncludes": {
-        "@id": "schema:SportsEvent"
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:SportsTeam"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -360,27 +363,27 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:MedicalStudy"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -397,19 +400,19 @@
       }
     },
     {
-      "@id": "schema:performer",
+      "@id": "schema:competitor",
       "@type": "rdf:Property",
-      "rdfs:comment": "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.",
-      "rdfs:label": "performer",
+      "rdfs:comment": "A competitor in a sports event.",
+      "rdfs:label": "competitor",
       "schema:domainIncludes": {
-        "@id": "schema:Event"
+        "@id": "schema:SportsEvent"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:SportsTeam"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -467,13 +470,42 @@
       }
     },
     {
+      "@id": "schema:performer",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.",
+      "rdfs:label": "performer",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
+    },
+    {
       "@id": "schema:aggregateRating",
       "@type": "rdf:Property",
       "rdfs:comment": "The overall rating, based on a collection of reviews or ratings, of the item.",
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
@@ -482,19 +514,7 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": {
@@ -514,13 +534,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -601,13 +621,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:PostalAddress"
         }
       ]
     },
@@ -618,37 +638,37 @@
       "rdfs:label": "actor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RadioSeries"
-        },
-        {
-          "@id": "schema:Episode"
-        },
-        {
-          "@id": "schema:VideoObject"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:TVSeries"
-        },
-        {
-          "@id": "schema:VideoGameSeries"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:Movie"
         },
         {
           "@id": "schema:VideoGame"
         },
         {
-          "@id": "schema:MovieSeries"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:Episode"
         },
         {
           "@id": "schema:Clip"
+        },
+        {
+          "@id": "schema:RadioSeries"
+        },
+        {
+          "@id": "schema:MovieSeries"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:VideoObject"
         }
       ],
       "schema:rangeIncludes": {
@@ -688,55 +708,23 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
     {
-      "@id": "schema:director",
+      "@id": "schema:sameAs",
       "@type": "rdf:Property",
-      "rdfs:comment": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
-      "rdfs:label": "director",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Clip"
-        },
-        {
-          "@id": "schema:VideoGameSeries"
-        },
-        {
-          "@id": "schema:Episode"
-        },
-        {
-          "@id": "schema:MovieSeries"
-        },
-        {
-          "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:VideoObject"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:RadioSeries"
-        },
-        {
-          "@id": "schema:TVSeries"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:VideoGame"
-        }
-      ],
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:Person"
+        "@id": "schema:URL"
       }
     },
     {
@@ -746,19 +734,19 @@
       "rdfs:label": "startDate",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Role"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:Role"
         },
         {
           "@id": "schema:DatedMoneySpecification"
         },
         {
           "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
@@ -797,49 +785,20 @@
       "rdfs:label": "translator",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
-    },
-    {
-      "@id": "schema:duration",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>.",
-      "rdfs:label": "duration",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Audiobook"
-        },
-        {
-          "@id": "schema:MusicRecording"
-        },
-        {
-          "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:MediaObject"
-        },
-        {
-          "@id": "schema:MusicRelease"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Duration"
-      }
     },
     {
       "@id": "schema:remainingAttendeeCapacity",
@@ -901,24 +860,33 @@
       }
     },
     {
-      "@id": "schema:mainEntityOfPage",
+      "@id": "schema:duration",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>.",
+      "rdfs:label": "duration",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Audiobook"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:MusicRecording"
+        },
+        {
+          "@id": "schema:MusicRelease"
+        },
+        {
+          "@id": "schema:MediaObject"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Movie"
         }
-      ]
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Duration"
+      }
     },
     {
       "@id": "schema:awayTeam",
@@ -933,10 +901,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:SportsTeam"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:SportsTeam"
         }
       ]
     },
@@ -956,13 +924,13 @@
           "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -972,17 +940,20 @@
     {
       "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "A flag to signal that the publication is accessible for free.",
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
         {
           "@id": "schema:PublicationEvent"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -996,19 +967,19 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:AggregateOffer"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
         },
         {
           "@id": "schema:Product"
@@ -1019,15 +990,47 @@
       }
     },
     {
-      "@id": "schema:sameAs",
+      "@id": "schema:director",
       "@type": "rdf:Property",
-      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-      "rdfs:label": "sameAs",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "A director of e.g. tv, radio, movie, video gaming etc. content, or of an event. Directors can be associated with individual items or with a series, episode, clip.",
+      "rdfs:label": "director",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:VideoObject"
+        },
+        {
+          "@id": "schema:Episode"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:RadioSeries"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:MovieSeries"
+        },
+        {
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:VideoGame"
+        },
+        {
+          "@id": "schema:TVSeries"
+        },
+        {
+          "@id": "schema:Clip"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Person"
       }
     },
     {
@@ -1037,16 +1040,16 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:WriteAction"
         },
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:LinkRole"
@@ -1054,10 +1057,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     }

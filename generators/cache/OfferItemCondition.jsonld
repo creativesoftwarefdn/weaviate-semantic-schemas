@@ -25,6 +25,21 @@
       }
     },
     {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
       "@id": "schema:supersededBy",
       "@type": "rdf:Property",
       "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
@@ -34,10 +49,10 @@
           "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -48,10 +63,10 @@
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         }
       ]
     },
@@ -80,33 +95,35 @@
       }
     },
     {
-      "@id": "schema:UsedCondition",
-      "@type": "schema:OfferItemCondition"
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:DamagedCondition",
       "@type": "schema:OfferItemCondition"
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "@id": "schema:UsedCondition",
+      "@type": "schema:OfferItemCondition"
     },
     {
       "@id": "schema:itemCondition",
@@ -177,35 +194,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
     {
-      "@id": "schema:identifier",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:identifier"
-      },
-      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
-      "rdfs:label": "identifier",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:RefurbishedCondition",
@@ -224,13 +224,13 @@
       }
     },
     {
-      "@id": "schema:disambiguatingDescription",
+      "@id": "schema:description",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
       },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },

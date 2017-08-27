@@ -217,22 +217,33 @@
       }
     },
     {
-      "@id": "schema:warning",
+      "@id": "schema:legalStatus",
       "@type": "rdf:Property",
-      "rdfs:comment": "Any FDA or other warnings about the drug (text or URL).",
-      "rdfs:label": "warning",
-      "schema:domainIncludes": {
-        "@id": "schema:Drug"
-      },
+      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "rdfs:label": "legalStatus",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:Drug"
+        },
+        {
+          "@id": "schema:MedicalEntity"
+        }
+      ],
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:MedicalEnumeration"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -268,10 +279,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -294,10 +305,10 @@
       "rdfs:label": "proprietaryName",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -463,13 +474,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -552,10 +563,10 @@
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:Substance"
+          "@id": "schema:DrugStrength"
         },
         {
-          "@id": "schema:DrugStrength"
+          "@id": "schema:Substance"
         },
         {
           "@id": "schema:Drug"
@@ -721,33 +732,22 @@
       }
     },
     {
-      "@id": "schema:legalStatus",
+      "@id": "schema:warning",
       "@type": "rdf:Property",
-      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
-      "rdfs:label": "legalStatus",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:MedicalEntity"
-        },
-        {
-          "@id": "schema:Drug"
-        }
-      ],
+      "rdfs:comment": "Any FDA or other warnings about the drug (text or URL).",
+      "rdfs:label": "warning",
+      "schema:domainIncludes": {
+        "@id": "schema:Drug"
+      },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -800,16 +800,16 @@
       "rdfs:label": "maximumIntake",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DrugStrength"
+          "@id": "schema:Substance"
         },
         {
           "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Substance"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:DrugStrength"
         }
       ],
       "schema:isPartOf": {
@@ -885,10 +885,10 @@
       "rdfs:label": "mechanismOfAction",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {

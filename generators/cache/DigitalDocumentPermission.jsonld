@@ -10,16 +10,27 @@
   },
   "@graph": [
     {
-      "@id": "schema:permissionType",
+      "@id": "schema:grantee",
       "@type": "rdf:Property",
-      "rdfs:comment": "The type of permission granted the person, organization, or audience.",
-      "rdfs:label": "permissionType",
+      "rdfs:comment": "The person, organization, contact point, or audience that has been granted this permission.",
+      "rdfs:label": "grantee",
       "schema:domainIncludes": {
         "@id": "schema:DigitalDocumentPermission"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:DigitalDocumentPermissionType"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Audience"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        }
+      ]
     },
     {
       "@id": "schema:additionalType",
@@ -64,27 +75,16 @@
       }
     },
     {
-      "@id": "schema:grantee",
+      "@id": "schema:permissionType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The person, organization, contact point, or audience that has been granted this permission.",
-      "rdfs:label": "grantee",
+      "rdfs:comment": "The type of permission granted the person, organization, or audience.",
+      "rdfs:label": "permissionType",
       "schema:domainIncludes": {
         "@id": "schema:DigitalDocumentPermission"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Audience"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:DigitalDocumentPermissionType"
+      }
     },
     {
       "@id": "schema:identifier",
@@ -99,13 +99,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -149,10 +149,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

@@ -25,10 +25,10 @@
       "rdfs:label": "isSimilarTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -80,10 +80,10 @@
       "rdfs:label": "manufacturer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:DietarySupplement"
         },
         {
           "@id": "schema:Drug"
@@ -106,10 +106,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -142,35 +142,6 @@
       ]
     },
     {
-      "@id": "schema:offers",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
-      "rdfs:label": "offers",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:MenuItem"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:AggregateOffer"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Offer"
-      }
-    },
-    {
       "@id": "schema:gtin8",
       "@type": "rdf:Property",
       "dct:source": {
@@ -183,10 +154,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
@@ -194,26 +165,6 @@
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:purchaseDate",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
-      },
-      "rdfs:comment": "The date the item e.g. vehicle was purchased by the current owner.",
-      "rdfs:label": "purchaseDate",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Vehicle"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Date"
       }
     },
     {
@@ -282,16 +233,7 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
@@ -303,12 +245,38 @@
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Review"
       }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
     },
     {
       "@id": "schema:depth",
@@ -348,13 +316,13 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -374,13 +342,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -420,16 +388,16 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Product"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
@@ -454,9 +422,23 @@
       }
     },
     {
-      "@id": "schema:orderedItem",
+      "@id": "schema:purchaseDate",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      },
+      "rdfs:comment": "The date the item e.g. vehicle was purchased by the current owner.",
+      "rdfs:label": "purchaseDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Vehicle"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Product"
+        "@id": "schema:Date"
       }
     },
     {
@@ -472,13 +454,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -516,16 +498,16 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -539,12 +521,6 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
@@ -552,6 +528,12 @@
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -568,28 +550,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -609,13 +591,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -677,19 +659,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -721,10 +703,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -738,13 +720,13 @@
       "rdfs:label": "mpn",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -758,10 +740,10 @@
       "rdfs:label": "width",
       "schema:domainIncludes": [
         {
-          "@id": "schema:VisualArtwork"
+          "@id": "schema:MediaObject"
         },
         {
-          "@id": "schema:MediaObject"
+          "@id": "schema:VisualArtwork"
         },
         {
           "@id": "schema:Product"
@@ -777,32 +759,10 @@
       ]
     },
     {
-      "@id": "schema:height",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The height of the item.",
-      "rdfs:label": "height",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:VisualArtwork"
-        },
-        {
-          "@id": "schema:MediaObject"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Distance"
-        },
-        {
-          "@id": "schema:QuantitativeValue"
-        }
-      ]
+      "@id": "schema:orderedItem",
+      "schema:rangeIncludes": {
+        "@id": "schema:Product"
+      }
     },
     {
       "@id": "schema:weight",
@@ -814,15 +774,43 @@
       "rdfs:label": "weight",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
+    },
+    {
+      "@id": "schema:height",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The height of the item.",
+      "rdfs:label": "height",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:MediaObject"
+        },
+        {
+          "@id": "schema:VisualArtwork"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:Distance"
+        }
+      ]
     },
     {
       "@id": "schema:productID",
@@ -869,10 +857,10 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -883,25 +871,25 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Class"
         },
         {
           "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Property"
         }
       ],
       "schema:rangeIncludes": [
@@ -929,10 +917,10 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:PlayAction"
         },
         {
           "@id": "schema:Event"
@@ -944,7 +932,7 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:PlayAction"
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -973,16 +961,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -1005,19 +993,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -1042,21 +1030,33 @@
       }
     },
     {
-      "@id": "schema:image",
+      "@id": "schema:offers",
       "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "rdfs:label": "offers",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:MenuItem"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:AggregateOffer"
         }
-      ]
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
     },
     {
       "@id": "schema:sameAs",
@@ -1086,10 +1086,10 @@
       "rdfs:label": "productionDate",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Vehicle"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Vehicle"
         }
       ],
       "schema:rangeIncludes": {

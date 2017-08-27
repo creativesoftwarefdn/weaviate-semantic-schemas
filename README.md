@@ -25,7 +25,7 @@ Template:
 
 ```
 {
-    "context": string           // example: http://schema.org
+    "@context": string           // example: http://schema.org
     "type": ["thing", "action"] // is it to describe an action or a thing?
     "maintainer" email          // email of maintainer
     "name": string              // name of schema
@@ -41,7 +41,7 @@ Golang Struct:
 
 ```
 type Schema struct {
-	Context    string   `json:"context"`
+	Context    string   `json:"@context"`
 	Type       []string `json:"type"`
 	Maintainer string   `json:"maintainer"`
 	Name       string   `json:"name"`
@@ -57,4 +57,4 @@ _Note: You can use the existing schemas as templates or examples_
 
 ## Generators
 
-Generators are use to create custom schemas. They should be run from the ./generators dir of the repo. Like: `$ cd generators && node create_schema.org.js`
+Generators are use to create custom schemas. They should be run from the ./generators dir of the repo. Like: `$ cd generators && python generate_schema.org.py`

@@ -10,50 +10,28 @@
   },
   "@graph": [
     {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
+      "@id": "schema:DrugClass",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.",
+      "rdfs:label": "DrugClass",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEnumeration"
       },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Text"
       }
-    },
-    {
-      "@id": "schema:supersededBy",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
-      "rdfs:label": "supersededBy",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Property"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://meta.schema.org/"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Property"
-        }
-      ]
     },
     {
       "@id": "schema:drugClass",
@@ -98,10 +76,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
@@ -165,15 +143,18 @@
       ]
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
       }
     },
     {
@@ -245,7 +226,7 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DrugClass"
+          "@id": "schema:Patient"
         },
         {
           "@id": "schema:TherapeuticProcedure"
@@ -254,7 +235,7 @@
           "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:Patient"
+          "@id": "schema:DrugClass"
         }
       ],
       "schema:isPartOf": {
@@ -274,16 +255,35 @@
       }
     },
     {
-      "@id": "schema:DrugClass",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.",
-      "rdfs:label": "DrugClass",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEnumeration"
-      },
+      "@id": "schema:supersededBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "rdfs:label": "supersededBy",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Property"
+        }
+      ],
       "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
+        "@id": "http://meta.schema.org/"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Class"
+        }
+      ]
     }
   ]
 }

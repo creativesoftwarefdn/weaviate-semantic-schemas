@@ -87,13 +87,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalEnumeration"
+        },
+        {
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -128,18 +128,18 @@
       }
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:affectedBy",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "Drugs that affect the test's results.",
+      "rdfs:label": "affectedBy",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:MedicalTest"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Drug"
       }
     },
     {
@@ -202,21 +202,6 @@
       }
     },
     {
-      "@id": "schema:affectedBy",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Drugs that affect the test's results.",
-      "rdfs:label": "affectedBy",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalTest"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Drug"
-      }
-    },
-    {
       "@id": "schema:usesDevice",
       "@type": "rdf:Property",
       "rdfs:comment": "Device used to perform the test.",
@@ -274,10 +259,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -294,6 +279,21 @@
       }
     },
     {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
       "@id": "schema:image",
       "@type": "rdf:Property",
       "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
@@ -303,10 +303,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },

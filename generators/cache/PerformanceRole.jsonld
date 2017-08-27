@@ -10,15 +10,18 @@
   },
   "@graph": [
     {
-      "@id": "schema:name",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
       }
     },
     {
@@ -61,21 +64,18 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
     {
-      "@id": "schema:description",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
@@ -93,10 +93,10 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Role"
+          "@id": "schema:CreativeWorkSeason"
         },
         {
-          "@id": "schema:CreativeWorkSeason"
+          "@id": "schema:Role"
         },
         {
           "@id": "schema:CreativeWorkSeries"
@@ -107,20 +107,26 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         }
       ]
     },
     {
-      "@id": "schema:PerformanceRole",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.",
-      "rdfs:label": "PerformanceRole",
-      "rdfs:subClassOf": {
-        "@id": "schema:Role"
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -148,26 +154,43 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:roleName",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
+      "rdfs:comment": "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
+      "rdfs:label": "roleName",
+      "schema:domainIncludes": {
+        "@id": "schema:Role"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
       "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
+        "@id": "schema:description"
       },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Text"
       }
     },
     {
@@ -224,10 +247,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ],
       "schema:supersededBy": {
@@ -247,18 +270,12 @@
       }
     },
     {
-      "@id": "schema:disambiguatingDescription",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:PerformanceRole",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A PerformanceRole is a Role that some entity places with regard to a theatrical performance, e.g. in a Movie, TVSeries etc.",
+      "rdfs:label": "PerformanceRole",
+      "rdfs:subClassOf": {
+        "@id": "schema:Role"
       }
     },
     {
@@ -271,31 +288,11 @@
       }
     },
     {
-      "@id": "schema:roleName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
-      "rdfs:label": "roleName",
-      "schema:domainIncludes": {
-        "@id": "schema:Role"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
       "@id": "schema:startDate",
       "@type": "rdf:Property",
       "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
       "rdfs:label": "startDate",
       "schema:domainIncludes": [
-        {
-          "@id": "schema:Event"
-        },
         {
           "@id": "schema:Role"
         },
@@ -306,15 +303,18 @@
           "@id": "schema:DatedMoneySpecification"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:CreativeWorkSeason"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         },
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         }
       ]
     }

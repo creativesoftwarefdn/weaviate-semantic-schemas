@@ -53,13 +53,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -70,10 +70,10 @@
           "@id": "schema:Property"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Class"
         }
       ]
     },
@@ -90,8 +90,16 @@
       }
     },
     {
-      "@id": "schema:NoninvasiveProcedure",
-      "@type": "schema:MedicalProcedureType"
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
     },
     {
       "@id": "schema:MedicalProcedureType",
@@ -129,8 +137,24 @@
       ]
     },
     {
-      "@id": "schema:SurgicalProcedure",
-      "@type": "schema:MedicalProcedureType"
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:description",
@@ -157,36 +181,12 @@
       }
     },
     {
-      "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
-      }
+      "@id": "schema:NoninvasiveProcedure",
+      "@type": "schema:MedicalProcedureType"
     },
     {
-      "@id": "schema:mainEntityOfPage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "@id": "schema:SurgicalProcedure",
+      "@type": "schema:MedicalProcedureType"
     },
     {
       "@id": "schema:name",

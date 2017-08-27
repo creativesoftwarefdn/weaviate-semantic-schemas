@@ -60,25 +60,31 @@
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:AdministrativeArea"
+        },
         {
           "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:AdministrativeArea"
         }
       ],
       "schema:supersededBy": {
         "@id": "schema:areaServed"
+      }
+    },
+    {
+      "@id": "schema:toRecipient",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
       }
     },
     {
@@ -138,7 +144,7 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
@@ -147,7 +153,7 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -169,25 +175,28 @@
     {
       "@id": "schema:availableLanguage",
       "@type": "rdf:Property",
-      "rdfs:comment": "A language someone may use with the item. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/inLanguage\">inLanguage</a>",
+      "rdfs:comment": "A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/inLanguage\">inLanguage</a>",
       "rdfs:label": "availableLanguage",
       "schema:domainIncludes": [
+        {
+          "@id": "schema:TouristAttraction"
+        },
+        {
+          "@id": "schema:ServiceChannel"
+        },
         {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:LodgingBusiness"
-        },
-        {
-          "@id": "schema:ServiceChannel"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -210,36 +219,36 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AdministrativeArea"
-        },
-        {
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -250,13 +259,13 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:LocationFeatureSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -326,6 +335,18 @@
       ]
     },
     {
+      "@id": "schema:recipient",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
+      "@id": "schema:ccRecipient",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
       "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -362,10 +383,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -382,6 +403,12 @@
       "rdfs:label": "ContactPoint",
       "rdfs:subClassOf": {
         "@id": "schema:StructuredValue"
+      }
+    },
+    {
+      "@id": "schema:bccRecipient",
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
       }
     },
     {
@@ -409,13 +436,13 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
@@ -444,10 +471,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

@@ -16,10 +16,10 @@
       "rdfs:label": "possibleTreatment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalSignOrSymptom"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalSignOrSymptom"
         }
       ],
       "schema:isPartOf": {
@@ -51,10 +51,10 @@
           "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -139,10 +139,10 @@
       "rdfs:label": "associatedAnatomy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -153,27 +153,12 @@
           "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:SuperficialAnatomy"
         }
       ]
-    },
-    {
-      "@id": "schema:typicalTest",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A medical test typically performed given this condition.",
-      "rdfs:label": "typicalTest",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalCondition"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalTest"
-      }
     },
     {
       "@id": "schema:stage",
@@ -188,6 +173,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalConditionStage"
+      }
+    },
+    {
+      "@id": "schema:typicalTest",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical test typically performed given this condition.",
+      "rdfs:label": "typicalTest",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalCondition"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalTest"
       }
     },
     {
@@ -241,10 +241,10 @@
           "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -418,10 +418,10 @@
       "rdfs:label": "epidemiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:isPartOf": {
@@ -444,10 +444,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
@@ -518,16 +518,16 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Patient"
-        },
-        {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:DrugClass"
         },
         {
           "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:DrugClass"
+          "@id": "schema:TherapeuticProcedure"
+        },
+        {
+          "@id": "schema:Patient"
         }
       ],
       "schema:isPartOf": {

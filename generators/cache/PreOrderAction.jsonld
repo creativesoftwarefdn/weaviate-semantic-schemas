@@ -34,10 +34,20 @@
       }
     },
     {
-      "@id": "schema:Thing",
+      "@id": "schema:PreOrderAction",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1125"
+      },
+      "rdfs:comment": "An agent orders a (not yet released) object/product/service to be delivered/sent.",
+      "rdfs:label": "PreOrderAction",
+      "rdfs:subClassOf": {
+        "@id": "schema:TradeAction"
+      },
+      "schema:category": "issue-1125",
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      }
     },
     {
       "@id": "schema:participant",
@@ -49,10 +59,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -126,10 +136,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -155,10 +165,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -178,13 +188,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -213,10 +223,10 @@
       "rdfs:label": "priceSpecification",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TradeAction"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:TradeAction"
         },
         {
           "@id": "schema:Offer"
@@ -227,16 +237,32 @@
       }
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        }
+      ]
     },
     {
       "@id": "schema:image",
@@ -256,20 +282,10 @@
       ]
     },
     {
-      "@id": "schema:PreOrderAction",
+      "@id": "schema:Thing",
       "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1125"
-      },
-      "rdfs:comment": "An agent orders a (not yet released) object/product/service to be delivered/sent.",
-      "rdfs:label": "PreOrderAction",
-      "rdfs:subClassOf": {
-        "@id": "schema:TradeAction"
-      },
-      "schema:category": "issue-1125",
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      }
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:target",
@@ -314,21 +330,21 @@
       "rdfs:label": "price",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PriceSpecification"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:TradeAction"
-        },
-        {
-          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -357,40 +373,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PostalAddress"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:alternateName",

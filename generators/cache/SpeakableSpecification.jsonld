@@ -25,38 +25,25 @@
         "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:XPathType"
       }
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Text"
       }
     },
     {
-      "@id": "schema:SpeakableSpecification",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1389"
-      },
-      "rdfs:comment": "A SpeakableSpecification indicates (typically via <a class=\"localLink\" href=\"http://schema.org/xpath\">xpath</a> or <a class=\"localLink\" href=\"http://schema.org/cssSelector\">cssSelector</a>) sections of a document that are highlighted as particularly <a class=\"localLink\" href=\"http://schema.org/speakable\">speakable</a>. Instances of this type are expected to be used primarily as values of the <a class=\"localLink\" href=\"http://schema.org/speakable\">speakable</a> property.",
-      "rdfs:label": "SpeakableSpecification",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      },
-      "schema:category": "issue-1389",
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "@id": "schema:speakable",
+      "schema:rangeIncludes": {
+        "@id": "schema:SpeakableSpecification"
       }
     },
     {
@@ -84,13 +71,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -110,7 +97,7 @@
         "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:CssSelectorType"
       }
     },
     {
@@ -126,6 +113,22 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:SpeakableSpecification",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1389"
+      },
+      "rdfs:comment": "A SpeakableSpecification indicates (typically via <a class=\"localLink\" href=\"http://schema.org/xpath\">xpath</a> or <a class=\"localLink\" href=\"http://schema.org/cssSelector\">cssSelector</a>) sections of a document that are highlighted as particularly <a class=\"localLink\" href=\"http://schema.org/speakable\">speakable</a>. Instances of this type are expected to be used primarily as values of the <a class=\"localLink\" href=\"http://schema.org/speakable\">speakable</a> property.",
+      "rdfs:label": "SpeakableSpecification",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      },
+      "schema:category": "issue-1389",
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       }
     },
     {
@@ -161,15 +164,18 @@
       ]
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
       }
     },
     {
@@ -217,12 +223,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "schema:speakable",
-      "schema:rangeIncludes": {
-        "@id": "schema:SpeakableSpecification"
       }
     },
     {

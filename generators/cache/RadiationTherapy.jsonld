@@ -40,10 +40,10 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalCondition"
         },
         {
           "@id": "schema:MedicalStudy"
@@ -54,10 +54,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalStudyStatus"
         },
         {
-          "@id": "schema:MedicalStudyStatus"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:EventStatusType"
@@ -113,10 +113,10 @@
       "rdfs:label": "bodyLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:AnatomicalStructure"
         }
       ],
       "schema:isPartOf": {
@@ -148,13 +148,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalEntity"
+        },
+        {
           "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -162,13 +162,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:MedicalEnumeration"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:DrugLegalStatus"
-        },
-        {
-          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -236,10 +236,10 @@
       "rdfs:label": "adverseOutcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:MedicalDevice"
         },
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:TherapeuticProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -303,10 +303,10 @@
       "rdfs:label": "outcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -349,13 +349,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -366,13 +366,13 @@
       "rdfs:label": "indication",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:TherapeuticProcedure"
         },
         {
           "@id": "schema:MedicalDevice"
         },
         {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -404,10 +404,10 @@
       "rdfs:label": "contraindication",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalTherapy"
+          "@id": "schema:MedicalDevice"
         },
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:MedicalTherapy"
         }
       ],
       "schema:isPartOf": {
@@ -432,10 +432,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -467,10 +467,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -487,16 +487,16 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Patient"
-        },
-        {
-          "@id": "schema:MedicalCondition"
-        },
-        {
           "@id": "schema:DrugClass"
         },
         {
+          "@id": "schema:Patient"
+        },
+        {
           "@id": "schema:TherapeuticProcedure"
+        },
+        {
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -606,10 +606,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -620,10 +620,10 @@
       "rdfs:label": "seriousAdverseOutcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:MedicalTherapy"
         },
         {
-          "@id": "schema:MedicalTherapy"
+          "@id": "schema:MedicalDevice"
         }
       ],
       "schema:isPartOf": {

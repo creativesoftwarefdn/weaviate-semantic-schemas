@@ -10,26 +10,27 @@
   },
   "@graph": [
     {
-      "@id": "schema:version",
+      "@id": "schema:expires",
       "@type": "rdf:Property",
-      "rdfs:comment": "The version of the CreativeWork embodied by a specified resource.",
-      "rdfs:label": "version",
+      "rdfs:comment": "Date the content expires and is no longer useful or available. For example a <a class=\"localLink\" href=\"http://schema.org/VideoObject\">VideoObject</a> or <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a> whose availability or relevance is time-limited, or a <a class=\"localLink\" href=\"http://schema.org/ClaimReview\">ClaimReview</a> fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.",
+      "rdfs:label": "expires",
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Number"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
     },
     {
-      "@id": "schema:Conversation",
-      "rdfs:subClassOf": {
+      "@id": "schema:text",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The textual content of this CreativeWork.",
+      "rdfs:label": "text",
+      "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -60,6 +61,12 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:Dataset",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -127,10 +134,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -156,7 +163,13 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Brand"
@@ -165,13 +178,7 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Place"
@@ -199,33 +206,21 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
     {
-      "@id": "schema:text",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The textual content of this CreativeWork.",
-      "rdfs:label": "text",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:Clip",
+      "@id": "schema:Conversation",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
     },
     {
-      "@id": "schema:SoftwareApplication",
+      "@id": "schema:Clip",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
@@ -282,10 +277,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:URL"
@@ -350,6 +345,30 @@
       }
     },
     {
+      "@id": "schema:actionableFeedbackPolicy",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:spatialCoverage",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:spatial"
+      },
+      "rdfs:comment": "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of\n      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates\n      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.",
+      "rdfs:label": "spatialCoverage",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:contentLocation"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Place"
+      }
+    },
+    {
       "@id": "schema:Code",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
@@ -365,10 +384,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -406,10 +425,10 @@
       "rdfs:label": "comment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:RsvpAction"
         },
         {
-          "@id": "schema:RsvpAction"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -431,17 +450,20 @@
     {
       "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "A flag to signal that the publication is accessible for free.",
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
-        {
-          "@id": "schema:PublicationEvent"
-        },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:PublicationEvent"
         }
       ],
       "schema:rangeIncludes": {
@@ -467,10 +489,10 @@
       "rdfs:label": "genre",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BroadcastChannel"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:BroadcastChannel"
         },
         {
           "@id": "schema:MusicGroup"
@@ -547,24 +569,24 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -602,28 +624,28 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:Invoice"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Flight"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:BusTrip"
         },
         {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:Reservation"
+        },
+        {
           "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:Flight"
         }
       ],
       "schema:rangeIncludes": [
@@ -636,10 +658,21 @@
       ]
     },
     {
-      "@id": "schema:Quotation",
-      "rdfs:subClassOf": {
+      "@id": "schema:version",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The version of the CreativeWork embodied by a specified resource.",
+      "rdfs:label": "version",
+      "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
-      }
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:fileFormat",
@@ -679,6 +712,12 @@
           "@id": "schema:Organization"
         }
       ]
+    },
+    {
+      "@id": "schema:steps",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
     },
     {
       "@id": "schema:accessibilityHazard",
@@ -767,13 +806,13 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -790,19 +829,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -842,21 +881,10 @@
       ]
     },
     {
-      "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "@id": "schema:ethicsPolicy",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
     },
     {
       "@id": "schema:contentLocation",
@@ -871,7 +899,25 @@
       }
     },
     {
-      "@id": "schema:lyrics",
+      "@id": "schema:diversityPolicy",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:learningResourceType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
+      "rdfs:label": "learningResourceType",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:unnamedSourcesPolicy",
       "schema:rangeIncludes": {
         "@id": "schema:CreativeWork"
       }
@@ -883,10 +929,10 @@
       "rdfs:label": "typicalAgeRange",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -918,10 +964,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -932,16 +978,16 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:PlayAction"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Service"
@@ -965,6 +1011,23 @@
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
     },
     {
       "@id": "schema:sameAs",
@@ -1035,6 +1098,9 @@
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates the primary entity described in some page or other CreativeWork.",
       "rdfs:label": "mainEntity",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:about"
+      },
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
@@ -1058,18 +1124,18 @@
       "rdfs:label": "dateCreated",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         }
       ]
     },
@@ -1087,6 +1153,12 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:recipeInstructions",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1140,10 +1212,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1219,13 +1291,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1254,19 +1326,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1280,7 +1352,19 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:HowTo",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
       "@id": "schema:encodesCreativeWork",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:verificationFactCheckingPolicy",
       "schema:rangeIncludes": {
         "@id": "schema:CreativeWork"
       }
@@ -1325,18 +1409,6 @@
           "@id": "schema:CreativeWork"
         }
       ]
-    },
-    {
-      "@id": "schema:keywords",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
-      "rdfs:label": "keywords",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
     },
     {
       "@id": "schema:MusicPlaylist",
@@ -1395,13 +1467,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ],
       "schema:supersededBy": {
@@ -1544,13 +1616,13 @@
       "rdfs:label": "about",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommunicateAction"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CommunicateAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -1558,18 +1630,9 @@
       }
     },
     {
-      "@id": "schema:disambiguatingDescription",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "@id": "schema:masthead",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1588,6 +1651,12 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Duration"
+      }
+    },
+    {
+      "@id": "schema:missionCoveragePrioritiesPolicy",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1615,9 +1684,15 @@
       }
     },
     {
-      "@id": "schema:Dataset",
-      "rdfs:subClassOf": {
+      "@id": "schema:keywords",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "rdfs:label": "keywords",
+      "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -1630,7 +1705,7 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:Organization"
@@ -1639,7 +1714,7 @@
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1664,7 +1739,7 @@
       }
     },
     {
-      "@id": "schema:Recipe",
+      "@id": "schema:SoftwareApplication",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
@@ -1700,21 +1775,24 @@
       }
     },
     {
-      "@id": "schema:spatialCoverage",
+      "@id": "schema:Legislation",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:spatial"
-      },
-      "rdfs:comment": "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of\n      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates\n      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.",
-      "rdfs:label": "spatialCoverage",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
       "rdfs:subPropertyOf": {
-        "@id": "schema:contentLocation"
+        "@id": "schema:description"
       },
       "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Place"
+        "@id": "schema:Text"
       }
     },
     {
@@ -1759,28 +1837,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -1812,31 +1890,25 @@
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         },
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         },
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         }
       ]
     },
     {
-      "@id": "schema:learningResourceType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
-      "rdfs:label": "learningResourceType",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
+      "@id": "schema:lyrics",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1846,32 +1918,9 @@
       }
     },
     {
-      "@id": "schema:offers",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
-      "rdfs:label": "offers",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:AggregateOffer"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:MenuItem"
-        }
-      ],
+      "@id": "schema:documentation",
       "schema:rangeIncludes": {
-        "@id": "schema:Offer"
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1896,6 +1945,12 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:correctionsPolicy",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1925,10 +1980,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1977,13 +2032,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -2009,22 +2064,58 @@
       }
     },
     {
-      "@id": "schema:documentation",
+      "@id": "schema:offers",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "rdfs:label": "offers",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MenuItem"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Offer"
       }
     },
     {
       "@id": "schema:publishingPrinciples",
       "@type": "rdf:Property",
-      "rdfs:comment": "Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.",
+      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
       "rdfs:label": "publishingPrinciples",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:copyrightYear",
@@ -2045,33 +2136,39 @@
       }
     },
     {
+      "@id": "schema:Quotation",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
       "@id": "schema:inLanguage",
       "@type": "rdf:Property",
       "rdfs:comment": "The language of the content or performance or used in an action. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/availableLanguage\">availableLanguage</a>.",
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
+          "@id": "schema:LinkRole"
+        },
+        {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:WriteAction"
         },
         {
-          "@id": "schema:LinkRole"
-        },
-        {
           "@id": "schema:CommunicateAction"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         }
       ]
     }

@@ -43,10 +43,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -74,22 +74,27 @@
       ]
     },
     {
-      "@id": "schema:vehicleSeatingCapacity",
+      "@id": "schema:isSimilarTo",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.</p>\n\n<p>Typical unit code(s): C62 for persons.",
-      "rdfs:label": "vehicleSeatingCapacity",
-      "schema:domainIncludes": {
-        "@id": "schema:Vehicle"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "A pointer to another, functionally similar product (or multiple products).",
+      "rdfs:label": "isSimilarTo",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
         }
       ]
     },
@@ -147,34 +152,49 @@
       }
     },
     {
-      "@id": "schema:vehicleEngine",
+      "@id": "schema:manufacturer",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
-      },
-      "rdfs:comment": "Information about the engine or engines of the vehicle.",
-      "rdfs:label": "vehicleEngine",
-      "schema:domainIncludes": {
-        "@id": "schema:Vehicle"
-      },
+      "rdfs:comment": "The manufacturer of the product.",
+      "rdfs:label": "manufacturer",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Drug"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:EngineSpecification"
+        "@id": "schema:Organization"
       }
     },
     {
-      "@id": "schema:productID",
+      "@id": "schema:isRelatedTo",
       "@type": "rdf:Property",
-      "rdfs:comment": "The product identifier, such as ISBN. For example: <code>meta itemprop=\"productID\" content=\"isbn:123-456-789\"</code>.",
-      "rdfs:label": "productID",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:identifier"
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "schema:domainIncludes": {
-        "@id": "schema:Product"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "rdfs:comment": "A pointer to another, somehow related product (or multiple products).",
+      "rdfs:label": "isRelatedTo",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ]
     },
     {
       "@id": "schema:driveWheelConfiguration",
@@ -195,21 +215,6 @@
           "@id": "schema:DriveWheelConfigurationValue"
         }
       ]
-    },
-    {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
     },
     {
       "@id": "schema:name",
@@ -254,10 +259,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -280,10 +285,10 @@
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -330,10 +335,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ProductModel"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:ProductModel"
         }
       ]
     },
@@ -386,29 +391,19 @@
       }
     },
     {
-      "@id": "schema:width",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The width of the item.",
-      "rdfs:label": "width",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:VisualArtwork"
-        },
-        {
-          "@id": "schema:MediaObject"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Distance"
-        },
-        {
-          "@id": "schema:QuantitativeValue"
-        }
-      ]
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
     },
     {
       "@id": "schema:review",
@@ -417,7 +412,13 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:CreativeWork"
@@ -426,16 +427,10 @@
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Place"
         },
         {
           "@id": "schema:Service"
@@ -497,18 +492,18 @@
       "rdfs:label": "depth",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:VisualArtwork"
         },
         {
-          "@id": "schema:VisualArtwork"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Distance"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Distance"
         }
       ]
     },
@@ -525,13 +520,13 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -551,13 +546,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -577,10 +572,10 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -597,10 +592,10 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -614,37 +609,40 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         }
       ]
     },
     {
-      "@id": "schema:potentialAction",
+      "@id": "schema:vehicleEngine",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      },
+      "rdfs:comment": "Information about the engine or engines of the vehicle.",
+      "rdfs:label": "vehicleEngine",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Vehicle"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Action"
+        "@id": "schema:EngineSpecification"
       }
     },
     {
@@ -660,26 +658,31 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         }
       ]
     },
     {
-      "@id": "schema:color",
+      "@id": "schema:purchaseDate",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
       },
-      "rdfs:comment": "The color of the product.",
-      "rdfs:label": "color",
-      "schema:domainIncludes": {
-        "@id": "schema:Product"
-      },
+      "rdfs:comment": "The date the item e.g. vehicle was purchased by the current owner.",
+      "rdfs:label": "purchaseDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Vehicle"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Date"
       }
     },
     {
@@ -706,12 +709,15 @@
       ]
     },
     {
-      "@id": "schema:Vehicle",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.",
-      "rdfs:label": "Vehicle",
-      "rdfs:subClassOf": {
-        "@id": "schema:Product"
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
       }
     },
     {
@@ -727,10 +733,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:QualitativeValue"
@@ -753,22 +759,24 @@
       }
     },
     {
-      "@id": "schema:modelDate",
+      "@id": "schema:numberOfAirbags",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
       },
-      "rdfs:comment": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
-      "rdfs:label": "modelDate",
+      "rdfs:comment": "The number or type of airbags in the vehicle.",
+      "rdfs:label": "numberOfAirbags",
       "schema:domainIncludes": {
         "@id": "schema:Vehicle"
       },
-      "schema:isPartOf": {
-        "@id": "http://auto.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Date"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Number"
+        }
+      ]
     },
     {
       "@id": "schema:fuelType",
@@ -780,21 +788,21 @@
       "rdfs:label": "fuelType",
       "schema:domainIncludes": [
         {
-          "@id": "schema:EngineSpecification"
+          "@id": "schema:Vehicle"
         },
         {
-          "@id": "schema:Vehicle"
+          "@id": "schema:EngineSpecification"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:QualitativeValue"
+        },
         {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:QualitativeValue"
         }
       ]
     },
@@ -811,13 +819,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -866,7 +874,7 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:QualitativeValue"
         },
         {
           "@id": "schema:Product"
@@ -875,12 +883,40 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:QuantitativeValue"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:PropertyValue"
       }
+    },
+    {
+      "@id": "schema:height",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The height of the item.",
+      "rdfs:label": "height",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MediaObject"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:VisualArtwork"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Distance"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ]
     },
     {
       "@id": "schema:reviews",
@@ -889,19 +925,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Offer"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -918,13 +954,10 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Service"
@@ -933,13 +966,16 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -970,62 +1006,34 @@
       ]
     },
     {
-      "@id": "schema:purchaseDate",
+      "@id": "schema:description",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
       },
-      "rdfs:comment": "The date the item e.g. vehicle was purchased by the current owner.",
-      "rdfs:label": "purchaseDate",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Vehicle"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Date"
-      }
-    },
-    {
-      "@id": "schema:vehicleInteriorColor",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
-      },
-      "rdfs:comment": "The color or color combination of the interior of the vehicle.",
-      "rdfs:label": "vehicleInteriorColor",
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
       "schema:domainIncludes": {
-        "@id": "schema:Vehicle"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
     },
     {
-      "@id": "schema:isSimilarTo",
+      "@id": "schema:image",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
-      "rdfs:comment": "A pointer to another, functionally similar product (or multiple products).",
-      "rdfs:label": "isSimilarTo",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1090,13 +1098,13 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1104,21 +1112,13 @@
       }
     },
     {
-      "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "@id": "schema:Vehicle",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A vehicle is a device that is designed or used to transport people or cargo over land, water, air, or through space.",
+      "rdfs:label": "Vehicle",
+      "rdfs:subClassOf": {
+        "@id": "schema:Product"
+      }
     },
     {
       "@id": "schema:Thing",
@@ -1139,10 +1139,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1156,13 +1156,13 @@
       "rdfs:label": "mpn",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -1170,15 +1170,60 @@
       }
     },
     {
-      "@id": "schema:description",
+      "@id": "schema:width",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
+      "rdfs:comment": "The width of the item.",
+      "rdfs:label": "width",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:VisualArtwork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:MediaObject"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Distance"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:vehicleSeatingCapacity",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
       },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
+      "rdfs:comment": "The number of passengers that can be seated in the vehicle, both in terms of the physical space available, and in terms of limitations set by law.</p>\n\n<p>Typical unit code(s): C62 for persons.",
+      "rdfs:label": "vehicleSeatingCapacity",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Vehicle"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:vehicleInteriorColor",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
+      },
+      "rdfs:comment": "The color or color combination of the interior of the vehicle.",
+      "rdfs:label": "vehicleInteriorColor",
+      "schema:domainIncludes": {
+        "@id": "schema:Vehicle"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
@@ -1203,43 +1248,18 @@
       }
     },
     {
-      "@id": "schema:manufacturer",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The manufacturer of the product.",
-      "rdfs:label": "manufacturer",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Drug"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Organization"
-      }
-    },
-    {
-      "@id": "schema:weight",
+      "@id": "schema:color",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "The weight of the product or person.",
-      "rdfs:label": "weight",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
+      "rdfs:comment": "The color of the product.",
+      "rdfs:label": "color",
+      "schema:domainIncludes": {
+        "@id": "schema:Product"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
+        "@id": "schema:Text"
       }
     },
     {
@@ -1263,77 +1283,57 @@
       }
     },
     {
-      "@id": "schema:height",
+      "@id": "schema:productID",
       "@type": "rdf:Property",
-      "rdfs:comment": "The height of the item.",
-      "rdfs:label": "height",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:MediaObject"
-        },
-        {
-          "@id": "schema:VisualArtwork"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Distance"
-        },
-        {
-          "@id": "schema:QuantitativeValue"
-        }
-      ]
+      "rdfs:comment": "The product identifier, such as ISBN. For example: <code>meta itemprop=\"productID\" content=\"isbn:123-456-789\"</code>.",
+      "rdfs:label": "productID",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Product"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
-      "@id": "schema:isRelatedTo",
+      "@id": "schema:weight",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "A pointer to another, somehow related product (or multiple products).",
-      "rdfs:label": "isRelatedTo",
+      "rdfs:comment": "The weight of the product or person.",
+      "rdfs:label": "weight",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Service"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
     },
     {
-      "@id": "schema:numberOfAirbags",
+      "@id": "schema:modelDate",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Automotive_Ontology_Working_Group"
       },
-      "rdfs:comment": "The number or type of airbags in the vehicle.",
-      "rdfs:label": "numberOfAirbags",
+      "rdfs:comment": "The release date of a vehicle model (often used to differentiate versions of the same make and model).",
+      "rdfs:label": "modelDate",
       "schema:domainIncludes": {
         "@id": "schema:Vehicle"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Number"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
+      "schema:isPartOf": {
+        "@id": "http://auto.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
     },
     {
       "@id": "schema:trailerWeight",
@@ -1402,13 +1402,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1454,10 +1454,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
@@ -1471,7 +1471,10 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Property"
@@ -1480,27 +1483,24 @@
           "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Invoice"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Thing"
         },
         {
           "@id": "schema:PhysicalActivityCategory"
         },
         {
-          "@id": "schema:Thing"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1526,10 +1526,7 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:PlayAction"
@@ -1538,10 +1535,13 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -1570,13 +1570,13 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
@@ -1602,16 +1602,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
@@ -1645,22 +1645,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:AggregateOffer"
-        },
-        {
-          "@id": "schema:MenuItem"
         },
         {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:MenuItem"
         }
       ],
       "schema:rangeIncludes": {

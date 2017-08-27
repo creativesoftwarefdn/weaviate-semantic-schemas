@@ -211,28 +211,34 @@
       }
     },
     {
-      "@id": "schema:sender",
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:Person"
+        "@id": "schema:Text"
       }
     },
     {
-      "@id": "schema:faxNumber",
+      "@id": "schema:vatID",
       "@type": "rdf:Property",
-      "rdfs:comment": "The fax number.",
-      "rdfs:label": "faxNumber",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The Value-added Tax ID of the organization or person.",
+      "rdfs:label": "vatID",
       "schema:domainIncludes": [
         {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -249,10 +255,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -287,13 +293,13 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:GeoCoordinates"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -371,16 +377,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -400,21 +406,21 @@
           "@id": "schema:VisualArtwork"
         },
         {
-          "@id": "schema:MediaObject"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:MediaObject"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Distance"
         },
         {
-          "@id": "schema:Distance"
+          "@id": "schema:QuantitativeValue"
         }
       ]
     },
@@ -545,10 +551,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:OwnershipInfo"
         },
         {
-          "@id": "schema:OwnershipInfo"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -683,13 +689,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -748,10 +754,10 @@
       "rdfs:label": "makesOffer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:inverseOf": {
@@ -840,10 +846,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -860,13 +866,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -913,10 +919,10 @@
       "rdfs:label": "seeks",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -951,10 +957,10 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Place"
@@ -1066,13 +1072,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1095,19 +1101,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -1177,10 +1183,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:EducationalOrganization"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:EducationalOrganization"
         }
       ]
     },
@@ -1203,10 +1209,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1246,13 +1252,13 @@
       "rdfs:label": "contactPoint",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:HealthInsurancePlan"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1269,16 +1275,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1327,6 +1333,12 @@
       }
     },
     {
+      "@id": "schema:toRecipient",
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
       "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
       "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
@@ -1372,10 +1384,10 @@
       "rdfs:label": "email",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
@@ -1418,27 +1430,27 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1475,6 +1487,12 @@
       }
     },
     {
+      "@id": "schema:legislationPassedBy",
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
       "@id": "schema:landlord",
       "schema:rangeIncludes": {
         "@id": "schema:Person"
@@ -1505,6 +1523,18 @@
       }
     },
     {
+      "@id": "schema:ccRecipient",
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
+      "@id": "schema:bccRecipient",
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
       "@id": "schema:globalLocationNumber",
       "@type": "rdf:Property",
       "dct:source": {
@@ -1517,10 +1547,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
@@ -1531,18 +1561,9 @@
       }
     },
     {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "@id": "schema:sender",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Person"
       }
     },
     {
@@ -1576,16 +1597,25 @@
       }
     },
     {
-      "@id": "schema:vatID",
+      "@id": "schema:legislationResponsible",
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
+      "@id": "schema:faxNumber",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The Value-added Tax ID of the organization or person.",
-      "rdfs:label": "vatID",
+      "rdfs:comment": "The fax number.",
+      "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
+          "@id": "schema:ContactPoint"
+        },
+        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Person"
@@ -1605,10 +1635,10 @@
       "rdfs:label": "weight",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -1644,6 +1674,31 @@
       "schema:rangeIncludes": {
         "@id": "schema:Person"
       }
+    },
+    {
+      "@id": "schema:publishingPrinciples",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
+      "rdfs:label": "publishingPrinciples",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     }
   ]
 }

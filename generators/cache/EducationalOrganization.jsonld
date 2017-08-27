@@ -16,19 +16,22 @@
       }
     },
     {
-      "@id": "schema:duns",
+      "@id": "schema:globalLocationNumber",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.",
-      "rdfs:label": "duns",
+      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "rdfs:label": "globalLocationNumber",
       "rdfs:subPropertyOf": {
         "@id": "schema:identifier"
       },
       "schema:domainIncludes": [
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
@@ -48,6 +51,29 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:duns",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.",
+      "rdfs:label": "duns",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -122,24 +148,24 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -161,6 +187,32 @@
       }
     },
     {
+      "@id": "schema:award",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An award won by or for this item.",
+      "rdfs:label": "award",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
       "@id": "schema:founders",
       "@type": "rdf:Property",
       "rdfs:comment": "A person who founded this organization.",
@@ -173,18 +225,6 @@
       },
       "schema:supersededBy": {
         "@id": "schema:founder"
-      }
-    },
-    {
-      "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -209,6 +249,26 @@
       }
     },
     {
+      "@id": "schema:contactPoint",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A contact point for a person or organization.",
+      "rdfs:label": "contactPoint",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:HealthInsurancePlan"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
       "@id": "schema:memberOf",
       "@type": "rdf:Property",
       "rdfs:comment": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
@@ -226,10 +286,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ProgramMembership"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ProgramMembership"
         }
       ]
     },
@@ -240,28 +300,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -286,10 +346,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -300,13 +360,13 @@
       "rdfs:label": "email",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -320,13 +380,13 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
@@ -392,19 +452,19 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:MedicalStudy"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -426,13 +486,13 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
@@ -466,10 +526,10 @@
       "rdfs:label": "hasPOS",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -483,10 +543,13 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:ContactPoint"
@@ -495,24 +558,58 @@
           "@id": "schema:DeliveryChargeSpecification"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:correctionsPolicy",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+        },
+        {
+          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
+        }
+      ],
+      "rdfs:comment": "For an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>), a statement describing (in news media, the newsroom’s) disclosure and correction policy for errors.",
+      "rdfs:label": "correctionsPolicy",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:publishingPrinciples"
+      },
+      "schema:category": "issue-1525",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:NewsMediaOrganization"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -523,13 +620,13 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Person"
         },
         {
           "@id": "schema:ContactPoint"
@@ -546,16 +643,10 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:JoinAction"
         },
         {
           "@id": "schema:LeaveAction"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:PlayAction"
         },
         {
           "@id": "schema:InformAction"
@@ -564,7 +655,13 @@
           "@id": "schema:InviteAction"
         },
         {
-          "@id": "schema:JoinAction"
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -581,15 +678,52 @@
       "rdfs:label": "naics",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:actionableFeedbackPolicy",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+        }
+      ],
+      "rdfs:comment": "For a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a> or other news-related <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a>, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
+      "rdfs:label": "actionableFeedbackPolicy",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:publishingPrinciples"
+      },
+      "schema:category": "issue-1525",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:NewsMediaOrganization"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:MiddleSchool",
@@ -651,16 +785,16 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
@@ -680,28 +814,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -750,10 +884,10 @@
       "rdfs:label": "alumni",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:EducationalOrganization"
         },
         {
-          "@id": "schema:EducationalOrganization"
+          "@id": "schema:Organization"
         }
       ],
       "schema:inverseOf": {
@@ -837,42 +971,16 @@
       }
     },
     {
-      "@id": "schema:globalLocationNumber",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "rdfs:label": "globalLocationNumber",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
       "@id": "schema:location",
       "@type": "rdf:Property",
       "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Action"
@@ -880,41 +988,44 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PostalAddress"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PostalAddress"
         }
       ]
     },
     {
-      "@id": "schema:award",
+      "@id": "schema:ethicsPolicy",
       "@type": "rdf:Property",
-      "rdfs:comment": "An award won by or for this item.",
-      "rdfs:label": "award",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+      },
+      "rdfs:comment": "Statement about ethics policy, e.g. of a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a> regarding journalistic and publishing practices, or of a <a class=\"localLink\" href=\"http://schema.org/Restaurant\">Restaurant</a>, a page describing food source policies. In the case of a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>, an ethicsPolicy is typically a statement describing the personal, organizational, and corporate standards of behavior expected by the organization.",
+      "rdfs:label": "ethicsPolicy",
+      "schema:category": "issue-1525",
       "schema:domainIncludes": [
         {
+          "@id": "schema:NewsMediaOrganization"
+        },
+        {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Person"
-        },
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:URL"
         }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      ]
     },
     {
       "@id": "schema:isicV4",
@@ -926,13 +1037,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -970,13 +1081,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -998,10 +1109,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:supersededBy": {
@@ -1009,16 +1120,50 @@
       }
     },
     {
-      "@id": "schema:ElementarySchool",
-      "rdfs:subClassOf": {
-        "@id": "schema:EducationalOrganization"
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
-      "@id": "schema:HighSchool",
-      "rdfs:subClassOf": {
-        "@id": "schema:EducationalOrganization"
-      }
+      "@id": "schema:diversityPolicy",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+        }
+      ],
+      "rdfs:comment": "Statement on diversity policy by an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> e.g. a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>. For a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.",
+      "rdfs:label": "diversityPolicy",
+      "schema:category": "issue-1525",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:NewsMediaOrganization"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:address",
@@ -1027,6 +1172,9 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
@@ -1034,9 +1182,6 @@
         },
         {
           "@id": "schema:GeoShape"
-        },
-        {
-          "@id": "schema:Place"
         },
         {
           "@id": "schema:GeoCoordinates"
@@ -1052,16 +1197,65 @@
       ]
     },
     {
+      "@id": "schema:ElementarySchool",
+      "rdfs:subClassOf": {
+        "@id": "schema:EducationalOrganization"
+      }
+    },
+    {
+      "@id": "schema:HighSchool",
+      "rdfs:subClassOf": {
+        "@id": "schema:EducationalOrganization"
+      }
+    },
+    {
+      "@id": "schema:unnamedSourcesPolicy",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+        },
+        {
+          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
+        }
+      ],
+      "rdfs:comment": "For an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (typically a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>), a statement about policy on use of unnamed sources and the decision process required.",
+      "rdfs:label": "unnamedSourcesPolicy",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:publishingPrinciples"
+      },
+      "schema:category": "issue-1525",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:NewsMediaOrganization"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "schema:contactPoints",
       "@type": "rdf:Property",
       "rdfs:comment": "A contact point for a person or organization.",
       "rdfs:label": "contactPoints",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1090,10 +1284,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1122,10 +1316,10 @@
       "rdfs:label": "makesOffer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:inverseOf": {
@@ -1162,21 +1356,21 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:GeoShape"
@@ -1196,10 +1390,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1219,9 +1413,6 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Person"
         },
         {
@@ -1229,6 +1420,9 @@
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -1251,19 +1445,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -1276,23 +1470,15 @@
       ]
     },
     {
-      "@id": "schema:contactPoint",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "rdfs:comment": "A contact point for a person or organization.",
-      "rdfs:label": "contactPoint",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:HealthInsurancePlan"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ],
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:ContactPoint"
+        "@id": "schema:Text"
       }
     },
     {
@@ -1311,16 +1497,29 @@
       }
     },
     {
-      "@id": "schema:sameAs",
+      "@id": "schema:publishingPrinciples",
       "@type": "rdf:Property",
-      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-      "rdfs:label": "sameAs",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
+      "rdfs:label": "publishingPrinciples",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:Organization",

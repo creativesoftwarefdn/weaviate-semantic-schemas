@@ -20,10 +20,10 @@
       "schema:category": "issue-1062",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HealthPlanFormulary"
+          "@id": "schema:HealthInsurancePlan"
         },
         {
-          "@id": "schema:HealthInsurancePlan"
+          "@id": "schema:HealthPlanFormulary"
         }
       ],
       "schema:isPartOf": {
@@ -50,15 +50,42 @@
       }
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:healthPlanCostSharing",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
+      },
+      "rdfs:comment": "Whether The costs to the patient for services under this network or formulary.",
+      "rdfs:label": "healthPlanCostSharing",
+      "schema:category": "issue-1062",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HealthPlanFormulary"
+        },
+        {
+          "@id": "schema:HealthPlanNetwork"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -105,13 +132,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -163,18 +190,15 @@
       ]
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Text"
       }
     },
     {
@@ -228,30 +252,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "schema:healthPlanCostSharing",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
-      },
-      "rdfs:comment": "Whether The costs to the patient for services under this network or formulary.",
-      "rdfs:label": "healthPlanCostSharing",
-      "schema:category": "issue-1062",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:HealthPlanFormulary"
-        },
-        {
-          "@id": "schema:HealthPlanNetwork"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
       }
     },
     {

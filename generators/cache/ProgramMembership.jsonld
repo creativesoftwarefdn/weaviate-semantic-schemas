@@ -55,10 +55,10 @@
       "rdfs:label": "member",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ProgramMembership"
         },
         {
-          "@id": "schema:ProgramMembership"
+          "@id": "schema:Organization"
         }
       ],
       "schema:inverseOf": {
@@ -66,10 +66,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -106,15 +106,9 @@
       }
     },
     {
-      "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "@id": "schema:memberOf",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:ProgramMembership"
       }
     },
     {
@@ -169,10 +163,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -198,15 +192,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
     {
-      "@id": "schema:memberOf",
+      "@id": "schema:programMembershipUsed",
       "schema:rangeIncludes": {
         "@id": "schema:ProgramMembership"
       }
@@ -218,9 +212,15 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:programMembershipUsed",
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:ProgramMembership"
+        "@id": "schema:Text"
       }
     },
     {
@@ -254,10 +254,10 @@
       "rdfs:label": "members",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ProgramMembership"
         },
         {
-          "@id": "schema:ProgramMembership"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [

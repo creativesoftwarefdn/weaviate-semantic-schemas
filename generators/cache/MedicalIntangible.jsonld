@@ -28,19 +28,10 @@
       }
     },
     {
-      "@id": "schema:medicineSystem",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
-      "rdfs:label": "medicineSystem",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalEntity"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicineSystem"
-      }
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:guideline",
@@ -70,13 +61,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -87,10 +78,10 @@
           "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -164,12 +155,6 @@
       }
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
-    },
-    {
       "@id": "schema:name",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of the item.",
@@ -209,13 +194,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -261,6 +246,21 @@
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
+      "@id": "schema:medicineSystem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+      "rdfs:label": "medicineSystem",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicineSystem"
       }
     },
     {

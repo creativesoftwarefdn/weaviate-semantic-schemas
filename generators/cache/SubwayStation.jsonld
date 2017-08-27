@@ -20,10 +20,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -31,10 +31,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -45,25 +45,25 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LeaveAction"
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:JoinAction"
         },
         {
           "@id": "schema:InviteAction"
+        },
+        {
+          "@id": "schema:LeaveAction"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:InformAction"
-        },
-        {
-          "@id": "schema:JoinAction"
-        },
-        {
-          "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -81,10 +81,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -92,10 +92,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -109,10 +109,10 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
@@ -129,10 +129,10 @@
       "rdfs:label": "events",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -153,10 +153,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -193,10 +193,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -269,10 +269,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -328,28 +328,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -401,13 +401,13 @@
       "rdfs:label": "amenityFeature",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:Accommodation"
         },
         {
           "@id": "schema:LodgingBusiness"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -457,6 +457,29 @@
       }
     },
     {
+      "@id": "schema:faxNumber",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The fax number.",
+      "rdfs:label": "faxNumber",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
       "@id": "schema:branchCode",
       "@type": "rdf:Property",
       "rdfs:comment": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.</p>\n\n<p>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
@@ -479,10 +502,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -508,10 +531,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -533,10 +556,10 @@
       "rdfs:label": "openingHours",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocalBusiness"
+          "@id": "schema:CivicStructure"
         },
         {
-          "@id": "schema:CivicStructure"
+          "@id": "schema:LocalBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -550,16 +573,16 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:QuantitativeValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -576,16 +599,16 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -602,10 +625,19 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Place"
@@ -615,15 +647,6 @@
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -643,13 +666,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -686,6 +709,18 @@
       }
     },
     {
+      "@id": "schema:publicAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
       "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -701,29 +736,26 @@
       }
     },
     {
-      "@id": "schema:globalLocationNumber",
+      "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "rdfs:label": "globalLocationNumber",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:identifier"
-      },
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:PublicationEvent"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -737,10 +769,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -777,31 +809,33 @@
       }
     },
     {
-      "@id": "schema:geospatiallyCrosses",
+      "@id": "schema:address",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
-      },
-      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
-      "rdfs:label": "geospatiallyCrosses",
-      "schema:category": "issue-1375",
+      "rdfs:comment": "Physical address of the item.",
+      "rdfs:label": "address",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:GeoCoordinates"
         }
       ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -824,10 +858,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Photograph"
         }
       ],
       "schema:supersededBy": {
@@ -835,51 +869,20 @@
       }
     },
     {
-      "@id": "schema:address",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Physical address of the item.",
-      "rdfs:label": "address",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:GeoShape"
-        },
-        {
-          "@id": "schema:GeoCoordinates"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        }
-      ]
-    },
-    {
-      "@id": "schema:geospatiallyDisjoint",
+      "@id": "schema:geospatiallyCrosses",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
       },
-      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>)",
-      "rdfs:label": "geospatiallyDisjoint",
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCrosses",
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -895,22 +898,54 @@
       ]
     },
     {
-      "@id": "schema:faxNumber",
+      "@id": "schema:geospatiallyDisjoint",
       "@type": "rdf:Property",
-      "rdfs:comment": "The fax number.",
-      "rdfs:label": "faxNumber",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) are topologically disjoint: they have no point in common. They form a set of disconnected geometries.\" (a symmetric relationship, as defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>)",
+      "rdfs:label": "geospatiallyDisjoint",
+      "schema:category": "issue-1375",
       "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
+    },
+    {
+      "@id": "schema:globalLocationNumber",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "rdfs:label": "globalLocationNumber",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Person"
+        },
         {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -927,10 +962,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -967,10 +1002,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Photograph"
         }
       ]
     },
@@ -984,10 +1019,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1004,27 +1039,27 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Place"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },

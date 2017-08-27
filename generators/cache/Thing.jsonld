@@ -40,6 +40,12 @@
       }
     },
     {
+      "@id": "schema:Person",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
       "@id": "schema:Event",
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
@@ -52,8 +58,8 @@
       }
     },
     {
-      "@id": "schema:Person",
-      "rdfs:subClassOf": {
+      "@id": "schema:reservationFor",
+      "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
     },
@@ -82,8 +88,8 @@
       }
     },
     {
-      "@id": "schema:itemReviewed",
-      "schema:rangeIncludes": {
+      "@id": "schema:Product",
+      "rdfs:subClassOf": {
         "@id": "schema:Thing"
       }
     },
@@ -168,7 +174,7 @@
       }
     },
     {
-      "@id": "schema:requiredCollateral",
+      "@id": "schema:replacer",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -204,24 +210,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
     {
       "@id": "schema:itemListElement",
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:reservationFor",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -248,7 +248,7 @@
       }
     },
     {
-      "@id": "schema:purpose",
+      "@id": "schema:result",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -263,10 +263,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -283,7 +283,7 @@
       }
     },
     {
-      "@id": "schema:replacer",
+      "@id": "schema:requiredCollateral",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -319,8 +319,8 @@
       }
     },
     {
-      "@id": "schema:Product",
-      "rdfs:subClassOf": {
+      "@id": "schema:itemReviewed",
+      "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
     },
@@ -337,7 +337,7 @@
       }
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:purpose",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }

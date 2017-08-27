@@ -45,25 +45,25 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LeaveAction"
-        },
-        {
           "@id": "schema:InformAction"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:Organization"
         },
         {
           "@id": "schema:JoinAction"
         },
         {
           "@id": "schema:InviteAction"
+        },
+        {
+          "@id": "schema:LeaveAction"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -81,10 +81,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -109,10 +109,10 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
@@ -129,10 +129,10 @@
       "rdfs:label": "events",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -164,10 +164,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -210,16 +210,24 @@
       }
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:photo",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
+      "rdfs:comment": "A photograph of this place.",
+      "rdfs:label": "photo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Photograph"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ]
     },
     {
       "@id": "schema:hasMap",
@@ -249,10 +257,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -260,10 +268,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -298,18 +306,18 @@
       }
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:containedIn",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "The basic containment relation between a place and one that contains it.",
+      "rdfs:label": "containedIn",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Place"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Place"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:containedInPlace"
       }
     },
     {
@@ -319,19 +327,13 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Event"
@@ -341,6 +343,12 @@
         },
         {
           "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -362,7 +370,15 @@
     {
       "@id": "schema:TouristAttraction",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A tourist attraction.",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism"
+        }
+      ],
+      "rdfs:comment": "A tourist attraction.  In principle any Thing can be a <a class=\"localLink\" href=\"http://schema.org/TouristAttraction\">TouristAttraction</a>, from a <a class=\"localLink\" href=\"http://schema.org/Mountain\">Mountain</a> and <a class=\"localLink\" href=\"http://schema.org/LandmarksOrHistoricalBuildings\">LandmarksOrHistoricalBuildings</a> to a <a class=\"localLink\" href=\"http://schema.org/LocalBusiness\">LocalBusiness</a>.  This Type can be used on its own to describe a general <a class=\"localLink\" href=\"http://schema.org/TourstAttraction\">TourstAttraction</a>, or be used as an <a class=\"localLink\" href=\"http://schema.org/additionalType\">additionalType</a> to add tourist attraction properties to any other type.  (See examples below)",
       "rdfs:label": "TouristAttraction",
       "rdfs:subClassOf": {
         "@id": "schema:Place"
@@ -375,16 +391,16 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -401,18 +417,46 @@
       "rdfs:label": "amenityFeature",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Accommodation"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Accommodation"
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:LocationFeatureSpecification"
       }
+    },
+    {
+      "@id": "schema:availableLanguage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A language someone may use with or at the item, service or place. Please use one of the language codes from the <a href=\"http://tools.ietf.org/html/bcp47\">IETF BCP 47 standard</a>. See also <a class=\"localLink\" href=\"http://schema.org/inLanguage\">inLanguage</a>",
+      "rdfs:label": "availableLanguage",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:ServiceChannel"
+        },
+        {
+          "@id": "schema:TouristAttraction"
+        },
+        {
+          "@id": "schema:LodgingBusiness"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Language"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:potentialAction",
@@ -457,6 +501,29 @@
       }
     },
     {
+      "@id": "schema:faxNumber",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The fax number.",
+      "rdfs:label": "faxNumber",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
       "@id": "schema:branchCode",
       "@type": "rdf:Property",
       "rdfs:comment": "A short textual code (also called \"store code\") that uniquely identifies a place of business. The code is typically assigned by the parentOrganization and used in structured URLs.</p>\n\n<p>For example, in the URL http://www.starbucks.co.uk/store-locator/etc/detail/3047 the code \"3047\" is a branchCode for a particular branch.",
@@ -490,10 +557,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -527,18 +594,15 @@
       ]
     },
     {
-      "@id": "schema:map",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "A URL to a map of the place.",
-      "rdfs:label": "map",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
-        "@id": "schema:Place"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      },
-      "schema:supersededBy": {
-        "@id": "schema:hasMap"
+        "@id": "schema:Text"
       }
     },
     {
@@ -548,7 +612,7 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:QuantitativeValue"
@@ -557,7 +621,7 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:QualitativeValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -571,19 +635,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -600,19 +664,10 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Place"
         },
         {
           "@id": "schema:Product"
@@ -622,6 +677,15 @@
         },
         {
           "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -641,10 +705,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
@@ -652,18 +716,18 @@
       ]
     },
     {
-      "@id": "schema:openingHoursSpecification",
+      "@id": "schema:map",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The opening hours of a certain place.",
-      "rdfs:label": "openingHoursSpecification",
+      "rdfs:comment": "A URL to a map of the place.",
+      "rdfs:label": "map",
       "schema:domainIncludes": {
         "@id": "schema:Place"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:OpeningHoursSpecification"
+        "@id": "schema:URL"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:hasMap"
       }
     },
     {
@@ -673,10 +737,10 @@
       "rdfs:label": "maximumAttendeeCapacity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -684,18 +748,38 @@
       }
     },
     {
-      "@id": "schema:description",
+      "@id": "schema:publicAccess",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Place"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
+      }
+    },
+    {
+      "@id": "schema:isAccessibleForFree",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:PublicationEvent"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -711,10 +795,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
@@ -722,6 +806,21 @@
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
@@ -746,10 +845,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -760,18 +859,18 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:containedIn",
+      "@id": "schema:description",
       "@type": "rdf:Property",
-      "rdfs:comment": "The basic containment relation between a place and one that contains it.",
-      "rdfs:label": "containedIn",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
       "schema:domainIncludes": {
-        "@id": "schema:Place"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Place"
-      },
-      "schema:supersededBy": {
-        "@id": "schema:containedInPlace"
+        "@id": "schema:Text"
       }
     },
     {
@@ -830,19 +929,19 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:GeoCoordinates"
         }
       ],
       "schema:rangeIncludes": [
@@ -865,10 +964,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -884,27 +983,29 @@
       ]
     },
     {
-      "@id": "schema:faxNumber",
+      "@id": "schema:touristType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The fax number.",
-      "rdfs:label": "faxNumber",
-      "schema:domainIncludes": [
+      "dct:source": [
         {
-          "@id": "schema:Place"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#Tourism"
         },
         {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#IIT-CNR.it"
         }
       ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "rdfs:comment": "Attraction suitable for type(s) of tourist. eg. Children, visitors from a particular country, etc.",
+      "rdfs:label": "touristType",
+      "schema:domainIncludes": {
+        "@id": "schema:TouristAttraction"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Audience"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:geo",
@@ -936,30 +1037,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
-      "@id": "schema:photo",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A photograph of this place.",
-      "rdfs:label": "photo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -973,10 +1054,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -993,27 +1074,27 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -1066,6 +1147,21 @@
       },
       "schema:supersededBy": {
         "@id": "schema:hasMap"
+      }
+    },
+    {
+      "@id": "schema:openingHoursSpecification",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The opening hours of a certain place.",
+      "rdfs:label": "openingHoursSpecification",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:OpeningHoursSpecification"
       }
     }
   ]

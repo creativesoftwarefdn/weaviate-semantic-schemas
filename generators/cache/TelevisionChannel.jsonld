@@ -46,10 +46,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:BroadcastFrequencySpecification"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:BroadcastFrequencySpecification"
         }
       ]
     },
@@ -66,16 +66,27 @@
       }
     },
     {
-      "@id": "schema:broadcastChannelId",
+      "@id": "schema:identifier",
       "@type": "rdf:Property",
-      "rdfs:comment": "The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.",
-      "rdfs:label": "broadcastChannelId",
-      "schema:domainIncludes": {
-        "@id": "schema:BroadcastChannel"
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:TelevisionChannel",
@@ -102,27 +113,19 @@
       }
     },
     {
-      "@id": "schema:identifier",
+      "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
-        "@id": "dct:identifier"
+        "@id": "dct:description"
       },
-      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
-      "rdfs:label": "identifier",
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:BroadcastChannel",
@@ -158,10 +161,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -199,12 +202,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
+    },
+    {
+      "@id": "schema:broadcastChannelId",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The unique address by which the BroadcastService can be identified in a provider lineup. In US, this is typically a number.",
+      "rdfs:label": "broadcastChannelId",
+      "schema:domainIncludes": {
+        "@id": "schema:BroadcastChannel"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:Thing",
@@ -249,21 +264,6 @@
       }
     },
     {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
       "@id": "schema:Intangible",
       "@type": "rdfs:Class",
       "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
@@ -279,21 +279,21 @@
       "rdfs:label": "genre",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:MusicGroup"
         },
         {
           "@id": "schema:BroadcastChannel"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },

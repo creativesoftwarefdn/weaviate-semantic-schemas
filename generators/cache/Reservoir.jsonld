@@ -20,10 +20,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -45,16 +45,13 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:InviteAction"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:InformAction"
         },
         {
           "@id": "schema:JoinAction"
@@ -63,7 +60,10 @@
           "@id": "schema:LeaveAction"
         },
         {
-          "@id": "schema:InformAction"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:InviteAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -121,10 +121,10 @@
       "rdfs:label": "events",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -145,10 +145,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -156,10 +156,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -194,10 +194,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Photograph"
         }
       ]
     },
@@ -211,12 +211,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Map"
         },
         {
-          "@id": "schema:Map"
+          "@id": "schema:URL"
         }
       ]
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:geospatiallyCoveredBy",
@@ -229,10 +241,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -299,28 +311,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -375,10 +387,10 @@
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
@@ -460,16 +472,16 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
-        },
-        {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -539,10 +551,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -565,6 +577,9 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:QuantitativeValue"
         },
         {
@@ -572,9 +587,6 @@
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -588,19 +600,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -617,28 +629,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -658,29 +670,26 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:map",
+      "@id": "schema:publicAccess",
       "@type": "rdf:Property",
-      "rdfs:comment": "A URL to a map of the place.",
-      "rdfs:label": "map",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
       "schema:domainIncludes": {
         "@id": "schema:Place"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      },
-      "schema:supersededBy": {
-        "@id": "schema:hasMap"
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -690,10 +699,10 @@
       "rdfs:label": "maximumAttendeeCapacity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -728,13 +737,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -763,10 +772,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -792,33 +801,31 @@
       }
     },
     {
-      "@id": "schema:address",
+      "@id": "schema:geospatiallyCrosses",
       "@type": "rdf:Property",
-      "rdfs:comment": "Physical address of the item.",
-      "rdfs:label": "address",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      },
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCrosses",
+      "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeoShape"
-        },
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:GeoCoordinates"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -843,31 +850,33 @@
       }
     },
     {
-      "@id": "schema:geospatiallyCrosses",
+      "@id": "schema:address",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
-      },
-      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that crosses it: \"a crosses b: they have some but not all interior points in common, and the dimension of the intersection is less than that of at least one of them\". As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
-      "rdfs:label": "geospatiallyCrosses",
-      "schema:category": "issue-1375",
+      "rdfs:comment": "Physical address of the item.",
+      "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoCoordinates"
+        },
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:PostalAddress"
         }
       ]
     },
@@ -882,10 +891,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -893,10 +902,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -930,6 +939,21 @@
       ]
     },
     {
+      "@id": "schema:map",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A URL to a map of the place.",
+      "rdfs:label": "map",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:hasMap"
+      }
+    },
+    {
       "@id": "schema:geo",
       "@type": "rdf:Property",
       "rdfs:comment": "The geo coordinates of the place.",
@@ -959,10 +983,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -996,19 +1020,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -1021,15 +1045,26 @@
       ]
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:PublicationEvent"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {

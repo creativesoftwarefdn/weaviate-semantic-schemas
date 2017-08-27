@@ -29,13 +29,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Enumeration"
+        },
+        {
           "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Enumeration"
         }
       ],
       "schema:isPartOf": {
@@ -46,10 +46,10 @@
           "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         }
       ]
     },
@@ -87,10 +87,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -107,8 +107,19 @@
       }
     },
     {
-      "@id": "schema:ReservationConfirmed",
-      "@type": "schema:ReservationStatusType"
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:ReservationPending",
@@ -148,10 +159,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -222,19 +233,8 @@
       }
     },
     {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "@id": "schema:ReservationConfirmed",
+      "@type": "schema:ReservationStatusType"
     },
     {
       "@id": "schema:Intangible",

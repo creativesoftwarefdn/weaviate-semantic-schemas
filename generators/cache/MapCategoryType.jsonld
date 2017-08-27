@@ -22,13 +22,8 @@
       }
     },
     {
-      "@id": "schema:Enumeration",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-      "rdfs:label": "Enumeration",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
+      "@id": "schema:SeatingMap",
+      "@type": "schema:MapCategoryType"
     },
     {
       "@id": "schema:additionalType",
@@ -52,13 +47,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -66,13 +61,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Property"
+        },
+        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Property"
         }
       ]
     },
@@ -85,10 +80,6 @@
       "schema:rangeIncludes": {
         "@id": "schema:MapCategoryType"
       }
-    },
-    {
-      "@id": "schema:SeatingMap",
-      "@type": "schema:MapCategoryType"
     },
     {
       "@id": "schema:identifier",
@@ -106,18 +97,25 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
     {
-      "@id": "schema:Thing",
+      "@id": "schema:VenueMap",
+      "@type": "schema:MapCategoryType"
+    },
+    {
+      "@id": "schema:MapCategoryType",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "rdfs:comment": "An enumeration of several kinds of Map.",
+      "rdfs:label": "MapCategoryType",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
     },
     {
       "@id": "schema:description",
@@ -135,12 +133,12 @@
       }
     },
     {
-      "@id": "schema:MapCategoryType",
+      "@id": "schema:Enumeration",
       "@type": "rdfs:Class",
-      "rdfs:comment": "An enumeration of several kinds of Map.",
-      "rdfs:label": "MapCategoryType",
+      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+      "rdfs:label": "Enumeration",
       "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
+        "@id": "schema:Intangible"
       }
     },
     {
@@ -168,10 +166,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -209,8 +207,10 @@
       "@type": "schema:MapCategoryType"
     },
     {
-      "@id": "schema:VenueMap",
-      "@type": "schema:MapCategoryType"
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:alternateName",

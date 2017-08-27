@@ -20,10 +20,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -31,10 +31,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -48,13 +48,10 @@
           "@id": "schema:Place"
         },
         {
+          "@id": "schema:InviteAction"
+        },
+        {
           "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:InformAction"
-        },
-        {
-          "@id": "schema:Organization"
         },
         {
           "@id": "schema:JoinAction"
@@ -63,7 +60,10 @@
           "@id": "schema:LeaveAction"
         },
         {
-          "@id": "schema:InviteAction"
+          "@id": "schema:InformAction"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -71,16 +71,33 @@
       }
     },
     {
-      "@id": "schema:url",
+      "@id": "schema:geospatiallyIntersects",
       "@type": "rdf:Property",
-      "rdfs:comment": "URL of the item.",
-      "rdfs:label": "url",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyIntersects",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
     },
     {
       "@id": "schema:Landform",
@@ -104,10 +121,10 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -182,24 +199,27 @@
       }
     },
     {
-      "@id": "schema:photo",
+      "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "A photograph of this place.",
-      "rdfs:label": "photo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:PublicationEvent"
         }
-      ]
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
     },
     {
       "@id": "schema:hasMap",
@@ -299,13 +319,10 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Offer"
@@ -314,13 +331,16 @@
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -328,33 +348,16 @@
       }
     },
     {
-      "@id": "schema:geospatiallyIntersects",
+      "@id": "schema:url",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
-      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
-      "rdfs:label": "geospatiallyIntersects",
-      "schema:category": "issue-1375",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:GeospatialGeometry"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:GeospatialGeometry"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
     },
     {
       "@id": "schema:telephone",
@@ -363,13 +366,13 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
@@ -389,17 +392,32 @@
       "rdfs:label": "amenityFeature",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Accommodation"
-        },
-        {
           "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Accommodation"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:LocationFeatureSpecification"
+      }
+    },
+    {
+      "@id": "schema:openingHoursSpecification",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The opening hours of a certain place.",
+      "rdfs:label": "openingHoursSpecification",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:OpeningHoursSpecification"
       }
     },
     {
@@ -451,10 +469,10 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
@@ -490,10 +508,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ],
       "schema:isPartOf": {
@@ -501,10 +519,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -538,43 +556,6 @@
       ]
     },
     {
-      "@id": "schema:logo",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "An associated logo.",
-      "rdfs:label": "logo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:ImageObject"
-        }
-      ]
-    },
-    {
       "@id": "schema:name",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of the item.",
@@ -593,16 +574,16 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:QualitativeValue"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -616,19 +597,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -645,28 +626,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Brand"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -689,10 +670,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -729,6 +710,18 @@
       }
     },
     {
+      "@id": "schema:publicAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
       "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -756,13 +749,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -858,10 +851,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Photograph"
         },
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:ImageObject"
         }
       ],
       "schema:supersededBy": {
@@ -875,19 +868,19 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:GeoCoordinates"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -967,10 +960,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         }
       ]
     },
@@ -995,6 +988,26 @@
       ]
     },
     {
+      "@id": "schema:photo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A photograph of this place.",
+      "rdfs:label": "photo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:Photograph"
+        }
+      ]
+    },
+    {
       "@id": "schema:image",
       "@type": "rdf:Property",
       "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
@@ -1004,27 +1017,49 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:logo",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "An associated logo.",
+      "rdfs:label": "logo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:ImageObject"
         }
       ]
-    },
-    {
-      "@id": "schema:openingHoursSpecification",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The opening hours of a certain place.",
-      "rdfs:label": "openingHoursSpecification",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:OpeningHoursSpecification"
-      }
     },
     {
       "@id": "schema:alternateName",

@@ -28,10 +28,10 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalProcedure"
         },
         {
           "@id": "schema:MedicalCondition"
@@ -45,10 +45,10 @@
           "@id": "schema:EventStatusType"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalStudyStatus"
         },
         {
-          "@id": "schema:MedicalStudyStatus"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -127,10 +127,10 @@
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -138,13 +138,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -255,10 +255,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -290,13 +290,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -307,13 +307,13 @@
       "rdfs:label": "indication",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:TherapeuticProcedure"
         },
         {
           "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:MedicalDevice"
         }
       ],
       "schema:isPartOf": {
@@ -368,10 +368,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         }
       ]
     },
@@ -483,8 +483,8 @@
     {
       "@id": "schema:SurgicalProcedure",
       "@type": [
-        "schema:MedicalProcedureType",
-        "rdfs:Class"
+        "rdfs:Class",
+        "schema:MedicalProcedureType"
       ],
       "owl:equivalentClass": {
         "@id": "http://purl.bioontology.org/ontology/SNOMEDCT/387713003"

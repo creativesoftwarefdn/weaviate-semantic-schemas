@@ -69,10 +69,10 @@
       "rdfs:label": "about",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:Event"
@@ -163,10 +163,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:WriteAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -183,10 +183,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -212,10 +212,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -235,13 +235,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -258,16 +258,16 @@
           "@id": "schema:DonateAction"
         },
         {
+          "@id": "schema:PayAction"
+        },
+        {
+          "@id": "schema:SendAction"
+        },
+        {
           "@id": "schema:TipAction"
         },
         {
           "@id": "schema:AuthorizeAction"
-        },
-        {
-          "@id": "schema:CommunicateAction"
-        },
-        {
-          "@id": "schema:SendAction"
         },
         {
           "@id": "schema:ReturnAction"
@@ -276,21 +276,24 @@
           "@id": "schema:Message"
         },
         {
-          "@id": "schema:GiveAction"
+          "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:PayAction"
+          "@id": "schema:GiveAction"
         }
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Audience"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -310,32 +313,16 @@
       }
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Action"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:image",
@@ -439,24 +426,40 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Action"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        }
+      ]
     },
     {
       "@id": "schema:alternateName",
@@ -492,10 +495,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -506,10 +509,10 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:LinkRole"
@@ -518,15 +521,15 @@
           "@id": "schema:WriteAction"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         }
       ]
     }

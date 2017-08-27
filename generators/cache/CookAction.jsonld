@@ -58,10 +58,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -193,13 +193,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -236,10 +236,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
@@ -339,10 +339,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -359,13 +359,24 @@
       }
     },
     {
-      "@id": "schema:CookAction",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The act of producing/preparing food.",
-      "rdfs:label": "CookAction",
-      "rdfs:subClassOf": {
-        "@id": "schema:CreateAction"
-      }
+      "@id": "schema:foodEstablishment",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of location. The specific food establishment where the action occurred.",
+      "rdfs:label": "foodEstablishment",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:location"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:CookAction"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:FoodEstablishment"
+        }
+      ]
     },
     {
       "@id": "schema:alternateName",
@@ -409,24 +420,13 @@
       ]
     },
     {
-      "@id": "schema:foodEstablishment",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of location. The specific food establishment where the action occurred.",
-      "rdfs:label": "foodEstablishment",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:location"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:CookAction"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:FoodEstablishment"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "@id": "schema:CookAction",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The act of producing/preparing food.",
+      "rdfs:label": "CookAction",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreateAction"
+      }
     }
   ]
 }

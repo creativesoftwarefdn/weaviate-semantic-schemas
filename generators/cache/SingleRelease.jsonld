@@ -1,0 +1,34 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:SingleRelease",
+      "@type": "schema:MusicAlbumReleaseType",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ"
+      },
+      "rdfs:comment": "SingleRelease.",
+      "rdfs:label": "SingleRelease"
+    },
+    {
+      "@id": "schema:MusicAlbumReleaseType",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#MBZ"
+      },
+      "rdfs:comment": "The kind of release which this album is: single, EP or album.",
+      "rdfs:label": "MusicAlbumReleaseType",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
+    }
+  ]
+}

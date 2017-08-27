@@ -16,13 +16,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
-        },
-        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -30,13 +30,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Class"
+        },
+        {
           "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Class"
         }
       ]
     },
@@ -53,13 +53,8 @@
       }
     },
     {
-      "@id": "schema:Enumeration",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-      "rdfs:label": "Enumeration",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
+      "@id": "schema:DVDFormat",
+      "@type": "schema:MusicReleaseFormatType"
     },
     {
       "@id": "schema:DigitalAudioTapeFormat",
@@ -96,7 +91,7 @@
       }
     },
     {
-      "@id": "schema:LaserDiscFormat",
+      "@id": "schema:CDFormat",
       "@type": "schema:MusicReleaseFormatType"
     },
     {
@@ -154,13 +149,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -207,8 +202,13 @@
       "@type": "schema:MusicReleaseFormatType"
     },
     {
-      "@id": "schema:DVDFormat",
-      "@type": "schema:MusicReleaseFormatType"
+      "@id": "schema:Enumeration",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+      "rdfs:label": "Enumeration",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
     },
     {
       "@id": "schema:CassetteFormat",
@@ -272,7 +272,7 @@
       }
     },
     {
-      "@id": "schema:CDFormat",
+      "@id": "schema:LaserDiscFormat",
       "@type": "schema:MusicReleaseFormatType"
     }
   ]

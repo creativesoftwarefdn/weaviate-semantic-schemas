@@ -163,16 +163,16 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -204,10 +204,10 @@
       "rdfs:label": "vatID",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -224,10 +224,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -270,13 +270,13 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:GeoCoordinates"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
@@ -316,10 +316,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:GenderType"
         },
         {
-          "@id": "schema:GenderType"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -330,10 +330,10 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
@@ -359,21 +359,21 @@
           "@id": "schema:VisualArtwork"
         },
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:MediaObject"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Distance"
         },
         {
-          "@id": "schema:Distance"
+          "@id": "schema:QuantitativeValue"
         }
       ]
     },
@@ -408,10 +408,10 @@
       "rdfs:label": "memberOf",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:inverseOf": {
@@ -419,10 +419,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ProgramMembership"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ProgramMembership"
         }
       ]
     },
@@ -479,24 +479,24 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
         }
       ]
     },
@@ -513,10 +513,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -566,10 +566,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -583,10 +583,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:MonetaryAmount"
         }
       ]
     },
@@ -659,10 +659,10 @@
       "rdfs:label": "makesOffer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:inverseOf": {
@@ -685,10 +685,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -767,13 +767,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Enumeration"
+        },
+        {
           "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Enumeration"
         }
       ],
       "schema:isPartOf": {
@@ -781,13 +781,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Class"
         },
         {
           "@id": "schema:Property"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Enumeration"
         }
       ]
     },
@@ -801,13 +801,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -860,10 +860,10 @@
       "rdfs:label": "seeks",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -892,13 +892,13 @@
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:ContactPoint"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -927,10 +927,10 @@
       "rdfs:label": "naics",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -974,10 +974,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
@@ -1015,7 +1015,7 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Service"
@@ -1027,7 +1027,7 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -1047,16 +1047,16 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DrugClass"
+          "@id": "schema:MedicalCondition"
+        },
+        {
+          "@id": "schema:TherapeuticProcedure"
         },
         {
           "@id": "schema:Patient"
         },
         {
-          "@id": "schema:MedicalCondition"
-        },
-        {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:DrugClass"
         }
       ],
       "schema:isPartOf": {
@@ -1105,10 +1105,10 @@
       "rdfs:label": "contactPoints",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1168,10 +1168,10 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:HealthInsurancePlan"
         },
         {
-          "@id": "schema:HealthInsurancePlan"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1191,10 +1191,10 @@
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
@@ -1297,13 +1297,13 @@
       "rdfs:label": "email",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1317,13 +1317,13 @@
       "rdfs:label": "healthCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:PeopleAudience"
         },
         {
           "@id": "schema:Patient"
         },
         {
-          "@id": "schema:PeopleAudience"
+          "@id": "schema:MedicalStudy"
         }
       ],
       "schema:isPartOf": {
@@ -1357,10 +1357,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1391,10 +1391,10 @@
       "rdfs:label": "MedicalAudience",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:PeopleAudience"
+          "@id": "schema:Audience"
         },
         {
-          "@id": "schema:Audience"
+          "@id": "schema:PeopleAudience"
         },
         {
           "@id": "schema:MedicalEnumeration"
@@ -1443,10 +1443,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1484,6 +1484,31 @@
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:publishingPrinciples",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
+      "rdfs:label": "publishingPrinciples",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     }
   ]
 }

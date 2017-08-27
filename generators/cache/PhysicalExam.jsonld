@@ -20,10 +20,10 @@
       "rdfs:label": "PhysicalExam",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalEnumeration"
         }
       ],
       "schema:isPartOf": {
@@ -37,13 +37,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Property"
+        },
+        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -51,13 +51,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Class"
+          "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Property"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Class"
         }
       ]
     },
@@ -80,13 +80,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalCondition"
+        },
+        {
           "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:MedicalProcedure"
-        },
-        {
-          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -94,13 +94,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:MedicalStudyStatus"
+        },
+        {
           "@id": "schema:EventStatusType"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:MedicalStudyStatus"
         }
       ]
     },
@@ -152,21 +152,6 @@
       "@type": "schema:PhysicalExam"
     },
     {
-      "@id": "schema:disambiguatingDescription",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
       "@id": "schema:MedicalEnumeration",
       "@type": "rdfs:Class",
       "rdfs:comment": "Enumerations related to health and the practice of medicine: A concept that is used to attribute a quality to another concept, as a qualifier, a collection of items or a listing of all of the elements of a set in medicine practice.",
@@ -185,10 +170,10 @@
       "rdfs:label": "bodyLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -224,13 +209,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalEntity"
-        },
-        {
           "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -238,10 +223,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:Text"
@@ -264,19 +249,8 @@
       }
     },
     {
-      "@id": "schema:code",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
-      "rdfs:label": "code",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalEntity"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalCode"
-      }
+      "@id": "schema:Neck",
+      "@type": "schema:PhysicalExam"
     },
     {
       "@id": "schema:additionalType",
@@ -310,8 +284,19 @@
       }
     },
     {
-      "@id": "schema:Neck",
-      "@type": "schema:PhysicalExam"
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:Skin",
@@ -347,10 +332,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         }
       ]
     },
@@ -386,13 +371,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -403,13 +388,13 @@
       "rdfs:label": "indication",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalDevice"
-        },
-        {
           "@id": "schema:MedicalProcedure"
         },
         {
           "@id": "schema:TherapeuticProcedure"
+        },
+        {
+          "@id": "schema:MedicalDevice"
         }
       ],
       "schema:isPartOf": {
@@ -478,10 +463,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -573,6 +558,21 @@
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
+      "@id": "schema:code",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical code for the entity, taken from a controlled vocabulary or ontology such as ICD-9, DiseasesDB, MeSH, SNOMED-CT, RxNorm, etc.",
+      "rdfs:label": "code",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalCode"
       }
     },
     {

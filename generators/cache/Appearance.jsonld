@@ -1,0 +1,39 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:PhysicalExam",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A type of physical examination of a patient performed by a physician.",
+      "rdfs:label": "PhysicalExam",
+      "rdfs:subClassOf": [
+        {
+          "@id": "schema:MedicalProcedure"
+        },
+        {
+          "@id": "schema:MedicalEnumeration"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    },
+    {
+      "@id": "schema:Appearance",
+      "@type": "schema:PhysicalExam",
+      "rdfs:comment": "Appearance assessment with clinical examination.",
+      "rdfs:label": "Appearance",
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
+    }
+  ]
+}

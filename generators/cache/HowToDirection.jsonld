@@ -1,0 +1,411 @@
+{
+  "@context": {
+    "dct": "http://purl.org/dc/terms/",
+    "owl": "http://www.w3.org/2002/07/owl#",
+    "rdf": "http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+    "rdfa": "http://www.w3.org/ns/rdfa#",
+    "rdfs": "http://www.w3.org/2000/01/rdf-schema#",
+    "schema": "http://schema.org/",
+    "xsd": "http://www.w3.org/2001/XMLSchema#"
+  },
+  "@graph": [
+    {
+      "@id": "schema:beforeMedia",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A media object representing the circumstances before performing this direction.",
+      "rdfs:label": "beforeMedia",
+      "schema:domainIncludes": {
+        "@id": "schema:HowToDirection"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MediaObject"
+      }
+    },
+    {
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:item",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An entity represented by an entry in a list or data feed (e.g. an 'artist' in a list of 'artists')’.",
+      "rdfs:label": "item",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ListItem"
+        },
+        {
+          "@id": "schema:DataFeedItem"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:HowToDirection",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A direction indicating a single action to do in the instructions for how to achieve a result.",
+      "rdfs:label": "HowToDirection",
+      "rdfs:subClassOf": {
+        "@id": "schema:ListItem"
+      }
+    },
+    {
+      "@id": "schema:performTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The length of time it takes to perform instructions or a direction (not including time to prepare the supplies), in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
+      "rdfs:label": "performTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowTo"
+        },
+        {
+          "@id": "schema:HowToDirection"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Duration"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:tool",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of instrument. An object used (but not consumed) when performing instructions or a direction.",
+      "rdfs:label": "tool",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:instrument"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowTo"
+        },
+        {
+          "@id": "schema:HowToDirection"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:HowToTool"
+        }
+      ]
+    },
+    {
+      "@id": "schema:duringMedia",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A media object representing the circumstances while performing this direction.",
+      "rdfs:label": "duringMedia",
+      "schema:domainIncludes": {
+        "@id": "schema:HowToDirection"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MediaObject"
+      }
+    },
+    {
+      "@id": "schema:totalTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The total time required to perform instructions or a direction (including time to prepare the supplies), in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
+      "rdfs:label": "totalTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowToDirection"
+        },
+        {
+          "@id": "schema:HowTo"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Duration"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:afterMedia",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A media object representing the circumstances after performing this direction.",
+      "rdfs:label": "afterMedia",
+      "schema:domainIncludes": {
+        "@id": "schema:HowToDirection"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MediaObject"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:nextItem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A link to the ListItem that follows the current one.",
+      "rdfs:label": "nextItem",
+      "schema:domainIncludes": {
+        "@id": "schema:ListItem"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:ListItem"
+      }
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:prepTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The length of time it takes to prepare the items to be used in instructions or a direction, in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 duration format</a>.",
+      "rdfs:label": "prepTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowTo"
+        },
+        {
+          "@id": "schema:HowToDirection"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Duration"
+      }
+    },
+    {
+      "@id": "schema:image",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:previousItem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A link to the ListItem that preceeds the current one.",
+      "rdfs:label": "previousItem",
+      "schema:domainIncludes": {
+        "@id": "schema:ListItem"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:ListItem"
+      }
+    },
+    {
+      "@id": "schema:supply",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub-property of instrument. A supply consumed when performing instructions or a direction.",
+      "rdfs:label": "supply",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:instrument"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HowTo"
+        },
+        {
+          "@id": "schema:HowToDirection"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:HowToSupply"
+        }
+      ]
+    },
+    {
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
+    },
+    {
+      "@id": "schema:ListItem",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "An list item, e.g. a step in a checklist or how-to description.",
+      "rdfs:label": "ListItem",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:position",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The position of an item in a series or sequence of items.",
+      "rdfs:label": "position",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:ListItem"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Integer"
+        }
+      ]
+    }
+  ]
+}

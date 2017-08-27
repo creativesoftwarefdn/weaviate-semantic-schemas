@@ -31,13 +31,10 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
           "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:Offer"
         },
         {
           "@id": "schema:JobPosting"
@@ -46,7 +43,10 @@
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
@@ -129,25 +129,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:OpeningHoursSpecification"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:Permit"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
-          "@id": "schema:LocationFeatureSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -244,13 +244,13 @@
       "rdfs:label": "eligibleTransactionVolume",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
-        },
-        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -288,15 +288,21 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
         }
       ]
+    },
+    {
+      "@id": "schema:estimatedSalary",
+      "schema:rangeIncludes": {
+        "@id": "schema:PriceSpecification"
+      }
     },
     {
       "@id": "schema:description",
@@ -344,10 +350,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -388,13 +394,13 @@
       "rdfs:label": "price",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TradeAction"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:TradeAction"
         }
       ],
       "schema:rangeIncludes": [
@@ -439,13 +445,13 @@
       "rdfs:label": "eligibleQuantity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {

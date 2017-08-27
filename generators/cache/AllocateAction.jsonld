@@ -49,10 +49,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -120,6 +120,18 @@
       }
     },
     {
+      "@id": "schema:result",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
       "@id": "schema:endTime",
       "@type": "rdf:Property",
       "rdfs:comment": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>.</p>\n\n<p>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
@@ -155,10 +167,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -178,13 +190,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -210,13 +222,13 @@
       "rdfs:label": "purpose",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PayAction"
+        },
+        {
           "@id": "schema:MedicalDevice"
         },
         {
           "@id": "schema:AllocateAction"
-        },
-        {
-          "@id": "schema:PayAction"
         }
       ],
       "schema:isPartOf": {
@@ -224,10 +236,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalDevicePurpose"
+          "@id": "schema:Thing"
         },
         {
-          "@id": "schema:Thing"
+          "@id": "schema:MedicalDevicePurpose"
         }
       ]
     },
@@ -241,10 +253,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -336,24 +348,12 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
-    },
-    {
-      "@id": "schema:result",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
     },
     {
       "@id": "schema:location",
@@ -362,21 +362,21 @@
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:Action"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
@@ -423,10 +423,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     }

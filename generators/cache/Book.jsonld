@@ -98,10 +98,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -127,16 +127,10 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
@@ -145,10 +139,16 @@
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -162,10 +162,10 @@
       "rdfs:label": "author",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Rating"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Rating"
         }
       ],
       "schema:rangeIncludes": [
@@ -217,32 +217,39 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Product"
         }
       ]
     },
     {
-      "@id": "schema:fileFormat",
+      "@id": "schema:contentRating",
       "@type": "rdf:Property",
-      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
-      "rdfs:label": "fileFormat",
+      "rdfs:comment": "Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.",
+      "rdfs:label": "contentRating",
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:expires",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Date the content expires and is no longer useful or available. For example a <a class=\"localLink\" href=\"http://schema.org/VideoObject\">VideoObject</a> or <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a> whose availability or relevance is time-limited, or a <a class=\"localLink\" href=\"http://schema.org/ClaimReview\">ClaimReview</a> fact check whose publisher wants to indicate that it may no longer be relevant (or helpful to highlight) after some date.",
+      "rdfs:label": "expires",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
     },
     {
       "@id": "schema:publisher",
@@ -254,28 +261,23 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
     {
-      "@id": "schema:comment",
+      "@id": "schema:illustrator",
       "@type": "rdf:Property",
-      "rdfs:comment": "Comments, typically from users.",
-      "rdfs:label": "comment",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:RsvpAction"
-        }
-      ],
+      "rdfs:comment": "The illustrator of the book.",
+      "rdfs:label": "illustrator",
+      "schema:domainIncludes": {
+        "@id": "schema:Book"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:Comment"
+        "@id": "schema:Person"
       }
     },
     {
@@ -285,16 +287,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -307,14 +309,17 @@
     {
       "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "A flag to signal that the publication is accessible for free.",
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:PublicationEvent"
@@ -354,10 +359,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -413,13 +418,13 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
@@ -465,10 +470,10 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BusTrip"
+          "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:Service"
@@ -477,16 +482,16 @@
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Flight"
         },
         {
           "@id": "schema:TrainTrip"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -508,10 +513,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -568,15 +573,20 @@
       ]
     },
     {
-      "@id": "schema:illustrator",
+      "@id": "schema:comment",
       "@type": "rdf:Property",
-      "rdfs:comment": "The illustrator of the book.",
-      "rdfs:label": "illustrator",
-      "schema:domainIncludes": {
-        "@id": "schema:Book"
-      },
+      "rdfs:comment": "Comments, typically from users.",
+      "rdfs:label": "comment",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:RsvpAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Person"
+        "@id": "schema:Comment"
       }
     },
     {
@@ -679,19 +689,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -740,10 +750,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -798,19 +808,19 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:PlayAction"
-        },
-        {
           "@id": "schema:LodgingBusiness"
-        },
-        {
-          "@id": "schema:Product"
         },
         {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -874,10 +884,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Integer"
         },
         {
-          "@id": "schema:Integer"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -898,6 +908,9 @@
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates the primary entity described in some page or other CreativeWork.",
       "rdfs:label": "mainEntity",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:about"
+      },
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
@@ -1091,13 +1104,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -1120,16 +1133,16 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Person"
@@ -1220,13 +1233,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:DateTime"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -1240,13 +1253,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:supersededBy": {
@@ -1292,7 +1305,7 @@
     {
       "@id": "schema:workTranslation",
       "@type": "rdf:Property",
-      "rdfs:comment": "A work that is a translation of the content of this work. e.g. 西���記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.",
+      "rdfs:comment": "A work that is a translation of the content of this work. e.g. 西遊記 has an English workTranslation “Journey to the West”,a German workTranslation “Monkeys Pilgerfahrt” and a Vietnamese  translation Tây du ký bình khảo.",
       "rdfs:label": {
         "@language": "en",
         "@value": "workTranslation"
@@ -1332,10 +1345,10 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -1408,27 +1421,27 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1510,28 +1523,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Brand"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -1597,16 +1610,21 @@
       }
     },
     {
-      "@id": "schema:contentRating",
+      "@id": "schema:fileFormat",
       "@type": "rdf:Property",
-      "rdfs:comment": "Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.",
-      "rdfs:label": "contentRating",
+      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
+      "rdfs:label": "fileFormat",
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:interactionStatistic",
@@ -1627,10 +1645,10 @@
       "rdfs:label": "translator",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
@@ -1681,13 +1699,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1713,22 +1731,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:AggregateOffer"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:MenuItem"
-        },
-        {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -1738,14 +1756,27 @@
     {
       "@id": "schema:publishingPrinciples",
       "@type": "rdf:Property",
-      "rdfs:comment": "Link to page describing the editorial principles of the organization primarily responsible for the creation of the CreativeWork.",
+      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
       "rdfs:label": "publishingPrinciples",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:inLanguage",
@@ -1754,27 +1785,27 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:LinkRole"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:WriteAction"
         },
         {
-          "@id": "schema:LinkRole"
+          "@id": "schema:CommunicateAction"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         }
       ]
     },

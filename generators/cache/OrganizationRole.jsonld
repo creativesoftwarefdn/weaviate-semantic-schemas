@@ -19,32 +19,18 @@
       }
     },
     {
-      "@id": "schema:roleName",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
-      "rdfs:label": "roleName",
-      "schema:domainIncludes": {
-        "@id": "schema:Role"
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
       }
     },
     {
@@ -84,13 +70,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -101,19 +87,19 @@
       "rdfs:label": "endDate",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DatedMoneySpecification"
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:Role"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWorkSeries"
+          "@id": "schema:DatedMoneySpecification"
         },
         {
           "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:Role"
         }
       ],
       "schema:rangeIncludes": [
@@ -165,26 +151,23 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Text"
       }
     },
     {
@@ -197,12 +180,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
+    },
+    {
+      "@id": "schema:EmployeeRole",
+      "rdfs:subClassOf": {
+        "@id": "schema:OrganizationRole"
+      }
     },
     {
       "@id": "schema:Role",
@@ -264,52 +253,6 @@
       }
     },
     {
-      "@id": "schema:startDate",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
-      "rdfs:label": "startDate",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Role"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:CreativeWorkSeries"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DateTime"
-        },
-        {
-          "@id": "schema:Date"
-        }
-      ]
-    },
-    {
-      "@id": "schema:Intangible",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "rdfs:label": "Intangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:EmployeeRole",
-      "rdfs:subClassOf": {
-        "@id": "schema:OrganizationRole"
-      }
-    },
-    {
       "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
       "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
@@ -323,6 +266,63 @@
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:roleName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A role played, performed or filled by a person or organization. For example, the team of creators for a comic book might fill the roles named 'inker', 'penciller', and 'letterer'; or an athlete in a SportsTeam might play in the position named 'Quarterback'.",
+      "rdfs:label": "roleName",
+      "schema:domainIncludes": {
+        "@id": "schema:Role"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:startDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
+      "rdfs:label": "startDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Role"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWorkSeries"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
     }
   ]
 }

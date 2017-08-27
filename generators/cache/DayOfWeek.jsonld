@@ -16,13 +16,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
-        },
-        {
           "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -116,6 +116,12 @@
       "@type": "schema:DayOfWeek"
     },
     {
+      "@id": "schema:byDay",
+      "schema:rangeIncludes": {
+        "@id": "schema:DayOfWeek"
+      }
+    },
+    {
       "@id": "schema:name",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of the item.",
@@ -140,13 +146,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -175,10 +181,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },

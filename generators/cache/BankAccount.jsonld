@@ -19,10 +19,10 @@
       "rdfs:label": "isSimilarTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -53,6 +53,9 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:Order"
         },
         {
@@ -60,9 +63,6 @@
         },
         {
           "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -84,10 +84,10 @@
       "rdfs:label": "isRelatedTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -106,10 +106,10 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
@@ -117,13 +117,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:AdministrativeArea"
         },
         {
           "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:supersededBy": {
@@ -137,36 +137,36 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:TrainTrip"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Flight"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -231,28 +231,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
         },
         {
           "@id": "schema:Service"
         },
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -296,10 +296,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -310,7 +310,7 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Service"
@@ -319,15 +319,15 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -362,7 +362,10 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Demand"
@@ -371,27 +374,24 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:GeoShape"
-        },
-        {
-          "@id": "schema:Text"
-        },
         {
           "@id": "schema:AdministrativeArea"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -402,13 +402,13 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -429,10 +429,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         }
       ],
       "rdfs:comment": "An overdraft is an extension of credit from a lending institution when an account reaches zero. An overdraft allows the individual to continue withdrawing money even if the account has no funds in it. Basically the bank allows people to borrow a set amount of money.",
@@ -467,7 +467,7 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
@@ -476,19 +476,19 @@
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -520,13 +520,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -543,10 +543,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -599,13 +599,13 @@
           "@id": "schema:Service"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -622,10 +622,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -642,13 +642,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -684,10 +684,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         },
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         }
       ],
       "rdfs:comment": "A minimum amount that has to be paid in every month.",
@@ -725,18 +725,18 @@
       "rdfs:label": "feesAndCommissionsSpecification",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FinancialProduct"
+          "@id": "schema:FinancialService"
         },
         {
-          "@id": "schema:FinancialService"
+          "@id": "schema:FinancialProduct"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -796,36 +796,36 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Invoice"
-        },
-        {
           "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PhysicalActivityCategory"
         },
         {
           "@id": "schema:Thing"
         },
         {
-          "@id": "schema:PhysicalActivityCategory"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -836,22 +836,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PlayAction"
+        },
+        {
           "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:PlayAction"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -871,6 +871,12 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:Service"
         },
         {
@@ -878,12 +884,6 @@
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": [
@@ -914,22 +914,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AggregateOffer"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:AggregateOffer"
         },
         {
           "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {

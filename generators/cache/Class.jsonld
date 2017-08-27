@@ -28,13 +28,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -42,10 +42,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
@@ -65,18 +65,6 @@
       }
     },
     {
-      "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
-      }
-    },
-    {
       "@id": "schema:identifier",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -92,12 +80,91 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:category",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
+      "rdfs:label": "category",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
+        },
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Product"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Thing"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PhysicalActivityCategory"
+        }
+      ]
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
     },
     {
       "@id": "schema:mainEntityOfPage",
@@ -120,21 +187,6 @@
       ]
     },
     {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
       "@id": "schema:additionalType",
       "@type": "rdf:Property",
       "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
@@ -147,58 +199,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "schema:category",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
-      "rdfs:label": "category",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
-          "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Invoice"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PhysicalActivityCategory"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Thing"
-        }
-      ]
-    },
-    {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {

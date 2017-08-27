@@ -43,13 +43,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Enumeration"
-        },
-        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Enumeration"
         }
       ],
       "schema:isPartOf": {
@@ -72,8 +72,16 @@
       "@type": "schema:DrugCostCategory"
     },
     {
-      "@id": "schema:Retail",
-      "@type": "schema:DrugCostCategory"
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
     },
     {
       "@id": "schema:identifier",
@@ -91,18 +99,24 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:Thing",
+      "@id": "schema:DrugCostCategory",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "rdfs:comment": "Enumerated categories of medical drug costs.",
+      "rdfs:label": "DrugCostCategory",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEnumeration"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
     },
     {
       "@id": "schema:MedicalEnumeration",
@@ -141,16 +155,8 @@
       }
     },
     {
-      "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
-      }
+      "@id": "schema:Retail",
+      "@type": "schema:DrugCostCategory"
     },
     {
       "@id": "schema:mainEntityOfPage",
@@ -165,10 +171,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -208,16 +214,10 @@
       }
     },
     {
-      "@id": "schema:DrugCostCategory",
+      "@id": "schema:Thing",
       "@type": "rdfs:Class",
-      "rdfs:comment": "Enumerated categories of medical drug costs.",
-      "rdfs:label": "DrugCostCategory",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEnumeration"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:alternateName",

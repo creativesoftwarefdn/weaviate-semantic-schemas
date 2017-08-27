@@ -48,16 +48,16 @@
       "rdfs:label": "occupancy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HotelRoom"
-        },
-        {
-          "@id": "schema:SingleFamilyResidence"
+          "@id": "schema:Suite"
         },
         {
           "@id": "schema:Apartment"
         },
         {
-          "@id": "schema:Suite"
+          "@id": "schema:SingleFamilyResidence"
+        },
+        {
+          "@id": "schema:HotelRoom"
         }
       ],
       "schema:rangeIncludes": {
@@ -71,7 +71,10 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:InviteAction"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:LeaveAction"
         },
         {
           "@id": "schema:PlayAction"
@@ -80,16 +83,13 @@
           "@id": "schema:JoinAction"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:LeaveAction"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:InviteAction"
         },
         {
           "@id": "schema:InformAction"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -97,16 +97,33 @@
       }
     },
     {
-      "@id": "schema:url",
+      "@id": "schema:geospatiallyIntersects",
       "@type": "rdf:Property",
-      "rdfs:comment": "URL of the item.",
-      "rdfs:label": "url",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyIntersects",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
     },
     {
       "@id": "schema:HotelRoom",
@@ -145,13 +162,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -246,22 +263,36 @@
       }
     },
     {
-      "@id": "schema:photo",
+      "@id": "schema:numberOfRooms",
       "@type": "rdf:Property",
-      "rdfs:comment": "A photograph of this place.",
-      "rdfs:label": "photo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
+      "dct:source": {
+        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
       },
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
+      "rdfs:label": "numberOfRooms",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:Photograph"
+          "@id": "schema:House"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:Accommodation"
+        },
+        {
+          "@id": "schema:Apartment"
+        },
+        {
+          "@id": "schema:Suite"
+        },
+        {
+          "@id": "schema:SingleFamilyResidence"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
         }
       ]
     },
@@ -283,33 +314,31 @@
       ]
     },
     {
-      "@id": "schema:geospatiallyCoveredBy",
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:smokingAllowed",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
       },
-      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
-      "rdfs:label": "geospatiallyCoveredBy",
-      "schema:category": "issue-1375",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeospatialGeometry"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "rdfs:comment": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
+      "rdfs:label": "smokingAllowed",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeospatialGeometry"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
     },
     {
       "@id": "schema:disambiguatingDescription",
@@ -363,28 +392,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -392,33 +421,16 @@
       }
     },
     {
-      "@id": "schema:geospatiallyIntersects",
+      "@id": "schema:url",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
-      "rdfs:comment": "Represents spatial relations in which two geometries (or the places they represent) have at least one point in common. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
-      "rdfs:label": "geospatiallyIntersects",
-      "schema:category": "issue-1375",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:GeospatialGeometry"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeospatialGeometry"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
+      }
     },
     {
       "@id": "schema:petsAllowed",
@@ -430,10 +442,10 @@
       "rdfs:label": "petsAllowed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Accommodation"
+          "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Accommodation"
         }
       ],
       "schema:rangeIncludes": [
@@ -452,7 +464,7 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:CreativeWork"
@@ -461,19 +473,19 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -490,13 +502,13 @@
       "rdfs:label": "amenityFeature",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Accommodation"
+        },
+        {
           "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Accommodation"
         }
       ],
       "schema:rangeIncludes": {
@@ -531,19 +543,33 @@
       }
     },
     {
-      "@id": "schema:smokingAllowed",
+      "@id": "schema:geospatiallyCoveredBy",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1375"
       },
-      "rdfs:comment": "Indicates whether it is allowed to smoke in the place, e.g. in the restaurant, hotel or hotel room.",
-      "rdfs:label": "smokingAllowed",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
+      "rdfs:comment": "Represents a relationship between two geometries (or the places they represent), relating a geometry to another that covers it. As defined in <a href=\"https://en.wikipedia.org/wiki/DE-9IM\">DE-9IM</a>.",
+      "rdfs:label": "geospatiallyCoveredBy",
+      "schema:category": "issue-1375",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeospatialGeometry"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeospatialGeometry"
+        }
+      ]
     },
     {
       "@id": "schema:branchCode",
@@ -657,10 +683,10 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Offer"
@@ -669,7 +695,7 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -704,13 +730,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -747,6 +773,18 @@
       }
     },
     {
+      "@id": "schema:publicAccess",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A flag to signal that the <a class=\"localLink\" href=\"http://schema.org/Place\">Place</a> is open to public visitors.  If this property is omitted there is no assumed default boolean value",
+      "rdfs:label": "publicAccess",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
+    },
+    {
       "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -774,10 +812,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Place"
@@ -821,10 +859,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         }
       ]
     },
@@ -841,13 +879,13 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
@@ -870,6 +908,72 @@
       },
       "schema:supersededBy": {
         "@id": "schema:containedInPlace"
+      }
+    },
+    {
+      "@id": "schema:address",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Physical address of the item.",
+      "rdfs:label": "address",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:GeoCoordinates"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:GeoShape"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        }
+      ]
+    },
+    {
+      "@id": "schema:floorSize",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
+      },
+      "rdfs:comment": "The size of the accommodation, e.g. in square meter or squarefoot.\nTypical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard",
+      "rdfs:label": "floorSize",
+      "schema:domainIncludes": {
+        "@id": "schema:Accommodation"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:photos",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Photographs of this place.",
+      "rdfs:label": "photos",
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Photograph"
+        },
+        {
+          "@id": "schema:ImageObject"
+        }
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:photo"
       }
     },
     {
@@ -902,72 +1006,6 @@
       ]
     },
     {
-      "@id": "schema:floorSize",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
-      },
-      "rdfs:comment": "The size of the accommodation, e.g. in square meter or squarefoot.\nTypical unit code(s): MTK for square meter, FTK for square foot, or YDK for square yard",
-      "rdfs:label": "floorSize",
-      "schema:domainIncludes": {
-        "@id": "schema:Accommodation"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
-    },
-    {
-      "@id": "schema:photos",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Photographs of this place.",
-      "rdfs:label": "photos",
-      "schema:domainIncludes": {
-        "@id": "schema:Place"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
-        },
-        {
-          "@id": "schema:Photograph"
-        }
-      ],
-      "schema:supersededBy": {
-        "@id": "schema:photo"
-      }
-    },
-    {
-      "@id": "schema:address",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Physical address of the item.",
-      "rdfs:label": "address",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeoCoordinates"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:GeoShape"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        }
-      ]
-    },
-    {
       "@id": "schema:geospatiallyDisjoint",
       "@type": "rdf:Property",
       "dct:source": {
@@ -978,10 +1016,10 @@
       "schema:category": "issue-1375",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeospatialGeometry"
         },
         {
-          "@id": "schema:GeospatialGeometry"
+          "@id": "schema:Place"
         }
       ],
       "schema:isPartOf": {
@@ -1006,10 +1044,10 @@
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
@@ -1052,13 +1090,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:BedDetails"
+        },
+        {
           "@id": "schema:BedType"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:BedDetails"
         }
       ]
     },
@@ -1100,36 +1138,22 @@
       ]
     },
     {
-      "@id": "schema:numberOfRooms",
+      "@id": "schema:photo",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#STI_Accommodation_Ontology"
+      "rdfs:comment": "A photograph of this place.",
+      "rdfs:label": "photo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
       },
-      "rdfs:comment": "The number of rooms (excluding bathrooms and closets) of the acccommodation or lodging business.\nTypical unit code(s): ROM for room or C62 for no unit. The type of room can be put in the unitText property of the QuantitativeValue.",
-      "rdfs:label": "numberOfRooms",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:House"
-        },
-        {
-          "@id": "schema:Suite"
-        },
-        {
-          "@id": "schema:Apartment"
-        },
-        {
-          "@id": "schema:Accommodation"
-        },
-        {
-          "@id": "schema:SingleFamilyResidence"
-        }
-      ],
+      "schema:domainIncludes": {
+        "@id": "schema:Place"
+      },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Photograph"
         }
       ]
     },
@@ -1143,10 +1167,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1163,40 +1187,51 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
+      "rdfs:label": "isAccessibleForFree",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:PublicationEvent"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {

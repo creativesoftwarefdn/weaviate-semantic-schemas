@@ -19,10 +19,10 @@
       "rdfs:label": "composer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MusicComposition"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:MusicComposition"
         }
       ],
       "schema:rangeIncludes": [
@@ -44,10 +44,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:supersededBy": {
@@ -55,16 +55,28 @@
       }
     },
     {
-      "@id": "schema:EventSeries",
-      "rdfs:subClassOf": {
-        "@id": "schema:Event"
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
-      "@id": "schema:Thing",
+      "@id": "schema:Event",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "owl:equivalentClass": {
+        "@id": "http://purl.org/dc/dcmitype/Event"
+      },
+      "rdfs:comment": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class=\"localLink\" href=\"http://schema.org/offers\">offers</a> property. Repeated events may be structured as separate Event objects.",
+      "rdfs:label": "Event",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:broadcastOfEvent",
@@ -91,22 +103,22 @@
       "rdfs:label": "actor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Movie"
+          "@id": "schema:VideoGame"
         },
         {
           "@id": "schema:Clip"
         },
         {
-          "@id": "schema:VideoObject"
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:MovieSeries"
         },
         {
           "@id": "schema:RadioSeries"
         },
         {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:VideoGame"
+          "@id": "schema:TVSeries"
         },
         {
           "@id": "schema:Episode"
@@ -115,13 +127,13 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:TVSeries"
+          "@id": "schema:VideoObject"
         },
         {
           "@id": "schema:VideoGameSeries"
         },
         {
-          "@id": "schema:MovieSeries"
+          "@id": "schema:CreativeWorkSeason"
         }
       ],
       "schema:rangeIncludes": {
@@ -138,43 +150,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
     {
-      "@id": "schema:endDate",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The end date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
-      "rdfs:label": "endDate",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWorkSeries"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:Role"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
-        }
-      ]
+      "@id": "schema:FoodEvent",
+      "rdfs:subClassOf": {
+        "@id": "schema:Event"
+      }
     },
     {
       "@id": "schema:eventStatus",
@@ -201,27 +188,27 @@
           "@id": "schema:CreativeWork"
         },
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
     {
-      "@id": "schema:firstPerformance",
-      "schema:rangeIncludes": {
+      "@id": "schema:CourseInstance",
+      "rdfs:subClassOf": {
         "@id": "schema:Event"
       }
     },
@@ -259,13 +246,13 @@
       "rdfs:label": "about",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommunicateAction"
-        },
-        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:CommunicateAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -303,7 +290,13 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Organization"
@@ -312,16 +305,10 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Service"
@@ -332,15 +319,9 @@
       }
     },
     {
-      "@id": "schema:url",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of the item.",
-      "rdfs:label": "url",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
+      "@id": "schema:EventSeries",
+      "rdfs:subClassOf": {
+        "@id": "schema:Event"
       }
     },
     {
@@ -353,15 +334,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:VisualArtsEvent",
+      "@id": "schema:Festival",
       "rdfs:subClassOf": {
         "@id": "schema:Event"
       }
@@ -373,10 +354,16 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Place"
@@ -385,16 +372,10 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -402,10 +383,24 @@
       }
     },
     {
-      "@id": "schema:ComedyEvent",
-      "rdfs:subClassOf": {
-        "@id": "schema:Event"
-      }
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:previousStartDate",
@@ -429,13 +424,13 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:MedicalStudy"
@@ -463,25 +458,8 @@
       }
     },
     {
-      "@id": "schema:performer",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.",
-      "rdfs:label": "performer",
-      "schema:domainIncludes": {
-        "@id": "schema:Event"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ]
-    },
-    {
-      "@id": "schema:recordedAt",
-      "schema:rangeIncludes": {
+      "@id": "schema:ComedyEvent",
+      "rdfs:subClassOf": {
         "@id": "schema:Event"
       }
     },
@@ -522,10 +500,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -545,21 +523,6 @@
       }
     },
     {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
-    },
-    {
       "@id": "schema:name",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of the item.",
@@ -569,6 +532,35 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:performer",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A performer at the event&#x2014;for example, a presenter, musician, musical group or actor.",
+      "rdfs:label": "performer",
+      "schema:domainIncludes": {
+        "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
@@ -636,24 +628,24 @@
       }
     },
     {
-      "@id": "schema:EducationEvent",
-      "rdfs:subClassOf": {
+      "@id": "schema:workPerformed",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A work performed in some event, for example a play performed in a TheaterEvent.",
+      "rdfs:label": "workPerformed",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:workFeatured"
+      },
+      "schema:domainIncludes": {
         "@id": "schema:Event"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
       }
     },
     {
-      "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:LiteraryEvent",
+      "rdfs:subClassOf": {
+        "@id": "schema:Event"
       }
     },
     {
@@ -686,10 +678,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PostalAddress"
         },
         {
           "@id": "schema:Place"
@@ -703,63 +695,40 @@
       }
     },
     {
-      "@id": "schema:workPerformed",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A work performed in some event, for example a play performed in a TheaterEvent.",
-      "rdfs:label": "workPerformed",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:workFeatured"
-      },
-      "schema:domainIncludes": {
+      "@id": "schema:EducationEvent",
+      "rdfs:subClassOf": {
         "@id": "schema:Event"
+      }
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:description",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Text"
       }
     },
     {
-      "@id": "schema:Event",
-      "@type": "rdfs:Class",
-      "owl:equivalentClass": {
-        "@id": "http://purl.org/dc/dcmitype/Event"
-      },
-      "rdfs:comment": "An event happening at a certain time and location, such as a concert, lecture, or festival. Ticketing information may be added via the <a class=\"localLink\" href=\"http://schema.org/offers\">offers</a> property. Repeated events may be structured as separate Event objects.",
-      "rdfs:label": "Event",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:mainEntityOfPage",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
       },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
-      "@id": "schema:LiteraryEvent",
-      "rdfs:subClassOf": {
-        "@id": "schema:Event"
-      }
-    },
-    {
-      "@id": "schema:sameAs",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-      "rdfs:label": "sameAs",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
@@ -774,27 +743,27 @@
       "rdfs:label": "startDate",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWorkSeason"
+          "@id": "schema:Role"
         },
         {
           "@id": "schema:CreativeWorkSeries"
         },
         {
-          "@id": "schema:Role"
+          "@id": "schema:DatedMoneySpecification"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:DatedMoneySpecification"
+          "@id": "schema:CreativeWorkSeason"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         }
       ]
     },
@@ -833,10 +802,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -912,14 +881,39 @@
       }
     },
     {
-      "@id": "schema:Festival",
-      "rdfs:subClassOf": {
-        "@id": "schema:Event"
-      }
+      "@id": "schema:endDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The end date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
+      "rdfs:label": "endDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:Role"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
     },
     {
-      "@id": "schema:CourseInstance",
-      "rdfs:subClassOf": {
+      "@id": "schema:firstPerformance",
+      "schema:rangeIncludes": {
         "@id": "schema:Event"
       }
     },
@@ -948,19 +942,19 @@
       "rdfs:label": "duration",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Audiobook"
-        },
-        {
           "@id": "schema:MediaObject"
-        },
-        {
-          "@id": "schema:MusicRecording"
         },
         {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:MusicRelease"
+        },
+        {
+          "@id": "schema:Audiobook"
+        },
+        {
+          "@id": "schema:MusicRecording"
         },
         {
           "@id": "schema:Movie"
@@ -971,8 +965,8 @@
       }
     },
     {
-      "@id": "schema:FoodEvent",
-      "rdfs:subClassOf": {
+      "@id": "schema:recordedAt",
+      "schema:rangeIncludes": {
         "@id": "schema:Event"
       }
     },
@@ -983,22 +977,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:PlayAction"
+        },
+        {
           "@id": "schema:LodgingBusiness"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1006,9 +1000,15 @@
       }
     },
     {
+      "@id": "schema:VisualArtsEvent",
+      "rdfs:subClassOf": {
+        "@id": "schema:Event"
+      }
+    },
+    {
       "@id": "schema:isAccessibleForFree",
       "@type": "rdf:Property",
-      "rdfs:comment": "A flag to signal that the publication is accessible for free.",
+      "rdfs:comment": "A flag to signal that the item, event, or place is accessible for free.",
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
@@ -1019,6 +1019,9 @@
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -1035,16 +1038,16 @@
           "@id": "schema:AggregateOffer"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:MenuItem"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
@@ -1061,37 +1064,37 @@
       "rdfs:label": "director",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RadioSeries"
-        },
-        {
           "@id": "schema:VideoGameSeries"
-        },
-        {
-          "@id": "schema:VideoGame"
-        },
-        {
-          "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:MovieSeries"
-        },
-        {
-          "@id": "schema:VideoObject"
-        },
-        {
-          "@id": "schema:Clip"
-        },
-        {
-          "@id": "schema:TVSeries"
-        },
-        {
-          "@id": "schema:Episode"
         },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:Episode"
+        },
+        {
+          "@id": "schema:RadioSeries"
+        },
+        {
+          "@id": "schema:Clip"
+        },
+        {
+          "@id": "schema:VideoObject"
+        },
+        {
+          "@id": "schema:MovieSeries"
+        },
+        {
+          "@id": "schema:VideoGame"
+        },
+        {
+          "@id": "schema:TVSeries"
+        },
+        {
           "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:Movie"
         }
       ],
       "schema:rangeIncludes": {
@@ -1105,10 +1108,10 @@
       "rdfs:label": "contributor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1127,27 +1130,27 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:LinkRole"
+        },
+        {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:LinkRole"
+          "@id": "schema:WriteAction"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     }

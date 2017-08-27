@@ -10,18 +10,15 @@
   },
   "@graph": [
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:Text"
       }
     },
     {
@@ -46,6 +43,55 @@
       }
     },
     {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:DatedMoneySpecification",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. <strong>Note:</strong> This type has been superseded by <a class=\"localLink\" href=\"http://schema.org/MonetaryAmount\">MonetaryAmount</a> use of that type is recommended",
+      "rdfs:label": "DatedMoneySpecification",
+      "rdfs:subClassOf": {
+        "@id": "schema:StructuredValue"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:MonetaryAmount"
+      }
+    },
+    {
+      "@id": "schema:endDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The end date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
+      "rdfs:label": "endDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Role"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:DateTime"
+        },
+        {
+          "@id": "schema:Date"
+        }
+      ]
+    },
+    {
       "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -56,84 +102,6 @@
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:mainEntityOfPage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "schema:endDate",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The end date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
-      "rdfs:label": "endDate",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Role"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWorkSeries"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
-        }
-      ]
-    },
-    {
-      "@id": "schema:currency",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-      },
-      "rdfs:comment": "The currency in which the monetary amount is expressed (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a> format).",
-      "rdfs:label": "currency",
-      "schema:category": "issue-1253",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:ExchangeRateSpecification"
-        },
-        {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:LoanOrCredit"
-        }
-      ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
@@ -152,13 +120,13 @@
           "@id": "schema:InvestmentOrDeposit"
         },
         {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
           "@id": "schema:MoneyTransfer"
         },
         {
           "@id": "schema:LoanOrCredit"
-        },
-        {
-          "@id": "schema:DatedMoneySpecification"
         }
       ],
       "schema:rangeIncludes": [
@@ -183,27 +151,38 @@
       }
     },
     {
-      "@id": "schema:DatedMoneySpecification",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A DatedMoneySpecification represents monetary values with optional start and end dates. For example, this could represent an employee's salary over a specific period of time. <strong>Note:</strong> This type has been superseded by <a class=\"localLink\" href=\"http://schema.org/MonetaryAmount\">MonetaryAmount</a> use of that type is recommended",
-      "rdfs:label": "DatedMoneySpecification",
-      "rdfs:subClassOf": {
-        "@id": "schema:StructuredValue"
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
-      "schema:supersededBy": {
-        "@id": "schema:MonetaryAmount"
-      }
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
       }
     },
     {
@@ -216,18 +195,66 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:ImageObject"
+        }
+      ]
+    },
+    {
+      "@id": "schema:startDate",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
+      "rdfs:label": "startDate",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
+          "@id": "schema:Role"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Date"
+        },
+        {
+          "@id": "schema:DateTime"
+        }
+      ]
+    },
+    {
+      "@id": "schema:identifier",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:identifier"
+      },
+      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
+      "rdfs:label": "identifier",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
         }
       ]
-    },
-    {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:alternateName",
@@ -254,16 +281,28 @@
       }
     },
     {
-      "@id": "schema:disambiguatingDescription",
+      "@id": "schema:currency",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
       },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "The currency in which the monetary amount is expressed (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a> format).",
+      "rdfs:label": "currency",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:LoanOrCredit"
+        },
+        {
+          "@id": "schema:ExchangeRateSpecification"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        }
+      ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
@@ -278,58 +317,19 @@
       }
     },
     {
-      "@id": "schema:identifier",
+      "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:identifier"
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
       },
-      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
-      "rdfs:label": "identifier",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "schema:startDate",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
-      "rdfs:label": "startDate",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
-          "@id": "schema:CreativeWorkSeries"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:Role"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Date"
-        },
-        {
-          "@id": "schema:DateTime"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     }
   ]
 }

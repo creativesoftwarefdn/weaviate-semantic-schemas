@@ -37,13 +37,13 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Order"
         },
         {
           "@id": "schema:Service"
@@ -68,18 +68,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:DateTime"
-      }
-    },
-    {
-      "@id": "schema:reservationStatus",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The current status of the reservation.",
-      "rdfs:label": "reservationStatus",
-      "schema:domainIncludes": {
-        "@id": "schema:Reservation"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:ReservationStatusType"
       }
     },
     {
@@ -113,10 +101,19 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BusTrip"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:Reservation"
@@ -126,15 +123,6 @@
         },
         {
           "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:TrainTrip"
         }
       ],
       "schema:rangeIncludes": [
@@ -161,10 +149,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -205,10 +193,10 @@
       "rdfs:label": "totalPrice",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": [
@@ -268,12 +256,15 @@
       }
     },
     {
-      "@id": "schema:FoodEstablishmentReservation",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A reservation to dine at a food-related business.Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
-      "rdfs:label": "FoodEstablishmentReservation",
-      "rdfs:subClassOf": {
+      "@id": "schema:reservationStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The current status of the reservation.",
+      "rdfs:label": "reservationStatus",
+      "schema:domainIncludes": {
         "@id": "schema:Reservation"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:ReservationStatusType"
       }
     },
     {
@@ -324,10 +315,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -401,22 +392,31 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:FoodEstablishmentReservation",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A reservation to dine at a food-related business.Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+      "rdfs:label": "FoodEstablishmentReservation",
+      "rdfs:subClassOf": {
+        "@id": "schema:Reservation"
+      }
+    },
+    {
       "@id": "schema:priceCurrency",
       "@type": "rdf:Property",
       "rdfs:comment": "The currency (in 3-letter ISO 4217 format) of the price or a price component, when attached to <a class=\"localLink\" href=\"http://schema.org/PriceSpecification\">PriceSpecification</a> and its subtypes.",
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -465,10 +465,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },

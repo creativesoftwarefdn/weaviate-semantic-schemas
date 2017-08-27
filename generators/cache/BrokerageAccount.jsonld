@@ -19,18 +19,18 @@
       "rdfs:label": "isSimilarTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -53,6 +53,9 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:Order"
         },
         {
@@ -60,17 +63,14 @@
         },
         {
           "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -84,10 +84,10 @@
       "rdfs:label": "isRelatedTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -106,24 +106,24 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
         {
           "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:AdministrativeArea"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:supersededBy": {
@@ -135,10 +135,10 @@
       "@type": "rdfs:Class",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         },
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         }
       ],
       "rdfs:comment": "An account that allows an investor to deposit funds and place investment orders with a licensed broker or brokerage firm.",
@@ -158,15 +158,6 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TrainTrip"
-        },
-        {
-          "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Invoice"
         },
         {
@@ -176,18 +167,27 @@
           "@id": "schema:ParcelDelivery"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:TrainTrip"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -198,16 +198,16 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -245,13 +245,13 @@
       "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
-          "@id": "schema:InvestmentOrDeposit"
+          "@id": "schema:MoneyTransfer"
         },
         {
           "@id": "schema:LoanOrCredit"
         },
         {
-          "@id": "schema:MoneyTransfer"
+          "@id": "schema:InvestmentOrDeposit"
         },
         {
           "@id": "schema:DatedMoneySpecification"
@@ -291,10 +291,10 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Service"
@@ -303,13 +303,13 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": {
@@ -403,30 +403,30 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:AdministrativeArea"
         },
         {
           "@id": "schema:Text"
@@ -443,13 +443,13 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:LocationFeatureSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -487,7 +487,10 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Product"
@@ -499,13 +502,10 @@
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -537,13 +537,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -604,7 +604,7 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
@@ -613,7 +613,7 @@
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
@@ -633,10 +633,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -653,13 +653,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -720,10 +720,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -766,33 +766,33 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:PhysicalActivity"
         },
         {
           "@id": "schema:Invoice"
         },
         {
+          "@id": "schema:Property"
+        },
+        {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PhysicalActivityCategory"
         },
         {
-          "@id": "schema:PhysicalActivityCategory"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:Thing"
@@ -809,9 +809,6 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:PlayAction"
-        },
-        {
           "@id": "schema:Event"
         },
         {
@@ -819,6 +816,9 @@
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:PlayAction"
         },
         {
           "@id": "schema:CreativeWork"
@@ -844,16 +844,16 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -884,22 +884,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:AggregateOffer"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:MenuItem"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:MenuItem"
         }
       ],
       "schema:rangeIncludes": {

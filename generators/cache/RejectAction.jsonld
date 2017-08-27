@@ -75,12 +75,18 @@
       }
     },
     {
-      "@id": "schema:AllocateAction",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The act of organizing tasks/objects/events by associating resources to it.",
-      "rdfs:label": "AllocateAction",
-      "rdfs:subClassOf": {
-        "@id": "schema:OrganizeAction"
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
@@ -114,18 +120,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Action"
-      }
-    },
-    {
-      "@id": "schema:result",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
       }
     },
     {
@@ -164,10 +158,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -213,19 +207,32 @@
       }
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:purpose",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
+      "rdfs:comment": "A goal towards an action is taken. Can be concrete or abstract.",
+      "rdfs:label": "purpose",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:AllocateAction"
+        },
+        {
+          "@id": "schema:MedicalDevice"
+        },
+        {
+          "@id": "schema:PayAction"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
       },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:MedicalDevicePurpose"
+        },
+        {
+          "@id": "schema:Thing"
+        }
+      ]
     },
     {
       "@id": "schema:image",
@@ -249,6 +256,15 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:AllocateAction",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The act of organizing tasks/objects/events by associating resources to it.",
+      "rdfs:label": "AllocateAction",
+      "rdfs:subClassOf": {
+        "@id": "schema:OrganizeAction"
+      }
     },
     {
       "@id": "schema:target",
@@ -311,40 +327,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:purpose",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "A goal towards an action is taken. Can be concrete or abstract.",
-      "rdfs:label": "purpose",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:AllocateAction"
-        },
-        {
-          "@id": "schema:PayAction"
-        },
-        {
-          "@id": "schema:MedicalDevice"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Thing"
-        },
-        {
-          "@id": "schema:MedicalDevicePurpose"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:location",
@@ -353,13 +353,13 @@
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": [
@@ -367,10 +367,10 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -408,10 +408,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     }

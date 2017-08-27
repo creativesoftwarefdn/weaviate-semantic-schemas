@@ -16,6 +16,37 @@
       }
     },
     {
+      "@id": "schema:unitCode",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+      "rdfs:label": "unitCode",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:TypeAndQuantityNode"
+        },
+        {
+          "@id": "schema:UnitPriceSpecification"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
+    },
+    {
       "@id": "schema:inventoryLevel",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
@@ -46,22 +77,22 @@
       }
     },
     {
+      "@id": "schema:yield",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
       "@id": "schema:tongueWeight",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
     },
     {
-      "@id": "schema:referenceQuantity",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
-    },
-    {
-      "@id": "schema:advanceBookingRequirement",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:yearlyRevenue",
@@ -70,7 +101,7 @@
       }
     },
     {
-      "@id": "schema:numberOfEmployees",
+      "@id": "schema:seatingCapacity",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -88,19 +119,25 @@
       }
     },
     {
-      "@id": "schema:seatingCapacity",
+      "@id": "schema:numberOfEmployees",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
     },
     {
-      "@id": "schema:cargoVolume",
+      "@id": "schema:requiredQuantity",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
     },
     {
-      "@id": "schema:durationOfWarranty",
+      "@id": "schema:advanceBookingRequirement",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:yearsInOperation",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -130,16 +167,16 @@
       "rdfs:label": "minValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:PropertyValueSpecification"
         },
         {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:PropertyValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -168,19 +205,7 @@
       }
     },
     {
-      "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
-      }
-    },
-    {
-      "@id": "schema:depth",
+      "@id": "schema:numChildren",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -195,30 +220,30 @@
       "rdfs:label": "valueReference",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:QualitativeValue"
         },
         {
           "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:StructuredValue"
+          "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:StructuredValue"
         }
       ]
     },
@@ -241,40 +266,21 @@
       }
     },
     {
-      "@id": "schema:unitCode",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
-      "rdfs:label": "unitCode",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:TypeAndQuantityNode"
-        },
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:UnitPriceSpecification"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "schema:yearsInOperation",
+      "@id": "schema:durationOfWarranty",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
       }
     },
     {
@@ -308,21 +314,21 @@
       "rdfs:label": "value",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:StructuredValue"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:StructuredValue"
         },
         {
           "@id": "schema:Text"
@@ -357,10 +363,10 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:Product"
@@ -389,16 +395,16 @@
       "rdfs:label": "maxValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:PropertyValueSpecification"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:PropertyValueSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -424,13 +430,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -477,10 +483,10 @@
           "@id": "schema:UnitPriceSpecification"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:TypeAndQuantityNode"
         },
         {
-          "@id": "schema:TypeAndQuantityNode"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:QuantitativeValue"
@@ -509,10 +515,10 @@
       }
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "@id": "schema:referenceQuantity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
     },
     {
       "@id": "schema:mainEntityOfPage",
@@ -527,15 +533,27 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
       "@id": "schema:width",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:cargoVolume",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:recipeYield",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -601,7 +619,7 @@
       }
     },
     {
-      "@id": "schema:numChildren",
+      "@id": "schema:depth",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
