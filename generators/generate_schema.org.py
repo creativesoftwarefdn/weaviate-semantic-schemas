@@ -123,7 +123,7 @@ def createFile( i, processedClasses ):
     # Set basic vars
     ##
     tree = {}
-    tree['context']     = 'http://schema.org'
+    tree['@context']     = 'http://schema.org'
     tree['type']        = i.lower()
     tree['name']        = 'Schema.org - ' + i
     tree['maintainer']  = 'yourfriends@weaviate.com'
