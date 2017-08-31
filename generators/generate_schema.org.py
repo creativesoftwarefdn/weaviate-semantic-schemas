@@ -13,7 +13,7 @@ counter = 1
 def buildLog( i ):
     global counter
     counter += 1
-    print(str(counter).zfill(5)  + " | " + str(datetime.datetime.now().time()) + " | " + i)
+    print(str(counter).zfill(7)  + " | " + str(datetime.datetime.now().time()) + " | " + i)
 
 ##
 # Create file process
@@ -53,6 +53,41 @@ def createFile( i, processedClasses ):
                 buildLog("FAILED AND SKIP: " + i)
 
     ##
+    # Check if it should be a string. This validate if it should be a string, if there are ONLY schema:rangeIncludes, it should be a string
+    #
+    # i = Class to check
+    ##
+    def shouldBeString( i ):
+        workFile = getSchema("http://schema.org/" + i + ".jsonld")
+        for graph in workFile["@graph"]:
+            if "@type" in graph and graph["@type"] == "rdf:Property":
+                return False
+        return True
+
+    ##
+    # Load and get props
+    #
+    # i = class to load
+    ##
+    def getDataTypesInArray( i ):
+        if isinstance(i, list):
+            returnArray = []
+            for subI in i:
+                currentProp = subI["@id"].split(":")[1]
+                if currentProp[0].isupper() == True and shouldBeString(currentProp) == False:
+                    returnArray.append(currentProp)
+                elif shouldBeString(currentProp) == True:
+                    if "string" not in returnArray:
+                        returnArray.append("string")
+            return returnArray
+        else:
+            currentProp = i["@id"].split(":")[1]
+            if currentProp[0].isupper() == True and shouldBeString(currentProp) == False:
+                return [currentProp]
+            elif shouldBeString(currentProp) == True:
+                return ["string"]
+
+    ##
     # Gets an array of props
     #
     # i = based on the current graph
@@ -64,12 +99,15 @@ def createFile( i, processedClasses ):
         for graph in i:
             currentProp = graph["@id"].split(":")[1]
             # If first of schema is lower = prop
-            if currentProp[0].isupper() == False:
+            if currentProp[0].isupper() == False and "@type" in graph and graph["@type"] == "rdf:Property":
                 subArray = {}
                 subArray["name"] = currentProp
-                subArray["@dataType"] = [] # SHOULD BE FIXED, SEE GITHUB ISSUE
+                subArray["@dataType"] = getDataTypesInArray(graph["schema:rangeIncludes"])
                 if "rdfs:comment" in graph:
-                    subArray["description"] = graph["rdfs:comment"]
+                    if isinstance(graph["rdfs:comment"], list):
+                        subArray["description"] = ' '.join(graph["rdfs:comment"])
+                    else:
+                        subArray["description"] = graph["rdfs:comment"]
                 else:
                     subArray["description"] = None
                 # append the array
@@ -98,7 +136,10 @@ def createFile( i, processedClasses ):
                     # extend the tree
                     newTree = {}
                     newTree["class"]        = currentClass
-                    newTree["description"]  = graph["rdfs:comment"]
+                    if isinstance(graph["rdfs:comment"], list):
+                        newTree["description"] = ' '.join(graph["rdfs:comment"])
+                    else:
+                        newTree["description"] = graph["rdfs:comment"]
                     newTree["properties"]   = properties
                     tree["classes"].append(newTree)
                 else :

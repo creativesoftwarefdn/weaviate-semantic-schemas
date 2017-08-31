@@ -34,7 +34,7 @@ Template EXAMPLE:
 		"description": "This is a Thing",
 		"properties": [{
 			"name": "url",
-			"@dataType": ["URL"],
+			"@dataType": ["Person", "string"], // if a cref it has a capital (= Class) otherwise "string" or "int"
 			"description": "URL of the item."
 		}]
 	}]
