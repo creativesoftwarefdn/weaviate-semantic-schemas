@@ -1,4 +1,4 @@
-# Weaviate Semantic Schema Repo
+# Weaviate Semantic Schema Repo with Ontologies
 
 In this repo you can find a set of commonly used semantic schemas like [schema.org](schema.org)
 
