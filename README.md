@@ -26,9 +26,9 @@ Template EXAMPLE:
 ```
 {
 	"@context": "http://schema.org",
-	"type": "thing",
+	"type": "thing", // thing or action
 	"name": "schema.org - Thing",
-	"maintainer": "yourfriends@weaviate.com",
+	"maintainer": "yourfriends@weaviate.com", // should be email
 	"classes": [{
 		"class": "Thing",
 		"description": "This is a Thing",
