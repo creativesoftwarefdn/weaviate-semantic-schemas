@@ -26,7 +26,7 @@ Template EXAMPLE:
 ```
 {
 	"@context": "http://schema.org",
-	"version": "version",
+	"version": "x.x.x", // semver version number of this schema
 	"type": "thing", // thing or action
 	"name": "schema.org - Thing",
 	"maintainer": "yourfriends@weaviate.com", // should be email
