@@ -20,7 +20,7 @@ def buildLog( i ):
 # i = input Class
 # processedClasses = skipp class array
 ##
-def createFile( i, processedClasses ):
+def createFile( i, processedClasses, version ):
 
     ##
     # Load jsonld file from cache
@@ -165,6 +165,7 @@ def createFile( i, processedClasses ):
     ##
     tree = {}
     tree['@context']     = 'http://schema.org'
+    tree['version']     = version
     tree['type']        = i.lower()
     tree['name']        = 'Schema.org - ' + i
     tree['maintainer']  = 'yourfriends@weaviate.com'
@@ -186,7 +187,15 @@ def createFile( i, processedClasses ):
 ##
 # START BUILD
 ##
-createFile('Thing', ['Action'])
-createFile('Action', [])
 
-buildLog("DONE")
+arguments = sys.argv[1:]
+
+if (len(arguments) == 0):
+    buildLog("ERROR: Add one argument with the semver version of the schema.")
+elif (len(arguments) == 1):
+    createFile('Thing', ['Action'], arguments[0])
+    createFile('Action', [], arguments[0])
+
+    buildLog("DONE")
+else:
+    buildLog("ERROR: Too many arguments given.")

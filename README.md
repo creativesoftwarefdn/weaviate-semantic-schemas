@@ -26,6 +26,7 @@ Template EXAMPLE:
 ```
 {
 	"@context": "http://schema.org",
+	"version": "version",
 	"type": "thing", // thing or action
 	"name": "schema.org - Thing",
 	"maintainer": "yourfriends@weaviate.com", // should be email
@@ -47,6 +48,7 @@ Golang Struct:
 // Schema is a representation in GO for the custom schema provided.
 type Schema struct {
 	Context    string  `json:"@context"`
+	Version    string  `json:"version"`
 	Type       string  `json:"type"`
 	Maintainer string  `json:"maintainer"`
 	Name       string  `json:"name"`
@@ -72,4 +74,4 @@ _Note: You can use the existing schemas as templates or examples_
 
 ## Generators
 
-Generators are use to create custom schemas. They should be run from the ./generators dir of the repo. Like: `$ cd generators && python generate_schema.org.py`
+Generators are use to create custom schemas. They should be run from the ./generators dir of the repo. Like: `$ cd generators && python generate_schema.org.py`. The schema.org generator `generate_schema.org.py` needs one argument, the semver version of the schema you want to generate, like: `python generate_schema.org.py 1.0.0`.
