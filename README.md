@@ -21,7 +21,7 @@ The Thing schemas are used to define actual things. The Action schemas are used 
 
 This repo contains examples of ready to use schemas. But you can create your own schema.
 
-Template EXAMPLE:
+Template __example__:
 
 ```
 {
@@ -34,13 +34,20 @@ Template EXAMPLE:
 		"class": "Thing",
 		"description": "This is a Thing",
 		"properties": [{
-			"name": "url",
-			"@dataType": ["Person", "string"], // if a cref it has a capital (= Class) otherwise "string" or "int"
+			"name": "owner",
+			"@dataType": ["Person"], // if a cross-reference it has a capital (= Class) otherwise it is a value*
 			"description": "URL of the item."
 		}]
 	}]
 }
 ```
+
+
+_* Notes:_
+* _The value in the `@dataType` array should contain on of the following values: any uppercase starting word (like `Person`) being a cross-reference, `string`, `int`, `number`, `boolean` or `date`._
+* _Every property with a certain name across all schema's should contain either a cross-reference or one of the values. For example, in this example the property `owner` in another class can __only__ contain a data type starting with a capital (like `Person` or `Company`)._
+* _Different data types can not be combined in the array_
+* _Weaviate validates the schemas when initializing, giving a detailed error when some of the requirements mentioned above are not met_
 
 Golang Struct:
 
