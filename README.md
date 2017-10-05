@@ -36,7 +36,7 @@ Template __example__:
 		"properties": [{
 			"name": "owner",
 			"@dataType": ["Person"], // if a cross-reference it has a capital (= Class) otherwise it is a value*
-			"description": "URL of the item."
+			"description": "Owner of the thing."
 		}]
 	}]
 }
