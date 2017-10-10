@@ -127,10 +127,13 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Event"
@@ -139,13 +142,10 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Product"
@@ -229,13 +229,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -273,10 +273,10 @@
       "rdfs:label": "estimatedCost",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowToSupply"
+          "@id": "schema:HowTo"
         },
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToSupply"
         }
       ],
       "schema:rangeIncludes": [
@@ -310,10 +310,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -330,10 +330,10 @@
       "rdfs:label": "comment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:RsvpAction"
         },
         {
-          "@id": "schema:RsvpAction"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -347,16 +347,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -445,10 +445,10 @@
       "rdfs:label": "suitableForDiet",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Recipe"
+          "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:Recipe"
         }
       ],
       "schema:rangeIncludes": {
@@ -477,16 +477,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
@@ -532,16 +532,7 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:TrainTrip"
-        },
-        {
           "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:Flight"
         },
         {
           "@id": "schema:ParcelDelivery"
@@ -550,18 +541,27 @@
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:TrainTrip"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -583,33 +583,16 @@
       ]
     },
     {
-      "@id": "schema:fileFormat",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
-      "rdfs:label": "fileFormat",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
-    },
-    {
       "@id": "schema:contributor",
       "@type": "rdf:Property",
       "rdfs:comment": "A secondary contributor to the CreativeWork or Event.",
       "rdfs:label": "contributor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
@@ -641,27 +624,30 @@
     {
       "@id": "schema:steps",
       "@type": "rdf:Property",
-      "rdfs:comment": "The steps in the form of a single item (text, document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+      "rdfs:comment": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
       "rdfs:label": "steps",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToSection"
         },
         {
-          "@id": "schema:HowToSection"
+          "@id": "schema:HowTo"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ItemList"
         },
         {
-          "@id": "schema:ItemList"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Text"
         }
-      ]
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:step"
+      }
     },
     {
       "@id": "schema:accessibilityHazard",
@@ -754,13 +740,13 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Offer"
@@ -826,10 +812,10 @@
       "rdfs:label": "typicalAgeRange",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -849,10 +835,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -863,15 +849,6 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LodgingBusiness"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Event"
         },
         {
@@ -879,6 +856,15 @@
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:LodgingBusiness"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1022,10 +1008,10 @@
       "rdfs:label": "performTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowToDirection"
+          "@id": "schema:HowTo"
         },
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToDirection"
         }
       ],
       "schema:rangeIncludes": {
@@ -1047,10 +1033,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         },
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         }
       ]
     },
@@ -1091,20 +1077,20 @@
       "rdfs:comment": "A step in making the recipe, in the form of a single item (document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
       "rdfs:label": "recipeInstructions",
       "rdfs:subPropertyOf": {
-        "@id": "schema:steps"
+        "@id": "schema:step"
       },
       "schema:domainIncludes": {
         "@id": "schema:Recipe"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:ItemList"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1223,10 +1209,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1243,13 +1229,36 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
+        }
+      ]
+    },
+    {
+      "@id": "schema:step",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.",
+      "rdfs:label": "step",
+      "schema:domainIncludes": {
+        "@id": "schema:HowTo"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:HowToStep"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:HowToSection"
         }
       ]
     },
@@ -1272,7 +1281,7 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
@@ -1284,7 +1293,7 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1305,6 +1314,33 @@
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:ingredients",
@@ -1349,10 +1385,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1472,13 +1508,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:URL"
         }
       ],
       "schema:supersededBy": {
@@ -1557,19 +1593,29 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
+      "schema:inverseOf": {
+        "@id": "schema:subjectOf"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -1611,18 +1657,18 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToDirection"
         },
         {
-          "@id": "schema:HowToDirection"
+          "@id": "schema:HowTo"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:HowToTool"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:HowToTool"
         }
       ]
     },
@@ -1657,27 +1703,27 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1771,25 +1817,25 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -1815,10 +1861,10 @@
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         },
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1884,6 +1930,31 @@
       }
     },
     {
+      "@id": "schema:publishingPrinciples",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
+      "rdfs:label": "publishingPrinciples",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
       "@id": "schema:interactionStatistic",
       "@type": "rdf:Property",
       "rdfs:comment": "The number of interactions for the CreativeWork using the WebSite or SoftwareApplication. The most specific child type of InteractionCounter should be used.",
@@ -1902,18 +1973,18 @@
       "rdfs:label": "translator",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1956,13 +2027,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -1988,22 +2059,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:MenuItem"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:AggregateOffer"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:MenuItem"
         }
       ],
       "schema:rangeIncludes": {
@@ -2011,27 +2082,19 @@
       }
     },
     {
-      "@id": "schema:publishingPrinciples",
+      "@id": "schema:fileFormat",
       "@type": "rdf:Property",
-      "rdfs:comment": "The publishingPrinciples property indicates (typically via <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a>) a document describing the editorial principles of an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (or individual e.g. a <a class=\"localLink\" href=\"http://schema.org/Person\">Person</a> writing a blog) that relate to their activities as a publisher, e.g. ethics or diversity policies. When applied to a <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a> (e.g. <a class=\"localLink\" href=\"http://schema.org/NewsArticle\">NewsArticle</a>) the principles are those of the party primarily responsible for the creation of the <a class=\"localLink\" href=\"http://schema.org/CreativeWork\">CreativeWork</a>.</p>\n\n<p>While such policies are most typically expressed in natural language, sometimes related information (e.g. indicating a <a class=\"localLink\" href=\"http://schema.org/funder\">funder</a>) can be expressed using schema.org terminology.",
-      "rdfs:label": "publishingPrinciples",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
+      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
+      "rdfs:label": "fileFormat",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -2054,19 +2117,19 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:WriteAction"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:LinkRole"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [

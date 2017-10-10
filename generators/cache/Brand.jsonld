@@ -10,9 +10,15 @@
   },
   "@graph": [
     {
-      "@id": "schema:brand",
-      "schema:rangeIncludes": {
-        "@id": "schema:Brand"
+      "@id": "schema:Brand",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      },
+      "rdfs:comment": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
+      "rdfs:label": "Brand",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
       }
     },
     {
@@ -40,25 +46,25 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -84,16 +90,16 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Event"
@@ -102,10 +108,10 @@
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -125,13 +131,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -165,10 +171,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -188,15 +194,9 @@
       }
     },
     {
-      "@id": "schema:Brand",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
-      },
-      "rdfs:comment": "A brand is a name used by an organization or business person for labeling a product, product group, or similar.",
-      "rdfs:label": "Brand",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
+      "@id": "schema:brand",
+      "schema:rangeIncludes": {
+        "@id": "schema:Brand"
       }
     },
     {
@@ -224,10 +224,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -289,6 +289,33 @@
       "schema:rangeIncludes": {
         "@id": "schema:URL"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:Intangible",

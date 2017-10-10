@@ -10,6 +10,50 @@
   },
   "@graph": [
     {
+      "@id": "schema:SeatingMap",
+      "@type": "schema:MapCategoryType"
+    },
+    {
+      "@id": "schema:MapCategoryType",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "An enumeration of several kinds of Map.",
+      "rdfs:label": "MapCategoryType",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
+    },
+    {
+      "@id": "schema:supersededBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "rdfs:label": "supersededBy",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Class"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://meta.schema.org/"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Class"
+        }
+      ]
+    },
+    {
       "@id": "schema:url",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of the item.",
@@ -22,8 +66,28 @@
       }
     },
     {
-      "@id": "schema:SeatingMap",
-      "@type": "schema:MapCategoryType"
+      "@id": "schema:Enumeration",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+      "rdfs:label": "Enumeration",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:disambiguatingDescription",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:additionalType",
@@ -41,45 +105,46 @@
       }
     },
     {
-      "@id": "schema:supersededBy",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
-      "rdfs:label": "supersededBy",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Property"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://meta.schema.org/"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Enumeration"
-        }
-      ]
-    },
-    {
-      "@id": "schema:ParkingMap",
-      "@type": "schema:MapCategoryType"
-    },
-    {
       "@id": "schema:mapType",
       "schema:rangeIncludes": {
         "@id": "schema:MapCategoryType"
       }
+    },
+    {
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:TransitMap",
+      "@type": "schema:MapCategoryType"
+    },
+    {
+      "@id": "schema:VenueMap",
+      "@type": "schema:MapCategoryType"
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:ParkingMap",
+      "@type": "schema:MapCategoryType"
     },
     {
       "@id": "schema:identifier",
@@ -94,28 +159,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
         }
       ]
-    },
-    {
-      "@id": "schema:VenueMap",
-      "@type": "schema:MapCategoryType"
-    },
-    {
-      "@id": "schema:MapCategoryType",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "An enumeration of several kinds of Map.",
-      "rdfs:label": "MapCategoryType",
-      "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
-      }
     },
     {
       "@id": "schema:description",
@@ -133,25 +185,54 @@
       }
     },
     {
-      "@id": "schema:Enumeration",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-      "rdfs:label": "Enumeration",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
-    },
-    {
-      "@id": "schema:potentialAction",
+      "@id": "schema:image",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:mainEntityOfPage",
@@ -166,51 +247,12 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
-    },
-    {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:ImageObject"
-        }
-      ]
-    },
-    {
-      "@id": "schema:TransitMap",
-      "@type": "schema:MapCategoryType"
-    },
-    {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:alternateName",
@@ -243,21 +285,6 @@
       "rdfs:label": "Intangible",
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:disambiguatingDescription",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     }
   ]

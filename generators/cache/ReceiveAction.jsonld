@@ -43,13 +43,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:MoveAction"
+          "@id": "schema:TransferAction"
         },
         {
           "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:TransferAction"
+          "@id": "schema:MoveAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -66,16 +66,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:TrackAction"
+          "@id": "schema:OrderAction"
         },
         {
-          "@id": "schema:OrderAction"
+          "@id": "schema:ReceiveAction"
         },
         {
           "@id": "schema:SendAction"
         },
         {
-          "@id": "schema:ReceiveAction"
+          "@id": "schema:TrackAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -160,10 +160,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -212,30 +212,43 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:description",
+      "@id": "schema:sender",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
+      "rdfs:comment": "A sub property of participant. The participant who is at the sending end of the action.",
+      "rdfs:label": "sender",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:participant"
       },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ReceiveAction"
+        },
+        {
+          "@id": "schema:Message"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Audience"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
     },
     {
       "@id": "schema:location",
@@ -244,10 +257,10 @@
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Action"
@@ -255,10 +268,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PostalAddress"
         },
         {
           "@id": "schema:Place"
@@ -289,30 +302,44 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:sender",
+      "@id": "schema:description",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of participant. The participant who is at the sending end of the action.",
-      "rdfs:label": "sender",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:participant"
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
       },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:ReceiveAction"
-        },
-        {
-          "@id": "schema:Message"
-        }
-      ],
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Audience"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -421,10 +448,10 @@
           "@id": "schema:TransferAction"
         },
         {
-          "@id": "schema:InsertAction"
+          "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:InsertAction"
         }
       ],
       "schema:rangeIncludes": {

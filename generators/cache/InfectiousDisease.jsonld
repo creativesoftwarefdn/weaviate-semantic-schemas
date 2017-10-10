@@ -48,13 +48,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
-        },
-        {
           "@id": "schema:MedicalCondition"
         },
         {
           "@id": "schema:MedicalStudy"
+        },
+        {
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -62,13 +62,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:MedicalStudyStatus"
+        },
+        {
           "@id": "schema:EventStatusType"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:MedicalStudyStatus"
         }
       ]
     },
@@ -153,27 +153,12 @@
           "@id": "schema:SuperficialAnatomy"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:AnatomicalSystem"
         }
       ]
-    },
-    {
-      "@id": "schema:typicalTest",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A medical test typically performed given this condition.",
-      "rdfs:label": "typicalTest",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalCondition"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalTest"
-      }
     },
     {
       "@id": "schema:stage",
@@ -188,6 +173,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalConditionStage"
+      }
+    },
+    {
+      "@id": "schema:typicalTest",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical test typically performed given this condition.",
+      "rdfs:label": "typicalTest",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalCondition"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalTest"
       }
     },
     {
@@ -238,13 +238,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalEnumeration"
+        },
+        {
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -255,10 +255,10 @@
       "rdfs:label": "pathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -312,6 +312,33 @@
       "schema:rangeIncludes": {
         "@id": "schema:URL"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:transmissionMethod",
@@ -435,13 +462,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -518,13 +545,13 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Patient"
+          "@id": "schema:MedicalCondition"
         },
         {
           "@id": "schema:DrugClass"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:Patient"
         },
         {
           "@id": "schema:TherapeuticProcedure"
@@ -678,10 +705,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },

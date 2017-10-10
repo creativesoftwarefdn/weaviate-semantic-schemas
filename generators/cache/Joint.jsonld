@@ -28,13 +28,13 @@
       "rdfs:label": "associatedPathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalStructure"
         },
         {
           "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:SuperficialAnatomy"
         }
       ],
       "schema:isPartOf": {
@@ -81,10 +81,10 @@
       "rdfs:label": "bodyLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:AnatomicalStructure"
         }
       ],
       "schema:isPartOf": {
@@ -104,10 +104,10 @@
           "@id": "schema:SuperficialAnatomy"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:AnatomicalStructure"
         }
       ],
       "schema:isPartOf": {
@@ -124,10 +124,10 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
@@ -138,13 +138,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -218,10 +218,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         }
       ]
     },
@@ -322,10 +322,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
@@ -401,15 +401,45 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:Joint",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The anatomical location at which two or more bones make contact.",
-      "rdfs:label": "Joint",
-      "rdfs:subClassOf": {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
+      "@id": "schema:connectedTo",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Other anatomical structures to which this structure is connected.",
+      "rdfs:label": "connectedTo",
+      "schema:domainIncludes": {
         "@id": "schema:AnatomicalStructure"
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:AnatomicalStructure"
       }
     },
     {
@@ -537,18 +567,15 @@
       }
     },
     {
-      "@id": "schema:connectedTo",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Other anatomical structures to which this structure is connected.",
-      "rdfs:label": "connectedTo",
-      "schema:domainIncludes": {
+      "@id": "schema:Joint",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The anatomical location at which two or more bones make contact.",
+      "rdfs:label": "Joint",
+      "rdfs:subClassOf": {
         "@id": "schema:AnatomicalStructure"
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:AnatomicalStructure"
       }
     }
   ]

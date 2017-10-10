@@ -66,10 +66,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -154,10 +154,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -206,10 +206,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
@@ -226,45 +226,45 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:AuthorizeAction"
+          "@id": "schema:DonateAction"
+        },
+        {
+          "@id": "schema:Message"
         },
         {
           "@id": "schema:SendAction"
         },
         {
-          "@id": "schema:DonateAction"
-        },
-        {
           "@id": "schema:PayAction"
         },
         {
-          "@id": "schema:ReturnAction"
+          "@id": "schema:AuthorizeAction"
         },
         {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:GiveAction"
+          "@id": "schema:ReturnAction"
         },
         {
           "@id": "schema:TipAction"
         },
         {
-          "@id": "schema:Message"
+          "@id": "schema:GiveAction"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Audience"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Person"
         }
       ]
     },
@@ -305,10 +305,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -317,6 +317,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:target",
@@ -382,13 +409,13 @@
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
@@ -396,10 +423,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -413,16 +440,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:InsertAction"
+          "@id": "schema:MoveAction"
         },
         {
           "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:MoveAction"
+          "@id": "schema:TransferAction"
         },
         {
-          "@id": "schema:TransferAction"
+          "@id": "schema:InsertAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -472,10 +499,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     }

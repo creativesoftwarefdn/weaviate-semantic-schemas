@@ -43,13 +43,13 @@
       "rdfs:label": "manufacturer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
-        },
-        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:Drug"
         }
       ],
       "schema:rangeIncludes": {
@@ -84,35 +84,24 @@
       }
     },
     {
-      "@id": "schema:legalStatus",
+      "@id": "schema:isProprietary",
       "@type": "rdf:Property",
-      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
-      "rdfs:label": "legalStatus",
+      "rdfs:comment": "True if this item's name is a proprietary/brand name (vs. generic name).",
+      "rdfs:label": "isProprietary",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:DrugLegalStatus"
-        },
-        {
-          "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
+      }
     },
     {
       "@id": "schema:recommendedIntake",
@@ -175,24 +164,35 @@
       }
     },
     {
-      "@id": "schema:isProprietary",
+      "@id": "schema:legalStatus",
       "@type": "rdf:Property",
-      "rdfs:comment": "True if this item's name is a proprietary/brand name (vs. generic name).",
-      "rdfs:label": "isProprietary",
+      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:MedicalEntity"
         },
         {
           "@id": "schema:Drug"
+        },
+        {
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:MedicalEnumeration"
+        },
+        {
+          "@id": "schema:DrugLegalStatus"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:potentialAction",
@@ -213,10 +213,10 @@
       "rdfs:label": "proprietaryName",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
@@ -296,10 +296,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
@@ -351,10 +351,10 @@
           "@id": "schema:Drug"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Substance"
         },
         {
-          "@id": "schema:Substance"
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
@@ -369,6 +369,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:Substance",
@@ -480,10 +507,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -500,10 +527,10 @@
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DrugStrength"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DrugStrength"
         }
       ],
       "schema:isPartOf": {

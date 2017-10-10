@@ -58,10 +58,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -141,10 +141,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -170,10 +170,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -193,10 +193,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
@@ -219,32 +219,16 @@
       }
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Action"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:PostalAddress"
-        },
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:image",
@@ -268,6 +252,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:target",
@@ -347,36 +358,41 @@
       ]
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:foodEstablishment",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of location. The specific food establishment where the action occurred.",
-      "rdfs:label": "foodEstablishment",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:location"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:CookAction"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:FoodEstablishment"
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:PostalAddress"
+        },
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Place"
         }
       ]
+    },
+    {
+      "@id": "schema:CookAction",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The act of producing/preparing food.",
+      "rdfs:label": "CookAction",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreateAction"
+      }
     },
     {
       "@id": "schema:alternateName",
@@ -420,13 +436,24 @@
       ]
     },
     {
-      "@id": "schema:CookAction",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The act of producing/preparing food.",
-      "rdfs:label": "CookAction",
-      "rdfs:subClassOf": {
-        "@id": "schema:CreateAction"
-      }
+      "@id": "schema:foodEstablishment",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of location. The specific food establishment where the action occurred.",
+      "rdfs:label": "foodEstablishment",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:location"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:CookAction"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:FoodEstablishment"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
     }
   ]
 }

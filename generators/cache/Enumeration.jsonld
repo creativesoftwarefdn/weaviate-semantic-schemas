@@ -48,13 +48,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Class"
-        },
-        {
           "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Class"
         }
       ]
     },
@@ -86,7 +86,13 @@
       }
     },
     {
-      "@id": "schema:Specialty",
+      "@id": "schema:MusicReleaseFormatType",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
+    },
+    {
+      "@id": "schema:MapCategoryType",
       "rdfs:subClassOf": {
         "@id": "schema:Enumeration"
       }
@@ -149,6 +155,15 @@
       }
     },
     {
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
       "@id": "schema:potentialAction",
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
@@ -158,12 +173,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Action"
-      }
-    },
-    {
-      "@id": "schema:GamePlayMode",
-      "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
       }
     },
     {
@@ -212,9 +221,15 @@
       }
     },
     {
-      "@id": "schema:MusicReleaseFormatType",
-      "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
+      "@id": "schema:sameAs",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
+      "rdfs:label": "sameAs",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
@@ -259,12 +274,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:MapCategoryType",
-      "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
       }
     },
     {
@@ -317,6 +326,33 @@
       ]
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "schema:LegalValueLevel",
       "rdfs:subClassOf": {
         "@id": "schema:Enumeration"
@@ -326,18 +362,6 @@
       "@id": "schema:MusicAlbumReleaseType",
       "rdfs:subClassOf": {
         "@id": "schema:Enumeration"
-      }
-    },
-    {
-      "@id": "schema:sameAs",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-      "rdfs:label": "sameAs",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
       }
     },
     {
@@ -365,6 +389,12 @@
       }
     },
     {
+      "@id": "schema:Specialty",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
+    },
+    {
       "@id": "schema:GenderType",
       "rdfs:subClassOf": {
         "@id": "schema:Enumeration"
@@ -377,12 +407,9 @@
       }
     },
     {
-      "@id": "schema:Intangible",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "rdfs:label": "Intangible",
+      "@id": "schema:GamePlayMode",
       "rdfs:subClassOf": {
-        "@id": "schema:Thing"
+        "@id": "schema:Enumeration"
       }
     },
     {

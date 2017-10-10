@@ -31,25 +31,25 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:JobPosting"
-        },
-        {
           "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
         },
         {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:JobPosting"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -120,16 +120,16 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -164,10 +164,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -178,24 +178,24 @@
       "rdfs:label": "ineligibleRegion",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -230,7 +230,10 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
@@ -239,10 +242,7 @@
           "@id": "schema:DeliveryChargeSpecification"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:ContactPoint"
@@ -250,16 +250,16 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:AdministrativeArea"
         },
         {
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -305,10 +305,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -340,13 +340,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -390,10 +390,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -402,6 +402,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:eligibleRegion",
@@ -419,21 +446,21 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:GeoShape"
-        },
         {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -444,21 +471,21 @@
       "rdfs:label": "price",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:TradeAction"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -472,22 +499,22 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Permit"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Permit"
         },
         {
           "@id": "schema:OpeningHoursSpecification"
         },
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:LocationFeatureSpecification"
@@ -507,13 +534,13 @@
       "rdfs:label": "eligibleQuantity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {

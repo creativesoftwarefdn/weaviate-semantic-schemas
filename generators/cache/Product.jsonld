@@ -25,18 +25,18 @@
       "rdfs:label": "isSimilarTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -80,10 +80,10 @@
       "rdfs:label": "manufacturer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Drug"
@@ -126,10 +126,10 @@
       "rdfs:label": "isRelatedTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -140,6 +140,35 @@
           "@id": "schema:Service"
         }
       ]
+    },
+    {
+      "@id": "schema:offers",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "rdfs:label": "offers",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:MenuItem"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Offer"
+      }
     },
     {
       "@id": "schema:gtin8",
@@ -154,17 +183,23 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:orderedItem",
+      "schema:rangeIncludes": {
+        "@id": "schema:Product"
       }
     },
     {
@@ -233,50 +268,33 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Review"
       }
-    },
-    {
-      "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:ImageObject"
-        }
-      ]
     },
     {
       "@id": "schema:depth",
@@ -288,18 +306,18 @@
       "rdfs:label": "depth",
       "schema:domainIncludes": [
         {
-          "@id": "schema:VisualArtwork"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:VisualArtwork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Distance"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Distance"
         }
       ]
     },
@@ -316,13 +334,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -371,10 +389,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -388,16 +406,16 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -454,13 +472,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -498,13 +516,13 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:QualitativeValue"
-        },
-        {
-          "@id": "schema:Product"
         },
         {
           "@id": "schema:QuantitativeValue"
@@ -521,19 +539,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -550,28 +568,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Service"
         },
         {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -659,19 +677,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -703,10 +721,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -723,10 +741,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -759,10 +777,59 @@
       ]
     },
     {
-      "@id": "schema:orderedItem",
-      "schema:rangeIncludes": {
-        "@id": "schema:Product"
-      }
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
+      "@id": "schema:height",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The height of the item.",
+      "rdfs:label": "height",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MediaObject"
+        },
+        {
+          "@id": "schema:VisualArtwork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:Distance"
+        }
+      ]
     },
     {
       "@id": "schema:weight",
@@ -774,43 +841,15 @@
       "rdfs:label": "weight",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
-    },
-    {
-      "@id": "schema:height",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The height of the item.",
-      "rdfs:label": "height",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:MediaObject"
-        },
-        {
-          "@id": "schema:VisualArtwork"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:Distance"
-        }
-      ]
     },
     {
       "@id": "schema:productID",
@@ -854,13 +893,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -871,36 +910,36 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Invoice"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Class"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:PhysicalActivityCategory"
-        },
         {
           "@id": "schema:Thing"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PhysicalActivityCategory"
         }
       ]
     },
@@ -920,19 +959,19 @@
           "@id": "schema:Service"
         },
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -961,16 +1000,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Person"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -993,10 +1032,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
@@ -1010,10 +1049,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -1030,33 +1069,21 @@
       }
     },
     {
-      "@id": "schema:offers",
+      "@id": "schema:image",
       "@type": "rdf:Property",
-      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
-      "rdfs:label": "offers",
-      "schema:domainIncludes": [
+      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
+      "rdfs:label": "image",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:MenuItem"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:AggregateOffer"
+          "@id": "schema:URL"
         }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Offer"
-      }
+      ]
     },
     {
       "@id": "schema:sameAs",
@@ -1086,10 +1113,10 @@
       "rdfs:label": "productionDate",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Vehicle"
         },
         {
-          "@id": "schema:Vehicle"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {

@@ -31,10 +31,10 @@
           "@id": "schema:CreativeWorkSeason"
         },
         {
-          "@id": "schema:DatedMoneySpecification"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:DatedMoneySpecification"
         },
         {
           "@id": "schema:Role"
@@ -62,10 +62,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -125,13 +125,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Number"
+        },
+        {
           "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:Number"
         }
       ]
     },
@@ -237,13 +237,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -286,6 +286,33 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "schema:startDate",
       "@type": "rdf:Property",
       "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
@@ -298,13 +325,13 @@
           "@id": "schema:CreativeWorkSeries"
         },
         {
-          "@id": "schema:DatedMoneySpecification"
-        },
-        {
           "@id": "schema:CreativeWorkSeason"
         },
         {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:DatedMoneySpecification"
         }
       ],
       "schema:rangeIncludes": [

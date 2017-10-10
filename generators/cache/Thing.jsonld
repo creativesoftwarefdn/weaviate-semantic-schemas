@@ -17,14 +17,8 @@
     },
     {
       "@id": "schema:url",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of the item.",
-      "rdfs:label": "url",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
       }
     },
     {
@@ -36,12 +30,6 @@
     {
       "@id": "schema:mainEntity",
       "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:Person",
-      "rdfs:subClassOf": {
         "@id": "schema:Thing"
       }
     },
@@ -58,8 +46,8 @@
       }
     },
     {
-      "@id": "schema:reservationFor",
-      "schema:rangeIncludes": {
+      "@id": "schema:Person",
+      "rdfs:subClassOf": {
         "@id": "schema:Thing"
       }
     },
@@ -88,24 +76,15 @@
       }
     },
     {
-      "@id": "schema:Product",
-      "rdfs:subClassOf": {
+      "@id": "schema:itemReviewed",
+      "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
     },
     {
       "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
       }
     },
     {
@@ -122,34 +101,14 @@
     },
     {
       "@id": "schema:mainEntityOfPage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      }
     },
     {
       "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Action"
       }
     },
     {
@@ -159,18 +118,15 @@
       }
     },
     {
+      "@id": "schema:Product",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
+      }
+    },
+    {
       "@id": "schema:disambiguatingDescription",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
-      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -181,14 +137,8 @@
     },
     {
       "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -199,26 +149,9 @@
     },
     {
       "@id": "schema:identifier",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:identifier"
-      },
-      "rdfs:comment": "The identifier property represents any kind of identifier for any kind of <a class=\"localLink\" href=\"http://schema.org/Thing\">Thing</a>, such as ISBNs, GTIN codes, UUIDs etc. Schema.org provides dedicated properties for representing many of these, either as textual strings or as URL (URI) links. See <a href=\"/docs/datamodel.html#identifierBg\">background notes</a> for more details.",
-      "rdfs:label": "identifier",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:PropertyValue"
-        }
-      ]
+      }
     },
     {
       "@id": "schema:itemListElement",
@@ -228,17 +161,8 @@
     },
     {
       "@id": "schema:description",
-      "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
-      },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -248,33 +172,28 @@
       }
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:purpose",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
     },
     {
       "@id": "schema:image",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An image of the item. This can be a <a class=\"localLink\" href=\"http://schema.org/URL\">URL</a> or a fully described <a class=\"localLink\" href=\"http://schema.org/ImageObject\">ImageObject</a>.",
-      "rdfs:label": "image",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:ImageObject"
-        }
-      ]
+      }
     },
     {
       "@id": "schema:Thing",
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:mentions",
@@ -319,7 +238,7 @@
       }
     },
     {
-      "@id": "schema:itemReviewed",
+      "@id": "schema:reservationFor",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -337,7 +256,7 @@
       }
     },
     {
-      "@id": "schema:purpose",
+      "@id": "schema:result",
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -350,14 +269,8 @@
     },
     {
       "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -368,14 +281,8 @@
     },
     {
       "@id": "schema:sameAs",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
-      "rdfs:label": "sameAs",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
       }
     },
     {

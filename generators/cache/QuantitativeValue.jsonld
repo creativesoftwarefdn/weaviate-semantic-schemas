@@ -25,16 +25,16 @@
       "rdfs:label": "unitCode",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TypeAndQuantityNode"
-        },
-        {
-          "@id": "schema:UnitPriceSpecification"
-        },
-        {
           "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:TypeAndQuantityNode"
+        },
+        {
+          "@id": "schema:UnitPriceSpecification"
         }
       ],
       "schema:rangeIncludes": [
@@ -59,6 +59,12 @@
       }
     },
     {
+      "@id": "schema:vehicleSeatingCapacity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
       "@id": "schema:url",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of the item.",
@@ -71,7 +77,7 @@
       }
     },
     {
-      "@id": "schema:numberOfPlayers",
+      "@id": "schema:numberOfPreviousOwners",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -89,10 +95,10 @@
       }
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "@id": "schema:referenceQuantity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
     },
     {
       "@id": "schema:yearlyRevenue",
@@ -137,12 +143,6 @@
       }
     },
     {
-      "@id": "schema:yearsInOperation",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
-    },
-    {
       "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
       "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
@@ -167,16 +167,16 @@
       "rdfs:label": "minValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:PropertyValueSpecification"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:QuantitativeValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -205,7 +205,19 @@
       }
     },
     {
-      "@id": "schema:numChildren",
+      "@id": "schema:potentialAction",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
+      "rdfs:label": "potentialAction",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Action"
+      }
+    },
+    {
+      "@id": "schema:depth",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -220,35 +232,35 @@
       "rdfs:label": "valueReference",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QualitativeValue"
-        },
-        {
           "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:QualitativeValue"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:StructuredValue"
         },
         {
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:StructuredValue"
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
     {
-      "@id": "schema:numberOfPreviousOwners",
+      "@id": "schema:numberOfPlayers",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -260,10 +272,24 @@
       }
     },
     {
-      "@id": "schema:vehicleSeatingCapacity",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:durationOfWarranty",
@@ -272,20 +298,20 @@
       }
     },
     {
-      "@id": "schema:potentialAction",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
-      "rdfs:label": "potentialAction",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "@id": "schema:yearsInOperation",
       "schema:rangeIncludes": {
-        "@id": "schema:Action"
+        "@id": "schema:QuantitativeValue"
       }
     },
     {
       "@id": "schema:numberOfAxles",
       "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:MonetaryAmountDistribution",
+      "rdfs:subClassOf": {
         "@id": "schema:QuantitativeValue"
       }
     },
@@ -296,12 +322,9 @@
       }
     },
     {
-      "@id": "schema:StructuredValue",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "rdfs:label": "StructuredValue",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
+      "@id": "schema:cargoVolume",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
       }
     },
     {
@@ -314,29 +337,38 @@
       "rdfs:label": "value",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:Number"
-        },
-        {
-          "@id": "schema:StructuredValue"
-        },
         {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:Boolean"
+        },
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:StructuredValue"
         }
       ]
+    },
+    {
+      "@id": "schema:StructuredValue",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "rdfs:label": "StructuredValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
     },
     {
       "@id": "schema:fuelConsumption",
@@ -369,14 +401,20 @@
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:PropertyValue"
+      }
+    },
+    {
+      "@id": "schema:height",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
       }
     },
     {
@@ -395,16 +433,16 @@
       "rdfs:label": "maxValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:PropertyValueSpecification"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -433,23 +471,17 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
     {
-      "@id": "schema:QuantitativeValue",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
-      },
-      "rdfs:comment": "A point value or interval for product characteristics and other purposes.",
-      "rdfs:label": "QuantitativeValue",
-      "rdfs:subClassOf": {
-        "@id": "schema:StructuredValue"
+      "@id": "schema:deliveryLeadTime",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
       }
     },
     {
@@ -515,30 +547,10 @@
       }
     },
     {
-      "@id": "schema:referenceQuantity",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
-    },
-    {
-      "@id": "schema:mainEntityOfPage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:width",
@@ -547,10 +559,31 @@
       }
     },
     {
-      "@id": "schema:cargoVolume",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:recipeYield",
@@ -577,8 +610,8 @@
       }
     },
     {
-      "@id": "schema:height",
-      "schema:rangeIncludes": {
+      "@id": "schema:QuantitativeValueDistribution",
+      "rdfs:subClassOf": {
         "@id": "schema:QuantitativeValue"
       }
     },
@@ -619,7 +652,7 @@
       }
     },
     {
-      "@id": "schema:depth",
+      "@id": "schema:numChildren",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -646,18 +679,12 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
-    },
-    {
-      "@id": "schema:deliveryLeadTime",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
     },
     {
       "@id": "schema:alternateName",
@@ -702,6 +729,18 @@
       "rdfs:label": "Intangible",
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
+      }
+    },
+    {
+      "@id": "schema:QuantitativeValue",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      },
+      "rdfs:comment": "A point value or interval for product characteristics and other purposes.",
+      "rdfs:label": "QuantitativeValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:StructuredValue"
       }
     },
     {

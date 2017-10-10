@@ -70,13 +70,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:MedicalEntity"
         },
         {
           "@id": "schema:Drug"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
@@ -84,13 +84,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -220,10 +220,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -270,6 +270,33 @@
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:recognizingAuthority",
@@ -326,10 +353,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

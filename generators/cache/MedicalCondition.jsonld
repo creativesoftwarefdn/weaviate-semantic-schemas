@@ -16,10 +16,10 @@
       "rdfs:label": "possibleTreatment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalSignOrSymptom"
         },
         {
-          "@id": "schema:MedicalSignOrSymptom"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -54,10 +54,10 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:MedicalProcedure"
@@ -68,13 +68,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalStudyStatus"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:EventStatusType"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalStudyStatus"
         }
       ]
     },
@@ -145,10 +145,10 @@
       "rdfs:label": "associatedAnatomy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:isPartOf": {
@@ -156,30 +156,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AnatomicalStructure"
-        },
-        {
           "@id": "schema:AnatomicalSystem"
         },
         {
           "@id": "schema:SuperficialAnatomy"
+        },
+        {
+          "@id": "schema:AnatomicalStructure"
         }
       ]
-    },
-    {
-      "@id": "schema:typicalTest",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A medical test typically performed given this condition.",
-      "rdfs:label": "typicalTest",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalCondition"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalTest"
-      }
     },
     {
       "@id": "schema:stage",
@@ -194,6 +179,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalConditionStage"
+      }
+    },
+    {
+      "@id": "schema:typicalTest",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical test typically performed given this condition.",
+      "rdfs:label": "typicalTest",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalCondition"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalTest"
       }
     },
     {
@@ -230,10 +230,10 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         },
         {
           "@id": "schema:DietarySupplement"
@@ -244,13 +244,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEnumeration"
-        },
-        {
           "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -261,10 +261,10 @@
       "rdfs:label": "pathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -464,13 +464,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -524,6 +524,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:diagnosis",

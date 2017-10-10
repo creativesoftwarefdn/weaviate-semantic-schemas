@@ -37,13 +37,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Enumeration"
+        },
+        {
           "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Enumeration"
         }
       ],
       "schema:isPartOf": {
@@ -80,13 +80,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalProcedure"
+        },
+        {
           "@id": "schema:MedicalCondition"
         },
         {
           "@id": "schema:MedicalStudy"
-        },
-        {
-          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -94,13 +94,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalStudyStatus"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:EventStatusType"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalStudyStatus"
         }
       ]
     },
@@ -170,10 +170,10 @@
       "rdfs:label": "bodyLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:AnatomicalStructure"
         }
       ],
       "schema:isPartOf": {
@@ -209,13 +209,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalEntity"
+        },
+        {
           "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -321,10 +321,10 @@
       "rdfs:label": "outcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalStudy"
         }
       ],
       "schema:isPartOf": {
@@ -332,10 +332,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -443,10 +443,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -483,6 +483,33 @@
     {
       "@id": "schema:MusculoskeletalExam",
       "@type": "schema:PhysicalExam"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:Nose",
@@ -588,10 +615,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

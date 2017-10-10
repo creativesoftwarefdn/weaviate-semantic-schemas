@@ -87,10 +87,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalEnumeration"
@@ -196,10 +196,10 @@
       "rdfs:label": "adverseOutcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:MedicalDevice"
         },
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:TherapeuticProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -290,10 +290,10 @@
           "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:MedicalDevice"
         },
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:TherapeuticProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -340,13 +340,13 @@
       "rdfs:label": "purpose",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:PayAction"
         },
         {
           "@id": "schema:AllocateAction"
         },
         {
-          "@id": "schema:PayAction"
+          "@id": "schema:MedicalDevice"
         }
       ],
       "schema:isPartOf": {
@@ -354,10 +354,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Thing"
+          "@id": "schema:MedicalDevicePurpose"
         },
         {
-          "@id": "schema:MedicalDevicePurpose"
+          "@id": "schema:Thing"
         }
       ]
     },
@@ -371,10 +371,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -383,6 +383,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:recognizingAuthority",

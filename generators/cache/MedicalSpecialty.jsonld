@@ -118,10 +118,10 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
@@ -132,13 +132,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Class"
+        },
+        {
           "@id": "schema:Property"
         },
         {
           "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Class"
         }
       ]
     },
@@ -155,7 +155,7 @@
       "@type": "schema:MedicalSpecialty"
     },
     {
-      "@id": "schema:Endocrine",
+      "@id": "schema:Gastroenterologic",
       "@type": "schema:MedicalSpecialty"
     },
     {
@@ -175,7 +175,7 @@
       }
     },
     {
-      "@id": "schema:Gastroenterologic",
+      "@id": "schema:Endocrine",
       "@type": "schema:MedicalSpecialty"
     },
     {
@@ -195,10 +195,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
@@ -293,10 +293,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -317,15 +317,42 @@
       "rdfs:label": "MedicalSpecialty",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:Specialty"
         },
         {
-          "@id": "schema:Specialty"
+          "@id": "schema:MedicalEnumeration"
         }
       ],
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:Midwifery",
@@ -399,10 +426,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

@@ -127,22 +127,22 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Product"
@@ -162,18 +162,18 @@
       "rdfs:label": "author",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Rating"
         },
         {
-          "@id": "schema:Rating"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -217,10 +217,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:URL"
@@ -251,18 +251,18 @@
       "rdfs:label": "estimatedCost",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowToSupply"
+          "@id": "schema:HowTo"
         },
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToSupply"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MonetaryAmount"
         }
       ]
     },
@@ -288,10 +288,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -325,10 +325,10 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -348,13 +348,13 @@
           "@id": "schema:CreativeWork"
         },
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:PublicationEvent"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -380,13 +380,13 @@
       "rdfs:label": "genre",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BroadcastChannel"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:MusicGroup"
+        },
+        {
+          "@id": "schema:BroadcastChannel"
         }
       ],
       "schema:rangeIncludes": [
@@ -447,13 +447,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
@@ -461,10 +461,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -502,12 +502,6 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BusTrip"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
           "@id": "schema:Service"
         },
         {
@@ -517,21 +511,27 @@
           "@id": "schema:Flight"
         },
         {
-          "@id": "schema:Reservation"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:BusTrip"
+        },
+        {
           "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -559,10 +559,10 @@
       "rdfs:label": "contributor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -584,17 +584,17 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Text"
         }
       ]
     },
     {
       "@id": "schema:steps",
       "@type": "rdf:Property",
-      "rdfs:comment": "The steps in the form of a single item (text, document, video, etc.) or an ordered list with HowToStep and/or HowToSection items.",
+      "rdfs:comment": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection (originally misnamed 'steps'; 'step' is preferred).",
       "rdfs:label": "steps",
       "schema:domainIncludes": [
         {
@@ -606,15 +606,18 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:ItemList"
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Text"
         }
-      ]
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:step"
+      }
     },
     {
       "@id": "schema:accessibilityHazard",
@@ -704,19 +707,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -753,10 +756,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -779,10 +782,10 @@
       "rdfs:label": "typicalAgeRange",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -811,19 +814,19 @@
           "@id": "schema:LodgingBusiness"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -879,18 +882,18 @@
       "rdfs:label": "position",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ListItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ListItem"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Integer"
         },
         {
-          "@id": "schema:Integer"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -952,10 +955,10 @@
       "rdfs:label": "performTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowToDirection"
+          "@id": "schema:HowTo"
         },
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToDirection"
         }
       ],
       "schema:rangeIncludes": {
@@ -1044,10 +1047,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1103,10 +1106,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1123,13 +1126,36 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
+        }
+      ]
+    },
+    {
+      "@id": "schema:step",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A single step item (as HowToStep, text, document, video, etc.) or a HowToSection.",
+      "rdfs:label": "step",
+      "schema:domainIncludes": {
+        "@id": "schema:HowTo"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:HowToStep"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:HowToSection"
         }
       ]
     },
@@ -1152,16 +1178,16 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:CreativeWork"
@@ -1185,6 +1211,33 @@
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:mentions",
@@ -1220,18 +1273,18 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowToDirection"
+          "@id": "schema:HowTo"
         },
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToDirection"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:HowToSupply"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:HowToSupply"
         }
       ]
     },
@@ -1245,10 +1298,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -1277,13 +1330,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:DateTime"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1297,13 +1350,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:supersededBy": {
@@ -1382,19 +1435,29 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:CommunicateAction"
         }
       ],
+      "schema:inverseOf": {
+        "@id": "schema:subjectOf"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -1436,18 +1499,18 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToDirection"
         },
         {
-          "@id": "schema:HowToDirection"
+          "@id": "schema:HowTo"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:HowToTool"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:HowToTool"
         }
       ]
     },
@@ -1493,24 +1556,24 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1572,10 +1635,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1598,28 +1661,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:Brand"
+        },
+        {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -1645,18 +1708,18 @@
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         },
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         },
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         }
       ]
     },
@@ -1679,10 +1742,10 @@
       "rdfs:label": "prepTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:HowTo"
+          "@id": "schema:HowToDirection"
         },
         {
-          "@id": "schema:HowToDirection"
+          "@id": "schema:HowTo"
         }
       ],
       "schema:rangeIncludes": {
@@ -1818,22 +1881,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
+          "@id": "schema:AggregateOffer"
+        },
+        {
           "@id": "schema:MenuItem"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:AggregateOffer"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -1847,21 +1910,21 @@
       "rdfs:label": "publishingPrinciples",
       "schema:domainIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -1884,16 +1947,16 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:WriteAction"
         },
         {
           "@id": "schema:LinkRole"
@@ -1901,10 +1964,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     }

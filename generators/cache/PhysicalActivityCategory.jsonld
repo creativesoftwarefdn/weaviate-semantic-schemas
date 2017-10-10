@@ -20,13 +20,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         }
       ],
       "schema:isPartOf": {
@@ -34,13 +34,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Enumeration"
-        },
-        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Enumeration"
         }
       ]
     },
@@ -96,10 +96,24 @@
       }
     },
     {
-      "@id": "schema:category",
-      "schema:rangeIncludes": {
-        "@id": "schema:PhysicalActivityCategory"
-      }
+      "@id": "schema:mainEntityOfPage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:potentialAction",
@@ -193,10 +207,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -211,28 +225,41 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:Flexibility",
-      "@type": "schema:PhysicalActivityCategory"
-    },
-    {
-      "@id": "schema:mainEntityOfPage",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:inverseOf": {
-        "@id": "schema:mainEntity"
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": [
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Event"
         }
       ]
+    },
+    {
+      "@id": "schema:Flexibility",
+      "@type": "schema:PhysicalActivityCategory"
+    },
+    {
+      "@id": "schema:category",
+      "schema:rangeIncludes": {
+        "@id": "schema:PhysicalActivityCategory"
+      }
     },
     {
       "@id": "schema:alternateName",

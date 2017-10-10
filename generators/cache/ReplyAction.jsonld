@@ -43,10 +43,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:CommentAction"
+          "@id": "schema:ReplyAction"
         },
         {
-          "@id": "schema:ReplyAction"
+          "@id": "schema:CommentAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -74,19 +74,29 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
         {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:CommunicateAction"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
+      "schema:inverseOf": {
+        "@id": "schema:subjectOf"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -101,10 +111,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -221,10 +231,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -264,28 +274,28 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:DonateAction"
+          "@id": "schema:Message"
+        },
+        {
+          "@id": "schema:TipAction"
         },
         {
           "@id": "schema:PayAction"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:ReturnAction"
+        },
+        {
+          "@id": "schema:DonateAction"
         },
         {
           "@id": "schema:SendAction"
         },
         {
-          "@id": "schema:Message"
+          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:AuthorizeAction"
-        },
-        {
-          "@id": "schema:ReturnAction"
-        },
-        {
-          "@id": "schema:TipAction"
         },
         {
           "@id": "schema:GiveAction"
@@ -296,13 +306,13 @@
           "@id": "schema:Audience"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         }
       ]
     },
@@ -343,10 +353,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -364,6 +374,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:target",
@@ -426,10 +463,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -443,10 +480,10 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -495,10 +532,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -509,27 +546,27 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:WriteAction"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:LinkRole"
-        },
-        {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:WriteAction"
+          "@id": "schema:LinkRole"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         }
       ]
     }

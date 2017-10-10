@@ -85,13 +85,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -102,10 +102,10 @@
           "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -188,10 +188,16 @@
       }
     },
     {
-      "@id": "schema:Thing",
+      "@id": "schema:MedicalIntangible",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "rdfs:label": "MedicalIntangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      }
     },
     {
       "@id": "schema:name",
@@ -233,13 +239,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -282,16 +288,16 @@
       "rdfs:label": "activeIngredient",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DrugStrength"
+          "@id": "schema:Drug"
+        },
+        {
+          "@id": "schema:Substance"
         },
         {
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:Drug"
-        },
-        {
-          "@id": "schema:Substance"
+          "@id": "schema:DrugStrength"
         }
       ],
       "schema:isPartOf": {
@@ -302,16 +308,37 @@
       }
     },
     {
-      "@id": "schema:MedicalIntangible",
+      "@id": "schema:Thing",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
-      "rdfs:label": "MedicalIntangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEntity"
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
       },
       "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:recognizingAuthority",
@@ -368,10 +395,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -382,16 +409,16 @@
       "rdfs:label": "maximumIntake",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DrugStrength"
-        },
-        {
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:Substance"
         },
         {
-          "@id": "schema:Substance"
+          "@id": "schema:DrugStrength"
+        },
+        {
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {

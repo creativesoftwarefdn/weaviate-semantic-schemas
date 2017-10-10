@@ -87,10 +87,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalEnumeration"
@@ -149,6 +149,26 @@
       }
     },
     {
+      "@id": "schema:diagnosis",
+      "@type": "rdf:Property",
+      "rdfs:comment": "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
+      "rdfs:label": "diagnosis",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Patient"
+        },
+        {
+          "@id": "schema:DDxElement"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalCondition"
+      }
+    },
+    {
       "@id": "schema:potentialAction",
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
@@ -161,16 +181,10 @@
       }
     },
     {
-      "@id": "schema:MedicalIntangible",
+      "@id": "schema:Thing",
       "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
-      "rdfs:label": "MedicalIntangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEntity"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:name",
@@ -215,10 +229,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -255,30 +269,43 @@
       ]
     },
     {
-      "@id": "schema:Thing",
+      "@id": "schema:MedicalIntangible",
       "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:diagnosis",
-      "@type": "rdf:Property",
-      "rdfs:comment": "One or more alternative conditions considered in the differential diagnosis process as output of a diagnosis process.",
-      "rdfs:label": "diagnosis",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:DDxElement"
-        },
-        {
-          "@id": "schema:Patient"
-        }
-      ],
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things in the medical space.",
+      "rdfs:label": "MedicalIntangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEntity"
+      },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalCondition"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:DDxElement",
@@ -347,10 +374,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

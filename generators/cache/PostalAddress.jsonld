@@ -73,21 +73,21 @@
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:GeoShape"
-        },
         {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:GeoShape"
         }
       ],
       "schema:supersededBy": {
@@ -104,10 +104,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -139,13 +139,13 @@
       "rdfs:label": "addressCountry",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:GeoCoordinates"
         },
         {
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:PostalAddress"
         }
       ],
       "schema:rangeIncludes": [
@@ -179,13 +179,13 @@
       "rdfs:label": "email",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -199,16 +199,16 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -228,16 +228,16 @@
       "rdfs:label": "availableLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ServiceChannel"
-        },
-        {
-          "@id": "schema:TouristAttraction"
-        },
-        {
           "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:ServiceChannel"
+        },
+        {
+          "@id": "schema:TouristAttraction"
         }
       ],
       "schema:rangeIncludes": [
@@ -268,25 +268,28 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
         {
           "@id": "schema:Text"
         },
@@ -295,9 +298,6 @@
         },
         {
           "@id": "schema:AdministrativeArea"
-        },
-        {
-          "@id": "schema:Place"
         }
       ]
     },
@@ -308,13 +308,13 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
-        },
-        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -367,13 +367,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -478,6 +478,33 @@
       "rdfs:subClassOf": {
         "@id": "schema:StructuredValue"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:PostalAddress",

@@ -27,10 +27,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ]
     },
@@ -53,7 +53,7 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Order"
@@ -62,7 +62,7 @@
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
@@ -116,10 +116,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -153,10 +153,10 @@
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Place"
         }
       ],
       "schema:supersededBy": {
@@ -170,25 +170,25 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TrainTrip"
-        },
-        {
-          "@id": "schema:BusTrip"
-        },
-        {
           "@id": "schema:Flight"
         },
         {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Reservation"
+          "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:Service"
@@ -210,19 +210,19 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Product"
         },
         {
           "@id": "schema:AggregateOffer"
@@ -249,10 +249,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         },
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         }
       ],
       "rdfs:comment": "A floor limit is the amount of money above which credit card transactions must be authorized.",
@@ -318,22 +318,22 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Brand"
@@ -377,10 +377,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -427,9 +427,6 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DeliveryChargeSpecification"
-        },
-        {
           "@id": "schema:ContactPoint"
         },
         {
@@ -439,24 +436,27 @@
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:DeliveryChargeSpecification"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:AdministrativeArea"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -490,10 +490,10 @@
       "rdfs:label": "PaymentCard",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:PaymentMethod"
+          "@id": "schema:FinancialProduct"
         },
         {
-          "@id": "schema:FinancialProduct"
+          "@id": "schema:PaymentMethod"
         }
       ]
     },
@@ -528,10 +528,10 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
@@ -545,10 +545,10 @@
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         }
       ]
     },
@@ -571,28 +571,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -627,10 +627,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -647,10 +647,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         }
       ]
     },
@@ -706,7 +706,7 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
@@ -715,7 +715,7 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -744,10 +744,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:Boolean"
         },
         {
-          "@id": "schema:Boolean"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -764,10 +764,10 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Service"
@@ -802,6 +802,33 @@
       ]
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
       "@id": "schema:sameAs",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of a reference Web page that unambiguously indicates the item's identity. E.g. the URL of the item's Wikipedia page, Wikidata entry, or official website.",
@@ -823,10 +850,10 @@
       "rdfs:label": "feesAndCommissionsSpecification",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FinancialProduct"
+          "@id": "schema:FinancialService"
         },
         {
-          "@id": "schema:FinancialService"
+          "@id": "schema:FinancialProduct"
         }
       ],
       "schema:rangeIncludes": [
@@ -851,10 +878,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -865,16 +892,10 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
-          "@id": "schema:Property"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Service"
         },
         {
           "@id": "schema:Invoice"
@@ -883,7 +904,13 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:PhysicalActivity"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Property"
         }
       ],
       "schema:rangeIncludes": [
@@ -905,6 +932,9 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:LodgingBusiness"
         },
         {
@@ -918,9 +948,6 @@
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -940,19 +967,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [

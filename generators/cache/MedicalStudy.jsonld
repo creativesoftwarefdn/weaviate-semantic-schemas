@@ -10,15 +10,9 @@
   },
   "@graph": [
     {
-      "@id": "schema:url",
-      "@type": "rdf:Property",
-      "rdfs:comment": "URL of the item.",
-      "rdfs:label": "url",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
+      "@id": "schema:MedicalObservationalStudy",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalStudy"
       }
     },
     {
@@ -28,13 +22,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalCondition"
         },
         {
           "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalStudy"
         }
       ],
       "schema:isPartOf": {
@@ -42,13 +36,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:EventStatusType"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalStudyStatus"
-        },
-        {
-          "@id": "schema:EventStatusType"
         }
       ]
     },
@@ -119,13 +113,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:DietarySupplement"
         },
         {
           "@id": "schema:Drug"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -133,10 +127,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:Text"
@@ -189,9 +183,15 @@
       }
     },
     {
-      "@id": "schema:MedicalObservationalStudy",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalStudy"
+      "@id": "schema:url",
+      "@type": "rdf:Property",
+      "rdfs:comment": "URL of the item.",
+      "rdfs:label": "url",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
@@ -201,10 +201,10 @@
       "rdfs:label": "healthCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Patient"
+          "@id": "schema:PeopleAudience"
         },
         {
-          "@id": "schema:PeopleAudience"
+          "@id": "schema:Patient"
         },
         {
           "@id": "schema:MedicalStudy"
@@ -224,19 +224,19 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:MedicalStudy"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -294,10 +294,10 @@
       "rdfs:label": "outcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -325,13 +325,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -390,6 +390,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:recognizingAuthority",

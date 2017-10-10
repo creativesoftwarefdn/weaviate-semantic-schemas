@@ -124,18 +124,18 @@
       ]
     },
     {
-      "@id": "schema:gameServer",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The server on which  it is possible to play the game.",
-      "rdfs:label": "gameServer",
-      "schema:domainIncludes": {
-        "@id": "schema:VideoGame"
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
       },
-      "schema:inverseOf": {
-        "@id": "schema:game"
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:GameServer"
+        "@id": "schema:URL"
       }
     },
     {
@@ -148,25 +148,25 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -188,10 +188,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -247,10 +247,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Product"
@@ -341,27 +341,19 @@
       ]
     },
     {
-      "@id": "schema:gamePlatform",
+      "@id": "schema:license",
       "@type": "rdf:Property",
-      "rdfs:comment": "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
-      "rdfs:label": "gamePlatform",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:VideoGame"
-        },
-        {
-          "@id": "schema:VideoGameSeries"
-        }
-      ],
+      "rdfs:comment": "A license document that applies to this content, typically indicated by URL.",
+      "rdfs:label": "license",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
       "schema:rangeIncludes": [
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Thing"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -372,10 +364,10 @@
       "rdfs:label": "comment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RsvpAction"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:RsvpAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -389,16 +381,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Product"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -415,9 +407,6 @@
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:Place"
         },
         {
@@ -425,6 +414,9 @@
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -438,31 +430,31 @@
       "rdfs:label": "directors",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Movie"
+          "@id": "schema:TVSeries"
         },
         {
-          "@id": "schema:TVSeries"
+          "@id": "schema:Movie"
         },
         {
           "@id": "schema:VideoGame"
         },
         {
-          "@id": "schema:VideoGameSeries"
+          "@id": "schema:Episode"
         },
         {
-          "@id": "schema:MovieSeries"
+          "@id": "schema:VideoGameSeries"
         },
         {
           "@id": "schema:Clip"
         },
         {
-          "@id": "schema:Episode"
+          "@id": "schema:VideoObject"
+        },
+        {
+          "@id": "schema:MovieSeries"
         },
         {
           "@id": "schema:RadioSeries"
-        },
-        {
-          "@id": "schema:VideoObject"
         }
       ],
       "schema:rangeIncludes": {
@@ -491,21 +483,21 @@
       "rdfs:label": "genre",
       "schema:domainIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:MusicGroup"
         },
         {
           "@id": "schema:BroadcastChannel"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -555,16 +547,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -622,16 +614,10 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Flight"
+        },
+        {
           "@id": "schema:BusTrip"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
@@ -640,10 +626,16 @@
           "@id": "schema:TrainTrip"
         },
         {
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Flight"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -682,10 +674,35 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:Number"
+        }
+      ]
+    },
+    {
+      "@id": "schema:gamePlatform",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The electronic systems used to play <a href=\"http://en.wikipedia.org/wiki/Category:Video_game_platforms\">video games</a>.",
+      "rdfs:label": "gamePlatform",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:VideoGame"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Thing"
         }
       ]
     },
@@ -713,10 +730,10 @@
       "rdfs:label": "contributor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
@@ -743,10 +760,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:PostalAddress"
         },
         {
           "@id": "schema:URL"
@@ -841,19 +858,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -881,18 +898,18 @@
       ]
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:gameServer",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
+      "rdfs:comment": "The server on which  it is possible to play the game.",
+      "rdfs:label": "gameServer",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:VideoGame"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:game"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:GameServer"
       }
     },
     {
@@ -962,10 +979,10 @@
       "rdfs:label": "quest",
       "schema:domainIncludes": [
         {
-          "@id": "schema:VideoGameSeries"
+          "@id": "schema:Game"
         },
         {
-          "@id": "schema:Game"
+          "@id": "schema:VideoGameSeries"
         }
       ],
       "schema:rangeIncludes": {
@@ -973,24 +990,16 @@
       }
     },
     {
-      "@id": "schema:mainEntityOfPage",
+      "@id": "schema:keywords",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
-      "rdfs:label": "mainEntityOfPage",
+      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "rdfs:label": "keywords",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:CreativeWork"
       },
-      "schema:inverseOf": {
-        "@id": "schema:mainEntity"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:musicBy",
@@ -999,52 +1008,69 @@
       "rdfs:label": "musicBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:VideoGameSeries"
-        },
-        {
-          "@id": "schema:VideoGame"
+          "@id": "schema:Movie"
         },
         {
           "@id": "schema:MovieSeries"
         },
         {
-          "@id": "schema:Episode"
-        },
-        {
-          "@id": "schema:TVSeries"
-        },
-        {
-          "@id": "schema:Movie"
-        },
-        {
           "@id": "schema:Clip"
+        },
+        {
+          "@id": "schema:Episode"
         },
         {
           "@id": "schema:RadioSeries"
         },
         {
           "@id": "schema:VideoObject"
+        },
+        {
+          "@id": "schema:VideoGame"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:TVSeries"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MusicGroup"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:MusicGroup"
         }
       ]
     },
     {
-      "@id": "schema:softwareVersion",
+      "@id": "schema:audience",
       "@type": "rdf:Property",
-      "rdfs:comment": "Version of the software instance.",
-      "rdfs:label": "softwareVersion",
-      "schema:domainIncludes": {
-        "@id": "schema:SoftwareApplication"
-      },
+      "rdfs:comment": "An intended audience, i.e. a group for whom something was created.",
+      "rdfs:label": "audience",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:LodgingBusiness"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Service"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Audience"
       }
     },
     {
@@ -1066,7 +1092,10 @@
       "rdfs:label": "actors",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RadioSeries"
+          "@id": "schema:MovieSeries"
+        },
+        {
+          "@id": "schema:Movie"
         },
         {
           "@id": "schema:Episode"
@@ -1078,19 +1107,16 @@
           "@id": "schema:VideoObject"
         },
         {
-          "@id": "schema:VideoGameSeries"
-        },
-        {
-          "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:TVSeries"
+          "@id": "schema:RadioSeries"
         },
         {
           "@id": "schema:VideoGame"
         },
         {
-          "@id": "schema:MovieSeries"
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:TVSeries"
         }
       ],
       "schema:rangeIncludes": {
@@ -1110,10 +1136,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1136,25 +1162,22 @@
       "rdfs:label": "actor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MovieSeries"
-        },
-        {
-          "@id": "schema:Episode"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:TVSeries"
-        },
-        {
-          "@id": "schema:VideoGameSeries"
         },
         {
           "@id": "schema:VideoGame"
         },
         {
+          "@id": "schema:Episode"
+        },
+        {
+          "@id": "schema:RadioSeries"
+        },
+        {
           "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:Clip"
         },
         {
           "@id": "schema:VideoObject"
@@ -1163,10 +1186,13 @@
           "@id": "schema:Movie"
         },
         {
-          "@id": "schema:RadioSeries"
+          "@id": "schema:VideoGameSeries"
         },
         {
-          "@id": "schema:Clip"
+          "@id": "schema:MovieSeries"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -1180,34 +1206,34 @@
       "rdfs:label": "director",
       "schema:domainIncludes": [
         {
+          "@id": "schema:VideoObject"
+        },
+        {
           "@id": "schema:Episode"
+        },
+        {
+          "@id": "schema:Clip"
+        },
+        {
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:VideoGame"
+        },
+        {
+          "@id": "schema:TVSeries"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
         },
         {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:MovieSeries"
-        },
-        {
-          "@id": "schema:TVSeries"
-        },
-        {
-          "@id": "schema:VideoGame"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:VideoGameSeries"
-        },
-        {
-          "@id": "schema:VideoObject"
-        },
-        {
-          "@id": "schema:Clip"
         },
         {
           "@id": "schema:RadioSeries"
@@ -1236,26 +1262,16 @@
       }
     },
     {
-      "@id": "schema:position",
+      "@id": "schema:copyrightYear",
       "@type": "rdf:Property",
-      "rdfs:comment": "The position of an item in a series or sequence of items.",
-      "rdfs:label": "position",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:ListItem"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Integer"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
+      "rdfs:comment": "The year during which the claimed copyright for the CreativeWork was first asserted.",
+      "rdfs:label": "copyrightYear",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Number"
+      }
     },
     {
       "@id": "schema:accessibilityFeature",
@@ -1315,10 +1331,10 @@
       "rdfs:label": "dateCreated",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         }
       ],
       "schema:rangeIncludes": [
@@ -1394,10 +1410,10 @@
       "rdfs:label": "characterAttribute",
       "schema:domainIncludes": [
         {
-          "@id": "schema:VideoGameSeries"
+          "@id": "schema:Game"
         },
         {
-          "@id": "schema:Game"
+          "@id": "schema:VideoGameSeries"
         }
       ],
       "schema:rangeIncludes": {
@@ -1411,10 +1427,10 @@
       "rdfs:label": "creator",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:UserComments"
         },
         {
-          "@id": "schema:UserComments"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1478,10 +1494,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1498,13 +1514,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -1535,10 +1551,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1593,6 +1609,12 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Product"
         },
         {
@@ -1600,12 +1622,6 @@
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1619,16 +1635,31 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:gameTip",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "Links to tips, tactics, etc.",
-      "rdfs:label": "gameTip",
-      "schema:domainIncludes": {
-        "@id": "schema:VideoGame"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:CreativeWork"
-      }
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:mentions",
@@ -1673,25 +1704,25 @@
       "rdfs:label": "trailer",
       "schema:domainIncludes": [
         {
+          "@id": "schema:RadioSeries"
+        },
+        {
+          "@id": "schema:CreativeWorkSeason"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
+          "@id": "schema:MovieSeries"
+        },
+        {
           "@id": "schema:TVSeries"
         },
         {
           "@id": "schema:VideoGame"
         },
         {
-          "@id": "schema:VideoGameSeries"
-        },
-        {
           "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:MovieSeries"
-        },
-        {
-          "@id": "schema:RadioSeries"
         },
         {
           "@id": "schema:Episode"
@@ -1723,10 +1754,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1764,10 +1795,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1787,10 +1818,10 @@
           "@id": "schema:DateTime"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1804,13 +1835,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:supersededBy": {
@@ -1877,10 +1908,10 @@
       "rdfs:label": "numberOfPlayers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Game"
+          "@id": "schema:VideoGameSeries"
         },
         {
-          "@id": "schema:VideoGameSeries"
+          "@id": "schema:Game"
         }
       ],
       "schema:rangeIncludes": {
@@ -1907,23 +1938,6 @@
       "schema:rangeIncludes": {
         "@id": "schema:CreativeWork"
       }
-    },
-    {
-      "@id": "schema:license",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A license document that applies to this content, typically indicated by URL.",
-      "rdfs:label": "license",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
     },
     {
       "@id": "schema:screenshot",
@@ -1957,19 +1971,29 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": [
         {
           "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
+      "schema:inverseOf": {
+        "@id": "schema:subjectOf"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -2017,10 +2041,10 @@
       "rdfs:label": "cheatCode",
       "schema:domainIncludes": [
         {
-          "@id": "schema:VideoGameSeries"
+          "@id": "schema:VideoGame"
         },
         {
-          "@id": "schema:VideoGame"
+          "@id": "schema:VideoGameSeries"
         }
       ],
       "schema:rangeIncludes": {
@@ -2040,16 +2064,24 @@
       }
     },
     {
-      "@id": "schema:keywords",
+      "@id": "schema:mainEntityOfPage",
       "@type": "rdf:Property",
-      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
-      "rdfs:label": "keywords",
+      "rdfs:comment": "Indicates a page (or other CreativeWork) for which this thing is the main entity being described. See <a href=\"/docs/datamodel.html#mainEntityBackground\">background notes</a> for details.",
+      "rdfs:label": "mainEntityOfPage",
       "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:inverseOf": {
+        "@id": "schema:mainEntity"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:sponsor",
@@ -2064,10 +2096,10 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:MedicalStudy"
@@ -2075,10 +2107,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -2116,32 +2148,27 @@
       }
     },
     {
-      "@id": "schema:audience",
+      "@id": "schema:gameTip",
       "@type": "rdf:Property",
-      "rdfs:comment": "An intended audience, i.e. a group for whom something was created.",
-      "rdfs:label": "audience",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:LodgingBusiness"
-        },
-        {
-          "@id": "schema:PlayAction"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ],
+      "rdfs:comment": "Links to tips, tactics, etc.",
+      "rdfs:label": "gameTip",
+      "schema:domainIncludes": {
+        "@id": "schema:VideoGame"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:Audience"
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:softwareVersion",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Version of the software instance.",
+      "rdfs:label": "softwareVersion",
+      "schema:domainIncludes": {
+        "@id": "schema:SoftwareApplication"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -2198,7 +2225,10 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Service"
@@ -2207,16 +2237,13 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
@@ -2245,10 +2272,10 @@
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         },
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -2327,10 +2354,10 @@
       "rdfs:label": "gameItem",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Game"
+          "@id": "schema:VideoGameSeries"
         },
         {
-          "@id": "schema:VideoGameSeries"
+          "@id": "schema:Game"
         }
       ],
       "schema:rangeIncludes": {
@@ -2347,10 +2374,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -2385,18 +2412,18 @@
       "rdfs:label": "material",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:URL"
@@ -2428,10 +2455,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -2442,6 +2469,15 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:MenuItem"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:AggregateOffer"
         },
         {
@@ -2449,15 +2485,6 @@
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:MenuItem"
         }
       ],
       "schema:rangeIncludes": {
@@ -2471,13 +2498,13 @@
       "rdfs:label": "publishingPrinciples",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -2490,16 +2517,26 @@
       ]
     },
     {
-      "@id": "schema:copyrightYear",
+      "@id": "schema:position",
       "@type": "rdf:Property",
-      "rdfs:comment": "The year during which the claimed copyright for the CreativeWork was first asserted.",
-      "rdfs:label": "copyrightYear",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Number"
-      }
+      "rdfs:comment": "The position of an item in a series or sequence of items.",
+      "rdfs:label": "position",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:ListItem"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Integer"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:inLanguage",
@@ -2508,19 +2545,19 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:CommunicateAction"
-        },
-        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:LinkRole"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:WriteAction"
+        },
+        {
+          "@id": "schema:CommunicateAction"
         }
       ],
       "schema:rangeIncludes": [

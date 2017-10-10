@@ -16,10 +16,10 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Class"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Property"
@@ -30,13 +30,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
-        },
-        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Property"
         }
       ]
     },
@@ -59,12 +59,6 @@
       "rdfs:label": "Enumeration",
       "rdfs:subClassOf": {
         "@id": "schema:Intangible"
-      }
-    },
-    {
-      "@id": "schema:vehicleSpecialUsage",
-      "schema:rangeIncludes": {
-        "@id": "schema:CarUsageType"
       }
     },
     {
@@ -181,16 +175,16 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
         }
       ],
       "schema:rangeIncludes": {
@@ -210,13 +204,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -245,10 +239,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -272,6 +266,33 @@
       "schema:rangeIncludes": {
         "@id": "schema:QualitativeValue"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:greaterOrEqual",
@@ -298,10 +319,10 @@
       "rdfs:label": "valueReference",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:QualitativeValue"
@@ -309,19 +330,19 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:StructuredValue"
+        },
+        {
           "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Enumeration"
-        },
-        {
           "@id": "schema:QualitativeValue"
-        },
-        {
-          "@id": "schema:StructuredValue"
         }
       ]
     },
@@ -363,6 +384,12 @@
           "@id": "schema:URL"
         }
       ]
+    },
+    {
+      "@id": "schema:vehicleSpecialUsage",
+      "schema:rangeIncludes": {
+        "@id": "schema:CarUsageType"
+      }
     },
     {
       "@id": "schema:CarUsageType",

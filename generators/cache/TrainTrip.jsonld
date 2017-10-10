@@ -40,13 +40,13 @@
       "rdfs:label": "departureTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BusTrip"
-        },
-        {
           "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:BusTrip"
         }
       ],
       "schema:rangeIncludes": {
@@ -63,13 +63,16 @@
           "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Flight"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
@@ -79,9 +82,6 @@
         },
         {
           "@id": "schema:BusTrip"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -225,13 +225,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -251,12 +251,12 @@
       }
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:trainName",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
+      "rdfs:comment": "The name of the train (e.g. The Orient Express).",
+      "rdfs:label": "trainName",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:TrainTrip"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
@@ -284,6 +284,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:arrivalStation",
@@ -318,12 +345,12 @@
       ]
     },
     {
-      "@id": "schema:trainName",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the train (e.g. The Orient Express).",
-      "rdfs:label": "trainName",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
       "schema:domainIncludes": {
-        "@id": "schema:TrainTrip"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"

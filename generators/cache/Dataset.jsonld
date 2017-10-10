@@ -46,29 +46,6 @@
       }
     },
     {
-      "@id": "schema:Dataset",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass"
-      },
-      "owl:equivalentClass": [
-        {
-          "@id": "http://purl.org/dc/dcmitype/Dataset"
-        },
-        {
-          "@id": "http://www.w3.org/ns/dcat#Dataset"
-        },
-        {
-          "@id": "http://rdfs.org/ns/void#Dataset"
-        }
-      ],
-      "rdfs:comment": "A body of structured information describing some topic(s) of interest.",
-      "rdfs:label": "Dataset",
-      "rdfs:subClassOf": {
-        "@id": "schema:CreativeWork"
-      }
-    },
-    {
       "@id": "schema:encodings",
       "@type": "rdf:Property",
       "rdfs:comment": "A media object that encodes this CreativeWork.",
@@ -136,10 +113,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -165,28 +142,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -279,10 +256,10 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -311,10 +288,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -354,10 +331,10 @@
       "rdfs:label": "comment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RsvpAction"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:RsvpAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -371,16 +348,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -397,16 +374,16 @@
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Event"
+          "@id": "schema:PublicationEvent"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:PublicationEvent"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -447,10 +424,10 @@
       "rdfs:label": "genre",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BroadcastChannel"
+          "@id": "schema:MusicGroup"
         },
         {
-          "@id": "schema:MusicGroup"
+          "@id": "schema:BroadcastChannel"
         },
         {
           "@id": "schema:CreativeWork"
@@ -499,16 +476,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
@@ -560,22 +537,22 @@
           "@id": "schema:Reservation"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Invoice"
+        },
+        {
           "@id": "schema:Flight"
         },
         {
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:TrainTrip"
-        },
-        {
           "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:TrainTrip"
         }
       ],
       "schema:rangeIncludes": [
@@ -597,10 +574,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -619,10 +596,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -714,10 +691,10 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Organization"
@@ -789,10 +766,10 @@
       "rdfs:label": "typicalAgeRange",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -800,15 +777,9 @@
       }
     },
     {
-      "@id": "schema:keywords",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
-      "rdfs:label": "keywords",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:DataFeed",
+      "rdfs:subClassOf": {
+        "@id": "schema:Dataset"
       }
     },
     {
@@ -821,19 +792,19 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:PlayAction"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:LodgingBusiness"
-        },
-        {
-          "@id": "schema:PlayAction"
-        },
-        {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -913,10 +884,10 @@
       "rdfs:label": "position",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ListItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ListItem"
         }
       ],
       "schema:rangeIncludes": [
@@ -1033,16 +1004,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Dataset"
+          "@id": "schema:CreativeWorkSeries"
         },
         {
-          "@id": "schema:CreativeWorkSeries"
+          "@id": "schema:Blog"
         },
         {
           "@id": "schema:WebSite"
         },
         {
-          "@id": "schema:Blog"
+          "@id": "schema:Dataset"
         }
       ],
       "schema:rangeIncludes": {
@@ -1163,13 +1134,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -1198,19 +1169,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1222,6 +1193,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:mentions",
@@ -1257,12 +1255,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
+    },
+    {
+      "@id": "schema:keywords",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Keywords or tags used to describe this content. Multiple entries in a keywords list are typically delimited by commas.",
+      "rdfs:label": "keywords",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:creator",
@@ -1279,10 +1289,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1326,13 +1336,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:DateTime"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:DateTime"
         }
       ]
     },
@@ -1346,13 +1356,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
         }
       ],
       "schema:supersededBy": {
@@ -1425,19 +1435,29 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": [
-        {
-          "@id": "schema:Event"
-        },
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
+      "schema:inverseOf": {
+        "@id": "schema:subjectOf"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -1482,9 +1502,26 @@
       }
     },
     {
-      "@id": "schema:DataFeed",
+      "@id": "schema:Dataset",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_DatasetClass"
+      },
+      "owl:equivalentClass": [
+        {
+          "@id": "http://www.w3.org/ns/dcat#Dataset"
+        },
+        {
+          "@id": "http://purl.org/dc/dcmitype/Dataset"
+        },
+        {
+          "@id": "http://rdfs.org/ns/void#Dataset"
+        }
+      ],
+      "rdfs:comment": "A body of structured information describing some topic(s) of interest.",
+      "rdfs:label": "Dataset",
       "rdfs:subClassOf": {
-        "@id": "schema:Dataset"
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1497,16 +1534,16 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:MedicalStudy"
         }
       ],
       "schema:rangeIncludes": [
@@ -1571,10 +1608,10 @@
       "schema:category": "issue-1425",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DataDownload"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:DataDownload"
         },
         {
           "@id": "schema:Dataset"
@@ -1588,10 +1625,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1605,10 +1642,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -1634,25 +1671,25 @@
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Event"
         },
         {
           "@id": "schema:Place"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1678,18 +1715,18 @@
       "rdfs:label": "dateModified",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         }
       ]
     },
@@ -1784,10 +1821,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1830,13 +1867,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1862,7 +1899,7 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
@@ -1874,10 +1911,10 @@
           "@id": "schema:AggregateOffer"
         },
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:MenuItem"
         }
       ],
       "schema:rangeIncludes": {
@@ -1935,19 +1972,19 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LinkRole"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:LinkRole"
         },
         {
           "@id": "schema:WriteAction"
+        },
+        {
+          "@id": "schema:CommunicateAction"
         }
       ],
       "schema:rangeIncludes": [

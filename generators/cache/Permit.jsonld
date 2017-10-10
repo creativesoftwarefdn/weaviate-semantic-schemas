@@ -28,10 +28,10 @@
       "rdfs:label": "issuedBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Permit"
+          "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Permit"
         }
       ],
       "schema:rangeIncludes": {
@@ -161,13 +161,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -225,6 +225,33 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
       "@id": "schema:validIn",
       "@type": "rdf:Property",
       "rdfs:comment": "The geographic area where the permit is valid.",
@@ -246,25 +273,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
-          "@id": "schema:PriceSpecification"
-        },
-        {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Permit"
         },
         {
           "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {

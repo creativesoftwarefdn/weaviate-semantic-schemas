@@ -40,7 +40,7 @@
       }
     },
     {
-      "@id": "schema:HealthPlanFormulary",
+      "@id": "schema:Property",
       "rdfs:subClassOf": {
         "@id": "schema:Intangible"
       }
@@ -64,9 +64,18 @@
       }
     },
     {
-      "@id": "schema:Schedule",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
+      "@id": "schema:additionalType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:URL"
       }
     },
     {
@@ -95,6 +104,12 @@
     },
     {
       "@id": "schema:ItemList",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:Occupation",
       "rdfs:subClassOf": {
         "@id": "schema:Intangible"
       }
@@ -223,7 +238,7 @@
       }
     },
     {
-      "@id": "schema:Property",
+      "@id": "schema:HealthPlanFormulary",
       "rdfs:subClassOf": {
         "@id": "schema:Intangible"
       }
@@ -265,13 +280,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -306,7 +321,7 @@
       }
     },
     {
-      "@id": "schema:GeospatialGeometry",
+      "@id": "schema:Permit",
       "rdfs:subClassOf": {
         "@id": "schema:Intangible"
       }
@@ -345,19 +360,31 @@
       }
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
       },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
-      }
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:ParcelDelivery",
@@ -373,6 +400,12 @@
     },
     {
       "@id": "schema:DigitalDocumentPermission",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
+    },
+    {
+      "@id": "schema:Schedule",
       "rdfs:subClassOf": {
         "@id": "schema:Intangible"
       }
@@ -396,10 +429,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -437,10 +470,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -472,7 +505,7 @@
       }
     },
     {
-      "@id": "schema:Permit",
+      "@id": "schema:GeospatialGeometry",
       "rdfs:subClassOf": {
         "@id": "schema:Intangible"
       }

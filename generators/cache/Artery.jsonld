@@ -85,10 +85,10 @@
       "rdfs:label": "bodyLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -105,13 +105,13 @@
       "rdfs:label": "relatedTherapy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         },
         {
           "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         }
       ],
       "schema:isPartOf": {
@@ -146,10 +146,10 @@
           "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
@@ -157,13 +157,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEnumeration"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:DrugLegalStatus"
+        },
+        {
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -288,13 +288,13 @@
       "rdfs:label": "associatedPathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         },
         {
           "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         }
       ],
       "schema:isPartOf": {
@@ -362,10 +362,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -424,10 +424,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -436,6 +436,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:recognizingAuthority",
@@ -474,13 +501,13 @@
       "rdfs:label": "relatedCondition",
       "schema:domainIncludes": [
         {
+          "@id": "schema:SuperficialAnatomy"
+        },
+        {
           "@id": "schema:AnatomicalSystem"
         },
         {
           "@id": "schema:AnatomicalStructure"
-        },
-        {
-          "@id": "schema:SuperficialAnatomy"
         }
       ],
       "schema:isPartOf": {

@@ -43,13 +43,13 @@
       "rdfs:label": "manufacturer",
       "schema:domainIncludes": [
         {
+          "@id": "schema:DietarySupplement"
+        },
+        {
           "@id": "schema:Drug"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:rangeIncludes": {
@@ -69,10 +69,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugPrescriptionStatus"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugPrescriptionStatus"
         }
       ]
     },
@@ -217,33 +217,29 @@
       }
     },
     {
-      "@id": "schema:legalStatus",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
-      "rdfs:label": "legalStatus",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:Drug"
-        },
-        {
-          "@id": "schema:MedicalEntity"
-        }
-      ],
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
       "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
+        "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:Text"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -474,13 +470,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -546,10 +542,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -560,13 +556,13 @@
       "rdfs:label": "activeIngredient",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Substance"
+        },
+        {
           "@id": "schema:DietarySupplement"
         },
         {
           "@id": "schema:DrugStrength"
-        },
-        {
-          "@id": "schema:Substance"
         },
         {
           "@id": "schema:Drug"
@@ -744,10 +740,41 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:URL"
+        }
+      ]
+    },
+    {
+      "@id": "schema:legalStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The drug or supplement's legal status, including any controlled substance schedules that apply.",
+      "rdfs:label": "legalStatus",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Drug"
+        },
+        {
+          "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:MedicalEntity"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:MedicalEnumeration"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -800,10 +827,10 @@
       "rdfs:label": "maximumIntake",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Substance"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:Substance"
         },
         {
           "@id": "schema:DietarySupplement"
@@ -885,10 +912,10 @@
       "rdfs:label": "mechanismOfAction",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {

@@ -43,10 +43,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -120,10 +120,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -149,10 +149,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -172,13 +172,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -192,37 +192,34 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Message"
-        },
-        {
-          "@id": "schema:PayAction"
-        },
-        {
           "@id": "schema:GiveAction"
-        },
-        {
-          "@id": "schema:SendAction"
-        },
-        {
-          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:TipAction"
         },
         {
-          "@id": "schema:DonateAction"
+          "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:Message"
+        },
+        {
+          "@id": "schema:ReturnAction"
+        },
+        {
+          "@id": "schema:PayAction"
         },
         {
           "@id": "schema:AuthorizeAction"
         },
         {
-          "@id": "schema:ReturnAction"
+          "@id": "schema:SendAction"
+        },
+        {
+          "@id": "schema:DonateAction"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:Person"
-        },
         {
           "@id": "schema:ContactPoint"
         },
@@ -231,6 +228,9 @@
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ]
     },
@@ -271,10 +271,10 @@
           "@id": "schema:TradeAction"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -288,13 +288,13 @@
       "rdfs:label": "purpose",
       "schema:domainIncludes": [
         {
+          "@id": "schema:AllocateAction"
+        },
+        {
           "@id": "schema:PayAction"
         },
         {
           "@id": "schema:MedicalDevice"
-        },
-        {
-          "@id": "schema:AllocateAction"
         }
       ],
       "schema:isPartOf": {
@@ -302,10 +302,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Thing"
+          "@id": "schema:MedicalDevicePurpose"
         },
         {
-          "@id": "schema:MedicalDevicePurpose"
+          "@id": "schema:Thing"
         }
       ]
     },
@@ -319,10 +319,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -331,6 +331,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:target",
@@ -375,13 +402,13 @@
       "rdfs:label": "price",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:TradeAction"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:TradeAction"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
@@ -444,13 +471,13 @@
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Action"
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -499,10 +526,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     }

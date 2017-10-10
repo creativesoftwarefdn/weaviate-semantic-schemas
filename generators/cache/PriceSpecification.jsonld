@@ -37,19 +37,19 @@
           "@id": "schema:LocationFeatureSpecification"
         },
         {
-          "@id": "schema:JobPosting"
-        },
-        {
           "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:JobPosting"
         }
       ],
       "schema:rangeIncludes": {
@@ -129,12 +129,6 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
-          "@id": "schema:PriceSpecification"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
@@ -148,6 +142,12 @@
         },
         {
           "@id": "schema:Permit"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -244,13 +244,13 @@
       "rdfs:label": "eligibleTransactionVolume",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -288,13 +288,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -370,6 +370,33 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "schema:totalPrice",
       "schema:rangeIncludes": {
         "@id": "schema:PriceSpecification"
@@ -397,18 +424,18 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:TradeAction"
         },
         {
-          "@id": "schema:TradeAction"
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -422,13 +449,13 @@
           "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Reservation"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -448,10 +475,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {

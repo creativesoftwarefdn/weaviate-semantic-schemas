@@ -79,6 +79,26 @@
       }
     },
     {
+      "@id": "schema:vatID",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The Value-added Tax ID of the organization or person.",
+      "rdfs:label": "vatID",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
       "@id": "schema:siblings",
       "@type": "rdf:Property",
       "rdfs:comment": "A sibling of the person.",
@@ -106,16 +126,31 @@
       }
     },
     {
-      "@id": "schema:spouse",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "The person's spouse.",
-      "rdfs:label": "spouse",
-      "schema:domainIncludes": {
-        "@id": "schema:Person"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Person"
-      }
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:givenName",
@@ -157,29 +192,6 @@
       }
     },
     {
-      "@id": "schema:faxNumber",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The fax number.",
-      "rdfs:label": "faxNumber",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
       "@id": "schema:description",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -195,19 +207,22 @@
       }
     },
     {
-      "@id": "schema:vatID",
+      "@id": "schema:faxNumber",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The Value-added Tax ID of the organization or person.",
-      "rdfs:label": "vatID",
+      "rdfs:comment": "The fax number.",
+      "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Person"
+        },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -238,10 +253,10 @@
       "rdfs:label": "diagnosis",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Patient"
+          "@id": "schema:DDxElement"
         },
         {
-          "@id": "schema:DDxElement"
+          "@id": "schema:Patient"
         }
       ],
       "schema:isPartOf": {
@@ -270,6 +285,9 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
+          "@id": "schema:GeoShape"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
@@ -280,9 +298,6 @@
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeoShape"
         }
       ],
       "schema:rangeIncludes": [
@@ -330,16 +345,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -356,16 +371,16 @@
       "rdfs:label": "height",
       "schema:domainIncludes": [
         {
-          "@id": "schema:VisualArtwork"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:VisualArtwork"
         },
         {
           "@id": "schema:MediaObject"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -390,15 +405,12 @@
       }
     },
     {
-      "@id": "schema:birthDate",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Date of birth.",
-      "rdfs:label": "birthDate",
-      "schema:domainIncludes": {
-        "@id": "schema:Person"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Date"
+      "@id": "schema:Audience",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Intended audience for an item, i.e. the group for whom the item was created.",
+      "rdfs:label": "Audience",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
       }
     },
     {
@@ -419,10 +431,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ProgramMembership"
         },
         {
-          "@id": "schema:ProgramMembership"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -479,16 +491,16 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -600,10 +612,10 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -611,18 +623,15 @@
       }
     },
     {
-      "@id": "schema:affiliation",
+      "@id": "schema:follows",
       "@type": "rdf:Property",
-      "rdfs:comment": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
-      "rdfs:label": "affiliation",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:memberOf"
-      },
+      "rdfs:comment": "The most generic uni-directional social relation.",
+      "rdfs:label": "follows",
       "schema:domainIncludes": {
         "@id": "schema:Person"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Organization"
+        "@id": "schema:Person"
       }
     },
     {
@@ -685,12 +694,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
+    },
+    {
+      "@id": "schema:spouse",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The person's spouse.",
+      "rdfs:label": "spouse",
+      "schema:domainIncludes": {
+        "@id": "schema:Person"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
     },
     {
       "@id": "schema:alternateName",
@@ -750,10 +771,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -767,13 +788,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Class"
         },
         {
           "@id": "schema:Property"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Enumeration"
         }
       ],
       "schema:isPartOf": {
@@ -781,10 +802,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
@@ -801,13 +822,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -871,15 +892,18 @@
       }
     },
     {
-      "@id": "schema:follows",
+      "@id": "schema:affiliation",
       "@type": "rdf:Property",
-      "rdfs:comment": "The most generic uni-directional social relation.",
-      "rdfs:label": "follows",
+      "rdfs:comment": "An organization that this person is affiliated with. For example, a school/university, a club, or a team.",
+      "rdfs:label": "affiliation",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:memberOf"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Person"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Person"
+        "@id": "schema:Organization"
       }
     },
     {
@@ -889,16 +913,16 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -974,13 +998,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1015,19 +1039,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1047,16 +1071,16 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:Patient"
         },
         {
           "@id": "schema:TherapeuticProcedure"
         },
         {
-          "@id": "schema:Patient"
+          "@id": "schema:DrugClass"
         },
         {
-          "@id": "schema:DrugClass"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -1076,10 +1100,10 @@
       "rdfs:label": "Patient",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:MedicalAudience"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:MedicalAudience"
         }
       ],
       "schema:isPartOf": {
@@ -1165,13 +1189,13 @@
       "rdfs:label": "contactPoint",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:HealthInsurancePlan"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1179,35 +1203,16 @@
       }
     },
     {
-      "@id": "schema:funder",
+      "@id": "schema:birthDate",
       "@type": "rdf:Property",
-      "rdfs:comment": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
-      "rdfs:label": "funder",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:sponsor"
+      "rdfs:comment": "Date of birth.",
+      "rdfs:label": "birthDate",
+      "schema:domainIncludes": {
+        "@id": "schema:Person"
       },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Date"
+      }
     },
     {
       "@id": "schema:url",
@@ -1243,15 +1248,6 @@
       }
     },
     {
-      "@id": "schema:Audience",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Intended audience for an item, i.e. the group for whom the item was created.",
-      "rdfs:label": "Audience",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
-    },
-    {
       "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
       "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
@@ -1279,15 +1275,22 @@
       }
     },
     {
-      "@id": "schema:additionalName",
+      "@id": "schema:hasOccupation",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional name for a Person, can be used for a middle name.",
-      "rdfs:label": "additionalName",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
+      },
+      "rdfs:comment": "The Person's occupation. For past professions, use Role for expressing dates.",
+      "rdfs:label": "hasOccupation",
+      "schema:category": "issue-1698",
       "schema:domainIncludes": {
         "@id": "schema:Person"
       },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Occupation"
       }
     },
     {
@@ -1297,13 +1300,13 @@
       "rdfs:label": "email",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1317,10 +1320,10 @@
       "rdfs:label": "healthCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PeopleAudience"
+          "@id": "schema:Patient"
         },
         {
-          "@id": "schema:Patient"
+          "@id": "schema:PeopleAudience"
         },
         {
           "@id": "schema:MedicalStudy"
@@ -1343,16 +1346,16 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -1391,10 +1394,10 @@
       "rdfs:label": "MedicalAudience",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:Audience"
+          "@id": "schema:PeopleAudience"
         },
         {
-          "@id": "schema:PeopleAudience"
+          "@id": "schema:Audience"
         },
         {
           "@id": "schema:MedicalEnumeration"
@@ -1417,15 +1420,27 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         }
       ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:additionalName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An additional name for a Person, can be used for a middle name.",
+      "rdfs:label": "additionalName",
+      "schema:domainIncludes": {
+        "@id": "schema:Person"
+      },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
@@ -1443,10 +1458,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1474,6 +1489,37 @@
       }
     },
     {
+      "@id": "schema:funder",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A person or organization that supports (sponsors) something through some kind of financial contribution.",
+      "rdfs:label": "funder",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:sponsor"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ]
+    },
+    {
       "@id": "schema:suggestedGender",
       "@type": "rdf:Property",
       "rdfs:comment": "The gender of the person or audience.",
@@ -1492,21 +1538,21 @@
       "rdfs:label": "publishingPrinciples",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     }

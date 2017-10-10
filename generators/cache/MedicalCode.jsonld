@@ -67,13 +67,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalEntity"
-        },
-        {
           "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -143,10 +143,10 @@
       "rdfs:label": "MedicalCode",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:MedicalIntangible"
+          "@id": "schema:CategoryCode"
         },
         {
-          "@id": "schema:CategoryCode"
+          "@id": "schema:MedicalIntangible"
         }
       ],
       "schema:isPartOf": {
@@ -200,10 +200,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CategoryCodeSet"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CategoryCodeSet"
         }
       ]
     },
@@ -256,10 +256,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -288,10 +288,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -306,6 +306,33 @@
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:CategoryCode",
@@ -393,10 +420,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

@@ -76,10 +76,10 @@
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -87,13 +87,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:MedicalEnumeration"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:DrugLegalStatus"
-        },
-        {
-          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -239,10 +239,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -259,10 +259,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:QualitativeValue"
         }
       ]
     },
@@ -305,6 +305,33 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "schema:recognizingAuthority",
       "@type": "rdf:Property",
       "rdfs:comment": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
@@ -341,10 +368,10 @@
       "rdfs:label": "targetPopulation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DoseSchedule"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:DoseSchedule"
         }
       ],
       "schema:isPartOf": {

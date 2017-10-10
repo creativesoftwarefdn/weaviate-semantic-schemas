@@ -31,10 +31,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -57,13 +57,13 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": [
@@ -71,10 +71,10 @@
           "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoShape"
         }
       ],
       "schema:supersededBy": {
@@ -144,16 +144,16 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -179,6 +179,9 @@
       "rdfs:label": "availableLanguage",
       "schema:domainIncludes": [
         {
+          "@id": "schema:LodgingBusiness"
+        },
+        {
           "@id": "schema:TouristAttraction"
         },
         {
@@ -186,9 +189,6 @@
         },
         {
           "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": [
@@ -219,10 +219,13 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:DeliveryChargeSpecification"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:Service"
@@ -231,10 +234,7 @@
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Demand"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -242,10 +242,10 @@
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Text"
@@ -262,10 +262,10 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": {
@@ -324,13 +324,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -412,6 +412,33 @@
       }
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
       "@id": "schema:grantee",
       "schema:rangeIncludes": {
         "@id": "schema:ContactPoint"
@@ -439,13 +466,13 @@
           "@id": "schema:Person"
         },
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -471,10 +498,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

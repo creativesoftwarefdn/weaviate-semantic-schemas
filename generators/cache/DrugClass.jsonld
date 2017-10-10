@@ -64,6 +64,32 @@
       }
     },
     {
+      "@id": "schema:drug",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Specifying a drug or medicine used in a medication procedure",
+      "rdfs:label": "drug",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:MedicalCondition"
+        },
+        {
+          "@id": "schema:DrugClass"
+        },
+        {
+          "@id": "schema:TherapeuticProcedure"
+        },
+        {
+          "@id": "schema:Patient"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Drug"
+      }
+    },
+    {
       "@id": "schema:identifier",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -76,13 +102,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -167,10 +193,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -220,30 +246,31 @@
       }
     },
     {
-      "@id": "schema:drug",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "Specifying a drug or medicine used in a medication procedure",
-      "rdfs:label": "drug",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Patient"
-        },
-        {
-          "@id": "schema:TherapeuticProcedure"
-        },
-        {
-          "@id": "schema:MedicalCondition"
-        },
-        {
-          "@id": "schema:DrugClass"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Drug"
-      }
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:Intangible",
@@ -261,13 +288,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Property"
+        },
+        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -275,10 +302,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"

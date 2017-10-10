@@ -49,7 +49,13 @@
           "@id": "schema:Demand"
         },
         {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
           "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
         },
         {
           "@id": "schema:PriceSpecification"
@@ -59,12 +65,6 @@
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -135,16 +135,16 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -229,10 +229,10 @@
       "rdfs:label": "eligibleTransactionVolume",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Demand"
@@ -267,10 +267,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
@@ -317,10 +317,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -329,6 +329,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:price",
@@ -340,10 +367,10 @@
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:TradeAction"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:TradeAction"
         }
       ],
       "schema:rangeIncludes": [
@@ -365,25 +392,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:Permit"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Permit"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -400,10 +427,10 @@
       "rdfs:label": "eligibleQuantity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Offer"

@@ -163,28 +163,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -221,6 +221,12 @@
     },
     {
       "@id": "schema:Clip",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:HowToStep",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
@@ -280,10 +286,10 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -425,10 +431,10 @@
       "rdfs:label": "comment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RsvpAction"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:RsvpAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -454,16 +460,16 @@
       "rdfs:label": "isAccessibleForFree",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:PublicationEvent"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:PublicationEvent"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -489,10 +495,10 @@
       "rdfs:label": "genre",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:BroadcastChannel"
         },
         {
-          "@id": "schema:BroadcastChannel"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:MusicGroup"
@@ -526,6 +532,12 @@
       }
     },
     {
+      "@id": "schema:HowToDirection",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
       "@id": "schema:accessibilityControl",
       "@type": "rdf:Property",
       "rdfs:comment": "Identifies input methods that are sufficient to fully control the described resource (<a href=\"http://www.w3.org/wiki/WebSchemas/Accessibility\">WebSchemas wiki lists possible values</a>).",
@@ -544,19 +556,9 @@
       }
     },
     {
-      "@id": "schema:accessMode",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1100"
-      },
-      "rdfs:comment": "The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.",
-      "rdfs:label": "accessMode",
-      "schema:category": "issue-1110",
-      "schema:domainIncludes": {
+      "@id": "schema:Series",
+      "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -572,13 +574,13 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -624,7 +626,10 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:CreativeWork"
@@ -633,19 +638,16 @@
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:BusTrip"
+          "@id": "schema:Flight"
         },
         {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Reservation"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:Flight"
+          "@id": "schema:BusTrip"
         }
       ],
       "schema:rangeIncludes": [
@@ -684,10 +686,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -698,18 +700,18 @@
       "rdfs:label": "contributor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -791,9 +793,19 @@
       }
     },
     {
-      "@id": "schema:Series",
-      "rdfs:subClassOf": {
+      "@id": "schema:accessMode",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1100"
+      },
+      "rdfs:comment": "The human sensory perceptual system or cognitive faculty through which a person may process or perceive information. Expected values include: auditory, tactile, textual, visual, colorDependent, chartOnVisual, chemOnVisual, diagramOnVisual, mathOnVisual, musicOnVisual, textOnVisual.",
+      "rdfs:label": "accessMode",
+      "schema:category": "issue-1110",
+      "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -803,9 +815,6 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Person"
         },
         {
@@ -813,6 +822,9 @@
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -829,16 +841,16 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Place"
@@ -905,15 +917,9 @@
       }
     },
     {
-      "@id": "schema:learningResourceType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
-      "rdfs:label": "learningResourceType",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
+      "@id": "schema:lyrics",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -929,10 +935,10 @@
       "rdfs:label": "typicalAgeRange",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -946,7 +952,7 @@
       }
     },
     {
-      "@id": "schema:Season",
+      "@id": "schema:Article",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
@@ -981,10 +987,10 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:PlayAction"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
@@ -993,11 +999,23 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Audience"
+      }
+    },
+    {
+      "@id": "schema:CreativeWork",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews"
+      },
+      "rdfs:comment": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
+      "rdfs:label": "CreativeWork",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
       }
     },
     {
@@ -1066,18 +1084,18 @@
       "rdfs:label": "position",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ListItem"
         },
         {
-          "@id": "schema:ListItem"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Integer"
         },
         {
-          "@id": "schema:Integer"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1124,10 +1142,10 @@
       "rdfs:label": "dateCreated",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         },
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1198,6 +1216,12 @@
       }
     },
     {
+      "@id": "schema:HowToSection",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
       "@id": "schema:creator",
       "@type": "rdf:Property",
       "rdfs:comment": "The creator/author of this CreativeWork. This is the same as the Author property for CreativeWork.",
@@ -1212,10 +1236,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1256,9 +1280,15 @@
       }
     },
     {
-      "@id": "schema:CreativeWorkSeries",
-      "rdfs:subClassOf": {
-        "@id": "schema:CreativeWork"
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -1291,18 +1321,24 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
     {
       "@id": "schema:softwareHelp",
+      "schema:rangeIncludes": {
+        "@id": "schema:CreativeWork"
+      }
+    },
+    {
+      "@id": "schema:step",
       "schema:rangeIncludes": {
         "@id": "schema:CreativeWork"
       }
@@ -1326,19 +1362,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1350,6 +1386,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:HowTo",
@@ -1403,10 +1466,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1447,13 +1510,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:DateTime"
         }
       ]
     },
@@ -1470,10 +1533,10 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Product"
         }
       ],
       "schema:supersededBy": {
@@ -1493,15 +1556,9 @@
       }
     },
     {
-      "@id": "schema:CreativeWork",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_rNews"
-      },
-      "rdfs:comment": "The most generic kind of creative work, including books, movies, photographs, software programs, etc.",
-      "rdfs:label": "CreativeWork",
+      "@id": "schema:HowToTip",
       "rdfs:subClassOf": {
-        "@id": "schema:Thing"
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1580,15 +1637,9 @@
       }
     },
     {
-      "@id": "schema:name",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:CreativeWorkSeries",
+      "rdfs:subClassOf": {
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -1604,7 +1655,7 @@
       }
     },
     {
-      "@id": "schema:Article",
+      "@id": "schema:Season",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
       }
@@ -1612,19 +1663,29 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": [
+        {
+          "@id": "schema:CommunicateAction"
+        },
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CommunicateAction"
         }
       ],
+      "schema:inverseOf": {
+        "@id": "schema:subjectOf"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -1702,19 +1763,19 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -1837,28 +1898,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:Brand"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1898,17 +1959,23 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         }
       ]
     },
     {
-      "@id": "schema:lyrics",
-      "schema:rangeIncludes": {
+      "@id": "schema:learningResourceType",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The predominant type or kind characterizing the learning resource. For example, 'presentation', 'handout'.",
+      "rdfs:label": "learningResourceType",
+      "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -1918,9 +1985,32 @@
       }
     },
     {
-      "@id": "schema:documentation",
+      "@id": "schema:offers",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
+      "rdfs:label": "offers",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:MenuItem"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Offer"
       }
     },
     {
@@ -1980,10 +2070,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -2024,10 +2114,10 @@
       "rdfs:label": "material",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -2064,32 +2154,9 @@
       }
     },
     {
-      "@id": "schema:offers",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
-      "rdfs:label": "offers",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:MenuItem"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:AggregateOffer"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
+      "@id": "schema:documentation",
       "schema:rangeIncludes": {
-        "@id": "schema:Offer"
+        "@id": "schema:CreativeWork"
       }
     },
     {
@@ -2110,10 +2177,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -2148,19 +2215,19 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LinkRole"
-        },
-        {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:WriteAction"
         },
         {
           "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:LinkRole"
         }
       ],
       "schema:rangeIncludes": [

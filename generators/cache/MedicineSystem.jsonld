@@ -16,13 +16,13 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Class"
-        },
-        {
           "@id": "schema:Property"
         },
         {
           "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Class"
         }
       ],
       "schema:isPartOf": {
@@ -30,10 +30,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
@@ -141,13 +141,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -188,6 +188,33 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:sameAs",

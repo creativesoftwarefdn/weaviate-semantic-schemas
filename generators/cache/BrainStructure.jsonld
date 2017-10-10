@@ -28,10 +28,10 @@
       "rdfs:label": "associatedPathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:SuperficialAnatomy"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalStructure"
         },
         {
           "@id": "schema:AnatomicalSystem"
@@ -45,18 +45,15 @@
       }
     },
     {
-      "@id": "schema:medicineSystem",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
-      "rdfs:label": "medicineSystem",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalEntity"
+      "@id": "schema:BrainStructure",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity.",
+      "rdfs:label": "BrainStructure",
+      "rdfs:subClassOf": {
+        "@id": "schema:AnatomicalStructure"
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicineSystem"
       }
     },
     {
@@ -110,10 +107,10 @@
           "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         }
       ],
       "schema:isPartOf": {
@@ -130,10 +127,10 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:MedicalEntity"
@@ -147,10 +144,10 @@
           "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -296,24 +293,12 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
-    },
-    {
-      "@id": "schema:BrainStructure",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Any anatomical structure which pertains to the soft nervous tissue functioning as the coordinating center of sensation and intellectual and nervous activity.",
-      "rdfs:label": "BrainStructure",
-      "rdfs:subClassOf": {
-        "@id": "schema:AnatomicalStructure"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
     },
     {
       "@id": "schema:function",
@@ -384,6 +369,48 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
+      "@id": "schema:medicineSystem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+      "rdfs:label": "medicineSystem",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicineSystem"
+      }
+    },
+    {
       "@id": "schema:recognizingAuthority",
       "@type": "rdf:Property",
       "rdfs:comment": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
@@ -420,13 +447,13 @@
       "rdfs:label": "relatedCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalSystem"
-        },
-        {
           "@id": "schema:SuperficialAnatomy"
         },
         {
           "@id": "schema:AnatomicalStructure"
+        },
+        {
+          "@id": "schema:AnatomicalSystem"
         }
       ],
       "schema:isPartOf": {
@@ -461,10 +488,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

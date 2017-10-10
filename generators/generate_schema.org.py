@@ -3,6 +3,8 @@ import urllib.request
 import sys
 from pathlib import Path
 import datetime
+import copy
+import os, errno
 
 ##
 # Buildlog function
@@ -124,41 +126,56 @@ def createFile( i, processedClasses, version ):
         # add to processedClasses
         processedClasses.append(i)
         workFile = getSchema("http://schema.org/" + i + ".jsonld")
-        # get a list of properties
-        properties = getProps(workFile["@graph"])
-        # loop through the file and find Classes
-        for graph in workFile["@graph"]:
-            currentClass = graph["@id"].split(":")[1]
-            # If first of schema is Upper = class
-            if currentClass[0].isupper() == True:
-                # Check if it is the current schema to extend tree
-                if currentClass == i:
-                    # extend the tree
-                    newTree = {}
-                    newTree["class"]        = currentClass
-                    if isinstance(graph["rdfs:comment"], list):
-                        newTree["description"] = ' '.join(graph["rdfs:comment"])
-                    else:
-                        newTree["description"] = graph["rdfs:comment"]
-                    newTree["properties"]   = properties
-                    tree["classes"].append(newTree)
-                else :
-                    # request and run the new schema
-                    if currentClass not in processedClasses:
-                        if "rdfs:subClassOf" in graph:
-                            # check if string or array
-                            if "@id" in graph["rdfs:subClassOf"]:
-                                # check if it has the correct subClass settings
-                                if graph["rdfs:subClassOf"]["@id"] == "schema:" + i:
-                                    createTree(currentClass)
-                            else:
-                                # loop through the array
-                                for subSubClass in graph["rdfs:subClassOf"]:
-                                    # check if string or array
-                                    if "@id" in subSubClass:
-                                        # check if it has the correct subClass settings
-                                        if subSubClass["@id"] == "schema:" + i:
-                                            createTree(currentClass)
+        #
+        if "@graph" in workFile:
+            # get a list of properties
+            properties = getProps(workFile["@graph"])
+            # loop through the file and find Classes
+            for graph in workFile["@graph"]:
+                currentClass = graph["@id"].split(":")[1]
+                # If first of schema is Upper = class
+                if currentClass[0].isupper() == True:
+                    # Check if it is the current schema to extend tree
+                    if currentClass == i:
+                        # extend the tree
+                        newTree = {}
+                        newTree["class"]        = currentClass
+                        if isinstance(graph["rdfs:comment"], list):
+                            newTree["description"] = ' '.join(graph["rdfs:comment"])
+                        else:
+                            newTree["description"] = graph["rdfs:comment"]
+                        newTree["properties"]   = properties
+                        tree["classes"].append(newTree)
+                    else :
+                        # request and run the new schema
+                        if currentClass not in processedClasses:
+                            if "rdfs:subClassOf" in graph:
+                                # check if string or array
+                                if "@id" in graph["rdfs:subClassOf"]:
+                                    # check if it has the correct subClass settings
+                                    if graph["rdfs:subClassOf"]["@id"] == "schema:" + i:
+                                        createTree(currentClass)
+                                else:
+                                    # loop through the array
+                                    for subSubClass in graph["rdfs:subClassOf"]:
+                                        # check if string or array
+                                        if "@id" in subSubClass:
+                                            # check if it has the correct subClass settings
+                                            if subSubClass["@id"] == "schema:" + i:
+                                                createTree(currentClass)
+
+    ##
+    # Clean the tree function
+    ##
+    def cleanTree( iTree ):
+        newTree = copy.deepcopy(iTree)
+        newTree["classes"] = []
+        for treeClass in iTree["classes"]:
+            for treeProps in treeClass["properties"]:
+                if "string" in treeProps["@dataType"]:
+                    treeProps["@dataType"] = ["string"];
+            newTree["classes"].append(treeClass)
+        return newTree
 
     ##
     # Set basic vars
@@ -172,16 +189,33 @@ def createFile( i, processedClasses, version ):
     tree['classes']     = []
 
     ##
+    # Create cache dir
+    ##
+    if not os.path.exists("cache/"):
+        os.makedirs("cache/")
+
+    ##
     # Start creation process of Class
     ##
     createTree(i)
 
+    # cleanup files
+    # If there is a string and a ref, always use only the string
+    # This might be depricated in the future
+    treeToClean = tree
+    tree = cleanTree(treeToClean)
+
     # sort classes
-    tree['classes'] = sorted(tree['classes'], key=lambda k: k['class']);
+    tree['classes'] = sorted(tree['classes'], key=lambda k: k['class'])
 
     # write to file
-    file = open("../weaviate-schema-" + i + "-schema_org.json","w") 
-    file.write(json.dumps(tree , indent=4, sort_keys=True)) 
+    file = open("../weaviate-" + i + "-ontology-schema_org.json","w") 
+    file.write(json.dumps(tree , indent=4, sort_keys=True))
+
+    # write to minified file
+    file = open("../weaviate-" + i + "-ontology-schema_org.min.json","w") 
+    file.write(json.dumps(tree, separators=(',',':')))
+
     file.close()
 
 ##
@@ -195,7 +229,6 @@ if (len(arguments) == 0):
 elif (len(arguments) == 1):
     createFile('Thing', ['Action'], arguments[0])
     createFile('Action', [], arguments[0])
-
     buildLog("DONE")
 else:
     buildLog("ERROR: Too many arguments given.")

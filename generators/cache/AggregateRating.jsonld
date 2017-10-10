@@ -22,21 +22,19 @@
       }
     },
     {
-      "@id": "schema:ratingValue",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The rating for the content.",
-      "rdfs:label": "ratingValue",
-      "schema:domainIncludes": {
-        "@id": "schema:Rating"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Number"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
+      "@id": "schema:EmployerAggregateRating",
+      "rdfs:subClassOf": {
+        "@id": "schema:AggregateRating"
+      }
+    },
+    {
+      "@id": "schema:Rating",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",
+      "rdfs:label": "Rating",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      }
     },
     {
       "@id": "schema:disambiguatingDescription",
@@ -138,24 +136,29 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         }
       ]
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:ratingValue",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "The rating for the content.",
+      "rdfs:label": "ratingValue",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Rating"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:aggregateRating",
@@ -176,13 +179,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -223,10 +226,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -235,6 +238,57 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
+      "@id": "schema:reviewAspect",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1689"
+      },
+      "rdfs:comment": "This Review or Rating is relevant to this part or facet of the itemReviewed.",
+      "rdfs:label": "reviewAspect",
+      "schema:category": "issue-1689",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Review"
+        },
+        {
+          "@id": "schema:Rating"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:ratingCount",
@@ -246,6 +300,18 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Integer"
+      }
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -278,21 +344,12 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
-    },
-    {
-      "@id": "schema:Rating",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A rating is an evaluation on a numeric scale, such as 1 to 5 stars.",
-      "rdfs:label": "Rating",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
     },
     {
       "@id": "schema:alternateName",

@@ -28,16 +28,16 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
-        },
-        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
           "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
@@ -56,10 +56,10 @@
       "rdfs:label": "paymentDueDate",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": {
@@ -144,10 +144,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": {
@@ -236,10 +236,10 @@
       "rdfs:label": "customer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": [
@@ -332,10 +332,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -361,10 +361,10 @@
       "rdfs:label": "paymentDue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": {
@@ -415,6 +415,33 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
       "@id": "schema:seller",
       "@type": "rdf:Property",
       "rdfs:comment": "An entity which offers (sells / leases / lends / loans) the services / goods.  A seller may also be a provider.",
@@ -424,7 +451,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:BuyAction"
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Order"
@@ -433,18 +463,15 @@
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:BuyAction"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -475,10 +502,10 @@
       "rdfs:label": "paymentMethod",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": {
@@ -520,10 +547,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:OrderItem"
         },
         {
-          "@id": "schema:OrderItem"
+          "@id": "schema:Product"
         }
       ]
     },

@@ -10,13 +10,13 @@
   },
   "@graph": [
     {
-      "@id": "schema:globalLocationNumber",
+      "@id": "schema:duns",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
-      "rdfs:label": "globalLocationNumber",
+      "rdfs:comment": "The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.",
+      "rdfs:label": "duns",
       "rdfs:subPropertyOf": {
         "@id": "schema:identifier"
       },
@@ -26,9 +26,6 @@
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -72,44 +69,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Action"
-      }
-    },
-    {
-      "@id": "schema:founders",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A person who founded this organization.",
-      "rdfs:label": "founders",
-      "schema:domainIncludes": {
-        "@id": "schema:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Person"
-      },
-      "schema:supersededBy": {
-        "@id": "schema:founder"
-      }
-    },
-    {
-      "@id": "schema:duns",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The Dun &amp; Bradstreet DUNS number for identifying an organization or business person.",
-      "rdfs:label": "duns",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:identifier"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -163,15 +122,34 @@
       }
     },
     {
-      "@id": "schema:foundingLocation",
+      "@id": "schema:serviceArea",
       "@type": "rdf:Property",
-      "rdfs:comment": "The place where the Organization was founded.",
-      "rdfs:label": "foundingLocation",
-      "schema:domainIncludes": {
-        "@id": "schema:Organization"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Place"
+      "rdfs:comment": "The geographic area where the service is provided.",
+      "rdfs:label": "serviceArea",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:areaServed"
       }
     },
     {
@@ -184,13 +162,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Person"
@@ -204,6 +182,29 @@
           "@id": "schema:Organization"
         }
       ]
+    },
+    {
+      "@id": "schema:taxID",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
+      "rdfs:label": "taxID",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:identifier"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:numberOfEmployees",
@@ -229,16 +230,16 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Person"
@@ -258,15 +259,18 @@
       }
     },
     {
-      "@id": "schema:album",
+      "@id": "schema:founders",
       "@type": "rdf:Property",
-      "rdfs:comment": "A music album.",
-      "rdfs:label": "album",
+      "rdfs:comment": "A person who founded this organization.",
+      "rdfs:label": "founders",
       "schema:domainIncludes": {
-        "@id": "schema:MusicGroup"
+        "@id": "schema:Organization"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:MusicAlbum"
+        "@id": "schema:Person"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:founder"
       }
     },
     {
@@ -305,6 +309,26 @@
       }
     },
     {
+      "@id": "schema:contactPoint",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A contact point for a person or organization.",
+      "rdfs:label": "contactPoint",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:HealthInsurancePlan"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:ContactPoint"
+      }
+    },
+    {
       "@id": "schema:memberOf",
       "@type": "rdf:Property",
       "rdfs:comment": "An Organization (or ProgramMembership) to which this Person or Organization belongs.",
@@ -330,9 +354,38 @@
       ]
     },
     {
-      "@id": "schema:byArtist",
+      "@id": "schema:review",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A review of the item.",
+      "rdfs:label": "review",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Offer"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:MusicGroup"
+        "@id": "schema:Review"
       }
     },
     {
@@ -342,10 +395,10 @@
       "rdfs:label": "member",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:ProgramMembership"
         },
         {
-          "@id": "schema:ProgramMembership"
+          "@id": "schema:Organization"
         }
       ],
       "schema:inverseOf": {
@@ -381,23 +434,28 @@
       }
     },
     {
-      "@id": "schema:tracks",
+      "@id": "schema:members",
       "@type": "rdf:Property",
-      "rdfs:comment": "A music recording (track)&#x2014;usually a single song.",
-      "rdfs:label": "tracks",
+      "rdfs:comment": "A member of this organization.",
+      "rdfs:label": "members",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MusicPlaylist"
+          "@id": "schema:ProgramMembership"
         },
         {
-          "@id": "schema:MusicGroup"
+          "@id": "schema:Organization"
         }
       ],
-      "schema:rangeIncludes": {
-        "@id": "schema:MusicRecording"
-      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
+        }
+      ],
       "schema:supersededBy": {
-        "@id": "schema:track"
+        "@id": "schema:member"
       }
     },
     {
@@ -407,13 +465,13 @@
       "rdfs:label": "telephone",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:ContactPoint"
@@ -424,15 +482,15 @@
       }
     },
     {
-      "@id": "schema:founder",
+      "@id": "schema:foundingLocation",
       "@type": "rdf:Property",
-      "rdfs:comment": "A person who founded this organization.",
-      "rdfs:label": "founder",
+      "rdfs:comment": "The place where the Organization was founded.",
+      "rdfs:label": "foundingLocation",
       "schema:domainIncludes": {
         "@id": "schema:Organization"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Person"
+        "@id": "schema:Place"
       }
     },
     {
@@ -479,19 +537,19 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalStudy"
+        },
+        {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
@@ -510,13 +568,13 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
@@ -524,10 +582,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Brand"
         }
       ]
     },
@@ -536,10 +594,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
         },
         {
-          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
         }
       ],
       "rdfs:comment": "For an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> (typically a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>), a statement about policy on use of unnamed sources and the decision process required.",
@@ -550,10 +608,10 @@
       "schema:category": "issue-1525",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:NewsMediaOrganization"
         },
         {
-          "@id": "schema:NewsMediaOrganization"
+          "@id": "schema:Organization"
         }
       ],
       "schema:isPartOf": {
@@ -578,10 +636,10 @@
       "rdfs:label": "hasPOS",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -598,33 +656,33 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Demand"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:AdministrativeArea"
         }
       ]
     },
@@ -672,13 +730,13 @@
       "rdfs:label": "faxNumber",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
@@ -695,6 +753,9 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
+          "@id": "schema:LeaveAction"
+        },
+        {
           "@id": "schema:PlayAction"
         },
         {
@@ -707,13 +768,10 @@
           "@id": "schema:InformAction"
         },
         {
-          "@id": "schema:InviteAction"
-        },
-        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:LeaveAction"
+          "@id": "schema:InviteAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -730,10 +788,10 @@
       "rdfs:label": "naics",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -750,10 +808,10 @@
       "rdfs:label": "track",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MusicGroup"
+          "@id": "schema:MusicPlaylist"
         },
         {
-          "@id": "schema:MusicPlaylist"
+          "@id": "schema:MusicGroup"
         }
       ],
       "schema:rangeIncludes": [
@@ -778,10 +836,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -822,13 +880,13 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Organization"
@@ -848,18 +906,6 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:Event"
         },
         {
@@ -870,6 +916,18 @@
         },
         {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -901,13 +959,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -918,10 +976,10 @@
       "rdfs:label": "alumni",
       "schema:domainIncludes": [
         {
-          "@id": "schema:EducationalOrganization"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:EducationalOrganization"
         }
       ],
       "schema:inverseOf": {
@@ -930,6 +988,43 @@
       "schema:rangeIncludes": {
         "@id": "schema:Person"
       }
+    },
+    {
+      "@id": "schema:logo",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "An associated logo.",
+      "rdfs:label": "logo",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:image"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:ImageObject"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:parentOrganization",
@@ -994,10 +1089,10 @@
       "rdfs:label": "vatID",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1011,21 +1106,21 @@
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Action"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:PostalAddress"
@@ -1043,10 +1138,10 @@
       "schema:category": "issue-1525",
       "schema:domainIncludes": [
         {
-          "@id": "schema:NewsMediaOrganization"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:NewsMediaOrganization"
         }
       ],
       "schema:isPartOf": {
@@ -1054,10 +1149,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -1071,13 +1166,13 @@
       "rdfs:label": "isicV4",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": {
@@ -1103,38 +1198,36 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:review",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "A review of the item.",
-      "rdfs:label": "review",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Brand"
-        },
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
         {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Place"
         }
-      ],
+      ]
+    },
+    {
+      "@id": "schema:byArtist",
       "schema:rangeIncludes": {
-        "@id": "schema:Review"
+        "@id": "schema:MusicGroup"
       }
     },
     {
@@ -1144,13 +1237,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1158,28 +1251,23 @@
       }
     },
     {
-      "@id": "schema:members",
+      "@id": "schema:tracks",
       "@type": "rdf:Property",
-      "rdfs:comment": "A member of this organization.",
-      "rdfs:label": "members",
+      "rdfs:comment": "A music recording (track)&#x2014;usually a single song.",
+      "rdfs:label": "tracks",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ProgramMembership"
+          "@id": "schema:MusicPlaylist"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:MusicGroup"
         }
       ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:MusicRecording"
+      },
       "schema:supersededBy": {
-        "@id": "schema:member"
+        "@id": "schema:track"
       }
     },
     {
@@ -1199,10 +1287,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
         },
         {
-          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
         }
       ],
       "rdfs:comment": "Statement on diversity policy by an <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a> e.g. a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>. For a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a>, a statement describing the newsroom’s diversity policy on both staffing and sources, typically providing staffing data.",
@@ -1210,10 +1298,10 @@
       "schema:category": "issue-1525",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:NewsMediaOrganization"
         },
         {
-          "@id": "schema:NewsMediaOrganization"
+          "@id": "schema:Organization"
         }
       ],
       "schema:isPartOf": {
@@ -1221,10 +1309,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1233,10 +1321,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
+          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
         },
         {
-          "@id": "https://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#TP"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1525"
         }
       ],
       "rdfs:comment": "For a <a class=\"localLink\" href=\"http://schema.org/NewsMediaOrganization\">NewsMediaOrganization</a> or other news-related <a class=\"localLink\" href=\"http://schema.org/Organization\">Organization</a>, a statement about public engagement activities (for news media, the newsroom’s), including involving the public - digitally or otherwise -- in coverage decisions, reporting and activities after publication.",
@@ -1258,10 +1346,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1272,19 +1360,19 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:GeoShape"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:GeoCoordinates"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:GeoShape"
         }
       ],
       "schema:rangeIncludes": [
@@ -1317,17 +1405,20 @@
       }
     },
     {
-      "@id": "schema:taxID",
+      "@id": "schema:globalLocationNumber",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
       },
-      "rdfs:comment": "The Tax / Fiscal ID of the organization or person, e.g. the TIN in the US or the CIF/NIF in Spain.",
-      "rdfs:label": "taxID",
+      "rdfs:comment": "The <a href=\"http://www.gs1.org/gln\">Global Location Number</a> (GLN, sometimes also referred to as International Location Number or ILN) of the respective organization, person, or place. The GLN is a 13-digit number used to identify parties and physical locations.",
+      "rdfs:label": "globalLocationNumber",
       "rdfs:subPropertyOf": {
         "@id": "schema:identifier"
       },
       "schema:domainIncludes": [
+        {
+          "@id": "schema:Place"
+        },
         {
           "@id": "schema:Organization"
         },
@@ -1340,24 +1431,24 @@
       }
     },
     {
+      "@id": "schema:founder",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A person who founded this organization.",
+      "rdfs:label": "founder",
+      "schema:domainIncludes": {
+        "@id": "schema:Organization"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
       "@id": "schema:PerformingGroup",
       "@type": "rdfs:Class",
       "rdfs:comment": "A performance group, such as a band, an orchestra, or a circus.",
       "rdfs:label": "PerformingGroup",
       "rdfs:subClassOf": {
         "@id": "schema:Organization"
-      }
-    },
-    {
-      "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -1382,10 +1473,10 @@
       "rdfs:label": "makesOffer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:inverseOf": {
@@ -1440,16 +1531,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -1460,60 +1551,27 @@
       }
     },
     {
-      "@id": "schema:logo",
+      "@id": "schema:album",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      "rdfs:comment": "A music album.",
+      "rdfs:label": "album",
+      "schema:domainIncludes": {
+        "@id": "schema:MusicGroup"
       },
-      "rdfs:comment": "An associated logo.",
-      "rdfs:label": "logo",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:image"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:ImageObject"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:MusicAlbum"
+      }
     },
     {
-      "@id": "schema:contactPoint",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "rdfs:comment": "A contact point for a person or organization.",
-      "rdfs:label": "contactPoint",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:HealthInsurancePlan"
-        },
-        {
-          "@id": "schema:Person"
-        }
-      ],
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:ContactPoint"
+        "@id": "schema:Text"
       }
     },
     {
@@ -1541,10 +1599,10 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -1557,37 +1615,6 @@
       ]
     },
     {
-      "@id": "schema:serviceArea",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The geographic area where the service is provided.",
-      "rdfs:label": "serviceArea",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:AdministrativeArea"
-        },
-        {
-          "@id": "schema:GeoShape"
-        }
-      ],
-      "schema:supersededBy": {
-        "@id": "schema:areaServed"
-      }
-    },
-    {
       "@id": "schema:genre",
       "@type": "rdf:Property",
       "rdfs:comment": "Genre of the creative work, broadcast channel or group.",
@@ -1597,18 +1624,18 @@
           "@id": "schema:MusicGroup"
         },
         {
-          "@id": "schema:BroadcastChannel"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:BroadcastChannel"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },

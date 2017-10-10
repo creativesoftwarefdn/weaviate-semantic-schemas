@@ -19,10 +19,10 @@
       "rdfs:label": "inventoryLevel",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:SomeProducts"
         },
         {
-          "@id": "schema:SomeProducts"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
@@ -45,13 +45,13 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -80,25 +80,25 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:JobPosting"
         },
         {
           "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:LocationFeatureSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -115,10 +115,10 @@
       "rdfs:label": "includesObject",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -135,10 +135,10 @@
       "rdfs:label": "warranty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -155,10 +155,10 @@
       "rdfs:label": "advanceBookingRequirement",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -234,10 +234,10 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:TypeAndQuantityNode"
         },
         {
-          "@id": "schema:TypeAndQuantityNode"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -254,25 +254,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
           "@id": "schema:LocationFeatureSpecification"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:OpeningHoursSpecification"
         },
         {
-          "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:Permit"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:Permit"
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -292,10 +292,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
@@ -318,13 +318,13 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -341,13 +341,13 @@
       },
       "schema:domainIncludes": [
         {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -361,13 +361,13 @@
       "rdfs:label": "itemCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -384,21 +384,21 @@
           "@id": "schema:DeliveryChargeSpecification"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeoShape"
+        },
         {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -421,10 +421,13 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
@@ -433,10 +436,7 @@
           "@id": "schema:DeliveryChargeSpecification"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:ContactPoint"
         }
       ],
       "schema:rangeIncludes": [
@@ -444,10 +444,10 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Text"
@@ -464,10 +464,10 @@
       "rdfs:label": "availabilityStarts",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -484,13 +484,13 @@
       "rdfs:label": "eligibleTransactionVolume",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
-        },
-        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -580,10 +580,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
@@ -661,24 +661,24 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:DeliveryChargeSpecification"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:DeliveryChargeSpecification"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:GeoShape"
+        },
         {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:GeoShape"
         }
       ]
     },
@@ -692,10 +692,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -735,18 +735,45 @@
       "rdfs:label": "mpn",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Product"
         },
         {
           "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:availableAtOrFrom",
@@ -781,16 +808,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:BuyAction"
+          "@id": "schema:Order"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:BuyAction"
+        },
+        {
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Flight"
@@ -798,10 +825,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -823,10 +850,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:LoanOrCredit"
+          "@id": "schema:PaymentMethod"
         },
         {
-          "@id": "schema:PaymentMethod"
+          "@id": "schema:LoanOrCredit"
         }
       ]
     },
@@ -840,10 +867,10 @@
       "rdfs:label": "eligibleDuration",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -857,10 +884,10 @@
       "rdfs:label": "availability",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": {
@@ -880,10 +907,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:IndividualProduct"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:IndividualProduct"
         },
         {
           "@id": "schema:Offer"
@@ -903,13 +930,13 @@
       "rdfs:label": "eligibleQuantity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -923,18 +950,18 @@
       "rdfs:label": "itemOffered",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ]
     },

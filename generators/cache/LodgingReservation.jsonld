@@ -57,10 +57,10 @@
           "@id": "schema:Order"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Invoice"
@@ -68,10 +68,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -118,36 +118,36 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:Flight"
         },
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -210,21 +210,21 @@
       "rdfs:label": "totalPrice",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Number"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -325,10 +325,10 @@
       "rdfs:label": "checkinTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:LodgingReservation"
         },
         {
-          "@id": "schema:LodgingReservation"
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -430,6 +430,33 @@
       }
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
       "@id": "schema:lodgingUnitDescription",
       "@type": "rdf:Property",
       "rdfs:comment": "A full description of the lodging unit.",
@@ -448,13 +475,13 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Ticket"
@@ -477,10 +504,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

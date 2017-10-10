@@ -40,13 +40,13 @@
       "rdfs:label": "departureTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
-        },
-        {
           "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:Flight"
         }
       ],
       "schema:rangeIncludes": {
@@ -77,36 +77,36 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TrainTrip"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:BusTrip"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:Flight"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:BusTrip"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -159,10 +159,10 @@
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:Flight"
         },
         {
-          "@id": "schema:Flight"
+          "@id": "schema:TrainTrip"
         }
       ],
       "schema:rangeIncludes": {
@@ -238,10 +238,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Vehicle"
         },
         {
-          "@id": "schema:Vehicle"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -282,10 +282,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -320,6 +320,33 @@
       }
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
+    },
+    {
       "@id": "schema:carrier",
       "@type": "rdf:Property",
       "rdfs:comment": "'carrier' is an out-dated term indicating the 'provider' for parcel delivery and flights.",
@@ -349,19 +376,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
+          "@id": "schema:BuyAction"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:BuyAction"
-        },
-        {
-          "@id": "schema:Demand"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": [
@@ -370,6 +397,23 @@
         },
         {
           "@id": "schema:Person"
+        }
+      ]
+    },
+    {
+      "@id": "schema:flightDistance",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The distance of the flight.",
+      "rdfs:label": "flightDistance",
+      "schema:domainIncludes": {
+        "@id": "schema:Flight"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Distance"
         }
       ]
     },
@@ -384,23 +428,6 @@
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
-    },
-    {
-      "@id": "schema:flightDistance",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The distance of the flight.",
-      "rdfs:label": "flightDistance",
-      "schema:domainIncludes": {
-        "@id": "schema:Flight"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Distance"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
     },
     {
       "@id": "schema:departureGate",
@@ -459,10 +486,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

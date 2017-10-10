@@ -28,13 +28,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
-        },
-        {
           "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:MedicalCondition"
+        },
+        {
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -45,10 +45,10 @@
           "@id": "schema:MedicalStudyStatus"
         },
         {
-          "@id": "schema:EventStatusType"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:EventStatusType"
         }
       ]
     },
@@ -138,13 +138,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -206,10 +206,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -244,10 +244,10 @@
       "rdfs:label": "outcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -255,10 +255,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -290,13 +290,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -307,13 +307,13 @@
       "rdfs:label": "indication",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TherapeuticProcedure"
+          "@id": "schema:MedicalDevice"
         },
         {
           "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalDevice"
+          "@id": "schema:TherapeuticProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -398,6 +398,33 @@
       "rdfs:subClassOf": {
         "@id": "schema:MedicalProcedure"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:DiagnosticProcedure",

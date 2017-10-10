@@ -43,10 +43,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:TransferAction"
+          "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:TransferAction"
         },
         {
           "@id": "schema:MoveAction"
@@ -116,6 +116,21 @@
       }
     },
     {
+      "@id": "schema:borrower",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of participant. The person that borrows the object being lent.",
+      "rdfs:label": "borrower",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:participant"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:LendAction"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
+      }
+    },
+    {
       "@id": "schema:potentialAction",
       "@type": "rdf:Property",
       "rdfs:comment": "Indicates a potential Action, which describes an idealized action in which this thing would play an 'object' role.",
@@ -163,10 +178,10 @@
       "rdfs:label": "startTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -186,13 +201,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -212,16 +227,32 @@
       }
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        },
+        {
+          "@id": "schema:Place"
+        }
+      ]
     },
     {
       "@id": "schema:image",
@@ -247,19 +278,31 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:borrower",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of participant. The person that borrows the object being lent.",
-      "rdfs:label": "borrower",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:participant"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
       },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": {
-        "@id": "schema:LendAction"
+        "@id": "schema:Thing"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Person"
-      }
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:target",
@@ -331,40 +374,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Organization"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        },
-        {
-          "@id": "schema:Place"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:toLocation",
@@ -376,16 +403,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:InsertAction"
-        },
-        {
-          "@id": "schema:MoveAction"
+          "@id": "schema:ExerciseAction"
         },
         {
           "@id": "schema:TransferAction"
         },
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:InsertAction"
+        },
+        {
+          "@id": "schema:MoveAction"
         }
       ],
       "schema:rangeIncludes": {

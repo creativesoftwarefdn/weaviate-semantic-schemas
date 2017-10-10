@@ -42,13 +42,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalStudyStatus"
-        },
-        {
           "@id": "schema:EventStatusType"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:MedicalStudyStatus"
         }
       ]
     },
@@ -98,18 +98,15 @@
       }
     },
     {
-      "@id": "schema:studySubject",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
-      "rdfs:label": "studySubject",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalStudy"
+      "@id": "schema:MedicalEntity",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of entity related to health and the practice of medicine.",
+      "rdfs:label": "MedicalEntity",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalEntity"
       }
     },
     {
@@ -133,13 +130,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:MedicalEnumeration"
         },
         {
           "@id": "schema:DrugLegalStatus"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -218,16 +215,16 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
+          "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
@@ -322,10 +319,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -407,6 +404,33 @@
       "rdfs:label": "Thing"
     },
     {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
+    },
+    {
       "@id": "schema:recognizingAuthority",
       "@type": "rdf:Property",
       "rdfs:comment": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
@@ -437,15 +461,18 @@
       }
     },
     {
-      "@id": "schema:MedicalEntity",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of entity related to health and the practice of medicine.",
-      "rdfs:label": "MedicalEntity",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
+      "@id": "schema:studySubject",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
+      "rdfs:label": "studySubject",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalStudy"
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalEntity"
       }
     },
     {
@@ -476,10 +503,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

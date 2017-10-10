@@ -28,10 +28,10 @@
       "rdfs:label": "supersededBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Enumeration"
@@ -42,13 +42,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
-        },
-        {
           "@id": "schema:Class"
         },
         {
           "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Property"
         }
       ]
     },
@@ -180,16 +180,16 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -209,13 +209,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
         }
       ]
     },
@@ -256,10 +256,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -283,6 +283,33 @@
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:Enumeration",
@@ -329,16 +356,16 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:StructuredValue"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:StructuredValue"
         },
         {
           "@id": "schema:QualitativeValue"

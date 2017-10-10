@@ -40,13 +40,13 @@
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": [
@@ -59,21 +59,10 @@
       ]
     },
     {
-      "@id": "schema:pickupTime",
-      "@type": "rdf:Property",
-      "rdfs:comment": "When a taxi will pickup a passenger or a rental car can be picked up.",
-      "rdfs:label": "pickupTime",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:RentalCarReservation"
-        },
-        {
-          "@id": "schema:TaxiReservation"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:DateTime"
-      }
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:bookingTime",
@@ -121,7 +110,16 @@
           "@id": "schema:TrainTrip"
         },
         {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:BusTrip"
+        },
+        {
           "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Service"
@@ -131,15 +129,6 @@
         },
         {
           "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:BusTrip"
-        },
-        {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
         }
       ],
       "schema:rangeIncludes": [
@@ -205,13 +194,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Number"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:Number"
         }
       ]
     },
@@ -222,10 +211,10 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Ticket"
@@ -245,10 +234,10 @@
       "rdfs:label": "underName",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": [
@@ -282,10 +271,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:supersededBy": {
@@ -368,10 +357,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -408,10 +397,48 @@
       ]
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "@id": "schema:pickupTime",
+      "@type": "rdf:Property",
+      "rdfs:comment": "When a taxi will pickup a passenger or a rental car can be picked up.",
+      "rdfs:label": "pickupTime",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:TaxiReservation"
+        },
+        {
+          "@id": "schema:RentalCarReservation"
+        }
+      ],
+      "schema:rangeIncludes": {
+        "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:dropoffTime",

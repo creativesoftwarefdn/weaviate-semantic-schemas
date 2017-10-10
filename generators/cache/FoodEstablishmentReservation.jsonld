@@ -40,10 +40,10 @@
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Service"
@@ -51,10 +51,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -68,6 +68,18 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:DateTime"
+      }
+    },
+    {
+      "@id": "schema:reservationStatus",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The current status of the reservation.",
+      "rdfs:label": "reservationStatus",
+      "schema:domainIncludes": {
+        "@id": "schema:Reservation"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:ReservationStatusType"
       }
     },
     {
@@ -101,36 +113,36 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Flight"
-        },
-        {
           "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -141,18 +153,18 @@
       "rdfs:label": "underName",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -201,13 +213,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Number"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -256,15 +268,12 @@
       }
     },
     {
-      "@id": "schema:reservationStatus",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The current status of the reservation.",
-      "rdfs:label": "reservationStatus",
-      "schema:domainIncludes": {
+      "@id": "schema:FoodEstablishmentReservation",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A reservation to dine at a food-related business.</p>\n\n<p>Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
+      "rdfs:label": "FoodEstablishmentReservation",
+      "rdfs:subClassOf": {
         "@id": "schema:Reservation"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:ReservationStatusType"
       }
     },
     {
@@ -341,10 +350,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -378,10 +387,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Integer"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Integer"
         }
       ]
     },
@@ -392,13 +401,31 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:FoodEstablishmentReservation",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A reservation to dine at a food-related business.Note: This type is for information about actual reservations, e.g. in confirmation emails or HTML pages with individual confirmations of reservations.",
-      "rdfs:label": "FoodEstablishmentReservation",
-      "rdfs:subClassOf": {
-        "@id": "schema:Reservation"
-      }
+      "@id": "schema:subjectOf",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+      },
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ]
     },
     {
       "@id": "schema:priceCurrency",
@@ -407,13 +434,13 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Ticket"
+        },
+        {
           "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Ticket"
         },
         {
           "@id": "schema:Reservation"

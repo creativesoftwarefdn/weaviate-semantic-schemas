@@ -10,25 +10,6 @@
   },
   "@graph": [
     {
-      "@id": "schema:healthPlanPharmacyCategory",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
-      },
-      "rdfs:comment": "The category or type of pharmacy associated with this cost sharing.",
-      "rdfs:label": "healthPlanPharmacyCategory",
-      "schema:category": "issue-1062",
-      "schema:domainIncludes": {
-        "@id": "schema:HealthPlanCostSharingSpecification"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
       "@id": "schema:additionalType",
       "@type": "rdf:Property",
       "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
@@ -84,15 +65,21 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
+    },
+    {
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:healthPlanCoinsuranceRate",
@@ -129,13 +116,13 @@
       }
     },
     {
-      "@id": "schema:healthPlanCopayOption",
+      "@id": "schema:healthPlanPharmacyCategory",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
       },
-      "rdfs:comment": "Whether the copay is before or after deductible, etc. TODO: Is this a closed set?",
-      "rdfs:label": "healthPlanCopayOption",
+      "rdfs:comment": "The category or type of pharmacy associated with this cost sharing.",
+      "rdfs:label": "healthPlanPharmacyCategory",
       "schema:category": "issue-1062",
       "schema:domainIncludes": {
         "@id": "schema:HealthPlanCostSharingSpecification"
@@ -201,18 +188,50 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "@id": "schema:healthPlanCopay",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
+      },
+      "rdfs:comment": "Whether The copay amount.",
+      "rdfs:label": "healthPlanCopay",
+      "schema:category": "issue-1062",
+      "schema:domainIncludes": {
+        "@id": "schema:HealthPlanCostSharingSpecification"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:PriceSpecification"
+      }
+    },
+    {
+      "@id": "schema:healthPlanCoinsuranceOption",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
+      },
+      "rdfs:comment": "Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?",
+      "rdfs:label": "healthPlanCoinsuranceOption",
+      "schema:category": "issue-1062",
+      "schema:domainIncludes": {
+        "@id": "schema:HealthPlanCostSharingSpecification"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:alternateName",
@@ -227,13 +246,13 @@
       }
     },
     {
-      "@id": "schema:healthPlanCoinsuranceOption",
+      "@id": "schema:healthPlanCopayOption",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
       },
-      "rdfs:comment": "Whether the coinsurance applies before or after deductible, etc. TODO: Is this a closed set?",
-      "rdfs:label": "healthPlanCoinsuranceOption",
+      "rdfs:comment": "Whether the copay is before or after deductible, etc. TODO: Is this a closed set?",
+      "rdfs:label": "healthPlanCopayOption",
       "schema:category": "issue-1062",
       "schema:domainIncludes": {
         "@id": "schema:HealthPlanCostSharingSpecification"
@@ -258,23 +277,31 @@
       }
     },
     {
-      "@id": "schema:healthPlanCopay",
+      "@id": "schema:subjectOf",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
       },
-      "rdfs:comment": "Whether The copay amount.",
-      "rdfs:label": "healthPlanCopay",
-      "schema:category": "issue-1062",
+      "rdfs:comment": "A CreativeWork or Event about this Thing..",
+      "rdfs:label": "subjectOf",
+      "schema:category": "issue-1670",
       "schema:domainIncludes": {
-        "@id": "schema:HealthPlanCostSharingSpecification"
+        "@id": "schema:Thing"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:about"
       },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:PriceSpecification"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        }
+      ]
     },
     {
       "@id": "schema:Intangible",
