@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2017 Weaviate
+Copyright (c) 2016-2017, Creative Software Foundation (registered @ Dutch Chamber of Commerce no 50805010)
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
