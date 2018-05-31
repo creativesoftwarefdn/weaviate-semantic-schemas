@@ -85,13 +85,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalEntity"
+        },
+        {
           "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -203,8 +203,8 @@
       }
     },
     {
-      "@id": "schema:AnatomicalSystem",
-      "rdfs:subClassOf": {
+      "@id": "schema:causeOf",
+      "schema:rangeIncludes": {
         "@id": "schema:MedicalEntity"
       }
     },
@@ -242,12 +242,18 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
+    },
+    {
+      "@id": "schema:MedicalRiskEstimator",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEntity"
+      }
     },
     {
       "@id": "schema:description",
@@ -265,15 +271,9 @@
       }
     },
     {
-      "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:AnatomicalSystem",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEntity"
       }
     },
     {
@@ -310,33 +310,6 @@
       "rdfs:subClassOf": {
         "@id": "schema:MedicalEntity"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:sameAs",
@@ -453,10 +426,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -479,9 +452,15 @@
       }
     },
     {
-      "@id": "schema:MedicalRiskEstimator",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEntity"
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -493,12 +472,6 @@
     {
       "@id": "schema:SuperficialAnatomy",
       "rdfs:subClassOf": {
-        "@id": "schema:MedicalEntity"
-      }
-    },
-    {
-      "@id": "schema:causeOf",
-      "schema:rangeIncludes": {
         "@id": "schema:MedicalEntity"
       }
     }

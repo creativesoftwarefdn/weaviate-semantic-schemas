@@ -78,13 +78,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -185,13 +185,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -234,16 +234,16 @@
       "rdfs:label": "activeIngredient",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DrugStrength"
+          "@id": "schema:DietarySupplement"
         },
         {
           "@id": "schema:Substance"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DrugStrength"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -258,33 +258,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:Substance",
@@ -356,10 +329,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -370,9 +343,6 @@
       "rdfs:label": "maximumIntake",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
-        },
-        {
           "@id": "schema:DrugStrength"
         },
         {
@@ -380,6 +350,9 @@
         },
         {
           "@id": "schema:Substance"
+        },
+        {
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {

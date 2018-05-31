@@ -16,37 +16,6 @@
       }
     },
     {
-      "@id": "schema:unitCode",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
-      },
-      "rdfs:comment": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
-      "rdfs:label": "unitCode",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:TypeAndQuantityNode"
-        },
-        {
-          "@id": "schema:UnitPriceSpecification"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
-    },
-    {
       "@id": "schema:inventoryLevel",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
@@ -77,7 +46,7 @@
       }
     },
     {
-      "@id": "schema:numberOfPreviousOwners",
+      "@id": "schema:numberOfPlayers",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -96,6 +65,12 @@
     },
     {
       "@id": "schema:referenceQuantity",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
+    },
+    {
+      "@id": "schema:advanceBookingRequirement",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -137,7 +112,7 @@
       }
     },
     {
-      "@id": "schema:advanceBookingRequirement",
+      "@id": "schema:durationOfWarranty",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -167,16 +142,16 @@
       "rdfs:label": "minValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:PropertyValueSpecification"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValueSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -217,7 +192,7 @@
       }
     },
     {
-      "@id": "schema:depth",
+      "@id": "schema:numChildren",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -232,27 +207,27 @@
       "rdfs:label": "valueReference",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:QualitativeValue"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:StructuredValue"
+          "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:StructuredValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:PropertyValue"
@@ -260,7 +235,7 @@
       ]
     },
     {
-      "@id": "schema:numberOfPlayers",
+      "@id": "schema:numberOfPreviousOwners",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -284,21 +259,46 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:durationOfWarranty",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
-      }
+      "@id": "schema:unitCode",
+      "@type": "rdf:Property",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+      },
+      "rdfs:comment": "The unit of measurement given using the UN/CEFACT Common Code (3 characters) or a URL. Other codes than the UN/CEFACT Common Code may be used with a prefix followed by a colon.",
+      "rdfs:label": "unitCode",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:UnitPriceSpecification"
+        },
+        {
+          "@id": "schema:TypeAndQuantityNode"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
-      "@id": "schema:yearsInOperation",
+      "@id": "schema:enginePower",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -310,21 +310,18 @@
       }
     },
     {
-      "@id": "schema:MonetaryAmountDistribution",
-      "rdfs:subClassOf": {
-        "@id": "schema:QuantitativeValue"
-      }
-    },
-    {
       "@id": "schema:loanTerm",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
     },
     {
-      "@id": "schema:cargoVolume",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
+      "@id": "schema:StructuredValue",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
+      "rdfs:label": "StructuredValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
       }
     },
     {
@@ -348,27 +345,18 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:StructuredValue"
         },
         {
           "@id": "schema:Boolean"
         },
         {
-          "@id": "schema:Number"
-        },
-        {
-          "@id": "schema:StructuredValue"
+          "@id": "schema:Text"
         }
       ]
-    },
-    {
-      "@id": "schema:StructuredValue",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Structured values are used when the value of a property has a more complex structure than simply being a textual value or a reference to another thing.",
-      "rdfs:label": "StructuredValue",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      }
     },
     {
       "@id": "schema:fuelConsumption",
@@ -395,26 +383,20 @@
       "rdfs:label": "additionalProperty",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:QualitativeValue"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:PropertyValue"
-      }
-    },
-    {
-      "@id": "schema:height",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
       }
     },
     {
@@ -433,16 +415,16 @@
       "rdfs:label": "maxValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
           "@id": "schema:PropertyValueSpecification"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -450,7 +432,7 @@
       }
     },
     {
-      "@id": "schema:enginePower",
+      "@id": "schema:yearsInOperation",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -468,20 +450,26 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
     {
-      "@id": "schema:deliveryLeadTime",
-      "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
+      "@id": "schema:QuantitativeValue",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      },
+      "rdfs:comment": "A point value or interval for product characteristics and other purposes.",
+      "rdfs:label": "QuantitativeValue",
+      "rdfs:subClassOf": {
+        "@id": "schema:StructuredValue"
       }
     },
     {
@@ -512,16 +500,16 @@
       "rdfs:label": "unitText",
       "schema:domainIncludes": [
         {
-          "@id": "schema:UnitPriceSpecification"
+          "@id": "schema:TypeAndQuantityNode"
         },
         {
-          "@id": "schema:TypeAndQuantityNode"
+          "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:UnitPriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -559,31 +547,10 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
+      "@id": "schema:cargoVolume",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
     },
     {
       "@id": "schema:recipeYield",
@@ -610,8 +577,8 @@
       }
     },
     {
-      "@id": "schema:QuantitativeValueDistribution",
-      "rdfs:subClassOf": {
+      "@id": "schema:height",
+      "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
     },
@@ -652,7 +619,7 @@
       }
     },
     {
-      "@id": "schema:numChildren",
+      "@id": "schema:depth",
       "schema:rangeIncludes": {
         "@id": "schema:QuantitativeValue"
       }
@@ -679,12 +646,18 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
+    },
+    {
+      "@id": "schema:deliveryLeadTime",
+      "schema:rangeIncludes": {
+        "@id": "schema:QuantitativeValue"
+      }
     },
     {
       "@id": "schema:alternateName",
@@ -729,18 +702,6 @@
       "rdfs:label": "Intangible",
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:QuantitativeValue",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
-      },
-      "rdfs:comment": "A point value or interval for product characteristics and other purposes.",
-      "rdfs:label": "QuantitativeValue",
-      "rdfs:subClassOf": {
-        "@id": "schema:StructuredValue"
       }
     },
     {

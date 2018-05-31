@@ -115,18 +115,18 @@
       }
     },
     {
-      "@id": "schema:affectedBy",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "Drugs that affect the test's results.",
-      "rdfs:label": "affectedBy",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalTest"
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
       },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Drug"
+        "@id": "schema:URL"
       }
     },
     {
@@ -148,13 +148,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
-        },
-        {
           "@id": "schema:DietarySupplement"
         },
         {
           "@id": "schema:MedicalEntity"
+        },
+        {
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -185,10 +185,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -223,6 +223,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalSign"
+      }
+    },
+    {
+      "@id": "schema:affectedBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Drugs that affect the test's results.",
+      "rdfs:label": "affectedBy",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalTest"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Drug"
       }
     },
     {
@@ -283,10 +298,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -294,21 +309,6 @@
       "@id": "schema:BloodTest",
       "rdfs:subClassOf": {
         "@id": "schema:MedicalTest"
-      }
-    },
-    {
-      "@id": "schema:additionalType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:URL"
       }
     },
     {
@@ -321,10 +321,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -348,33 +348,6 @@
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:recognizingAuthority",

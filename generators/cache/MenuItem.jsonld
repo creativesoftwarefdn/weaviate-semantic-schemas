@@ -16,18 +16,20 @@
       }
     },
     {
-      "@id": "schema:additionalType",
+      "@id": "schema:suitableForDiet",
       "@type": "rdf:Property",
-      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
-      "rdfs:label": "additionalType",
-      "rdfs:subPropertyOf": {
-        "@id": "rdf:type"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
+      "rdfs:label": "suitableForDiet",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Recipe"
+        },
+        {
+          "@id": "schema:MenuItem"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:URL"
+        "@id": "schema:RestrictedDiet"
       }
     },
     {
@@ -66,10 +68,22 @@
       ]
     },
     {
-      "@id": "schema:suitableForDiet",
+      "@id": "schema:name",
       "@type": "rdf:Property",
-      "rdfs:comment": "Indicates a dietary restriction or guideline for which this recipe or menu item is suitable, e.g. diabetic, halal etc.",
-      "rdfs:label": "suitableForDiet",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:nutrition",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Nutrition information about the recipe or menu item.",
+      "rdfs:label": "nutrition",
       "schema:domainIncludes": [
         {
           "@id": "schema:Recipe"
@@ -79,7 +93,7 @@
         }
       ],
       "schema:rangeIncludes": {
-        "@id": "schema:RestrictedDiet"
+        "@id": "schema:NutritionInformation"
       }
     },
     {
@@ -130,15 +144,18 @@
       ]
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:additionalType",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
+      "rdfs:comment": "An additional type for the item, typically used for adding more specific types from external vocabularies in microdata syntax. This is a relationship between something and a class that the thing is in. In RDFa syntax, it is better to use the native RDFa syntax - the 'typeof' attribute - for multiple types. Schema.org tools may have only weaker understanding of extra types, in particular those defined externally.",
+      "rdfs:label": "additionalType",
+      "rdfs:subPropertyOf": {
+        "@id": "rdf:type"
+      },
       "schema:domainIncludes": {
         "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:URL"
       }
     },
     {
@@ -192,22 +209,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AggregateOffer"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:MenuItem"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:AggregateOffer"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -225,50 +242,6 @@
       "schema:rangeIncludes": {
         "@id": "schema:URL"
       }
-    },
-    {
-      "@id": "schema:nutrition",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Nutrition information about the recipe or menu item.",
-      "rdfs:label": "nutrition",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:MenuItem"
-        },
-        {
-          "@id": "schema:Recipe"
-        }
-      ],
-      "schema:rangeIncludes": {
-        "@id": "schema:NutritionInformation"
-      }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:Intangible",
@@ -296,10 +269,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MenuSection"
+          "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:MenuSection"
         }
       ]
     },

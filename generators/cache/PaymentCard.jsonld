@@ -27,10 +27,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -116,10 +116,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ]
     },
@@ -139,13 +139,13 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": [
@@ -153,10 +153,10 @@
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:AdministrativeArea"
         }
       ],
       "schema:supersededBy": {
@@ -170,13 +170,19 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Invoice"
@@ -185,21 +191,15 @@
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -209,12 +209,6 @@
       "rdfs:comment": "An offer to provide this item&#x2014;for example, an offer to sell a product, rent the DVD of a movie, perform a service, or give away tickets to an event.",
       "rdfs:label": "offers",
       "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Product"
-        },
         {
           "@id": "schema:MenuItem"
         },
@@ -226,6 +220,12 @@
         },
         {
           "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -245,27 +245,18 @@
       }
     },
     {
-      "@id": "schema:floorLimit",
+      "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-        }
-      ],
-      "rdfs:comment": "A floor limit is the amount of money above which credit card transactions must be authorized.",
-      "rdfs:label": "floorLimit",
-      "schema:category": "issue-1253",
-      "schema:domainIncludes": {
-        "@id": "schema:PaymentCard"
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:description"
       },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:MonetaryAmount"
+        "@id": "schema:Text"
       }
     },
     {
@@ -275,9 +266,6 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
@@ -285,6 +273,9 @@
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -321,25 +312,25 @@
           "@id": "schema:CreativeWork"
         },
         {
+          "@id": "schema:Brand"
+        },
+        {
           "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Offer"
         },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -427,36 +418,36 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
           "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -470,10 +461,10 @@
           "@id": "schema:ContactPoint"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:LocationFeatureSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -490,26 +481,35 @@
       "rdfs:label": "PaymentCard",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:FinancialProduct"
+          "@id": "schema:PaymentMethod"
         },
         {
-          "@id": "schema:PaymentMethod"
+          "@id": "schema:FinancialProduct"
         }
       ]
     },
     {
-      "@id": "schema:disambiguatingDescription",
+      "@id": "schema:floorLimit",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
-      },
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        }
+      ],
+      "rdfs:comment": "A floor limit is the amount of money above which credit card transactions must be authorized.",
+      "rdfs:label": "floorLimit",
+      "schema:category": "issue-1253",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:PaymentCard"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:MonetaryAmount"
       }
     },
     {
@@ -531,10 +531,10 @@
           "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -571,16 +571,16 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Place"
+        },
+        {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Product"
@@ -589,10 +589,10 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Brand"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -647,24 +647,41 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         }
       ]
     },
     {
-      "@id": "schema:PaymentMethod",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      "@id": "schema:cashBack",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        }
+      ],
+      "rdfs:comment": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
+      "rdfs:label": "cashBack",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:PaymentCard"
       },
-      "rdfs:comment": "<p>A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.</p>\n\n<p>Commonly used values:</p>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li>\n<li>http://purl.org/goodrelations/v1#ByInvoice</li>\n<li>http://purl.org/goodrelations/v1#Cash</li>\n<li>http://purl.org/goodrelations/v1#CheckInAdvance</li>\n<li>http://purl.org/goodrelations/v1#COD</li>\n<li>http://purl.org/goodrelations/v1#DirectDebit</li>\n<li>http://purl.org/goodrelations/v1#GoogleCheckout</li>\n<li>http://purl.org/goodrelations/v1#PayPal</li>\n<li>http://purl.org/goodrelations/v1#PaySwarm</li>\n</ul>\n",
-      "rdfs:label": "PaymentMethod",
-      "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
-      }
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Number"
+        },
+        {
+          "@id": "schema:Boolean"
+        }
+      ]
     },
     {
       "@id": "schema:description",
@@ -703,19 +720,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -723,33 +740,16 @@
       }
     },
     {
-      "@id": "schema:cashBack",
-      "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-        }
-      ],
-      "rdfs:comment": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
-      "rdfs:label": "cashBack",
-      "schema:category": "issue-1253",
-      "schema:domainIncludes": {
-        "@id": "schema:PaymentCard"
+      "@id": "schema:PaymentMethod",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
       },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Boolean"
-        },
-        {
-          "@id": "schema:Number"
-        }
-      ]
+      "rdfs:comment": "<p>A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.</p>\n\n<p>Commonly used values:</p>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li>\n<li>http://purl.org/goodrelations/v1#ByInvoice</li>\n<li>http://purl.org/goodrelations/v1#Cash</li>\n<li>http://purl.org/goodrelations/v1#CheckInAdvance</li>\n<li>http://purl.org/goodrelations/v1#COD</li>\n<li>http://purl.org/goodrelations/v1#DirectDebit</li>\n<li>http://purl.org/goodrelations/v1#GoogleCheckout</li>\n<li>http://purl.org/goodrelations/v1#PayPal</li>\n<li>http://purl.org/goodrelations/v1#PaySwarm</li>\n</ul>\n",
+      "rdfs:label": "PaymentMethod",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
     },
     {
       "@id": "schema:Thing",
@@ -764,13 +764,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Person"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -798,33 +798,6 @@
         },
         {
           "@id": "schema:URL"
-        }
-      ]
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
         }
       ]
     },
@@ -892,7 +865,16 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:PhysicalActivity"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
@@ -901,16 +883,7 @@
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Property"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -918,10 +891,10 @@
           "@id": "schema:Thing"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PhysicalActivityCategory"
         },
         {
-          "@id": "schema:PhysicalActivityCategory"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -932,22 +905,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Product"
+        },
+        {
           "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:LodgingBusiness"
-        },
-        {
-          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:PlayAction"
         },
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -967,19 +940,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": [

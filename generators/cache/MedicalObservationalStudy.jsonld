@@ -43,10 +43,10 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:MedicalCondition"
@@ -57,13 +57,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:MedicalStudyStatus"
         },
         {
           "@id": "schema:EventStatusType"
         },
         {
-          "@id": "schema:MedicalStudyStatus"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -113,15 +113,18 @@
       }
     },
     {
-      "@id": "schema:MedicalEntity",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of entity related to health and the practice of medicine.",
-      "rdfs:label": "MedicalEntity",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
+      "@id": "schema:studySubject",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
+      "rdfs:label": "studySubject",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalStudy"
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalEntity"
       }
     },
     {
@@ -145,13 +148,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:MedicalEnumeration"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -219,10 +222,10 @@
       "rdfs:label": "healthCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Patient"
+          "@id": "schema:PeopleAudience"
         },
         {
-          "@id": "schema:PeopleAudience"
+          "@id": "schema:Patient"
         },
         {
           "@id": "schema:MedicalStudy"
@@ -242,27 +245,27 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:MedicalStudy"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -312,10 +315,10 @@
       "rdfs:label": "outcome",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -404,33 +407,6 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
       "@id": "schema:recognizingAuthority",
       "@type": "rdf:Property",
       "rdfs:comment": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
@@ -461,18 +437,15 @@
       }
     },
     {
-      "@id": "schema:studySubject",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A subject of the study, i.e. one of the medical conditions, therapies, devices, drugs, etc. investigated by the study.",
-      "rdfs:label": "studySubject",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalStudy"
+      "@id": "schema:MedicalEntity",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of entity related to health and the practice of medicine.",
+      "rdfs:label": "MedicalEntity",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
       },
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalEntity"
       }
     },
     {
@@ -503,10 +476,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

@@ -106,10 +106,10 @@
       "rdfs:label": "bodyLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -126,13 +126,13 @@
       "rdfs:label": "relatedTherapy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         },
         {
           "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         }
       ],
       "schema:isPartOf": {
@@ -158,10 +158,10 @@
           "@id": "schema:Drug"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
@@ -172,10 +172,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -231,7 +231,7 @@
       }
     },
     {
-      "@id": "schema:sensoryUnit",
+      "@id": "schema:supplyTo",
       "schema:rangeIncludes": {
         "@id": "schema:AnatomicalStructure"
       }
@@ -324,9 +324,18 @@
       }
     },
     {
-      "@id": "schema:BrainStructure",
-      "rdfs:subClassOf": {
-        "@id": "schema:AnatomicalStructure"
+      "@id": "schema:medicineSystem",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
+      "rdfs:label": "medicineSystem",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalEntity"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicineSystem"
       }
     },
     {
@@ -354,15 +363,21 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
+    },
+    {
+      "@id": "schema:BrainStructure",
+      "rdfs:subClassOf": {
+        "@id": "schema:AnatomicalStructure"
+      }
     },
     {
       "@id": "schema:function",
@@ -404,10 +419,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -418,51 +433,9 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:supplyTo",
+      "@id": "schema:sensoryUnit",
       "schema:rangeIncludes": {
         "@id": "schema:AnatomicalStructure"
-      }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
-      "@id": "schema:medicineSystem",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The system of medicine that includes this MedicalEntity, for example 'evidence-based', 'homeopathic', 'chiropractic', etc.",
-      "rdfs:label": "medicineSystem",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalEntity"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicineSystem"
       }
     },
     {
@@ -520,10 +493,10 @@
           "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:SuperficialAnatomy"
         }
       ],
       "schema:isPartOf": {
@@ -540,13 +513,13 @@
       "rdfs:label": "relatedCondition",
       "schema:domainIncludes": [
         {
+          "@id": "schema:AnatomicalSystem"
+        },
+        {
           "@id": "schema:SuperficialAnatomy"
         },
         {
           "@id": "schema:AnatomicalStructure"
-        },
-        {
-          "@id": "schema:AnatomicalSystem"
         }
       ],
       "schema:isPartOf": {

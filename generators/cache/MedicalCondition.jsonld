@@ -54,13 +54,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
-        },
-        {
           "@id": "schema:MedicalStudy"
         },
         {
           "@id": "schema:MedicalProcedure"
+        },
+        {
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -68,10 +68,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:EventStatusType"
         },
         {
-          "@id": "schema:EventStatusType"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalStudyStatus"
@@ -145,10 +145,10 @@
       "rdfs:label": "associatedAnatomy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -159,27 +159,12 @@
           "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:SuperficialAnatomy"
         }
       ]
-    },
-    {
-      "@id": "schema:stage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The stage of the condition, if applicable.",
-      "rdfs:label": "stage",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalCondition"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalConditionStage"
-      }
     },
     {
       "@id": "schema:typicalTest",
@@ -194,6 +179,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalTest"
+      }
+    },
+    {
+      "@id": "schema:stage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The stage of the condition, if applicable.",
+      "rdfs:label": "stage",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalCondition"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalConditionStage"
       }
     },
     {
@@ -233,10 +233,10 @@
           "@id": "schema:Drug"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -261,10 +261,10 @@
       "rdfs:label": "pathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:isPartOf": {
@@ -326,16 +326,16 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:Patient"
         },
         {
-          "@id": "schema:Patient"
+          "@id": "schema:DrugClass"
         },
         {
           "@id": "schema:TherapeuticProcedure"
         },
         {
-          "@id": "schema:DrugClass"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -385,10 +385,10 @@
       "rdfs:label": "cause",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalSignOrSymptom"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalSignOrSymptom"
         }
       ],
       "schema:isPartOf": {
@@ -438,10 +438,10 @@
       "rdfs:label": "epidemiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -464,10 +464,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
@@ -524,33 +524,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:diagnosis",
@@ -649,10 +622,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

@@ -19,10 +19,10 @@
       "rdfs:label": "isSimilarTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -53,24 +53,24 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -92,10 +92,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         }
       ]
     },
@@ -104,10 +104,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         }
       ],
       "rdfs:comment": "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
@@ -141,13 +141,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:AdministrativeArea"
+        },
+        {
           "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:AdministrativeArea"
         }
       ],
       "schema:supersededBy": {
@@ -161,28 +161,28 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:BusTrip"
-        },
-        {
           "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:Service"
         },
         {
+          "@id": "schema:Reservation"
+        },
+        {
           "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
@@ -207,10 +207,10 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
@@ -260,16 +260,16 @@
       "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
-          "@id": "schema:InvestmentOrDeposit"
+          "@id": "schema:LoanOrCredit"
         },
         {
-          "@id": "schema:LoanOrCredit"
+          "@id": "schema:DatedMoneySpecification"
         },
         {
           "@id": "schema:MoneyTransfer"
         },
         {
-          "@id": "schema:DatedMoneySpecification"
+          "@id": "schema:InvestmentOrDeposit"
         }
       ],
       "schema:rangeIncludes": [
@@ -303,28 +303,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Brand"
+        },
+        {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
-          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -332,9 +332,27 @@
       }
     },
     {
-      "@id": "schema:CreditCard",
-      "rdfs:subClassOf": {
+      "@id": "schema:renegotiableLoan",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        },
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        }
+      ],
+      "rdfs:comment": "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
+      "rdfs:label": "renegotiableLoan",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
         "@id": "schema:LoanOrCredit"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -354,10 +372,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         },
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         }
       ],
       "rdfs:comment": "The type of a loan or credit.",
@@ -391,10 +409,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -441,36 +459,36 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Demand"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:DeliveryChargeSpecification"
+        },
+        {
+          "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Place"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:AdministrativeArea"
         }
       ]
     },
@@ -541,13 +559,13 @@
       "rdfs:label": "hoursAvailable",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
-        },
-        {
           "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -564,25 +582,25 @@
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Event"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Service"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -614,10 +632,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
@@ -672,18 +690,9 @@
       }
     },
     {
-      "@id": "schema:produces",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The tangible thing generated by the service, e.g. a passport, permit, etc.",
-      "rdfs:label": "produces",
-      "schema:domainIncludes": {
-        "@id": "schema:Service"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:supersededBy": {
-        "@id": "schema:serviceOutput"
+      "@id": "schema:CreditCard",
+      "rdfs:subClassOf": {
+        "@id": "schema:LoanOrCredit"
       }
     },
     {
@@ -693,12 +702,6 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:Product"
         },
         {
@@ -706,6 +709,12 @@
         },
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -722,10 +731,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -740,10 +749,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         },
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         }
       ],
       "rdfs:comment": "The only way you get the money back in the event of default is the security. Recourse is where you still have the opportunity to go back to the borrower for the rest of the money.",
@@ -766,13 +775,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
           "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -782,23 +791,15 @@
     {
       "@id": "schema:currency",
       "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-        }
-      ],
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+      },
       "rdfs:comment": "The currency in which the monetary amount is expressed (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a> format).",
       "rdfs:label": "currency",
-      "schema:category": [
-        "issue-1253",
-        "issue-1698"
-      ],
+      "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LoanOrCredit"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:DatedMoneySpecification"
@@ -807,45 +808,12 @@
           "@id": "schema:ExchangeRateSpecification"
         },
         {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:MonetaryAmountDistribution"
+          "@id": "schema:LoanOrCredit"
         }
       ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:sameAs",
@@ -889,10 +857,10 @@
       "rdfs:label": "feesAndCommissionsSpecification",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FinancialService"
+          "@id": "schema:FinancialProduct"
         },
         {
-          "@id": "schema:FinancialProduct"
+          "@id": "schema:FinancialService"
         }
       ],
       "schema:rangeIncludes": [
@@ -923,12 +891,27 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:QuantitativeValue"
         }
       ]
+    },
+    {
+      "@id": "schema:produces",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The tangible thing generated by the service, e.g. a passport, permit, etc.",
+      "rdfs:label": "produces",
+      "schema:domainIncludes": {
+        "@id": "schema:Service"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:supersededBy": {
+        "@id": "schema:serviceOutput"
+      }
     },
     {
       "@id": "schema:Service",
@@ -940,55 +923,31 @@
       }
     },
     {
-      "@id": "schema:renegotiableLoan",
-      "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-        }
-      ],
-      "rdfs:comment": "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
-      "rdfs:label": "renegotiableLoan",
-      "schema:category": "issue-1253",
-      "schema:domainIncludes": {
-        "@id": "schema:LoanOrCredit"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
-      }
-    },
-    {
       "@id": "schema:category",
       "@type": "rdf:Property",
       "rdfs:comment": "A category for the item. Greater signs or slashes can be used to informally indicate a category hierarchy.",
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
-        },
-        {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Property"
         },
         {
-          "@id": "schema:Class"
-        },
-        {
           "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
@@ -1010,22 +969,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Service"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -1069,16 +1028,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:Brand"
+        },
+        {
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
@@ -1086,10 +1045,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -1112,22 +1071,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:AggregateOffer"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {

@@ -29,15 +29,27 @@
       }
     },
     {
-      "@id": "schema:name",
+      "@id": "schema:healthPlanCostSharing",
       "@type": "rdf:Property",
-      "rdfs:comment": "The name of the item.",
-      "rdfs:label": "name",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
+      },
+      "rdfs:comment": "Whether The costs to the patient for services under this network or formulary.",
+      "rdfs:label": "healthPlanCostSharing",
+      "schema:category": "issue-1062",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HealthPlanNetwork"
+        },
+        {
+          "@id": "schema:HealthPlanFormulary"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Boolean"
       }
     },
     {
@@ -101,15 +113,27 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:URL"
         }
       ]
+    },
+    {
+      "@id": "schema:name",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The name of the item.",
+      "rdfs:label": "name",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:description",
@@ -127,19 +151,15 @@
       }
     },
     {
-      "@id": "schema:HealthPlanNetwork",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
+      "@id": "schema:alternateName",
+      "@type": "rdf:Property",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
       },
-      "rdfs:comment": "A US-style health insurance plan network.",
-      "rdfs:label": "HealthPlanNetwork",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
-      },
-      "schema:category": "issue-1062",
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -187,10 +207,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -207,15 +227,19 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:alternateName",
-      "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
+      "@id": "schema:HealthPlanNetwork",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "rdfs:comment": "A US-style health insurance plan network.",
+      "rdfs:label": "HealthPlanNetwork",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
+      },
+      "schema:category": "issue-1062",
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       }
     },
     {
@@ -231,63 +255,12 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
       "@id": "schema:Intangible",
       "@type": "rdfs:Class",
       "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
       "rdfs:label": "Intangible",
       "rdfs:subClassOf": {
         "@id": "schema:Thing"
-      }
-    },
-    {
-      "@id": "schema:healthPlanCostSharing",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
-      },
-      "rdfs:comment": "Whether The costs to the patient for services under this network or formulary.",
-      "rdfs:label": "healthPlanCostSharing",
-      "schema:category": "issue-1062",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:HealthPlanFormulary"
-        },
-        {
-          "@id": "schema:HealthPlanNetwork"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Boolean"
       }
     },
     {

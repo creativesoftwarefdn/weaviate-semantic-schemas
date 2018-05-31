@@ -34,10 +34,10 @@
       }
     },
     {
-      "@id": "schema:Thing",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "The most generic type of item.",
-      "rdfs:label": "Thing"
+      "@id": "schema:OpeningHoursSpecification",
+      "rdfs:subClassOf": {
+        "@id": "schema:StructuredValue"
+      }
     },
     {
       "@id": "schema:PropertyValue",
@@ -46,7 +46,7 @@
       }
     },
     {
-      "@id": "schema:GeoCoordinates",
+      "@id": "schema:InteractionCounter",
       "rdfs:subClassOf": {
         "@id": "schema:StructuredValue"
       }
@@ -127,10 +127,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -162,7 +162,7 @@
       }
     },
     {
-      "@id": "schema:InteractionCounter",
+      "@id": "schema:GeoCoordinates",
       "rdfs:subClassOf": {
         "@id": "schema:StructuredValue"
       }
@@ -212,43 +212,16 @@
       ]
     },
     {
-      "@id": "schema:OpeningHoursSpecification",
-      "rdfs:subClassOf": {
-        "@id": "schema:StructuredValue"
-      }
+      "@id": "schema:Thing",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "The most generic type of item.",
+      "rdfs:label": "Thing"
     },
     {
       "@id": "schema:ContactPoint",
       "rdfs:subClassOf": {
         "@id": "schema:StructuredValue"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:OwnershipInfo",
@@ -281,10 +254,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

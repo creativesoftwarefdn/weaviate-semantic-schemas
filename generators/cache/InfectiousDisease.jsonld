@@ -48,13 +48,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalProcedure"
         },
         {
           "@id": "schema:MedicalStudy"
         },
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -62,13 +62,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:MedicalStudyStatus"
         },
         {
           "@id": "schema:EventStatusType"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -153,27 +153,12 @@
           "@id": "schema:SuperficialAnatomy"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:AnatomicalStructure"
         }
       ]
-    },
-    {
-      "@id": "schema:stage",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The stage of the condition, if applicable.",
-      "rdfs:label": "stage",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalCondition"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalConditionStage"
-      }
     },
     {
       "@id": "schema:typicalTest",
@@ -188,6 +173,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalTest"
+      }
+    },
+    {
+      "@id": "schema:stage",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The stage of the condition, if applicable.",
+      "rdfs:label": "stage",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalCondition"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalConditionStage"
       }
     },
     {
@@ -227,10 +227,10 @@
           "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -241,10 +241,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -255,10 +255,10 @@
       "rdfs:label": "pathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:isPartOf": {
@@ -314,33 +314,6 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
       "@id": "schema:transmissionMethod",
       "@type": "rdf:Property",
       "rdfs:comment": "How the disease spreads, either as a route or vector, for example 'direct contact', 'Aedes aegypti', etc.",
@@ -389,10 +362,10 @@
       "rdfs:label": "cause",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalSignOrSymptom"
         },
         {
-          "@id": "schema:MedicalSignOrSymptom"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -462,13 +435,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -545,9 +518,6 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
-        },
-        {
           "@id": "schema:DrugClass"
         },
         {
@@ -555,6 +525,9 @@
         },
         {
           "@id": "schema:TherapeuticProcedure"
+        },
+        {
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -664,10 +637,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

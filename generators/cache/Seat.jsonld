@@ -39,6 +39,24 @@
       }
     },
     {
+      "@id": "schema:seatSection",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The section location of the reserved seat (e.g. Orchestra).",
+      "rdfs:label": "seatSection",
+      "schema:domainIncludes": {
+        "@id": "schema:Seat"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:ticketedSeat",
+      "schema:rangeIncludes": {
+        "@id": "schema:Seat"
+      }
+    },
+    {
       "@id": "schema:url",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of the item.",
@@ -48,12 +66,6 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:URL"
-      }
-    },
-    {
-      "@id": "schema:ticketedSeat",
-      "schema:rangeIncludes": {
-        "@id": "schema:Seat"
       }
     },
     {
@@ -69,13 +81,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -84,45 +96,6 @@
       "@type": "rdf:Property",
       "rdfs:comment": "The location of the reserved seat (e.g., 27).",
       "rdfs:label": "seatNumber",
-      "schema:domainIncludes": {
-        "@id": "schema:Seat"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
-    },
-    {
-      "@id": "schema:seatSection",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The section location of the reserved seat (e.g. Orchestra).",
-      "rdfs:label": "seatSection",
       "schema:domainIncludes": {
         "@id": "schema:Seat"
       },
@@ -202,10 +175,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },

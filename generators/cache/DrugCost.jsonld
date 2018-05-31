@@ -30,10 +30,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Property"
+          "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Enumeration"
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Class"
@@ -53,12 +53,18 @@
       }
     },
     {
-      "@id": "schema:Enumeration",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
-      "rdfs:label": "Enumeration",
-      "rdfs:subClassOf": {
-        "@id": "schema:Intangible"
+      "@id": "schema:costCurrency",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217",
+      "rdfs:label": "costCurrency",
+      "schema:domainIncludes": {
+        "@id": "schema:DrugCost"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -181,13 +187,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -219,13 +225,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
           "@id": "schema:QualitativeValue"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -253,45 +259,12 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
-      "@id": "schema:costCurrency",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The currency (in 3-letter of the drug cost. See: http://en.wikipedia.org/wiki/ISO_4217",
-      "rdfs:label": "costCurrency",
-      "schema:domainIncludes": {
-        "@id": "schema:DrugCost"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:Enumeration",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "Lists or enumerations—for example, a list of cuisines or music genres, etc.",
+      "rdfs:label": "Enumeration",
+      "rdfs:subClassOf": {
+        "@id": "schema:Intangible"
       }
     },
     {
@@ -301,10 +274,10 @@
       "rdfs:label": "drugUnit",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DrugCost"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DrugCost"
         }
       ],
       "schema:isPartOf": {

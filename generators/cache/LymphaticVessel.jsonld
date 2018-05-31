@@ -115,13 +115,13 @@
       "rdfs:label": "relatedTherapy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalSystem"
-        },
-        {
           "@id": "schema:SuperficialAnatomy"
         },
         {
           "@id": "schema:AnatomicalStructure"
+        },
+        {
+          "@id": "schema:AnatomicalSystem"
         }
       ],
       "schema:isPartOf": {
@@ -141,10 +141,10 @@
           "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -152,13 +152,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         }
       ]
     },
@@ -265,10 +265,10 @@
       "rdfs:label": "associatedPathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:SuperficialAnatomy"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalStructure"
         },
         {
           "@id": "schema:AnatomicalSystem"
@@ -351,13 +351,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -430,33 +430,6 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
       "@id": "schema:recognizingAuthority",
       "@type": "rdf:Property",
       "rdfs:comment": "If applicable, the organization that officially recognizes this entity as part of its endorsed system of medicine.",
@@ -508,10 +481,10 @@
       "rdfs:label": "relatedCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         },
         {
           "@id": "schema:AnatomicalStructure"

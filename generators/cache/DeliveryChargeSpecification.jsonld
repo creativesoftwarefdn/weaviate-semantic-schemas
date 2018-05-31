@@ -31,22 +31,22 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:Offer"
         },
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:JobPosting"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
         },
         {
           "@id": "schema:PriceSpecification"
@@ -120,16 +120,16 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Ticket"
-        },
-        {
           "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": {
@@ -178,13 +178,13 @@
       "rdfs:label": "ineligibleRegion",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Demand"
+        },
+        {
           "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
@@ -230,36 +230,36 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
           "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Demand"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
           "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:AdministrativeArea"
         },
         {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Place"
         }
       ]
     },
@@ -302,13 +302,13 @@
       "rdfs:label": "eligibleTransactionVolume",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -343,10 +343,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -404,33 +404,6 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
-    },
-    {
       "@id": "schema:eligibleRegion",
       "@type": "rdf:Property",
       "dct:source": {
@@ -446,21 +419,21 @@
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Demand"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
         {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -471,21 +444,21 @@
       "rdfs:label": "price",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:TradeAction"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -499,25 +472,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Permit"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:PriceSpecification"
-        },
-        {
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:Permit"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -534,13 +507,13 @@
       "rdfs:label": "eligibleQuantity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Offer"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {

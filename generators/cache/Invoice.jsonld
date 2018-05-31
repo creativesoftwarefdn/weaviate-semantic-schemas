@@ -28,13 +28,13 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Reservation"
@@ -42,10 +42,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -88,7 +88,10 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:BusTrip"
@@ -97,27 +100,24 @@
           "@id": "schema:Flight"
         },
         {
+          "@id": "schema:TrainTrip"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:TrainTrip"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Invoice"
+          "@id": "schema:ParcelDelivery"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -152,10 +152,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": {
@@ -202,10 +202,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -228,18 +228,18 @@
       "rdfs:label": "customer",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -262,10 +262,10 @@
       "rdfs:label": "paymentMethodId",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": {
@@ -285,13 +285,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -319,10 +319,10 @@
       "rdfs:label": "paymentDue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": {
@@ -371,33 +371,6 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
       "@id": "schema:minimumPaymentDue",
       "@type": "rdf:Property",
       "rdfs:comment": "The minimum payment required at this time.",
@@ -436,10 +409,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PriceSpecification"
         }
       ]
     },
@@ -462,10 +435,10 @@
       "rdfs:label": "paymentMethod",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Order"
         }
       ],
       "schema:rangeIncludes": {
@@ -491,7 +464,7 @@
           "@id": "schema:Property"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Service"
@@ -500,13 +473,13 @@
           "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Invoice"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": [
@@ -514,10 +487,10 @@
           "@id": "schema:PhysicalActivityCategory"
         },
         {
-          "@id": "schema:Thing"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Thing"
         }
       ]
     },

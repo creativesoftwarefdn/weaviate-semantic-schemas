@@ -5,6 +5,7 @@ from pathlib import Path
 import datetime
 import copy
 import os, errno
+import re
 
 ##
 # Buildlog function
@@ -18,11 +19,51 @@ def buildLog( i ):
     print(str(counter).zfill(7)  + " | " + str(datetime.datetime.now().time()) + " | " + i)
 
 ##
+# find camelcase
+##
+def camelCaseSplit(i):
+    matches = re.sub('([a-z])([A-Z])', r'\1 \2', i).split()
+    return matches
+
+##
+# Removes CamelCase from a sentene
+#
+# i = input sentence
+def sentenceToNonCamel(i):
+
+    # remove HTML
+    i = re.sub('<[^<]+?>', '', i)
+
+    # start with empty string
+    cleanSentence = ""
+
+    for word in i.split():
+        # check if cammel, (true or false)
+        if ((word != word.lower() and word != word.upper()) == True):
+
+            # split into camelcase words
+            splittedWord = camelCaseSplit(word)
+
+            # IF MORE THAN ONE WORD ALL TO LOWER
+            if len(splittedWord) > 1:
+                for cleanWord in splittedWord:
+                    # add the word to the sentence
+                    cleanSentence += cleanWord.lower() + " "
+            # One word, keep capital (maybe name like Michael)
+            else:
+                cleanSentence += word.lower() + " "
+        else:
+            # add the regular word
+            cleanSentence += word + " "
+
+    return cleanSentence[:-1]
+
+##
 # Create file process
 # i = input Class
 # processedClasses = skipp class array
 ##
-def createFile( i, processedClasses, version ):
+def createFile( i, processedClasses, version, taggerUrl ):
 
     ##
     # Load jsonld file from cache
@@ -107,9 +148,9 @@ def createFile( i, processedClasses, version ):
                 subArray["@dataType"] = getDataTypesInArray(graph["schema:rangeIncludes"])
                 if "rdfs:comment" in graph:
                     if isinstance(graph["rdfs:comment"], list):
-                        subArray["description"] = ' '.join(graph["rdfs:comment"])
+                        subArray["description"] = sentenceToNonCamel(' '.join(graph["rdfs:comment"]))
                     else:
-                        subArray["description"] = graph["rdfs:comment"]
+                        subArray["description"] = sentenceToNonCamel(graph["rdfs:comment"])
                 else:
                     subArray["description"] = None
                 # append the array
@@ -118,11 +159,57 @@ def createFile( i, processedClasses, version ):
         return sorted(returnArray, key=lambda k: k['name']) 
 
     ##
+    # Adds the weights to the types.
+    # Main classes always count as heavy, where the value accumulates down
+    # Types as second heavy, where the value accumulates down
+    # description (Nouns are used) is third heave, where the value accumulates down
+    #
+    ##
+    def addKeyWordsFromString(mainClasses, mainTypes, description, NERurl):
+
+        # receives all return objects
+        returner = []
+
+        # add classes
+        mainClasses = camelCaseSplit(mainClasses)
+
+        # Add all main classes
+        for mainClass in mainClasses:
+            returner.append({
+                "keyword":  mainClass.lower(),
+                "weight": 1.0 # main class always has a weight of 1.0
+            })
+
+        # Add the types if available
+        if mainTypes != False:
+            for mainType in mainTypes:
+                for typeSplit in camelCaseSplit(mainType):
+                    # add if class (= uppercase)
+                    if typeSplit[0].isupper():
+                        returner.append({
+                            "keyword": typeSplit.lower(),
+                            "weight": 0.5 # main class always has a weight of 1.0
+                        })
+
+        # add keywords
+        buildLog("DOWNLOAD NER")
+        # download NER
+        response = urllib.request.urlopen("http://" + NERurl + "/?sentence=" + urllib.parse.quote_plus(description))
+        for NERitem in json.loads(response.read().decode()):
+            if NERitem["potentialThing"] == True:
+                returner.append({
+                    "keyword":  NERitem["word"].lower(),
+                    "weight": 0.25 # main class always has a weight of 1.0
+                })
+
+        return returner
+
+    ##
     # Create the Tree
     #
     # i = the startpoint of the tree
     ##
-    def createTree( i ):
+    def createTree( i, taggerUrl ):
         # add to processedClasses
         processedClasses.append(i)
         workFile = getSchema("http://schema.org/" + i + ".jsonld")
@@ -139,12 +226,13 @@ def createFile( i, processedClasses, version ):
                     if currentClass == i:
                         # extend the tree
                         newTree = {}
-                        newTree["class"]        = currentClass
+                        newTree["class"] = currentClass
                         if isinstance(graph["rdfs:comment"], list):
-                            newTree["description"] = ' '.join(graph["rdfs:comment"])
+                            newTree["description"] = sentenceToNonCamel(' '.join(graph["rdfs:comment"]))
                         else:
-                            newTree["description"] = graph["rdfs:comment"]
+                            newTree["description"] = sentenceToNonCamel(graph["rdfs:comment"])
                         newTree["properties"]   = properties
+                        newTree["keywords"] = addKeyWordsFromString(newTree["class"], False, newTree["description"],taggerUrl)
                         tree["classes"].append(newTree)
                     else :
                         # request and run the new schema
@@ -154,7 +242,7 @@ def createFile( i, processedClasses, version ):
                                 if "@id" in graph["rdfs:subClassOf"]:
                                     # check if it has the correct subClass settings
                                     if graph["rdfs:subClassOf"]["@id"] == "schema:" + i:
-                                        createTree(currentClass)
+                                        createTree(currentClass, taggerUrl)
                                 else:
                                     # loop through the array
                                     for subSubClass in graph["rdfs:subClassOf"]:
@@ -162,18 +250,21 @@ def createFile( i, processedClasses, version ):
                                         if "@id" in subSubClass:
                                             # check if it has the correct subClass settings
                                             if subSubClass["@id"] == "schema:" + i:
-                                                createTree(currentClass)
+                                                createTree(currentClass, taggerUrl)
 
     ##
     # Clean the tree function
     ##
-    def cleanTree( iTree ):
+    def cleanTree( iTree, taggerUrl ):
         newTree = copy.deepcopy(iTree)
         newTree["classes"] = []
         for treeClass in iTree["classes"]:
             for treeProps in treeClass["properties"]:
+                # add keywords
+                treeProps["keywords"] = addKeyWordsFromString(treeProps["name"], treeProps["@dataType"], treeProps["description"], taggerUrl)
+                # set string
                 if "string" in treeProps["@dataType"]:
-                    treeProps["@dataType"] = ["string"];
+                    treeProps["@dataType"] = ["string"]
             newTree["classes"].append(treeClass)
         return newTree
 
@@ -197,13 +288,13 @@ def createFile( i, processedClasses, version ):
     ##
     # Start creation process of Class
     ##
-    createTree(i)
+    createTree(i, taggerUrl)
 
     # cleanup files
     # If there is a string and a ref, always use only the string
     # This might be depricated in the future
     treeToClean = tree
-    tree = cleanTree(treeToClean)
+    tree = cleanTree(treeToClean, taggerUrl)
 
     # sort classes
     tree['classes'] = sorted(tree['classes'], key=lambda k: k['class'])
@@ -225,10 +316,17 @@ def createFile( i, processedClasses, version ):
 arguments = sys.argv[1:]
 
 if (len(arguments) == 0):
-    buildLog("ERROR: Add one argument with the semver version of the schema.")
+    buildLog("ERROR: Add one argument with the semver version (like 0.0.1) of the schema or add second argument with server of tagger.")
+    buildLog("EXAMPLE: generate_schema.org.py 0.0.1 www.example.com")
 elif (len(arguments) == 1):
-    createFile('Thing', ['Action'], arguments[0])
-    createFile('Action', [], arguments[0])
+    buildLog("NOT USING TAGGER")
+    createFile('Thing', ['Action'], arguments[0], None)
+    createFile('Action', [], arguments[0], None)
+    buildLog("DONE")
+elif (len(arguments) == 2):
+    buildLog("NOT USING TAGGER")
+    createFile('Thing', ['Action'], arguments[0], arguments[1])
+    createFile('Action', [], arguments[0], arguments[1])
     buildLog("DONE")
 else:
     buildLog("ERROR: Too many arguments given.")

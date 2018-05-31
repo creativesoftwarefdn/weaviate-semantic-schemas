@@ -19,10 +19,10 @@
       "rdfs:label": "isSimilarTo",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": [
@@ -53,16 +53,16 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Order"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
@@ -116,10 +116,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ]
     },
@@ -137,10 +137,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         },
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         }
       ],
       "rdfs:comment": "The period of time after any due date that the borrower has to fulfil its obligations before a default (failure to pay) is deemed to have occurred.",
@@ -163,10 +163,10 @@
       "rdfs:label": "serviceArea",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
@@ -174,13 +174,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:GeoShape"
-        },
-        {
           "@id": "schema:Place"
         },
         {
           "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:GeoShape"
         }
       ],
       "schema:supersededBy": {
@@ -194,22 +194,22 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Flight"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
         },
         {
           "@id": "schema:Invoice"
@@ -220,10 +220,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -234,10 +234,10 @@
       "rdfs:label": "brand",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:Service"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Organization"
@@ -316,28 +316,28 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Brand"
-        },
-        {
           "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": {
@@ -376,10 +376,10 @@
       "rdfs:label": "CreditCard",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:LoanOrCredit"
+          "@id": "schema:PaymentCard"
         },
         {
-          "@id": "schema:PaymentCard"
+          "@id": "schema:LoanOrCredit"
         }
       ]
     },
@@ -455,6 +455,9 @@
       "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
+          "@id": "schema:DatedMoneySpecification"
+        },
+        {
           "@id": "schema:LoanOrCredit"
         },
         {
@@ -462,17 +465,14 @@
         },
         {
           "@id": "schema:InvestmentOrDeposit"
-        },
-        {
-          "@id": "schema:DatedMoneySpecification"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:MonetaryAmount"
         }
       ]
     },
@@ -507,19 +507,19 @@
       "rdfs:label": "areaServed",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DeliveryChargeSpecification"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:DeliveryChargeSpecification"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
@@ -527,37 +527,35 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:AdministrativeArea"
+          "@id": "schema:GeoShape"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:AdministrativeArea"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
     {
-      "@id": "schema:hoursAvailable",
+      "@id": "schema:loanTerm",
       "@type": "rdf:Property",
-      "rdfs:comment": "The hours during which this service or contact is available.",
-      "rdfs:label": "hoursAvailable",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:ContactPoint"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:LocationFeatureSpecification"
-        }
-      ],
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+      },
+      "rdfs:comment": "The duration of the loan or credit agreement.",
+      "rdfs:label": "loanTerm",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:duration"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:LoanOrCredit"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:OpeningHoursSpecification"
+        "@id": "schema:QuantitativeValue"
       }
     },
     {
@@ -582,10 +580,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         }
       ],
       "rdfs:comment": "A floor limit is the amount of money above which credit card transactions must be authorized.",
@@ -635,10 +633,10 @@
           "@id": "schema:Enumeration"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Class"
         },
         {
-          "@id": "schema:Class"
+          "@id": "schema:Property"
         }
       ],
       "schema:isPartOf": {
@@ -646,13 +644,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Property"
+        },
+        {
           "@id": "schema:Enumeration"
         },
         {
           "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Property"
         }
       ]
     },
@@ -669,21 +667,23 @@
       }
     },
     {
-      "@id": "schema:loanTerm",
+      "@id": "schema:hoursAvailable",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
-      },
-      "rdfs:comment": "The duration of the loan or credit agreement.",
-      "rdfs:label": "loanTerm",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:duration"
-      },
-      "schema:domainIncludes": {
-        "@id": "schema:LoanOrCredit"
-      },
+      "rdfs:comment": "The hours during which this service or contact is available.",
+      "rdfs:label": "hoursAvailable",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:QuantitativeValue"
+        "@id": "schema:OpeningHoursSpecification"
       }
     },
     {
@@ -693,28 +693,28 @@
       "rdfs:label": "aggregateRating",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
+          "@id": "schema:Brand"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Event"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Brand"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -746,13 +746,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -789,16 +789,33 @@
       ]
     },
     {
-      "@id": "schema:PaymentMethod",
-      "@type": "rdfs:Class",
-      "dct:source": {
-        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
+      "@id": "schema:cashBack",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+        }
+      ],
+      "rdfs:comment": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
+      "rdfs:label": "cashBack",
+      "schema:category": "issue-1253",
+      "schema:domainIncludes": {
+        "@id": "schema:PaymentCard"
       },
-      "rdfs:comment": "<p>A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.</p>\n\n<p>Commonly used values:</p>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li>\n<li>http://purl.org/goodrelations/v1#ByInvoice</li>\n<li>http://purl.org/goodrelations/v1#Cash</li>\n<li>http://purl.org/goodrelations/v1#CheckInAdvance</li>\n<li>http://purl.org/goodrelations/v1#COD</li>\n<li>http://purl.org/goodrelations/v1#DirectDebit</li>\n<li>http://purl.org/goodrelations/v1#GoogleCheckout</li>\n<li>http://purl.org/goodrelations/v1#PayPal</li>\n<li>http://purl.org/goodrelations/v1#PaySwarm</li>\n</ul>\n",
-      "rdfs:label": "PaymentMethod",
-      "rdfs:subClassOf": {
-        "@id": "schema:Enumeration"
-      }
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Boolean"
+        },
+        {
+          "@id": "schema:Number"
+        }
+      ]
     },
     {
       "@id": "schema:description",
@@ -837,16 +854,16 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
           "@id": "schema:Organization"
         },
         {
+          "@id": "schema:Person"
+        },
+        {
           "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
@@ -857,33 +874,16 @@
       }
     },
     {
-      "@id": "schema:cashBack",
-      "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-        }
-      ],
-      "rdfs:comment": "A cardholder benefit that pays the cardholder a small percentage of their net expenditures.",
-      "rdfs:label": "cashBack",
-      "schema:category": "issue-1253",
-      "schema:domainIncludes": {
-        "@id": "schema:PaymentCard"
+      "@id": "schema:PaymentMethod",
+      "@type": "rdfs:Class",
+      "dct:source": {
+        "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsClass"
       },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Boolean"
-        },
-        {
-          "@id": "schema:Number"
-        }
-      ]
+      "rdfs:comment": "<p>A payment method is a standardized procedure for transferring the monetary amount for a purchase. Payment methods are characterized by the legal and technical structures used, and by the organization or group carrying out the transaction.</p>\n\n<p>Commonly used values:</p>\n\n<ul>\n<li>http://purl.org/goodrelations/v1#ByBankTransferInAdvance</li>\n<li>http://purl.org/goodrelations/v1#ByInvoice</li>\n<li>http://purl.org/goodrelations/v1#Cash</li>\n<li>http://purl.org/goodrelations/v1#CheckInAdvance</li>\n<li>http://purl.org/goodrelations/v1#COD</li>\n<li>http://purl.org/goodrelations/v1#DirectDebit</li>\n<li>http://purl.org/goodrelations/v1#GoogleCheckout</li>\n<li>http://purl.org/goodrelations/v1#PayPal</li>\n<li>http://purl.org/goodrelations/v1#PaySwarm</li>\n</ul>\n",
+      "rdfs:label": "PaymentMethod",
+      "rdfs:subClassOf": {
+        "@id": "schema:Enumeration"
+      }
     },
     {
       "@id": "schema:Thing",
@@ -922,13 +922,13 @@
       "rdfs:label": "hasOfferCatalog",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -938,70 +938,29 @@
     {
       "@id": "schema:currency",
       "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-        }
-      ],
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+      },
       "rdfs:comment": "The currency in which the monetary amount is expressed (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a> format).",
       "rdfs:label": "currency",
-      "schema:category": [
-        "issue-1253",
-        "issue-1698"
-      ],
+      "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DatedMoneySpecification"
+          "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:DatedMoneySpecification"
         },
         {
           "@id": "schema:ExchangeRateSpecification"
         },
         {
           "@id": "schema:LoanOrCredit"
-        },
-        {
-          "@id": "schema:MonetaryAmountDistribution"
         }
       ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:sameAs",
@@ -1045,10 +1004,10 @@
       "rdfs:label": "feesAndCommissionsSpecification",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FinancialProduct"
+          "@id": "schema:FinancialService"
         },
         {
-          "@id": "schema:FinancialService"
+          "@id": "schema:FinancialProduct"
         }
       ],
       "schema:rangeIncludes": [
@@ -1094,10 +1053,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#FIBO"
         }
       ],
       "rdfs:comment": "Whether the terms for payment of interest can be renegotiated during the life of the loan.",
@@ -1120,10 +1079,10 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:PhysicalActivity"
         },
         {
           "@id": "schema:Service"
@@ -1132,10 +1091,10 @@
           "@id": "schema:Class"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:Property"
         },
         {
-          "@id": "schema:Property"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Product"
@@ -1143,13 +1102,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Thing"
         },
         {
           "@id": "schema:PhysicalActivityCategory"
         },
         {
-          "@id": "schema:Thing"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -1160,22 +1119,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:PlayAction"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1199,10 +1158,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1219,19 +1178,19 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Brand"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Place"
         },
         {
+          "@id": "schema:Organization"
+        },
+        {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Brand"
         }
       ],
       "schema:rangeIncludes": [
@@ -1262,10 +1221,10 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
+          "@id": "schema:MenuItem"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Event"
@@ -1274,10 +1233,10 @@
           "@id": "schema:AggregateOffer"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:MenuItem"
+          "@id": "schema:Service"
         }
       ],
       "schema:rangeIncludes": {
@@ -1321,10 +1280,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:Number"
         }
       ]
     },

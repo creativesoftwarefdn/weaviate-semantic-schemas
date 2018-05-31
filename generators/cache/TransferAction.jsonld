@@ -271,21 +271,21 @@
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:PostalAddress"
-        },
         {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:PostalAddress"
         }
       ]
     },
@@ -311,33 +311,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:target",
@@ -439,10 +412,10 @@
           "@id": "schema:TransferAction"
         },
         {
-          "@id": "schema:InsertAction"
+          "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:InsertAction"
         }
       ],
       "schema:rangeIncludes": {

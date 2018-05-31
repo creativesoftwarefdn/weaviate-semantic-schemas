@@ -114,28 +114,16 @@
       }
     },
     {
-      "@id": "schema:result",
-      "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
-    },
-    {
       "@id": "schema:endTime",
       "@type": "rdf:Property",
       "rdfs:comment": "The endTime of something. For a reserved event or service (e.g. FoodEstablishmentReservation), the time that it is expected to end. For actions that span a period of time, when the action was performed. e.g. John wrote a book from January to <em>December</em>.</p>\n\n<p>Note that Event uses startDate/endDate instead of startTime/endTime, even when describing dates with times. This situation may be clarified in future revisions.",
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         },
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         }
       ],
       "schema:rangeIncludes": {
@@ -187,10 +175,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -204,45 +192,45 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:DonateAction"
-        },
-        {
-          "@id": "schema:SendAction"
-        },
-        {
-          "@id": "schema:GiveAction"
-        },
-        {
-          "@id": "schema:PayAction"
-        },
-        {
-          "@id": "schema:AuthorizeAction"
-        },
-        {
-          "@id": "schema:CommunicateAction"
-        },
-        {
-          "@id": "schema:Message"
+          "@id": "schema:ReturnAction"
         },
         {
           "@id": "schema:TipAction"
         },
         {
-          "@id": "schema:ReturnAction"
+          "@id": "schema:SendAction"
+        },
+        {
+          "@id": "schema:DonateAction"
+        },
+        {
+          "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:PayAction"
+        },
+        {
+          "@id": "schema:Message"
+        },
+        {
+          "@id": "schema:AuthorizeAction"
+        },
+        {
+          "@id": "schema:GiveAction"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:ContactPoint"
         },
         {
           "@id": "schema:Organization"
         },
         {
-          "@id": "schema:ContactPoint"
+          "@id": "schema:Audience"
         },
         {
-          "@id": "schema:Audience"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -268,13 +256,13 @@
       "rdfs:label": "purpose",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PayAction"
+        },
+        {
           "@id": "schema:MedicalDevice"
         },
         {
           "@id": "schema:AllocateAction"
-        },
-        {
-          "@id": "schema:PayAction"
         }
       ],
       "schema:isPartOf": {
@@ -282,10 +270,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:MedicalDevicePurpose"
+          "@id": "schema:Thing"
         },
         {
-          "@id": "schema:Thing"
+          "@id": "schema:MedicalDevicePurpose"
         }
       ]
     },
@@ -320,33 +308,6 @@
       "rdfs:subClassOf": {
         "@id": "schema:AllocateAction"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:AllocateAction",
@@ -418,12 +379,24 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
+    },
+    {
+      "@id": "schema:result",
+      "@type": "rdf:Property",
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:location",
@@ -432,10 +405,10 @@
       "rdfs:label": "location",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Event"
@@ -443,13 +416,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PostalAddress"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PostalAddress"
         }
       ]
     },
@@ -487,10 +460,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     }

@@ -180,10 +180,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
@@ -212,23 +212,15 @@
       }
     },
     {
-      "@id": "schema:contactPoint",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "rdfs:comment": "A contact point for a person or organization.",
-      "rdfs:label": "contactPoint",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:HealthInsurancePlan"
-        }
-      ],
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
+      "schema:domainIncludes": {
+        "@id": "schema:Thing"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:ContactPoint"
+        "@id": "schema:Text"
       }
     },
     {
@@ -251,13 +243,13 @@
       }
     },
     {
-      "@id": "schema:includesHealthPlanNetwork",
+      "@id": "schema:usesHealthPlanIdStandard",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
       },
-      "rdfs:comment": "Networks covered by this plan.",
-      "rdfs:label": "includesHealthPlanNetwork",
+      "rdfs:comment": "The standard for interpreting thePlan ID. The preferred is \"HIOS\". See the Centers for Medicare &amp; Medicaid Services for more details.",
+      "rdfs:label": "usesHealthPlanIdStandard",
       "schema:category": "issue-1062",
       "schema:domainIncludes": {
         "@id": "schema:HealthInsurancePlan"
@@ -265,9 +257,14 @@
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:HealthPlanNetwork"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:URL"
+        },
+        {
+          "@id": "schema:Text"
+        }
+      ]
     },
     {
       "@id": "schema:Thing",
@@ -276,39 +273,27 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
+      "@id": "schema:healthPlanDrugTier",
       "@type": "rdf:Property",
       "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
       },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
+      "rdfs:comment": "The tier(s) of drugs offered by this formulary or insurance plan.",
+      "rdfs:label": "healthPlanDrugTier",
+      "schema:category": "issue-1062",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:HealthPlanFormulary"
+        },
+        {
+          "@id": "schema:HealthInsurancePlan"
+        }
+      ],
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
-      "@id": "schema:Intangible",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
-      "rdfs:label": "Intangible",
-      "rdfs:subClassOf": {
-        "@id": "schema:Thing"
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -332,15 +317,23 @@
       ]
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:contactPoint",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
+      "rdfs:comment": "A contact point for a person or organization.",
+      "rdfs:label": "contactPoint",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:HealthInsurancePlan"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ],
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:ContactPoint"
       }
     },
     {
@@ -353,10 +346,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -373,37 +366,22 @@
       }
     },
     {
-      "@id": "schema:healthPlanDrugTier",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
-      },
-      "rdfs:comment": "The tier(s) of drugs offered by this formulary or insurance plan.",
-      "rdfs:label": "healthPlanDrugTier",
-      "schema:category": "issue-1062",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:HealthInsurancePlan"
-        },
-        {
-          "@id": "schema:HealthPlanFormulary"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
+      "@id": "schema:Intangible",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A utility class that serves as the umbrella for a number of 'intangible' things such as quantities, structured values, etc.",
+      "rdfs:label": "Intangible",
+      "rdfs:subClassOf": {
+        "@id": "schema:Thing"
       }
     },
     {
-      "@id": "schema:usesHealthPlanIdStandard",
+      "@id": "schema:includesHealthPlanNetwork",
       "@type": "rdf:Property",
       "dct:source": {
         "@id": "https://github.com/schemaorg/schemaorg/issues/1062"
       },
-      "rdfs:comment": "The standard for interpreting thePlan ID. The preferred is \"HIOS\". See the Centers for Medicare &amp; Medicaid Services for more details.",
-      "rdfs:label": "usesHealthPlanIdStandard",
+      "rdfs:comment": "Networks covered by this plan.",
+      "rdfs:label": "includesHealthPlanNetwork",
       "schema:category": "issue-1062",
       "schema:domainIncludes": {
         "@id": "schema:HealthInsurancePlan"
@@ -411,14 +389,9 @@
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:HealthPlanNetwork"
+      }
     }
   ]
 }

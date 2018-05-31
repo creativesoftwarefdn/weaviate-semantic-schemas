@@ -31,24 +31,24 @@
           "@id": "schema:CreativeWorkSeason"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Role"
+        },
+        {
+          "@id": "schema:CreativeWorkSeries"
         },
         {
           "@id": "schema:DatedMoneySpecification"
         },
         {
-          "@id": "schema:Role"
-        },
-        {
-          "@id": "schema:CreativeWorkSeries"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         },
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         }
       ]
     },
@@ -76,10 +76,10 @@
       "rdfs:label": "salaryCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:JobPosting"
+          "@id": "schema:EmployeeRole"
         },
         {
-          "@id": "schema:EmployeeRole"
+          "@id": "schema:JobPosting"
         }
       ],
       "schema:rangeIncludes": {
@@ -125,13 +125,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
           "@id": "schema:Number"
         },
         {
           "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
         }
       ]
     },
@@ -240,10 +240,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -272,10 +272,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -286,44 +286,11 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
       "@id": "schema:startDate",
       "@type": "rdf:Property",
       "rdfs:comment": "The start date and time of the item (in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>).",
       "rdfs:label": "startDate",
       "schema:domainIncludes": [
-        {
-          "@id": "schema:Role"
-        },
-        {
-          "@id": "schema:CreativeWorkSeries"
-        },
         {
           "@id": "schema:CreativeWorkSeason"
         },
@@ -331,15 +298,21 @@
           "@id": "schema:Event"
         },
         {
+          "@id": "schema:CreativeWorkSeries"
+        },
+        {
           "@id": "schema:DatedMoneySpecification"
+        },
+        {
+          "@id": "schema:Role"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         },
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         }
       ]
     },
@@ -356,10 +329,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

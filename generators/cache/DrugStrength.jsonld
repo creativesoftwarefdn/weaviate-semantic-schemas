@@ -85,13 +85,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalEntity"
+        },
+        {
           "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:MedicalEntity"
         }
       ],
       "schema:isPartOf": {
@@ -99,13 +99,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -239,10 +239,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
@@ -274,10 +274,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -288,16 +288,16 @@
       "rdfs:label": "activeIngredient",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
+        },
+        {
+          "@id": "schema:DrugStrength"
         },
         {
           "@id": "schema:Substance"
         },
         {
-          "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:DrugStrength"
+          "@id": "schema:Drug"
         }
       ],
       "schema:isPartOf": {
@@ -312,33 +312,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:recognizingAuthority",
@@ -409,16 +382,16 @@
       "rdfs:label": "maximumIntake",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DietarySupplement"
-        },
-        {
-          "@id": "schema:Substance"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:DrugStrength"
         },
         {
-          "@id": "schema:Drug"
+          "@id": "schema:Substance"
+        },
+        {
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {

@@ -15,17 +15,12 @@
       "dct:source": {
         "@id": "https://github.com/schemaorg/schemaorg/issues/1389"
       },
-      "rdfs:comment": "An XPath, e.g. of a <a class=\"localLink\" href=\"http://schema.org/SpeakableSpecification\">SpeakableSpecification</a> or <a class=\"localLink\" href=\"http://schema.org/WebPageElement\">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "rdfs:comment": "An XPath.",
       "rdfs:label": "xpath",
       "schema:category": "issue-1389",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:SpeakableSpecification"
-        },
-        {
-          "@id": "schema:WebPageElement"
-        }
-      ],
+      "schema:domainIncludes": {
+        "@id": "schema:SpeakableSpecification"
+      },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
@@ -105,17 +100,12 @@
       "dct:source": {
         "@id": "https://github.com/schemaorg/schemaorg/issues/1389"
       },
-      "rdfs:comment": "A CSS selector, e.g. of a <a class=\"localLink\" href=\"http://schema.org/SpeakableSpecification\">SpeakableSpecification</a> or <a class=\"localLink\" href=\"http://schema.org/WebPageElement\">WebPageElement</a>. In the latter case, multiple matches within a page can constitute a single conceptual \"Web page element\".",
+      "rdfs:comment": "A CSS selector.",
       "rdfs:label": "cssSelector",
       "schema:category": "issue-1389",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:SpeakableSpecification"
-        },
-        {
-          "@id": "schema:WebPageElement"
-        }
-      ],
+      "schema:domainIncludes": {
+        "@id": "schema:SpeakableSpecification"
+      },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
@@ -163,10 +153,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -192,10 +182,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -234,33 +224,6 @@
       "schema:rangeIncludes": {
         "@id": "schema:SpeakableSpecification"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:Intangible",

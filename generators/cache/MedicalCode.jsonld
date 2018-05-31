@@ -47,10 +47,10 @@
       "schema:category": "issue-894",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CategoryCode"
+          "@id": "schema:MedicalCode"
         },
         {
-          "@id": "schema:MedicalCode"
+          "@id": "schema:CategoryCode"
         }
       ],
       "schema:isPartOf": {
@@ -67,10 +67,10 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:DietarySupplement"
         },
         {
-          "@id": "schema:DietarySupplement"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:MedicalEntity"
@@ -81,13 +81,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:DrugLegalStatus"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -143,10 +143,10 @@
       "rdfs:label": "MedicalCode",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:CategoryCode"
+          "@id": "schema:MedicalIntangible"
         },
         {
-          "@id": "schema:MedicalIntangible"
+          "@id": "schema:CategoryCode"
         }
       ],
       "schema:isPartOf": {
@@ -306,33 +306,6 @@
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:CategoryCode",

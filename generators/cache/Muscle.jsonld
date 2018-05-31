@@ -28,10 +28,10 @@
       "rdfs:label": "associatedPathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         },
         {
           "@id": "schema:AnatomicalStructure"
@@ -81,10 +81,10 @@
       "rdfs:label": "bodyLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalProcedure"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:MedicalProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -101,13 +101,13 @@
       "rdfs:label": "relatedTherapy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalStructure"
-        },
-        {
           "@id": "schema:AnatomicalSystem"
         },
         {
           "@id": "schema:SuperficialAnatomy"
+        },
+        {
+          "@id": "schema:AnatomicalStructure"
         }
       ],
       "schema:isPartOf": {
@@ -141,10 +141,10 @@
           "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -359,13 +359,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -444,33 +444,6 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
-    },
-    {
       "@id": "schema:bloodSupply",
       "@type": "rdf:Property",
       "rdfs:comment": "The blood vessel that carries blood from the heart to the muscle.",
@@ -537,13 +510,13 @@
       "rdfs:label": "relatedCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:AnatomicalStructure"
         },
         {
           "@id": "schema:SuperficialAnatomy"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:AnatomicalSystem"
         }
       ],
       "schema:isPartOf": {

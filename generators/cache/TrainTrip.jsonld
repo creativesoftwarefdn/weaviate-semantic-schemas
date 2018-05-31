@@ -43,10 +43,10 @@
           "@id": "schema:TrainTrip"
         },
         {
-          "@id": "schema:Flight"
+          "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:BusTrip"
+          "@id": "schema:Flight"
         }
       ],
       "schema:rangeIncludes": {
@@ -60,13 +60,10 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
+          "@id": "schema:CreativeWork"
+        },
+        {
           "@id": "schema:TrainTrip"
-        },
-        {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Invoice"
@@ -75,10 +72,13 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:BusTrip"
@@ -86,10 +86,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -130,13 +130,13 @@
       "rdfs:label": "arrivalTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
+          "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:BusTrip"
         },
         {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:Flight"
         }
       ],
       "schema:rangeIncludes": {
@@ -225,13 +225,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -284,33 +284,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:arrivalStation",

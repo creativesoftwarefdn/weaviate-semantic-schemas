@@ -16,10 +16,10 @@
       "rdfs:label": "hasDeliveryMethod",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DeliveryEvent"
+          "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:DeliveryEvent"
         }
       ],
       "schema:rangeIncludes": {
@@ -69,28 +69,28 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:BusTrip"
-        },
-        {
-          "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:Service"
-        },
-        {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
@@ -101,18 +101,6 @@
           "@id": "schema:Organization"
         }
       ]
-    },
-    {
-      "@id": "schema:trackingNumber",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Shipper tracking number.",
-      "rdfs:label": "trackingNumber",
-      "schema:domainIncludes": {
-        "@id": "schema:ParcelDelivery"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
     },
     {
       "@id": "schema:disambiguatingDescription",
@@ -229,13 +217,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PropertyValue"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -290,31 +278,16 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
+      "@id": "schema:trackingNumber",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
+      "rdfs:comment": "Shipper tracking number.",
+      "rdfs:label": "trackingNumber",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:ParcelDelivery"
       },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:carrier",
@@ -323,10 +296,10 @@
       "rdfs:label": "carrier",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
+          "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:Flight"
         }
       ],
       "schema:rangeIncludes": {
@@ -370,10 +343,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

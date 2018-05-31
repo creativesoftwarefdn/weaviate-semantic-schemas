@@ -16,10 +16,10 @@
       "rdfs:label": "possibleTreatment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalSignOrSymptom"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalSignOrSymptom"
         }
       ],
       "schema:isPartOf": {
@@ -42,35 +42,24 @@
       }
     },
     {
-      "@id": "schema:status",
+      "@id": "schema:cause",
       "@type": "rdf:Property",
-      "rdfs:comment": "The status of the study (enumerated).",
-      "rdfs:label": "status",
+      "rdfs:comment": "Specifying a cause of something in general. e.g in medicine , one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.",
+      "rdfs:label": "cause",
       "schema:domainIncludes": [
-        {
-          "@id": "schema:MedicalProcedure"
-        },
         {
           "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalStudy"
+          "@id": "schema:MedicalSignOrSymptom"
         }
       ],
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:MedicalStudyStatus"
-        },
-        {
-          "@id": "schema:EventStatusType"
-        }
-      ]
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalCause"
+      }
     },
     {
       "@id": "schema:medicineSystem",
@@ -139,10 +128,10 @@
       "rdfs:label": "associatedAnatomy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -153,10 +142,10 @@
           "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         }
       ]
     },
@@ -255,10 +244,10 @@
       "rdfs:label": "pathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:isPartOf": {
@@ -314,33 +303,6 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
-    },
-    {
       "@id": "schema:MedicalSymptom",
       "rdfs:subClassOf": {
         "@id": "schema:MedicalSignOrSymptom"
@@ -380,24 +342,35 @@
       }
     },
     {
-      "@id": "schema:cause",
+      "@id": "schema:status",
       "@type": "rdf:Property",
-      "rdfs:comment": "Specifying a cause of something in general. e.g in medicine , one of the causative agent(s) that are most directly responsible for the pathophysiologic process that eventually results in the occurrence.",
-      "rdfs:label": "cause",
+      "rdfs:comment": "The status of the study (enumerated).",
+      "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:MedicalProcedure"
         },
         {
-          "@id": "schema:MedicalSignOrSymptom"
+          "@id": "schema:MedicalStudy"
+        },
+        {
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
         "@id": "http://health-lifesci.schema.org"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalCause"
-      }
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:EventStatusType"
+        },
+        {
+          "@id": "schema:MedicalStudyStatus"
+        }
+      ]
     },
     {
       "@id": "schema:name",
@@ -445,10 +418,10 @@
       "rdfs:label": "epidemiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:isPartOf": {
@@ -471,10 +444,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:Text"
@@ -649,10 +622,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },

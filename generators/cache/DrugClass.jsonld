@@ -10,18 +10,6 @@
   },
   "@graph": [
     {
-      "@id": "schema:DrugClass",
-      "@type": "rdfs:Class",
-      "rdfs:comment": "A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.",
-      "rdfs:label": "DrugClass",
-      "rdfs:subClassOf": {
-        "@id": "schema:MedicalEnumeration"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      }
-    },
-    {
       "@id": "schema:name",
       "@type": "rdf:Property",
       "rdfs:comment": "The name of the item.",
@@ -34,9 +22,46 @@
       }
     },
     {
-      "@id": "schema:drugClass",
-      "schema:rangeIncludes": {
-        "@id": "schema:DrugClass"
+      "@id": "schema:supersededBy",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
+      "rdfs:label": "supersededBy",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Enumeration"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Property"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://meta.schema.org/"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Property"
+        },
+        {
+          "@id": "schema:Class"
+        },
+        {
+          "@id": "schema:Enumeration"
+        }
+      ]
+    },
+    {
+      "@id": "schema:DrugClass",
+      "@type": "rdfs:Class",
+      "rdfs:comment": "A class of medical drugs, e.g., statins. Classes can represent general pharmacological class, common mechanisms of action, common physiological effects, etc.",
+      "rdfs:label": "DrugClass",
+      "rdfs:subClassOf": {
+        "@id": "schema:MedicalEnumeration"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
       }
     },
     {
@@ -64,32 +89,6 @@
       }
     },
     {
-      "@id": "schema:drug",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Specifying a drug or medicine used in a medication procedure",
-      "rdfs:label": "drug",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:MedicalCondition"
-        },
-        {
-          "@id": "schema:DrugClass"
-        },
-        {
-          "@id": "schema:TherapeuticProcedure"
-        },
-        {
-          "@id": "schema:Patient"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Drug"
-      }
-    },
-    {
       "@id": "schema:identifier",
       "@type": "rdf:Property",
       "owl:equivalentProperty": {
@@ -102,13 +101,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -161,10 +160,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -246,31 +245,30 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
+      "@id": "schema:drug",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "Specifying a drug or medicine used in a medication procedure",
+      "rdfs:label": "drug",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Patient"
+        },
+        {
+          "@id": "schema:DrugClass"
+        },
+        {
+          "@id": "schema:TherapeuticProcedure"
         }
-      ]
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Drug"
+      }
     },
     {
       "@id": "schema:Intangible",
@@ -282,35 +280,10 @@
       }
     },
     {
-      "@id": "schema:supersededBy",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Relates a term (i.e. a property, class or enumeration) to one that supersedes it.",
-      "rdfs:label": "supersededBy",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:Enumeration"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://meta.schema.org/"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Enumeration"
-        },
-        {
-          "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Class"
-        }
-      ]
+      "@id": "schema:drugClass",
+      "schema:rangeIncludes": {
+        "@id": "schema:DrugClass"
+      }
     }
   ]
 }

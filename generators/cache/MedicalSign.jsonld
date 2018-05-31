@@ -63,13 +63,13 @@
       "rdfs:label": "status",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalStudy"
-        },
-        {
           "@id": "schema:MedicalProcedure"
         },
         {
           "@id": "schema:MedicalCondition"
+        },
+        {
+          "@id": "schema:MedicalStudy"
         }
       ],
       "schema:isPartOf": {
@@ -77,13 +77,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:EventStatusType"
+        },
+        {
           "@id": "schema:MedicalStudyStatus"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:EventStatusType"
         }
       ]
     },
@@ -154,10 +154,10 @@
       "rdfs:label": "associatedAnatomy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         },
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         }
       ],
       "schema:isPartOf": {
@@ -165,30 +165,15 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:SuperficialAnatomy"
         },
         {
           "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:SuperficialAnatomy"
+          "@id": "schema:AnatomicalSystem"
         }
       ]
-    },
-    {
-      "@id": "schema:typicalTest",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A medical test typically performed given this condition.",
-      "rdfs:label": "typicalTest",
-      "schema:domainIncludes": {
-        "@id": "schema:MedicalCondition"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:MedicalTest"
-      }
     },
     {
       "@id": "schema:stage",
@@ -203,6 +188,21 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:MedicalConditionStage"
+      }
+    },
+    {
+      "@id": "schema:typicalTest",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A medical test typically performed given this condition.",
+      "rdfs:label": "typicalTest",
+      "schema:domainIncludes": {
+        "@id": "schema:MedicalCondition"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:MedicalTest"
       }
     },
     {
@@ -253,13 +253,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Text"
+        },
+        {
           "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:MedicalEnumeration"
-        },
-        {
-          "@id": "schema:Text"
         }
       ]
     },
@@ -328,33 +328,6 @@
       "schema:rangeIncludes": {
         "@id": "schema:URL"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:potentialAction",
@@ -501,10 +474,10 @@
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -539,18 +512,15 @@
       }
     },
     {
-      "@id": "schema:identifyingExam",
+      "@id": "schema:alternateName",
       "@type": "rdf:Property",
-      "rdfs:comment": "A physical examination that can identify this sign.",
-      "rdfs:label": "identifyingExam",
+      "rdfs:comment": "An alias for the item.",
+      "rdfs:label": "alternateName",
       "schema:domainIncludes": {
-        "@id": "schema:MedicalSign"
-      },
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:PhysicalExam"
+        "@id": "schema:Text"
       }
     },
     {
@@ -581,6 +551,9 @@
       "rdfs:label": "drug",
       "schema:domainIncludes": [
         {
+          "@id": "schema:TherapeuticProcedure"
+        },
+        {
           "@id": "schema:MedicalCondition"
         },
         {
@@ -588,9 +561,6 @@
         },
         {
           "@id": "schema:Patient"
-        },
-        {
-          "@id": "schema:TherapeuticProcedure"
         }
       ],
       "schema:isPartOf": {
@@ -685,23 +655,26 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:alternateName",
+      "@id": "schema:identifyingExam",
       "@type": "rdf:Property",
-      "rdfs:comment": "An alias for the item.",
-      "rdfs:label": "alternateName",
+      "rdfs:comment": "A physical examination that can identify this sign.",
+      "rdfs:label": "identifyingExam",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:MedicalSign"
+      },
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:PhysicalExam"
       }
     },
     {

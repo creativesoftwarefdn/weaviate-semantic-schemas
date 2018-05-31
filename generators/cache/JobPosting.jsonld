@@ -12,25 +12,10 @@
     {
       "@id": "schema:experienceRequirements",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
-      "rdfs:comment": [
-        "Description of skills and experience needed for the position or Occupation.",
-        "Description of skills and experience needed for the position."
-      ],
+      "rdfs:comment": "Description of skills and experience needed for the position.",
       "rdfs:label": "experienceRequirements",
-      "schema:category": "issue-1698",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Occupation"
-        },
-        {
-          "@id": "schema:JobPosting"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
@@ -39,35 +24,8 @@
     {
       "@id": "schema:educationRequirements",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
-      "rdfs:comment": [
-        "Educational background needed for the position.",
-        "Educational background needed for the position or Occupation."
-      ],
+      "rdfs:comment": "Educational background needed for the position.",
       "rdfs:label": "educationRequirements",
-      "schema:category": "issue-1698",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:JobPosting"
-        },
-        {
-          "@id": "schema:Occupation"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
-      }
-    },
-    {
-      "@id": "schema:employmentType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
-      "rdfs:label": "employmentType",
       "schema:domainIncludes": {
         "@id": "schema:JobPosting"
       },
@@ -90,25 +48,10 @@
     {
       "@id": "schema:skills",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
-      "rdfs:comment": [
-        "Skills required to fulfill this role.",
-        "Skills required to fulfill this role or in this Occupation."
-      ],
+      "rdfs:comment": "Skills required to fulfill this role.",
       "rdfs:label": "skills",
-      "schema:category": "issue-1698",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:JobPosting"
-        },
-        {
-          "@id": "schema:Occupation"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
@@ -124,25 +67,25 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
           "@id": "schema:JobPosting"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:Offer"
         },
         {
           "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -150,22 +93,15 @@
       }
     },
     {
-      "@id": "schema:relevantOccupation",
+      "@id": "schema:employmentType",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
-      "rdfs:comment": "The Occupation for the JobPosting.",
-      "rdfs:label": "relevantOccupation",
-      "schema:category": "issue-1698",
+      "rdfs:comment": "Type of employment (e.g. full-time, part-time, contract, temporary, seasonal, internship).",
+      "rdfs:label": "employmentType",
       "schema:domainIncludes": {
         "@id": "schema:JobPosting"
       },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": {
-        "@id": "schema:Occupation"
+        "@id": "schema:Text"
       }
     },
     {
@@ -219,21 +155,21 @@
       "rdfs:label": "baseSalary",
       "schema:domainIncludes": [
         {
-          "@id": "schema:EmployeeRole"
+          "@id": "schema:JobPosting"
         },
         {
-          "@id": "schema:JobPosting"
+          "@id": "schema:EmployeeRole"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -318,25 +254,10 @@
     {
       "@id": "schema:qualifications",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
-      "rdfs:comment": [
-        "Specific qualifications required for this role or Occupation.",
-        "Specific qualifications required for this role."
-      ],
+      "rdfs:comment": "Specific qualifications required for this role.",
       "rdfs:label": "qualifications",
-      "schema:category": "issue-1698",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Occupation"
-        },
-        {
-          "@id": "schema:JobPosting"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
@@ -357,25 +278,10 @@
     {
       "@id": "schema:responsibilities",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
-      "rdfs:comment": [
-        "Responsibilities associated with this role.",
-        "Responsibilities associated with this role or Occupation."
-      ],
+      "rdfs:comment": "Responsibilities associated with this role.",
       "rdfs:label": "responsibilities",
-      "schema:category": "issue-1698",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:JobPosting"
-        },
-        {
-          "@id": "schema:Occupation"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
@@ -406,13 +312,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -453,10 +359,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -465,33 +371,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:incentiveCompensation",
@@ -532,38 +411,19 @@
     {
       "@id": "schema:estimatedSalary",
       "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1577"
-        }
-      ],
-      "rdfs:comment": [
-        "The estimated salary for this occupation in the given occupationLocation.",
-        "A property describing the estimated salary for a job posting based on a variety of variables including, but not limited to industry, job title, and location. The estimated salary is usually computed by outside organizations and therefore the hiring organization is not bound to this estimated salary."
-      ],
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1577"
+      },
+      "rdfs:comment": "A property describing the estimated salary for a job posting based on a variety of variables including, but not limited to industry, job title, and location. The estimated salary is usually computed by outside organizations and therefore the hiring organization is not bound to this estimated salary.",
       "rdfs:label": "estimatedSalary",
-      "schema:category": [
-        "issue-1577",
-        "issue-1698"
-      ],
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:JobPosting"
-        },
-        {
-          "@id": "schema:Occupation"
-        }
-      ],
+      "schema:category": "issue-1577",
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
+      },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": [
-        {
-          "@id": "schema:MonetaryAmountDistribution"
-        },
         {
           "@id": "schema:PriceSpecification"
         },
@@ -578,22 +438,10 @@
     {
       "@id": "schema:occupationalCategory",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
       "rdfs:comment": "Category or categories describing the job. Use BLS O*NET-SOC taxonomy: http://www.onetcenter.org/taxonomy.html. Ideally includes textual label and formal code, with the property repeated for each applicable value.",
       "rdfs:label": "occupationalCategory",
-      "schema:category": "issue-1698",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:JobPosting"
-        },
-        {
-          "@id": "schema:Occupation"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+      "schema:domainIncludes": {
+        "@id": "schema:JobPosting"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"

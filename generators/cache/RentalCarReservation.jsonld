@@ -37,10 +37,10 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Service"
@@ -51,10 +51,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -113,13 +113,10 @@
           "@id": "schema:ParcelDelivery"
         },
         {
-          "@id": "schema:BusTrip"
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Service"
@@ -128,7 +125,10 @@
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Flight"
+          "@id": "schema:Reservation"
+        },
+        {
+          "@id": "schema:BusTrip"
         }
       ],
       "schema:rangeIncludes": [
@@ -194,13 +194,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
-        },
-        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Number"
         }
       ]
     },
@@ -211,7 +211,7 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Offer"
@@ -220,7 +220,7 @@
           "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -242,10 +242,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -271,10 +271,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:supersededBy": {
@@ -357,10 +357,10 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -389,10 +389,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -403,42 +403,15 @@
       "rdfs:label": "pickupTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TaxiReservation"
+          "@id": "schema:RentalCarReservation"
         },
         {
-          "@id": "schema:RentalCarReservation"
+          "@id": "schema:TaxiReservation"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:DateTime"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:dropoffTime",
@@ -482,10 +455,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

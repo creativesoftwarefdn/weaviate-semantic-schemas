@@ -22,9 +22,26 @@
       }
     },
     {
-      "@id": "schema:regionDrained",
+      "@id": "schema:associatedPathophysiology",
+      "@type": "rdf:Property",
+      "rdfs:comment": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
+      "rdfs:label": "associatedPathophysiology",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:SuperficialAnatomy"
+        },
+        {
+          "@id": "schema:AnatomicalSystem"
+        },
+        {
+          "@id": "schema:AnatomicalStructure"
+        }
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
       "schema:rangeIncludes": {
-        "@id": "schema:AnatomicalSystem"
+        "@id": "schema:Text"
       }
     },
     {
@@ -93,13 +110,13 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DietarySupplement"
-        },
-        {
           "@id": "schema:MedicalEntity"
         },
         {
           "@id": "schema:Drug"
+        },
+        {
+          "@id": "schema:DietarySupplement"
         }
       ],
       "schema:isPartOf": {
@@ -107,13 +124,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
-        },
-        {
           "@id": "schema:MedicalEnumeration"
         },
         {
           "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:DrugLegalStatus"
         }
       ]
     },
@@ -193,26 +210,9 @@
       }
     },
     {
-      "@id": "schema:associatedPathophysiology",
-      "@type": "rdf:Property",
-      "rdfs:comment": "If applicable, a description of the pathophysiology associated with the anatomical system, including potential abnormal changes in the mechanical, physical, and biochemical functions of the system.",
-      "rdfs:label": "associatedPathophysiology",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:SuperficialAnatomy"
-        },
-        {
-          "@id": "schema:AnatomicalStructure"
-        },
-        {
-          "@id": "schema:AnatomicalSystem"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
+      "@id": "schema:regionDrained",
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:AnatomicalSystem"
       }
     },
     {
@@ -261,13 +261,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -296,10 +296,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -308,33 +308,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:recognizingAuthority",
@@ -388,13 +361,13 @@
       "rdfs:label": "relatedCondition",
       "schema:domainIncludes": [
         {
-          "@id": "schema:SuperficialAnatomy"
-        },
-        {
           "@id": "schema:AnatomicalSystem"
         },
         {
           "@id": "schema:AnatomicalStructure"
+        },
+        {
+          "@id": "schema:SuperficialAnatomy"
         }
       ],
       "schema:isPartOf": {
@@ -429,10 +402,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:AnatomicalSystem"
+          "@id": "schema:AnatomicalStructure"
         },
         {
-          "@id": "schema:AnatomicalStructure"
+          "@id": "schema:AnatomicalSystem"
         }
       ]
     },
@@ -449,10 +422,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },

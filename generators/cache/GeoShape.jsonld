@@ -49,21 +49,21 @@
       "rdfs:label": "addressCountry",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeoCoordinates"
-        },
-        {
           "@id": "schema:PostalAddress"
         },
         {
           "@id": "schema:GeoShape"
+        },
+        {
+          "@id": "schema:GeoCoordinates"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Country"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Country"
         }
       ]
     },
@@ -154,10 +154,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -192,13 +192,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
@@ -227,10 +227,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -241,13 +241,13 @@
       "rdfs:label": "postalCode",
       "schema:domainIncludes": [
         {
-          "@id": "schema:GeoShape"
+          "@id": "schema:GeoCoordinates"
         },
         {
           "@id": "schema:PostalAddress"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:GeoShape"
         }
       ],
       "schema:rangeIncludes": {
@@ -259,33 +259,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:eligibleRegion",
@@ -300,19 +273,19 @@
       "rdfs:label": "address",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
           "@id": "schema:GeoShape"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:GeoCoordinates"
+        },
+        {
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:Person"
         },
         {
-          "@id": "schema:GeoCoordinates"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [

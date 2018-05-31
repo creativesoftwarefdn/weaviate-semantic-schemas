@@ -25,29 +25,6 @@
       }
     },
     {
-      "@id": "schema:breadcrumb",
-      "schema:rangeIncludes": {
-        "@id": "schema:BreadcrumbList"
-      }
-    },
-    {
-      "@id": "schema:itemListOrder",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Type of ordering (e.g. Ascending, Descending, Unordered).",
-      "rdfs:label": "itemListOrder",
-      "schema:domainIncludes": {
-        "@id": "schema:ItemList"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:ItemListOrderType"
-        }
-      ]
-    },
-    {
       "@id": "schema:url",
       "@type": "rdf:Property",
       "rdfs:comment": "URL of the item.",
@@ -72,13 +49,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -112,6 +89,12 @@
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
+      }
+    },
+    {
+      "@id": "schema:breadcrumb",
+      "schema:rangeIncludes": {
+        "@id": "schema:BreadcrumbList"
       }
     },
     {
@@ -192,10 +175,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -239,29 +222,19 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
+      "@id": "schema:itemListOrder",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
+      "rdfs:comment": "Type of ordering (e.g. Ascending, Descending, Unordered).",
+      "rdfs:label": "itemListOrder",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
+        "@id": "schema:ItemList"
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ItemListOrderType"
         },
         {
-          "@id": "schema:Event"
+          "@id": "schema:Text"
         }
       ]
     },

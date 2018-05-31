@@ -165,7 +165,13 @@
       "rdfs:label": "review",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Event"
@@ -174,13 +180,7 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:Organization"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:CreativeWork"
@@ -212,18 +212,18 @@
       "rdfs:label": "author",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Rating"
         },
         {
-          "@id": "schema:Rating"
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -279,13 +279,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:URL"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
         }
       ]
     },
@@ -302,19 +302,54 @@
       }
     },
     {
-      "@id": "schema:description",
+      "@id": "schema:legislationConsolidatedBy",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:description"
+      "dct:source": [
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+        },
+        {
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#exactMatch": {
+        "@id": "http://data.europa.eu/eli/ontology#consolidated_by"
       },
-      "rdfs:comment": "A description of the item.",
-      "rdfs:label": "description",
+      "owl:equivalentProperty": {
+        "@id": "http://data.europa.eu/eli/ontology#consolidated_by"
+      },
+      "rdfs:comment": "Indicates a consolidated legislation (which is usually the product of an editorial process that revises the legislation) that take into account this legislation.",
+      "rdfs:label": "legislationConsolidatedBy",
+      "schema:category": "issue-1156",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Legislation"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:legislationConsolidates"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Legislation"
       }
+    },
+    {
+      "@id": "schema:fileFormat",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
+      "rdfs:label": "fileFormat",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ]
     },
     {
       "@id": "schema:width",
@@ -323,13 +358,13 @@
       "rdfs:label": "width",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MediaObject"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:VisualArtwork"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:MediaObject"
         }
       ],
       "schema:rangeIncludes": [
@@ -340,6 +375,24 @@
           "@id": "schema:Distance"
         }
       ]
+    },
+    {
+      "@id": "schema:spatialCoverage",
+      "@type": "rdf:Property",
+      "owl:equivalentProperty": {
+        "@id": "dct:spatial"
+      },
+      "rdfs:comment": "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of\n      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates\n      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.",
+      "rdfs:label": "spatialCoverage",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:contentLocation"
+      },
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Place"
+      }
     },
     {
       "@id": "schema:expires",
@@ -358,10 +411,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -375,6 +428,9 @@
       "schema:category": "issue-1156",
       "schema:domainIncludes": {
         "@id": "schema:Legislation"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:legislationChangedBy"
       },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
@@ -424,10 +480,10 @@
       "rdfs:label": "comment",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RsvpAction"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:RsvpAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -457,6 +513,9 @@
       "schema:domainIncludes": {
         "@id": "schema:Legislation"
       },
+      "schema:inverseOf": {
+        "@id": "schema:legislationConsolidatedBy"
+      },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
@@ -471,16 +530,16 @@
       "rdfs:label": "awards",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -500,13 +559,13 @@
           "@id": "schema:CreativeWork"
         },
         {
+          "@id": "schema:PublicationEvent"
+        },
+        {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:PublicationEvent"
         }
       ],
       "schema:rangeIncludes": {
@@ -520,10 +579,10 @@
       "rdfs:label": "height",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MediaObject"
+          "@id": "schema:VisualArtwork"
         },
         {
-          "@id": "schema:VisualArtwork"
+          "@id": "schema:MediaObject"
         },
         {
           "@id": "schema:Product"
@@ -563,10 +622,10 @@
           "@id": "schema:BroadcastChannel"
         },
         {
-          "@id": "schema:MusicGroup"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:MusicGroup"
         }
       ],
       "schema:rangeIncludes": [
@@ -624,10 +683,10 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
@@ -638,10 +697,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -679,25 +738,25 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:Flight"
         },
         {
           "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:Invoice"
@@ -722,29 +781,45 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         }
       ]
     },
     {
-      "@id": "schema:fileFormat",
+      "@id": "schema:legislationChangedBy",
       "@type": "rdf:Property",
-      "rdfs:comment": "Media type, typically MIME format (see <a href=\"http://www.iana.org/assignments/media-types/media-types.xhtml\">IANA site</a>) of the content e.g. application/zip of a SoftwareApplication binary. In cases where a CreativeWork has several media type representations, 'encoding' can be used to indicate each MediaObject alongside particular fileFormat information. Unregistered or niche file formats can be indicated instead via the most appropriate URL, e.g. defining Web page or a Wikipedia entry.",
-      "rdfs:label": "fileFormat",
-      "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
-      },
-      "schema:rangeIncludes": [
+      "dct:source": [
         {
-          "@id": "schema:Text"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         },
         {
-          "@id": "schema:URL"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         }
-      ]
+      ],
+      "http://www.w3.org/2004/02/skos/core#exactMatch": {
+        "@id": "http://data.europa.eu/eli/ontology#changed_by"
+      },
+      "owl:equivalentProperty": {
+        "@id": "http://data.europa.eu/eli/ontology#changed_by"
+      },
+      "rdfs:comment": "Another legislation that changes this legislation. This encompasses the notions of amendment, replacement, correction, repeal, or other types of change. This may be a direct change (textual or non-textual amendment) or a consequential or indirect change. The property is to be used to express the existence of a change relationship between two acts rather than the existence of a consolidated version of the text that shows the result of the change. For consolidation relationships, use the <a href=\"/legislationConsolidatedBy\">legislationConsolidatedBy</a> property.",
+      "rdfs:label": "legislationChangedBy",
+      "schema:category": "issue-1156",
+      "schema:domainIncludes": {
+        "@id": "schema:Legislation"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:legislationChanges"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Legislation"
+      }
     },
     {
       "@id": "schema:contributor",
@@ -854,10 +929,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -898,19 +973,19 @@
       "rdfs:label": "reviews",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Place"
         }
       ],
       "schema:rangeIncludes": {
@@ -918,6 +993,18 @@
       },
       "schema:supersededBy": {
         "@id": "schema:review"
+      }
+    },
+    {
+      "@id": "schema:contentRating",
+      "@type": "rdf:Property",
+      "rdfs:comment": "Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.",
+      "rdfs:label": "contentRating",
+      "schema:domainIncludes": {
+        "@id": "schema:CreativeWork"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
       }
     },
     {
@@ -930,10 +1017,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -973,10 +1060,10 @@
       "rdfs:label": "typicalAgeRange",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": {
@@ -1022,22 +1109,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:Product"
+          "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:PlayAction"
-        },
-        {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:LodgingBusiness"
+          "@id": "schema:PlayAction"
+        },
+        {
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -1117,18 +1204,18 @@
       "rdfs:label": "position",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ListItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ListItem"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Integer"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Integer"
         }
       ]
     },
@@ -1167,10 +1254,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         },
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -1239,6 +1326,9 @@
       "schema:domainIncludes": {
         "@id": "schema:Legislation"
       },
+      "schema:inverseOf": {
+        "@id": "schema:legislationTransposedBy"
+      },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
       },
@@ -1253,10 +1343,10 @@
       "rdfs:label": "dateCreated",
       "schema:domainIncludes": [
         {
-          "@id": "schema:DataFeedItem"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:DataFeedItem"
         }
       ],
       "schema:rangeIncludes": [
@@ -1314,10 +1404,10 @@
       "rdfs:label": "LegislationObject",
       "rdfs:subClassOf": [
         {
-          "@id": "schema:MediaObject"
+          "@id": "schema:Legislation"
         },
         {
-          "@id": "schema:Legislation"
+          "@id": "schema:MediaObject"
         }
       ],
       "schema:category": "issue-1156",
@@ -1352,10 +1442,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1378,15 +1468,26 @@
       }
     },
     {
-      "@id": "schema:editor",
+      "@id": "schema:isBasedOnUrl",
       "@type": "rdf:Property",
-      "rdfs:comment": "Specifies the Person who edited the CreativeWork.",
-      "rdfs:label": "editor",
+      "rdfs:comment": "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.",
+      "rdfs:label": "isBasedOnUrl",
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
-      "schema:rangeIncludes": {
-        "@id": "schema:Person"
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:URL"
+        }
+      ],
+      "schema:supersededBy": {
+        "@id": "schema:isBasedOn"
       }
     },
     {
@@ -1411,10 +1512,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -1431,13 +1532,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1481,19 +1582,19 @@
       "rdfs:label": "award",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Product"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Product"
+        },
+        {
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": {
@@ -1505,33 +1606,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:encodesCreativeWork",
@@ -1574,16 +1648,16 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#closeMatch": {
         "@id": "http://data.europa.eu/eli/ontology#id_local"
       },
-      "rdfs:comment": "An identifier for the legislation. This can be either a string-based identifier, like the CELEX at EU level or the NOR in France, or a web-based, URL/URI identifier, like an ELI (European Legislation Identifier) or an URN-Lex.",
+      "rdfs:comment": "An identifier for the legislation. For example the CELEX at EU level, the NOR in France, or the ELI (European Legislation Identifier).",
       "rdfs:label": "legislationIdentifier",
       "rdfs:subPropertyOf": {
         "@id": "schema:identifier"
@@ -1609,48 +1683,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
-        },
-        {
           "@id": "schema:CreativeWork"
-        }
-      ]
-    },
-    {
-      "@id": "schema:legislationJurisdiction",
-      "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         },
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
-        }
-      ],
-      "http://www.w3.org/2004/02/skos/core#exactMatch": {
-        "@id": "http://data.europa.eu/eli/ontology#jurisdiction"
-      },
-      "owl:equivalentProperty": {
-        "@id": "http://data.europa.eu/eli/ontology#jurisdiction"
-      },
-      "rdfs:comment": "The jurisdiction from which the legislation originates.",
-      "rdfs:label": "legislationJurisdiction",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:spatialCoverage"
-      },
-      "schema:category": "issue-1156",
-      "schema:domainIncludes": {
-        "@id": "schema:Legislation"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -1659,10 +1695,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         },
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -1712,37 +1748,26 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:URL"
+        },
+        {
           "@id": "schema:DateTime"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:URL"
         }
       ]
     },
     {
-      "@id": "schema:isBasedOnUrl",
+      "@id": "schema:editor",
       "@type": "rdf:Property",
-      "rdfs:comment": "A resource that was used in the creation of this resource. This term can be repeated for multiple sources. For example, http://example.com/great-multiplication-intro.html.",
-      "rdfs:label": "isBasedOnUrl",
+      "rdfs:comment": "Specifies the Person who edited the CreativeWork.",
+      "rdfs:label": "editor",
       "schema:domainIncludes": {
         "@id": "schema:CreativeWork"
       },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:URL"
-        },
-        {
-          "@id": "schema:Product"
-        }
-      ],
-      "schema:supersededBy": {
-        "@id": "schema:isBasedOn"
+      "schema:rangeIncludes": {
+        "@id": "schema:Person"
       }
     },
     {
@@ -1803,6 +1828,42 @@
       }
     },
     {
+      "@id": "schema:legislationTransposedBy",
+      "@type": "rdf:Property",
+      "dct:source": [
+        {
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#exactMatch": {
+        "@id": "http://data.europa.eu/eli/ontology#transposed_by"
+      },
+      "owl:equivalentProperty": {
+        "@id": "http://data.europa.eu/eli/ontology#transposed_by"
+      },
+      "rdfs:comment": "Indicates that the objectives set by this legislation (or part of legislation) are fulfilled by another legislation who passed appropriate implementation measures. Typically, European Directives are transposed by the legislations of European Union's member states or regions. This indicates a legally binding link between the 2 legislations.",
+      "rdfs:label": "legislationTransposedBy",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:legislationAppliedBy"
+      },
+      "schema:category": "issue-1156",
+      "schema:domainIncludes": {
+        "@id": "schema:Legislation"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:legislationTransposes"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Legislation"
+      }
+    },
+    {
       "@id": "schema:sourceOrganization",
       "@type": "rdf:Property",
       "rdfs:comment": "The Organization on whose behalf the creator was working.",
@@ -1817,46 +1878,54 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
-      "schema:category": "issue-1670",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CommunicateAction"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:Event"
         },
         {
           "@id": "schema:CreativeWork"
         }
       ],
-      "schema:inverseOf": {
-        "@id": "schema:subjectOf"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
     },
     {
-      "@id": "schema:disambiguatingDescription",
+      "@id": "schema:legislationAppliedBy",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:description"
+      "dct:source": [
+        {
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+        },
+        {
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+        }
+      ],
+      "http://www.w3.org/2004/02/skos/core#exactMatch": {
+        "@id": "http://data.europa.eu/eli/ontology#implemented_by"
       },
+      "owl:equivalentProperty": {
+        "@id": "http://data.europa.eu/eli/ontology#implemented_by"
+      },
+      "rdfs:comment": "Indicates that this legislation (or part of a legislation) is somehow transfered by another legislation in a different legislative context. This is an informative link, and it has no legal value. For legally-binding links of transposition, use the property <a href=\"/legislationTransposedBy\">legislationTransposedBy</a>. For example the informative consolidated version of the European Directive is somehow \"applied by\" an informative consolidated law in a European Union's member state.",
+      "rdfs:label": "legislationAppliedBy",
+      "schema:category": "issue-1156",
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:Legislation"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:legislationApplies"
+      },
+      "schema:isPartOf": {
+        "@id": "http://pending.schema.org"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:Legislation"
       }
     },
     {
@@ -1902,6 +1971,9 @@
       "rdfs:label": "sponsor",
       "schema:domainIncludes": [
         {
+          "@id": "schema:MedicalStudy"
+        },
+        {
           "@id": "schema:CreativeWork"
         },
         {
@@ -1912,17 +1984,14 @@
         },
         {
           "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:MedicalStudy"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -1931,10 +2000,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         },
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -1948,6 +2017,9 @@
       "schema:category": "issue-1156",
       "schema:domainIncludes": {
         "@id": "schema:Legislation"
+      },
+      "schema:inverseOf": {
+        "@id": "schema:legislationAppliedBy"
       },
       "schema:isPartOf": {
         "@id": "http://pending.schema.org"
@@ -1981,13 +2053,13 @@
       ],
       "http://www.w3.org/2004/02/skos/core#closeMatch": [
         {
-          "@id": "http://data.europa.eu/eli/ontology#LegalResource"
+          "@id": "http://data.europa.eu/eli/ontology#LegalExpression"
         },
         {
-          "@id": "http://data.europa.eu/eli/ontology#LegalExpression"
+          "@id": "http://data.europa.eu/eli/ontology#LegalResource"
         }
       ],
-      "rdfs:comment": "A legal document such as an act, decree, bill, etc. (enforceable or not) or a component of a legal act (like an article).",
+      "rdfs:comment": "A legal act (enforceable or not) or a component of a legal act (like an article).",
       "rdfs:label": "Legislation",
       "rdfs:subClassOf": {
         "@id": "schema:CreativeWork"
@@ -1998,21 +2070,18 @@
       }
     },
     {
-      "@id": "schema:spatialCoverage",
+      "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
-      "owl:equivalentProperty": {
-        "@id": "dct:spatial"
-      },
-      "rdfs:comment": "The spatialCoverage of a CreativeWork indicates the place(s) which are the focus of the content. It is a subproperty of\n      contentLocation intended primarily for more technical and detailed materials. For example with a Dataset, it indicates\n      areas that the dataset describes: a dataset of New York weather would have spatialCoverage which was the place: the state of New York.",
-      "rdfs:label": "spatialCoverage",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
       "rdfs:subPropertyOf": {
-        "@id": "schema:contentLocation"
+        "@id": "schema:description"
       },
       "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Place"
+        "@id": "schema:Text"
       }
     },
     {
@@ -2020,10 +2089,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         },
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -2046,10 +2115,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     },
@@ -2075,10 +2144,16 @@
           "@id": "schema:CreativeWork"
         },
         {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Offer"
+        },
+        {
           "@id": "schema:Brand"
         },
         {
-          "@id": "schema:Product"
+          "@id": "schema:Organization"
         },
         {
           "@id": "schema:Event"
@@ -2087,13 +2162,7 @@
           "@id": "schema:Place"
         },
         {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         }
       ],
       "schema:rangeIncludes": {
@@ -2127,10 +2196,10 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Date"
+          "@id": "schema:DateTime"
         },
         {
-          "@id": "schema:DateTime"
+          "@id": "schema:Date"
         }
       ]
     },
@@ -2153,28 +2222,28 @@
       "rdfs:label": "productionCompany",
       "schema:domainIncludes": [
         {
+          "@id": "schema:Movie"
+        },
+        {
+          "@id": "schema:Episode"
+        },
+        {
+          "@id": "schema:MediaObject"
+        },
+        {
+          "@id": "schema:VideoGameSeries"
+        },
+        {
           "@id": "schema:MovieSeries"
         },
         {
           "@id": "schema:TVSeries"
         },
         {
-          "@id": "schema:MediaObject"
-        },
-        {
-          "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:VideoGameSeries"
-        },
-        {
           "@id": "schema:RadioSeries"
         },
         {
           "@id": "schema:CreativeWorkSeason"
-        },
-        {
-          "@id": "schema:Episode"
         }
       ],
       "schema:rangeIncludes": {
@@ -2186,10 +2255,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         },
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -2224,12 +2293,15 @@
       }
     },
     {
-      "@id": "schema:contentRating",
+      "@id": "schema:description",
       "@type": "rdf:Property",
-      "rdfs:comment": "Official rating of a piece of content&#x2014;for example,'MPAA PG-13'.",
-      "rdfs:label": "contentRating",
+      "owl:equivalentProperty": {
+        "@id": "dct:description"
+      },
+      "rdfs:comment": "A description of the item.",
+      "rdfs:label": "description",
       "schema:domainIncludes": {
-        "@id": "schema:CreativeWork"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
@@ -2274,10 +2346,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
+          "@id": "http://publications.europa.eu/mdr/eli/index.html"
         },
         {
-          "@id": "http://publications.europa.eu/mdr/eli/index.html"
+          "@id": "https://github.com/schemaorg/schemaorg/issues/1156"
         }
       ],
       "http://www.w3.org/2004/02/skos/core#exactMatch": {
@@ -2358,48 +2430,38 @@
           "@id": "schema:Product"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         }
       ]
     },
     {
       "@id": "schema:duration",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-      },
       "rdfs:comment": "The duration of the item (movie, audio recording, event, etc.) in <a href=\"http://en.wikipedia.org/wiki/ISO_8601\">ISO 8601 date format</a>.",
       "rdfs:label": "duration",
-      "schema:category": "issue-1698",
       "schema:domainIncludes": [
         {
           "@id": "schema:MusicRelease"
         },
         {
-          "@id": "schema:Movie"
-        },
-        {
-          "@id": "schema:MusicRecording"
-        },
-        {
-          "@id": "schema:QuantitativeValueDistribution"
-        },
-        {
           "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:MediaObject"
         },
         {
           "@id": "schema:Audiobook"
         },
         {
-          "@id": "schema:MediaObject"
+          "@id": "schema:MusicRecording"
+        },
+        {
+          "@id": "schema:Movie"
         }
       ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": {
         "@id": "schema:Duration"
       }
@@ -2426,22 +2488,22 @@
       "rdfs:label": "offers",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Service"
+          "@id": "schema:Product"
         },
         {
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:MenuItem"
-        },
-        {
-          "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:AggregateOffer"
+        },
+        {
+          "@id": "schema:MenuItem"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": {
@@ -2455,21 +2517,21 @@
       "rdfs:label": "publishingPrinciples",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Person"
-        },
-        {
           "@id": "schema:CreativeWork"
         },
         {
           "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Person"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
@@ -2492,27 +2554,27 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:WriteAction"
+          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:LinkRole"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:WriteAction"
         },
         {
-          "@id": "schema:CommunicateAction"
+          "@id": "schema:Event"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:Language"
         },
         {
-          "@id": "schema:Language"
+          "@id": "schema:Text"
         }
       ]
     }

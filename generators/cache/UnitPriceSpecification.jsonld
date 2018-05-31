@@ -64,25 +64,25 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:OpeningHoursSpecification"
         },
         {
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:JobPosting"
+          "@id": "schema:LocationFeatureSpecification"
         },
         {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:OpeningHoursSpecification"
+          "@id": "schema:JobPosting"
         },
         {
-          "@id": "schema:LocationFeatureSpecification"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -144,25 +144,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
           "@id": "schema:Permit"
-        },
-        {
-          "@id": "schema:Demand"
         },
         {
           "@id": "schema:MonetaryAmount"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:LocationFeatureSpecification"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -197,10 +197,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -296,13 +296,13 @@
       "rdfs:label": "eligibleTransactionVolume",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PriceSpecification"
+        },
+        {
           "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -396,10 +396,10 @@
       "@type": "rdf:Property",
       "dct:source": [
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsProperties"
         },
         {
-          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsProperties"
+          "@id": "http://www.w3.org/wiki/WebSchemas/SchemaDotOrgSources#source_GoodRelationsTerms"
         }
       ],
       "rdfs:comment": "The reference quantity for which a certain price applies, e.g. 1 EUR per 4 kWh of electricity. This property is a replacement for unitOfMeasurement for the advanced cases where the price does not relate to a standard unit.",
@@ -412,46 +412,19 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
-    },
-    {
       "@id": "schema:unitText",
       "@type": "rdf:Property",
       "rdfs:comment": "A string or text indicating the unit of measurement. Useful if you cannot provide a standard unit code for\n<a href='unitCode'>unitCode</a>.",
       "rdfs:label": "unitText",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PropertyValue"
+        },
+        {
           "@id": "schema:TypeAndQuantityNode"
         },
         {
           "@id": "schema:UnitPriceSpecification"
-        },
-        {
-          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:QuantitativeValue"
@@ -468,10 +441,10 @@
       "rdfs:label": "price",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Offer"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:TradeAction"
@@ -511,13 +484,13 @@
           "@id": "schema:Reservation"
         },
         {
+          "@id": "schema:PriceSpecification"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Ticket"
-        },
-        {
-          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -534,13 +507,13 @@
       "rdfs:label": "eligibleQuantity",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
-        },
-        {
           "@id": "schema:Offer"
         },
         {
           "@id": "schema:Demand"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {

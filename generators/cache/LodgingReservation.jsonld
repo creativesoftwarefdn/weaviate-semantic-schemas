@@ -57,13 +57,13 @@
           "@id": "schema:Order"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
@@ -118,19 +118,16 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:ParcelDelivery"
+          "@id": "schema:TrainTrip"
         },
         {
           "@id": "schema:Flight"
         },
         {
-          "@id": "schema:TrainTrip"
+          "@id": "schema:Reservation"
         },
         {
           "@id": "schema:Invoice"
-        },
-        {
-          "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:CreativeWork"
@@ -139,7 +136,10 @@
           "@id": "schema:Service"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:BusTrip"
+        },
+        {
+          "@id": "schema:ParcelDelivery"
         }
       ],
       "schema:rangeIncludes": [
@@ -218,13 +218,13 @@
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:Number"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PriceSpecification"
         }
       ]
     },
@@ -267,10 +267,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ],
       "schema:supersededBy": {
@@ -372,13 +372,13 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         },
         {
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -407,10 +407,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -428,33 +428,6 @@
       "rdfs:subClassOf": {
         "@id": "schema:Reservation"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:lodgingUnitDescription",
@@ -475,16 +448,16 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:Offer"
-        },
-        {
           "@id": "schema:Reservation"
         },
         {
+          "@id": "schema:PriceSpecification"
+        },
+        {
           "@id": "schema:Ticket"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {
@@ -504,10 +477,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -521,10 +494,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:QualitativeValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:QualitativeValue"
         }
       ]
     },

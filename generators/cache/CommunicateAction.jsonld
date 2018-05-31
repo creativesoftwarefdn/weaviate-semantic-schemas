@@ -63,29 +63,19 @@
     {
       "@id": "schema:about",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
       "rdfs:comment": "The subject matter of the content.",
       "rdfs:label": "about",
-      "schema:category": "issue-1670",
       "schema:domainIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
         {
           "@id": "schema:Event"
         },
         {
           "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:CreativeWork"
         }
       ],
-      "schema:inverseOf": {
-        "@id": "schema:subjectOf"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": {
         "@id": "schema:Thing"
       }
@@ -100,10 +90,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -197,10 +187,56 @@
       }
     },
     {
-      "@id": "schema:ShareAction",
-      "rdfs:subClassOf": {
-        "@id": "schema:CommunicateAction"
-      }
+      "@id": "schema:recipient",
+      "@type": "rdf:Property",
+      "rdfs:comment": "A sub property of participant. The participant who is at the receiving end of the action.",
+      "rdfs:label": "recipient",
+      "rdfs:subPropertyOf": {
+        "@id": "schema:participant"
+      },
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:AuthorizeAction"
+        },
+        {
+          "@id": "schema:DonateAction"
+        },
+        {
+          "@id": "schema:Message"
+        },
+        {
+          "@id": "schema:CommunicateAction"
+        },
+        {
+          "@id": "schema:TipAction"
+        },
+        {
+          "@id": "schema:PayAction"
+        },
+        {
+          "@id": "schema:GiveAction"
+        },
+        {
+          "@id": "schema:SendAction"
+        },
+        {
+          "@id": "schema:ReturnAction"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Person"
+        },
+        {
+          "@id": "schema:Audience"
+        },
+        {
+          "@id": "schema:ContactPoint"
+        },
+        {
+          "@id": "schema:Organization"
+        }
+      ]
     },
     {
       "@id": "schema:name",
@@ -247,64 +283,18 @@
           "@id": "schema:URL"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
     {
-      "@id": "schema:recipient",
-      "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of participant. The participant who is at the receiving end of the action.",
-      "rdfs:label": "recipient",
-      "rdfs:subPropertyOf": {
-        "@id": "schema:participant"
-      },
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:PayAction"
-        },
-        {
-          "@id": "schema:AuthorizeAction"
-        },
-        {
-          "@id": "schema:Message"
-        },
-        {
-          "@id": "schema:CommunicateAction"
-        },
-        {
-          "@id": "schema:ReturnAction"
-        },
-        {
-          "@id": "schema:TipAction"
-        },
-        {
-          "@id": "schema:GiveAction"
-        },
-        {
-          "@id": "schema:SendAction"
-        },
-        {
-          "@id": "schema:DonateAction"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Audience"
-        },
-        {
-          "@id": "schema:Person"
-        },
-        {
-          "@id": "schema:ContactPoint"
-        }
-      ]
+      "@id": "schema:ShareAction",
+      "rdfs:subClassOf": {
+        "@id": "schema:CommunicateAction"
+      }
     },
     {
       "@id": "schema:description",
@@ -331,21 +321,21 @@
           "@id": "schema:Event"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:Organization"
         }
       ],
       "schema:rangeIncludes": [
+        {
+          "@id": "schema:Place"
+        },
         {
           "@id": "schema:PostalAddress"
         },
         {
           "@id": "schema:Text"
-        },
-        {
-          "@id": "schema:Place"
         }
       ]
     },
@@ -380,33 +370,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
     },
     {
       "@id": "schema:sameAs",
@@ -481,10 +444,10 @@
       "rdfs:label": "endTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:FoodEstablishmentReservation"
+          "@id": "schema:Action"
         },
         {
-          "@id": "schema:Action"
+          "@id": "schema:FoodEstablishmentReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -551,10 +514,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -565,19 +528,19 @@
       "rdfs:label": "inLanguage",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:LinkRole"
-        },
-        {
-          "@id": "schema:CommunicateAction"
         },
         {
           "@id": "schema:WriteAction"
         },
         {
           "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:Event"
         }
       ],
       "schema:rangeIncludes": [

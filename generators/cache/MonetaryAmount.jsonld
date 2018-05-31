@@ -37,25 +37,25 @@
       "rdfs:label": "validThrough",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:OpeningHoursSpecification"
-        },
-        {
-          "@id": "schema:PriceSpecification"
-        },
-        {
-          "@id": "schema:JobPosting"
+          "@id": "schema:Demand"
         },
         {
           "@id": "schema:Offer"
         },
         {
-          "@id": "schema:Demand"
+          "@id": "schema:OpeningHoursSpecification"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
+        },
+        {
+          "@id": "schema:JobPosting"
+        },
+        {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
+          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {
@@ -111,33 +111,6 @@
       }
     },
     {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ]
-    },
-    {
       "@id": "schema:amount",
       "schema:rangeIncludes": {
         "@id": "schema:MonetaryAmount"
@@ -189,24 +162,24 @@
           "@id": "schema:QuantitativeValue"
         },
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Number"
-        },
-        {
           "@id": "schema:StructuredValue"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         },
         {
           "@id": "schema:Boolean"
+        },
+        {
+          "@id": "schema:Text"
         }
       ]
     },
@@ -220,16 +193,16 @@
       "rdfs:label": "minValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PropertyValueSpecification"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
           "@id": "schema:QuantitativeValue"
         },
         {
           "@id": "schema:PropertyValue"
+        },
+        {
+          "@id": "schema:PropertyValueSpecification"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -264,16 +237,16 @@
       "rdfs:label": "maxValue",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
-        },
-        {
-          "@id": "schema:QuantitativeValue"
+          "@id": "schema:PropertyValueSpecification"
         },
         {
           "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValueSpecification"
+          "@id": "schema:QuantitativeValue"
+        },
+        {
+          "@id": "schema:MonetaryAmount"
         }
       ],
       "schema:rangeIncludes": {
@@ -296,10 +269,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         }
       ]
     },
@@ -368,40 +341,26 @@
     {
       "@id": "schema:currency",
       "@type": "rdf:Property",
-      "dct:source": [
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1698"
-        },
-        {
-          "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
-        }
-      ],
+      "dct:source": {
+        "@id": "https://github.com/schemaorg/schemaorg/issues/1253"
+      },
       "rdfs:comment": "The currency in which the monetary amount is expressed (in 3-letter <a href=\"http://en.wikipedia.org/wiki/ISO_4217\">ISO 4217</a> format).",
       "rdfs:label": "currency",
-      "schema:category": [
-        "issue-1253",
-        "issue-1698"
-      ],
+      "schema:category": "issue-1253",
       "schema:domainIncludes": [
         {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:LoanOrCredit"
         },
         {
-          "@id": "schema:LoanOrCredit"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:ExchangeRateSpecification"
         },
         {
-          "@id": "schema:MonetaryAmountDistribution"
-        },
-        {
           "@id": "schema:DatedMoneySpecification"
         }
       ],
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
       "schema:rangeIncludes": {
         "@id": "schema:Text"
       }
@@ -440,25 +399,25 @@
       "rdfs:label": "validFrom",
       "schema:domainIncludes": [
         {
-          "@id": "schema:LocationFeatureSpecification"
-        },
-        {
-          "@id": "schema:MonetaryAmount"
+          "@id": "schema:Permit"
         },
         {
           "@id": "schema:OpeningHoursSpecification"
         },
         {
+          "@id": "schema:LocationFeatureSpecification"
+        },
+        {
           "@id": "schema:Demand"
         },
         {
-          "@id": "schema:Offer"
-        },
-        {
-          "@id": "schema:Permit"
+          "@id": "schema:MonetaryAmount"
         },
         {
           "@id": "schema:PriceSpecification"
+        },
+        {
+          "@id": "schema:Offer"
         }
       ],
       "schema:rangeIncludes": {

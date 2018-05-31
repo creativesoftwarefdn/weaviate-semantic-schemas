@@ -93,13 +93,13 @@
       },
       "schema:rangeIncludes": [
         {
+          "@id": "schema:AnatomicalStructure"
+        },
+        {
           "@id": "schema:AnatomicalSystem"
         },
         {
           "@id": "schema:SuperficialAnatomy"
-        },
-        {
-          "@id": "schema:AnatomicalStructure"
         }
       ]
     },
@@ -110,10 +110,10 @@
       "rdfs:label": "legalStatus",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Drug"
+          "@id": "schema:MedicalEntity"
         },
         {
-          "@id": "schema:MedicalEntity"
+          "@id": "schema:Drug"
         },
         {
           "@id": "schema:DietarySupplement"
@@ -124,10 +124,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:DrugLegalStatus"
+          "@id": "schema:MedicalEnumeration"
         },
         {
-          "@id": "schema:MedicalEnumeration"
+          "@id": "schema:DrugLegalStatus"
         },
         {
           "@id": "schema:Text"
@@ -141,10 +141,10 @@
       "rdfs:label": "pathophysiology",
       "schema:domainIncludes": [
         {
-          "@id": "schema:PhysicalActivity"
+          "@id": "schema:MedicalCondition"
         },
         {
-          "@id": "schema:MedicalCondition"
+          "@id": "schema:PhysicalActivity"
         }
       ],
       "schema:isPartOf": {
@@ -332,10 +332,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -344,33 +344,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:recognizingAuthority",
@@ -421,22 +394,22 @@
       "rdfs:label": "category",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Property"
-        },
-        {
-          "@id": "schema:Class"
-        },
-        {
-          "@id": "schema:PhysicalActivity"
-        },
-        {
           "@id": "schema:Invoice"
         },
         {
           "@id": "schema:Product"
         },
         {
+          "@id": "schema:Class"
+        },
+        {
           "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:PhysicalActivity"
+        },
+        {
+          "@id": "schema:Property"
         },
         {
           "@id": "schema:Service"
@@ -444,13 +417,13 @@
       ],
       "schema:rangeIncludes": [
         {
+          "@id": "schema:Thing"
+        },
+        {
           "@id": "schema:Text"
         },
         {
           "@id": "schema:PhysicalActivityCategory"
-        },
-        {
-          "@id": "schema:Thing"
         }
       ]
     },

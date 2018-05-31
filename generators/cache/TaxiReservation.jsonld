@@ -37,16 +37,16 @@
       "rdfs:label": "broker",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Invoice"
+          "@id": "schema:Service"
         },
         {
           "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:Order"
         },
         {
-          "@id": "schema:Order"
+          "@id": "schema:Invoice"
         }
       ],
       "schema:rangeIncludes": [
@@ -119,28 +119,28 @@
       "rdfs:label": "provider",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Flight"
-        },
-        {
-          "@id": "schema:ParcelDelivery"
-        },
-        {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:TrainTrip"
-        },
-        {
           "@id": "schema:Invoice"
         },
         {
-          "@id": "schema:Service"
+          "@id": "schema:BusTrip"
         },
         {
           "@id": "schema:CreativeWork"
         },
         {
-          "@id": "schema:BusTrip"
+          "@id": "schema:ParcelDelivery"
+        },
+        {
+          "@id": "schema:TrainTrip"
+        },
+        {
+          "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:Flight"
+        },
+        {
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
@@ -211,10 +211,10 @@
       "rdfs:label": "totalPrice",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
@@ -222,10 +222,10 @@
           "@id": "schema:PriceSpecification"
         },
         {
-          "@id": "schema:Number"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:Number"
         }
       ]
     },
@@ -236,16 +236,16 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
-        },
-        {
-          "@id": "schema:Offer"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Offer"
+        },
+        {
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -342,10 +342,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
           "@id": "schema:PropertyValue"
@@ -396,42 +396,15 @@
       "rdfs:label": "pickupTime",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RentalCarReservation"
+          "@id": "schema:TaxiReservation"
         },
         {
-          "@id": "schema:TaxiReservation"
+          "@id": "schema:RentalCarReservation"
         }
       ],
       "schema:rangeIncludes": {
         "@id": "schema:DateTime"
       }
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:pickupLocation",
@@ -440,10 +413,10 @@
       "rdfs:label": "pickupLocation",
       "schema:domainIncludes": [
         {
-          "@id": "schema:RentalCarReservation"
+          "@id": "schema:TaxiReservation"
         },
         {
-          "@id": "schema:TaxiReservation"
+          "@id": "schema:RentalCarReservation"
         }
       ],
       "schema:rangeIncludes": {
@@ -492,10 +465,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         },
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         }
       ]
     },

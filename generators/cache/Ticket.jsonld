@@ -28,10 +28,10 @@
       "rdfs:label": "issuedBy",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Permit"
         },
         {
-          "@id": "schema:Permit"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": {
@@ -45,18 +45,18 @@
       "rdfs:label": "underName",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         },
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         }
       ]
     },
@@ -97,21 +97,21 @@
       "rdfs:label": "totalPrice",
       "schema:domainIncludes": [
         {
-          "@id": "schema:Ticket"
+          "@id": "schema:Reservation"
         },
         {
-          "@id": "schema:Reservation"
+          "@id": "schema:Ticket"
         }
       ],
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Text"
+          "@id": "schema:PriceSpecification"
         },
         {
           "@id": "schema:Number"
         },
         {
-          "@id": "schema:PriceSpecification"
+          "@id": "schema:Text"
         }
       ]
     },
@@ -170,10 +170,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:URL"
+          "@id": "schema:Text"
         },
         {
-          "@id": "schema:Text"
+          "@id": "schema:URL"
         },
         {
           "@id": "schema:PropertyValue"
@@ -209,33 +209,6 @@
       "@type": "rdfs:Class",
       "rdfs:comment": "The most generic type of item.",
       "rdfs:label": "Thing"
-    },
-    {
-      "@id": "schema:subjectOf",
-      "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Event"
-        },
-        {
-          "@id": "schema:CreativeWork"
-        }
-      ]
     },
     {
       "@id": "schema:dateIssued",
@@ -285,6 +258,9 @@
       "rdfs:label": "priceCurrency",
       "schema:domainIncludes": [
         {
+          "@id": "schema:PriceSpecification"
+        },
+        {
           "@id": "schema:Offer"
         },
         {
@@ -292,9 +268,6 @@
         },
         {
           "@id": "schema:Ticket"
-        },
-        {
-          "@id": "schema:PriceSpecification"
         }
       ],
       "schema:rangeIncludes": {

@@ -46,10 +46,10 @@
           "@id": "schema:MoveAction"
         },
         {
-          "@id": "schema:TransferAction"
+          "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:TransferAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -133,18 +133,18 @@
       ]
     },
     {
-      "@id": "schema:disambiguatingDescription",
+      "@id": "schema:sportsActivityLocation",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
-      "rdfs:label": "disambiguatingDescription",
+      "rdfs:comment": "A sub property of location. The sports activity location where this action occurred.",
+      "rdfs:label": "sportsActivityLocation",
       "rdfs:subPropertyOf": {
-        "@id": "schema:description"
+        "@id": "schema:location"
       },
       "schema:domainIncludes": {
-        "@id": "schema:Thing"
+        "@id": "schema:ExerciseAction"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:Text"
+        "@id": "schema:SportsActivityLocation"
       }
     },
     {
@@ -196,10 +196,10 @@
       "rdfs:label": "distance",
       "schema:domainIncludes": [
         {
-          "@id": "schema:TravelAction"
+          "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:ExerciseAction"
+          "@id": "schema:TravelAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -243,25 +243,25 @@
       "rdfs:label": "event",
       "schema:domainIncludes": [
         {
-          "@id": "schema:InviteAction"
-        },
-        {
-          "@id": "schema:JoinAction"
-        },
-        {
-          "@id": "schema:LeaveAction"
-        },
-        {
           "@id": "schema:InformAction"
         },
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Place"
         },
         {
           "@id": "schema:PlayAction"
         },
         {
-          "@id": "schema:Place"
+          "@id": "schema:LeaveAction"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:InviteAction"
+        },
+        {
+          "@id": "schema:JoinAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -269,18 +269,18 @@
       }
     },
     {
-      "@id": "schema:sportsActivityLocation",
+      "@id": "schema:disambiguatingDescription",
       "@type": "rdf:Property",
-      "rdfs:comment": "A sub property of location. The sports activity location where this action occurred.",
-      "rdfs:label": "sportsActivityLocation",
+      "rdfs:comment": "A sub property of description. A short description of the item used to disambiguate from other, similar items. Information from other properties (in particular, name) may be necessary for the description to be useful for disambiguation.",
+      "rdfs:label": "disambiguatingDescription",
       "rdfs:subPropertyOf": {
-        "@id": "schema:location"
+        "@id": "schema:description"
       },
       "schema:domainIncludes": {
-        "@id": "schema:ExerciseAction"
+        "@id": "schema:Thing"
       },
       "schema:rangeIncludes": {
-        "@id": "schema:SportsActivityLocation"
+        "@id": "schema:Text"
       }
     },
     {
@@ -298,26 +298,6 @@
       ],
       "schema:rangeIncludes": {
         "@id": "schema:DateTime"
-      }
-    },
-    {
-      "@id": "schema:exerciseType",
-      "@type": "rdf:Property",
-      "rdfs:comment": "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
-      "rdfs:label": "exerciseType",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:ExerciseAction"
-        },
-        {
-          "@id": "schema:ExercisePlan"
-        }
-      ],
-      "schema:isPartOf": {
-        "@id": "http://health-lifesci.schema.org"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Text"
       }
     },
     {
@@ -390,10 +370,10 @@
           "@id": "schema:Text"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:PropertyValue"
         },
         {
-          "@id": "schema:PropertyValue"
+          "@id": "schema:URL"
         }
       ]
     },
@@ -428,32 +408,16 @@
       }
     },
     {
-      "@id": "schema:location",
+      "@id": "schema:result",
       "@type": "rdf:Property",
-      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
-      "rdfs:label": "location",
-      "schema:domainIncludes": [
-        {
-          "@id": "schema:Action"
-        },
-        {
-          "@id": "schema:Organization"
-        },
-        {
-          "@id": "schema:Event"
-        }
-      ],
-      "schema:rangeIncludes": [
-        {
-          "@id": "schema:Place"
-        },
-        {
-          "@id": "schema:PostalAddress"
-        },
-        {
-          "@id": "schema:Text"
-        }
-      ]
+      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
+      "rdfs:label": "result",
+      "schema:domainIncludes": {
+        "@id": "schema:Action"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Thing"
+      }
     },
     {
       "@id": "schema:image",
@@ -465,10 +429,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:ImageObject"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:ImageObject"
         }
       ]
     },
@@ -497,31 +461,24 @@
       "rdfs:label": "Thing"
     },
     {
-      "@id": "schema:subjectOf",
+      "@id": "schema:exerciseType",
       "@type": "rdf:Property",
-      "dct:source": {
-        "@id": "https://github.com/schemaorg/schemaorg/issues/1670"
-      },
-      "rdfs:comment": "A CreativeWork or Event about this Thing..",
-      "rdfs:label": "subjectOf",
-      "schema:category": "issue-1670",
-      "schema:domainIncludes": {
-        "@id": "schema:Thing"
-      },
-      "schema:inverseOf": {
-        "@id": "schema:about"
-      },
-      "schema:isPartOf": {
-        "@id": "http://pending.schema.org"
-      },
-      "schema:rangeIncludes": [
+      "rdfs:comment": "Type(s) of exercise or activity, such as strength training, flexibility training, aerobics, cardiac rehabilitation, etc.",
+      "rdfs:label": "exerciseType",
+      "schema:domainIncludes": [
         {
-          "@id": "schema:Event"
+          "@id": "schema:ExerciseAction"
         },
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:ExercisePlan"
         }
-      ]
+      ],
+      "schema:isPartOf": {
+        "@id": "http://health-lifesci.schema.org"
+      },
+      "schema:rangeIncludes": {
+        "@id": "schema:Text"
+      }
     },
     {
       "@id": "schema:target",
@@ -584,24 +541,40 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:CreativeWork"
+          "@id": "schema:URL"
         },
         {
-          "@id": "schema:URL"
+          "@id": "schema:CreativeWork"
         }
       ]
     },
     {
-      "@id": "schema:result",
+      "@id": "schema:location",
       "@type": "rdf:Property",
-      "rdfs:comment": "The result produced in the action. e.g. John wrote <em>a book</em>.",
-      "rdfs:label": "result",
-      "schema:domainIncludes": {
-        "@id": "schema:Action"
-      },
-      "schema:rangeIncludes": {
-        "@id": "schema:Thing"
-      }
+      "rdfs:comment": "The location of for example where the event is happening, an organization is located, or where an action takes place.",
+      "rdfs:label": "location",
+      "schema:domainIncludes": [
+        {
+          "@id": "schema:Action"
+        },
+        {
+          "@id": "schema:Organization"
+        },
+        {
+          "@id": "schema:Event"
+        }
+      ],
+      "schema:rangeIncludes": [
+        {
+          "@id": "schema:Text"
+        },
+        {
+          "@id": "schema:Place"
+        },
+        {
+          "@id": "schema:PostalAddress"
+        }
+      ]
     },
     {
       "@id": "schema:audience",
@@ -610,22 +583,22 @@
       "rdfs:label": "audience",
       "schema:domainIncludes": [
         {
-          "@id": "schema:CreativeWork"
-        },
-        {
-          "@id": "schema:Event"
-        },
-        {
           "@id": "schema:Product"
-        },
-        {
-          "@id": "schema:LodgingBusiness"
         },
         {
           "@id": "schema:PlayAction"
         },
         {
+          "@id": "schema:Event"
+        },
+        {
           "@id": "schema:Service"
+        },
+        {
+          "@id": "schema:CreativeWork"
+        },
+        {
+          "@id": "schema:LodgingBusiness"
         }
       ],
       "schema:rangeIncludes": {
@@ -642,16 +615,16 @@
       },
       "schema:domainIncludes": [
         {
-          "@id": "schema:TransferAction"
-        },
-        {
-          "@id": "schema:ExerciseAction"
-        },
-        {
           "@id": "schema:InsertAction"
         },
         {
           "@id": "schema:MoveAction"
+        },
+        {
+          "@id": "schema:TransferAction"
+        },
+        {
+          "@id": "schema:ExerciseAction"
         }
       ],
       "schema:rangeIncludes": {
@@ -692,10 +665,10 @@
       },
       "schema:rangeIncludes": [
         {
-          "@id": "schema:Organization"
+          "@id": "schema:Person"
         },
         {
-          "@id": "schema:Person"
+          "@id": "schema:Organization"
         }
       ]
     }
