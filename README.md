@@ -25,7 +25,7 @@ Template __example__:
 
 ```
 {
-	"@context": "http://schema.org",
+	"@context": "http://schema.org", // an example context
 	"version": "x.x.x", // semver version number of this schema (www.semver.org)
 	"type": "thing", // thing or action
 	"name": "schema.org - Thing",
@@ -36,7 +36,15 @@ Template __example__:
 		"properties": [{
 			"name": "owner",
 			"@dataType": ["Person"], // if a cross-reference it has a capital (= Class) otherwise it is a value*
-			"description": "Owner of the thing."
+			"description": "Owner of the thing.",
+			"keywords": [{
+				"name": "Keyword"
+				"weight": 0.9
+			}]
+		}],
+		"keywords": [{
+			"name": "Keyword"
+			"weight": 0.9
 		}]
 	}]
 }
@@ -48,34 +56,6 @@ _* Notes:_
 * _Every property with a certain name across all schema's should contain either a cross-reference or one of the values. For example, in this example the property `owner` in another class can __only__ contain a data type starting with a capital (like `Person` or `Company`)._
 * _Different data types can not be combined in the array_
 * _Weaviate validates the schemas when initializing, giving a detailed error when some of the requirements mentioned above are not met_
-
-Golang Struct:
-
-```
-// Schema is a representation in GO for the custom schema provided.
-type Schema struct {
-	Context    string  `json:"@context"`
-	Version    string  `json:"version"`
-	Type       string  `json:"type"`
-	Maintainer string  `json:"maintainer"`
-	Name       string  `json:"name"`
-	Classes    []Class `json:"classes"`
-}
-
-// Class is a representation of a class within the schema.
-type Class struct {
-	Class       string     `json:"class"`
-	Description string     `json:"description"`
-	Properties  []Property `json:"properties"`
-}
-
-// Property provides the structure for the properties of the class items.
-type Property struct {
-	Name        string   `json:"name"`
-	Description string   `json:"description"`
-	DataType    []string `json:"@dataType"`
-}
-```
 
 _Note: You can use the existing schemas as templates or examples_
 
